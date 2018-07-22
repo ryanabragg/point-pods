@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import blueGrey from '@material-ui/core/colors/blueGrey';
-import amber from '@material-ui/core/colors/amber';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import Home from './layouts/Home';
 
-const theme = createMuiTheme({
-  palette: {
-    primary: blueGrey,
-    secondary: amber
-  },
-});
+import theme from './theme';
 
 class App extends Component {
   render() {
