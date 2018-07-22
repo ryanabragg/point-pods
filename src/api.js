@@ -10,13 +10,8 @@ const api = {
 };
 
 export default api;
-export const APIContext = React.createContext(api);
 export function withAPI(Component) {
   return function APIComponent(props) {
-    return (
-      <APIContext.Consumer>
-        {context => <Component {...props} api={context} />}
-      </APIContext.Consumer>
-    );
+    return <Component {...props} api={api} />;
   };
-}
+};

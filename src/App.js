@@ -6,8 +6,6 @@ import amber from '@material-ui/core/colors/amber';
 
 import Home from './layouts/Home';
 
-import api, { APIContext } from './api';
-
 const theme = createMuiTheme({
   palette: {
     primary: blueGrey,
@@ -19,17 +17,15 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-        <APIContext.Provider value={api}>
-          <BrowserRouter>
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route path='/new' render={() => <Redirect to="/" />} />
-              <Route exact path='/tournament' render={() => <Redirect to="/" />} />
-              <Route path='/tournament/:id' render={() => <Redirect to="/" />} />
-              <Route path='/settings' render={() => <Redirect to="/" />} />
-            </Switch>
-          </BrowserRouter>
-        </APIContext.Provider>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/new' render={() => <Redirect to="/" />} />
+            <Route exact path='/tournament' render={() => <Redirect to="/" />} />
+            <Route path='/tournament/:id' render={() => <Redirect to="/" />} />
+            <Route path='/settings' render={() => <Redirect to="/" />} />
+          </Switch>
+        </BrowserRouter>
       </MuiThemeProvider>
     );
   }

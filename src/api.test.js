@@ -1,9 +1,7 @@
-import api, { APIContext, withAPI } from './api';
-import React, { Component } from 'react';
+import api, { withAPI } from './api';
 
 it('exports the expected values', () => {
   expect(api).toBeInstanceOf(Object);
-  expect(APIContext).toBeInstanceOf(Object);
   expect(withAPI).toBeInstanceOf(Function);
 });
 
