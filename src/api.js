@@ -114,8 +114,8 @@ api.Tournaments.remove = (id) => {
 };
 
 export default api;
-export function withAPI(Component) {
+export function withAPI(WrappedComponent) {
   return function APIComponent(props) {
-    return <Component {...props} api={api} />;
+    return <WrappedComponent {...props} api={api} />;
   };
 };
