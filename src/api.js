@@ -3,9 +3,7 @@ import React from 'react';
 
 const api = {
   store: localforage.createInstance({
-    name: 'Point Pods',
-    storeName: 'point_pods',
-    description: 'some description'
+    name: 'Point Pods'
   }),
   pairingMethods: {
     RANDOM: -1,
@@ -24,8 +22,12 @@ api.Settings.default = () => Promise.resolve({
   podSizeMaximum: 4,
 });
 
-api.Settings.get = () => api.store.getItem('settings')
-  .catch(error => api.Settings.default());
+api.Settings.get = () => api.store.keys()
+  .then(keys => {
+    if(-1 === keys.indexOf('settings'))
+      return api.store.setItem('settings', api.Settings.default());
+    return api.store.getItem('settings');
+  });
 
 api.Settings.set = (settings) => {
   return api.Settings.get().then(values => {
@@ -41,8 +43,12 @@ api.Settings.set = (settings) => {
   });
 };
 
-api.Players.all = () => api.store.getItem('players')
-  .catch(error => []);
+api.Players.all = () => api.store.keys()
+  .then(keys => {
+    if(-1 === keys.indexOf('players'))
+      return api.store.setItem('players', []);
+    return api.store.getItem('players');
+  });
 
 api.Players.get = (id) => {
   return api.Players.all().then(list => {
@@ -77,8 +83,12 @@ api.Players.remove = (id) => {
   });
 };
 
-api.Tournaments.all = () => api.store.getItem('tournaments')
-  .catch(error => []);
+api.Tournaments.all = () => api.store.keys()
+  .then(keys => {
+    if(-1 === keys.indexOf('tournaments'))
+      return api.store.setItem('tournaments', []);
+    return api.store.getItem('tournaments');
+  });
 
 api.Tournaments.get = (id) => {
   return api.Tournaments.all().then(list => {

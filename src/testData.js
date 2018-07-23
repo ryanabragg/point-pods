@@ -140,10 +140,12 @@ const testTournaments = [{
 
 let mockStore = {};
 const mockStorage = {
-  setItem: jest.fn().mockImplementation((key, val) => Promise.resolve(mockStore[key] = val)),
+  setItem: jest.fn().mockImplementation((key, val) => Promise.resolve((mockStore[key] = val))),
   getItem: jest.fn().mockImplementation(key => Promise.resolve(mockStore[key])),
   removeItem: jest.fn().mockImplementation(key => { delete mockStore[key]; Promise.resolve(); }),
   clear: jest.fn().mockImplementation(() => Promise.resolve((mockStore = {}))),
+  keys: jest.fn().mockImplementation(() => Promise.resolve(Object.keys(mockStore))),
+  length: jest.fn().mockImplementation(() => Promise.resolve(Object.keys(mockStore).length)),
 };
 
 let defaultStore = null;
