@@ -138,4 +138,35 @@ const testTournaments = [{
   }],
 }];
 
-export { testSettings, testPlayers, testTournaments };
+let mockStore = {};
+const mockStorage = {
+  setItem: jest.fn().mockImplementation((key, val) => Promise.resolve(mockStore[key] = val)),
+  getItem: jest.fn().mockImplementation(key => Promise.resolve(mockStore[key])),
+  removeItem: jest.fn().mockImplementation(key => { delete mockStore[key]; Promise.resolve(); }),
+  clear: jest.fn().mockImplementation(() => Promise.resolve((mockStore = {}))),
+};
+
+let defaultStore = null;
+function mockAPI(api, storage) {
+  defaultStore = api.store;
+  api.store = storage;
+  mockStore = {
+    settings: testSettings,
+    players: testPlayers,
+    tournaments: testTournaments,
+  };
+}
+function demockAPI(api) {
+  api.store = defaultStore;
+  defaultStore = null;
+}
+
+export {
+  testSettings,
+  testPlayers,
+  testTournaments,
+  mockStore,
+  mockStorage,
+  mockAPI,
+  demockAPI,
+};
