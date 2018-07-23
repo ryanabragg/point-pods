@@ -13,19 +13,19 @@ import {
   demockAPI
 } from './testData';
 
-it('exports the expected values', () => {
+test('exports the expected values', () => {
   expect(api).toBeInstanceOf(Object);
   expect(withAPI).toBeInstanceOf(Function);
 });
 
 describe('the api object', () => {
 
-  it('has localforage as a store object', () => {
+  test('has localforage as a store object', () => {
     expect(api.hasOwnProperty('store')).toBe(true);
     expect(api.store._defaultConfig.name).toBe('localforage');
   });
 
-  it('has a pairingMethods object', () => {
+  test('has a pairingMethods object', () => {
     expect(api.pairingMethods).toBeInstanceOf(Object);
     expect(api.pairingMethods.hasOwnProperty('RANDOM')).toBe(true);
     expect(api.pairingMethods.hasOwnProperty('POINTS')).toBe(true);
@@ -43,7 +43,7 @@ describe('the api object', () => {
     });
     afterEach(() => demockAPI(api));
 
-    it('with a default function', async () => {
+    test('with a default function', async () => {
       expect(api.Settings.default).toBeInstanceOf(Function);
       const defaults = await api.Settings.default();
       expect(defaults.hasOwnProperty('pairingMethod')).toBe(true);
@@ -52,14 +52,14 @@ describe('the api object', () => {
       expect(defaults.hasOwnProperty('podSizeMaximum')).toBe(true);
     });
 
-    it('with a get function', async () => {
+    test('with a get function', async () => {
       expect(api.Settings.get).toBeInstanceOf(Function);
       const getDefault = await api.Settings.get();
       expect(getDefault).toEqual(testSettings);
       expect(mockStorage.getItem.mock.calls[0][0]).toBe('settings');
     });
 
-    it('with a set function', async () => {
+    test('with a set function', async () => {
       expect(api.Settings.set).toBeInstanceOf(Function);
       const setMocked = await api.Settings.set({
         pairingMethod: api.pairingMethods.HISTORIC,
@@ -86,7 +86,7 @@ describe('the api object', () => {
     });
     afterEach(() => demockAPI(api));
     
-    it('with an all function', async () => {
+    test('with an all function', async () => {
       expect(api.Players.all).toBeInstanceOf(Function);
       const allMocked = await api.Players.all();
       expect(allMocked).toEqual(testPlayers);
@@ -94,7 +94,7 @@ describe('the api object', () => {
       expect(mockStorage.getItem.mock.calls[0][0]).toBe('players');
     });
 
-    it('with a get function', async () => {
+    test('with a get function', async () => {
       expect(api.Players.get).toBeInstanceOf(Function);
       const getMocked = await api.Players.get('mock4');
       try {
@@ -108,7 +108,7 @@ describe('the api object', () => {
       expect(mockStorage.getItem.mock.calls[1][0]).toBe('players');
     });
 
-    it('with a set function', async () => {
+    test('with a set function', async () => {
       expect(api.Players.set).toBeInstanceOf(Function);
       const setMocked = await api.Players.set({
         id: 'mock1',
@@ -137,7 +137,7 @@ describe('the api object', () => {
       expect(mockStorage.removeItem.mock.calls.length).toBe(0);
     });
 
-    it('with a remove function', async () => {
+    test('with a remove function', async () => {
       expect(api.Players.remove).toBeInstanceOf(Function);
       const removeMocked = await api.Players.remove('mock6');
       expect(removeMocked).toBe(mockStore.players);
@@ -168,7 +168,7 @@ describe('the api object', () => {
     });
     afterEach(() => demockAPI(api));
     
-    it('with an all function', async () => {
+    test('with an all function', async () => {
       expect(api.Tournaments.all).toBeInstanceOf(Function);
       const allMocked = await api.Tournaments.all();
       expect(allMocked).toEqual(testTournaments);
@@ -176,7 +176,7 @@ describe('the api object', () => {
       expect(mockStorage.getItem.mock.calls[0][0]).toBe('tournaments');
     });
 
-    it('with a get function', async () => {
+    test('with a get function', async () => {
       expect(api.Tournaments.get).toBeInstanceOf(Function);
       const getMocked = await api.Tournaments.get('mock1');
       try {
@@ -190,7 +190,7 @@ describe('the api object', () => {
       expect(mockStorage.getItem.mock.calls[1][0]).toBe('tournaments');
     });
 
-    it('with a set function', async () => {
+    test('with a set function', async () => {
       expect(api.Tournaments.set).toBeInstanceOf(Function);
       const setMocked = await api.Tournaments.set({
         id: 'mock1',
@@ -219,7 +219,7 @@ describe('the api object', () => {
       expect(mockStorage.removeItem.mock.calls.length).toBe(0);
     });
 
-    it('with a remove function', async () => {
+    test('with a remove function', async () => {
       expect(api.Tournaments.remove).toBeInstanceOf(Function);
       const removeMocked = await api.Tournaments.remove('mock1');
       expect(removeMocked).toBe(mockStore.tournaments);
@@ -242,7 +242,7 @@ describe('the api object', () => {
 });
 
 describe('the withAPI HOC', () => {
-  it('adds the api as a prop to the parameter component', () => {
+  test('adds the api as a prop to the parameter component', () => {
     const Test = withAPI((props) => (
       <div id='test'>{props.api.store._defaultConfig.name}</div>
     ));
