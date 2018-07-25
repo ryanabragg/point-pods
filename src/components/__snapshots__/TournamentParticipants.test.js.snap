@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the prior snapshot 1`] = `
+<div>
+  <div
+    className="MuiToolbar-root-139 MuiToolbar-regular-141 MuiToolbar-gutters-140"
+  >
+    <h1
+      className="MuiTypography-root-143 MuiTypography-headline-148"
+    >
+      Add Players
+    </h1>
+    <p
+      className="MuiTypography-root-143 MuiTypography-body1-152"
+    />
+    <button
+      aria-haspopup="true"
+      aria-label="Players Menu"
+      aria-owns={null}
+      className="MuiButtonBase-root-191 MuiButton-root-167 MuiButton-text-169 MuiButton-flat-172 APIComponent-right-136"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      <span
+        className="MuiButton-label-168"
+      >
+        0 Players
+      </span>
+      <span
+        className="MuiTouchRipple-root-194"
+      />
+    </button>
+  </div>
+  <div
+    className="APIComponent-addPlayer-137"
+  >
+    <div
+      className="IntegrationAutosuggest-root-205"
+    >
+      <div
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-owns="react-autowhatever-1"
+        className="IntegrationAutosuggest-container-206"
+        role="combobox"
+      >
+        <div
+          aria-describedby={undefined}
+          className="MuiFormControl-root-210 MuiFormControl-fullWidth-213"
+        >
+          <div
+            aria-activedescendant={null}
+            aria-autocomplete="list"
+            aria-controls="react-autowhatever-1"
+            className="MuiInput-root-214 MuiInput-fullWidth-221 MuiInput-formControl-215 MuiInput-underline-218"
+            style={Object {}}
+          >
+            <input
+              aria-invalid={false}
+              autoComplete="off"
+              autoFocus={undefined}
+              className="MuiInput-input-222"
+              defaultValue={undefined}
+              disabled={false}
+              id={undefined}
+              name={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={undefined}
+              placeholder="Add a player"
+              readOnly={undefined}
+              required={undefined}
+              rows={undefined}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="MuiPaper-root-227 MuiPaper-elevation2-231"
+          id="react-autowhatever-1"
+          role="listbox"
+          style={Object {}}
+        />
+      </div>
+      <button
+        className="MuiButtonBase-root-191 MuiIconButton-root-254 MuiIconButton-colorInherit-255"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label-259"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-260"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <g>
+              <path
+                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+              />
+            </g>
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root-194"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    className="APIComponent-list-138"
+  >
+    <ul
+      className="MuiList-root-267 MuiList-padding-268"
+    />
+  </div>
+</div>
+`;
+
+exports[`matches the prior snapshot 2`] = `
+<div>
+  <div
+    className="MuiToolbar-root-139 MuiToolbar-regular-141 MuiToolbar-gutters-140"
+  >
+    <h1
+      className="MuiTypography-root-143 MuiTypography-headline-148"
+    >
+      Add Players
+    </h1>
+    <p
+      className="MuiTypography-root-143 MuiTypography-body1-152"
+    />
+    <button
+      aria-haspopup="true"
+      aria-label="Players Menu"
+      aria-owns={null}
+      className="MuiButtonBase-root-191 MuiButton-root-167 MuiButton-text-169 MuiButton-flat-172 APIComponent-right-136"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="0"
+      type="button"
+    >
+      <span
+        className="MuiButton-label-168"
+      >
+        0 Players
+      </span>
+      <span
+        className="MuiTouchRipple-root-194"
+      />
+    </button>
+  </div>
+  <div
+    className="APIComponent-addPlayer-137"
+  >
+    <div
+      className="IntegrationAutosuggest-root-205"
+    >
+      <div
+        aria-expanded={false}
+        aria-haspopup="listbox"
+        aria-owns="react-autowhatever-1"
+        className="IntegrationAutosuggest-container-206"
+        role="combobox"
+      >
+        <div
+          aria-describedby={undefined}
+          className="MuiFormControl-root-210 MuiFormControl-fullWidth-213"
+        >
+          <div
+            aria-activedescendant={null}
+            aria-autocomplete="list"
+            aria-controls="react-autowhatever-1"
+            className="MuiInput-root-214 MuiInput-fullWidth-221 MuiInput-formControl-215 MuiInput-underline-218"
+            style={Object {}}
+          >
+            <input
+              aria-invalid={false}
+              autoComplete="off"
+              autoFocus={undefined}
+              className="MuiInput-input-222"
+              defaultValue={undefined}
+              disabled={false}
+              id={undefined}
+              name={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={undefined}
+              placeholder="Add a player"
+              readOnly={undefined}
+              required={undefined}
+              rows={undefined}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="MuiPaper-root-227 MuiPaper-elevation2-231"
+          id="react-autowhatever-1"
+          role="listbox"
+          style={Object {}}
+        />
+      </div>
+      <button
+        className="MuiButtonBase-root-191 MuiIconButton-root-254 MuiIconButton-colorInherit-255"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label-259"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-260"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <g>
+              <path
+                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+              />
+            </g>
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root-194"
+        />
+      </button>
+    </div>
+  </div>
+  <div
+    className="APIComponent-list-138"
+  >
+    <ul
+      className="MuiList-root-267 MuiList-padding-268"
+    />
+  </div>
+</div>
+`;

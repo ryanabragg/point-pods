@@ -138,14 +138,39 @@ const testTournaments = [{
   }],
 }];
 
+const mockRoute = {
+  history: {
+    push: jest.fn(to => to),
+    replace: jest.fn(to => to),
+  },
+  match: {
+    params: {},
+  },
+  matchWithInvalid: {
+    params: {
+      id: 'invalid',
+    },
+  },
+  matchWithID0: {
+    params: {
+      id: 'mock0',
+    },
+  },
+  matchWithID1: {
+    params: {
+      id: 'mock1',
+    },
+  },
+};
+
 let mockStore = {};
 const mockStorage = {
-  setItem: jest.fn().mockImplementation((key, val) => Promise.resolve((mockStore[key] = val))),
-  getItem: jest.fn().mockImplementation(key => Promise.resolve(mockStore[key])),
-  removeItem: jest.fn().mockImplementation(key => { delete mockStore[key]; Promise.resolve(); }),
-  clear: jest.fn().mockImplementation(() => Promise.resolve((mockStore = {}))),
-  keys: jest.fn().mockImplementation(() => Promise.resolve(Object.keys(mockStore))),
-  length: jest.fn().mockImplementation(() => Promise.resolve(Object.keys(mockStore).length)),
+  setItem: jest.fn((key, val) => Promise.resolve((mockStore[key] = val))),
+  getItem: jest.fn(key => Promise.resolve(mockStore[key])),
+  removeItem: jest.fn(key => { delete mockStore[key]; Promise.resolve(); }),
+  clear: jest.fn(() => Promise.resolve((mockStore = {}))),
+  keys: jest.fn(() => Promise.resolve(Object.keys(mockStore))),
+  length: jest.fn(() => Promise.resolve(Object.keys(mockStore).length)),
 };
 
 let defaultStore = null;
@@ -167,6 +192,7 @@ export {
   testSettings,
   testPlayers,
   testTournaments,
+  mockRoute,
   mockStore,
   mockStorage,
   mockAPI,
