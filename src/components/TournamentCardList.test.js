@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-
-import Button from '@material-ui/core/Button';
-import AddIcon from '@material-ui/icons/Add';
+import { shallow } from 'enzyme';
 
 import TournamentCardList from './TournamentCardList';
 
@@ -28,6 +26,12 @@ test('matches the prior snapshot', (done) => {
     expect(tree.toJSON()).toMatchSnapshot();
     done();
   }, 1000);
+});
+
+test('is a HOC-ed component', () => {
+  const component = shallow(<TournamentCardList />);
+  expect(component.type().prototype.constructor.name).toBe('APIComponent');
+  expect(component.dive().type().prototype.constructor.name).toBe('TournamentCardList');
 });
 
 test('has control props: filterByDone, done', (done) => {

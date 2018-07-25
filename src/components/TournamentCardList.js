@@ -47,11 +47,11 @@ class TournamentCardList extends Component {
       : tournaments;
     return (
       <div className={classes.root}>
-        {cards.map(({id, name, type, players}) => (
+        {cards.map(({id, name, category, done, staging, players}) => (
           <Card key={id} className={classes.card}>
             <CardHeader
               title={name}
-              subheader={type}
+              subheader={category}
             />
             <CardContent>
               <Typography>
@@ -64,9 +64,9 @@ class TournamentCardList extends Component {
             <CardActions>
               <Button size='small'
                 className={classes.right}
-                href={`/tournament/${id}`}
+                href={`/${staging ? 'new' : 'tournament'}/${id}`}
               >
-                Details
+                {done ? 'Details' : 'Continue'}
               </Button>
             </CardActions>
           </Card>
