@@ -63,7 +63,7 @@ describe('integration', () => {
     const component = shallow(<IntegrationAutosuggest items={suggestions} />);
     let unHOC = component.dive();
     expect(unHOC.find(IconButton).length).toBe(0);
-    component.setProps({ buttonIcon: 'test' });
+    component.setProps({ buttonIcon: <div /> });
     unHOC = component.dive();
     expect(unHOC.find(IconButton).prop('onClick')).toEqual(unHOC.instance().handleSuggestionButton);
   });

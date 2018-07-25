@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the prior snapshot 1`] = `
+<div
+  className="IntegrationAutosuggest-root-50"
+>
+  <div
+    aria-expanded={false}
+    aria-haspopup="listbox"
+    aria-owns="react-autowhatever-1"
+    className="IntegrationAutosuggest-container-51"
+    role="combobox"
+  >
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root-55 MuiFormControl-fullWidth-58"
+    >
+      <div
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-controls="react-autowhatever-1"
+        className="MuiInput-root-59 MuiInput-fullWidth-66 MuiInput-formControl-60 MuiInput-underline-63"
+        style={Object {}}
+      >
+        <input
+          aria-invalid={false}
+          autoComplete="off"
+          autoFocus={undefined}
+          className="MuiInput-input-67"
+          defaultValue={undefined}
+          disabled={false}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={undefined}
+          placeholder="Add a player"
+          readOnly={undefined}
+          required={undefined}
+          rows={undefined}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="MuiPaper-root-72 MuiPaper-elevation2-76"
+      id="react-autowhatever-1"
+      role="listbox"
+      style={Object {}}
+    />
+  </div>
+</div>
+`;
+
+exports[`matches the prior snapshot 2`] = `
+<div
+  className="IntegrationAutosuggest-root-50"
+>
+  <div
+    aria-expanded={false}
+    aria-haspopup="listbox"
+    aria-owns="react-autowhatever-1"
+    className="IntegrationAutosuggest-container-51"
+    role="combobox"
+  >
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root-55 MuiFormControl-fullWidth-58"
+    >
+      <div
+        aria-activedescendant={null}
+        aria-autocomplete="list"
+        aria-controls="react-autowhatever-1"
+        className="MuiInput-root-59 MuiInput-fullWidth-66 MuiInput-formControl-60 MuiInput-underline-63"
+        style={Object {}}
+      >
+        <input
+          aria-invalid={false}
+          autoComplete="off"
+          autoFocus={undefined}
+          className="MuiInput-input-67"
+          defaultValue={undefined}
+          disabled={false}
+          id={undefined}
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={undefined}
+          placeholder="Add a player"
+          readOnly={undefined}
+          required={undefined}
+          rows={undefined}
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="MuiPaper-root-72 MuiPaper-elevation2-76"
+      id="react-autowhatever-1"
+      role="listbox"
+      style={Object {}}
+    />
+  </div>
+</div>
+`;
