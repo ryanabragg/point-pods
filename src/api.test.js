@@ -114,7 +114,7 @@ describe('the api object', () => {
         id: 'mock1',
         name: 'changed',
       });
-      expect(setMocked).toBe(mockStore.players);
+      expect(setMocked).toBe(mockStore.players[1]);
       try {
         const notFound = await api.Players.set({
           id: 'not-found',
@@ -196,7 +196,7 @@ describe('the api object', () => {
         id: 'mock1',
         name: 'changed',
       });
-      expect(setMocked).toBe(mockStore.tournaments);
+      expect(setMocked).toBe(mockStore.tournaments[1]);
       try {
         const notFound = await api.Tournaments.set({
           id: 'not-found',

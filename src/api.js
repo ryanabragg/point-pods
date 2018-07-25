@@ -60,14 +60,21 @@ api.Players.get = (id) => {
 };
 
 api.Players.set = (value) => {
-  if(!value.id)
-    return Promise.reject('Invalid ID');
+  const create = !value.hasOwnProperty('id');
+  if(create)
+    value = Object.assign({}, { id: Date.now() }, value);
   return api.Players.all().then(list => {
-    const index = list.findIndex(i => String(i.id) === String(value.id));
-    if(index === -1)
+    let index = list.findIndex(i => String(i.id) === String(value.id));
+    if(create && index === -1)
+      index = list.push(value) - 1;
+    else if(index === -1)
       throw new Error('ID not found');
-    list[index] = Object.assign({}, list[index], value);
-    return api.store.setItem('players', list);
+    list[index] = Object.assign({
+      id: null,
+      name: '',
+      points: 0,
+    }, list[index], value);
+    return api.store.setItem('players', list).then(list => list[index]);
   });
 };
 
@@ -100,14 +107,31 @@ api.Tournaments.get = (id) => {
 };
 
 api.Tournaments.set = (value) => {
-  if(!value.id)
-    return Promise.reject('Invalid ID');
+  const create = !value.hasOwnProperty('id');
+  if(create)
+    value = Object.assign({}, { id: Date.now() }, value);
   return api.Tournaments.all().then(list => {
-    const index = list.findIndex(i => String(i.id) === String(value.id));
-    if(index === -1)
+    let index = list.findIndex(i => String(i.id) === String(value.id));
+    if(create && index === -1)
+      index = list.push(value) - 1;
+    else if(index === -1)
       throw new Error('ID not found');
-    list[index] = Object.assign({}, list[index], value);
-    return api.store.setItem('tournaments', list);
+    list[index] = Object.assign({
+      id: null,
+      name: '',
+      category: '',
+      description: '',
+      date: '',
+      pairingMethod: null,
+      pairingMethodInitial: null,
+      podSizeMinimum: null,
+      podSizeMaximum: null,
+      rounds: 0,
+      done: false,
+      staging: true,
+      players: [],
+    }, list[index], value);
+    return api.store.setItem('tournaments', list).then(list => list[index]);
   });
 };
 
