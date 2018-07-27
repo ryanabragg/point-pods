@@ -76,7 +76,7 @@ class TournamentCreation extends Component {
           .map(tournament => tournament.category)
           .filter((cat, i, self) => cat && self.indexOf(cat) === i).sort())
       .then(() => this.setState(loadState))
-      .catch(error => console.log(error.message));
+      .catch(error => this.props.notification(error.message, 'error'));
   }
 
   handleInputChange = name => event => {
@@ -108,7 +108,8 @@ class TournamentCreation extends Component {
       .then(tournament => {
         if(typeof this.props.onSubmit === 'function')
           this.props.onSubmit(tournament);
-      });
+      })
+      .catch(error => this.props.notification(error.message, 'error'));
   };
 
   render() {
@@ -251,13 +252,15 @@ class TournamentCreation extends Component {
 }
 
 TournamentCreation.defaultProps = {
-  onSubmit: () => null,
+  onSubmit: (tournament) => null,
+  notification: (message, variant, duration, onClose) => null,
 };
 
 TournamentCreation.propTypes = {
   api: PropTypes.object.isRequired, // added by withAPI
   classes: PropTypes.object.isRequired, // added by withStyles
   onSubmit: PropTypes.func,
+  notification: PropTypes.func,
 };
 
 export default withStyles(styles, { withTheme: true })(withAPI(TournamentCreation));

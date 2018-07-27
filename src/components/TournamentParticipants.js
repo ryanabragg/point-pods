@@ -58,12 +58,14 @@ class TournamentParticipants extends Component {
     let loadState = { id: this.props.id };
     this.props.api.Tournaments.get(this.props.id)
       .catch(error => {
-        console.log(error.message);
+        this.props.notification(error.message, 'error');
       })
       .then(tournament => loadState.participants = tournament.players || [])
       .then(() => this.props.api.Players.all())
       .then(list => loadState.players = list || [])
-      .catch(error => console.log(error.message))
+      .catch(error => {
+        this.props.notification(error.message, 'error');
+      })
       .then(() => this.setState(loadState));
   }
 
@@ -75,6 +77,7 @@ class TournamentParticipants extends Component {
   handleSelect = ({ id, label }) => {
     if(!label.length || this.state.id === null)
       return;
+    let created = false;
     return new Promise((resolve, reject) => {
       const found = this.state.players.filter(player => player.id === id);
       if(id === null || !found.length)
@@ -84,8 +87,8 @@ class TournamentParticipants extends Component {
       .catch(error => 
         this.props.api.Players.set({name: label})
         .then(player => {
+          created = true;
           this.setState({ players: this.state.players.concat(player) });
-          console.log('info', `Created player ${player.name}`, player);
           return player;
         })
       )
@@ -93,7 +96,8 @@ class TournamentParticipants extends Component {
         const added = this.state.participants.filter(p => p.id === player.id);
         if(added.length)
           throw new Error('Player already added');
-        console.log('info', `Added player ${player.name}`, player);
+        let message = `${created ? 'Created' : 'Added'} player ${player.name}`;
+        this.props.notification(message, 'info');
         return this.state.participants.concat(player).map(player => ({
           id: player.id,
           name: player.name,
@@ -115,7 +119,9 @@ class TournamentParticipants extends Component {
           this.setState({ participants: participants });
         });
       })
-      .catch(error => console.log('error', error.message));
+      .catch(error => {
+        this.props.notification(error.message, 'error');
+      });
   };
 
   removeParticipant = event => {
@@ -206,6 +212,7 @@ class TournamentParticipants extends Component {
 }
 
 TournamentParticipants.defaultProps = {
+  notification: (message, variant, duration, onClose) => null,
 };
 
 TournamentParticipants.propTypes = {
@@ -215,6 +222,7 @@ TournamentParticipants.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
+  notification: PropTypes.func,
 };
 
 export default withStyles(styles, { withTheme: true })(withAPI(TournamentParticipants));

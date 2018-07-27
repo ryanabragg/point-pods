@@ -7,9 +7,13 @@ import Button from '@material-ui/core/Button';
 
 import SendIcon from '@material-ui/icons/Send';
 
+import { withNotification } from '../components/Notification';
 import AppMenu from '../components/AppMenu';
 import TournamentCreation from '../components/TournamentCreation';
 import TournamentParticipants from '../components/TournamentParticipants';
+
+const NotifiedTournamentCreation = withNotification(TournamentCreation);
+const NotifiedTournamentParticipants = withNotification(TournamentParticipants);
 
 const styles = theme => ({
   actionButton: {
@@ -43,7 +47,7 @@ class NewTournament extends Component {
         {id === null
           ? (
             <div className={classes.center}>
-              <TournamentCreation {...rest}
+              <NotifiedTournamentCreation {...rest}
                 onSubmit={this.handleTournamentCreated}
               />
             </div>
@@ -58,7 +62,7 @@ class NewTournament extends Component {
               >
                 <SendIcon />
               </Button>
-              <TournamentParticipants {...rest} id={id} />
+              <NotifiedTournamentParticipants {...rest} id={id} />
             </React.Fragment>
           )
         }

@@ -35,8 +35,7 @@ class TournamentCardList extends Component {
 
   componentDidMount() {
     this.props.api.Tournaments.all()
-      .then(list => this.setState({ tournaments: list }))
-      .catch(error => console.log(error.message));
+      .then(list => this.setState({ tournaments: list }));
   }
 
   render() {

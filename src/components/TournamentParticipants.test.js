@@ -74,7 +74,8 @@ describe('actions', () => {
       return 0;
     };
     let players = testTournaments[0].players.map(ignoreVariance);
-    const component = shallow(<TournamentParticipants id='mock0' />);
+    const spy = jest.fn((m, v, d, c) => null);
+    const component = shallow(<TournamentParticipants id='mock0' notification={spy} />);
     const unHOC = component.dive().dive();
     expect(unHOC.find(IntegrationAutosuggest).prop('onSelect')).toEqual(unHOC.instance().handleSelect);
     let nextPlayer = {
@@ -90,6 +91,8 @@ describe('actions', () => {
           players.push(nextPlayer);
           expect(testTournaments[0].players.map(ignoreVariance)).toEqual(players.sort(playerSort));
           expect(unHOC.state('participants')).toEqual(testTournaments[0].players);
+          expect(spy.mock.calls[0][0]).toBe(`Added player ${nextPlayer.name}`);
+          expect(spy.mock.calls[0][1]).toBe(`info`);
           done();
         } catch (error) {
           done.fail(error);
@@ -111,7 +114,8 @@ describe('actions', () => {
       return 0;
     };
     let players = testTournaments[0].players.map(ignoreVariance);
-    const component = shallow(<TournamentParticipants id='mock0' />);
+    const spy = jest.fn((m, v, d, c) => null);
+    const component = shallow(<TournamentParticipants id='mock0' notification={spy} />);
     const unHOC = component.dive().dive();
     expect(unHOC.find(IntegrationAutosuggest).prop('onSelect')).toEqual(unHOC.instance().handleSelect);
     let nextPlayer = {
@@ -128,6 +132,8 @@ describe('actions', () => {
           players.push(nextPlayer);
           expect(testTournaments[0].players.map(ignoreVariance)).toEqual(players.sort(playerSort));
           expect(unHOC.state('participants')).toEqual(testTournaments[0].players);
+          expect(spy.mock.calls[0][0]).toBe(`Created player ${nextPlayer.name}`);
+          expect(spy.mock.calls[0][1]).toBe(`info`);
           done();
         } catch (error) {
           done.fail(error);
