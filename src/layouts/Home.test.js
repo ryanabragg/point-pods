@@ -4,6 +4,13 @@ import renderer from 'react-test-renderer';
 
 import Home from './Home';
 
+import api from '../api';
+
+import { mockStorage, mockAPI, demockAPI } from '../testData';
+
+beforeEach(() => mockAPI(api, mockStorage));
+afterEach(() => demockAPI(api));
+
 test('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<Home />, div);
