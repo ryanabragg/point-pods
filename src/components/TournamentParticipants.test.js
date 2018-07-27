@@ -26,7 +26,7 @@ test('renders without crashing', () => {
 test('matches the prior snapshot', (done) => {
   const component = renderer.create(<TournamentParticipants />);
   expect(component.toJSON()).toMatchSnapshot();
-  component.update(<TournamentParticipants />);
+  component.update(<TournamentParticipants id='mock0' />);
   setTimeout(() => {
     try {
       expect(component.toJSON()).toMatchSnapshot();
@@ -38,59 +38,18 @@ test('matches the prior snapshot', (done) => {
 });
 
 test('is a HOC-ed component', () => {
-  const component = shallow(<TournamentParticipants />);
+  const component = shallow(<TournamentParticipants id='mock0' />);
   expect(component.type().prototype.constructor.name).toBe('APIComponent');
   expect(component.dive().type().prototype.constructor.name).toBe('TournamentParticipants');
 });
 
 describe('default values', () => {
-  test('pushes to history if no route id', (done) => {
-    const component = shallow(
-      <TournamentParticipants
-        history={mockRoute.history}
-        match={mockRoute.match}
-      />
-    );
-    const unHOC = component.dive().dive();
-    setTimeout(() => {
-      try {
-        expect(mockRoute.history.push.mock.calls[0][0]).toEqual('/');
-        done();
-      } catch (error) {
-        done.fail(error);
-      }
-    }, 100);
-  });
-
-  test('pushes to history if invalid route id', (done) => {
-    const component = shallow(
-      <TournamentParticipants
-        history={mockRoute.history}
-        match={mockRoute.matchWithInvalid}
-      />
-    );
-    const unHOC = component.dive().dive();
-    setTimeout(() => {
-      try {
-        expect(mockRoute.history.push.mock.calls[0][0]).toEqual('/');
-        done();
-      } catch (error) {
-        done.fail(error);
-      }
-    }, 100);
-  });
-
   test('loads the state', (done) => {
-    const component = shallow(
-      <TournamentParticipants
-        history={mockRoute.history}
-        match={mockRoute.matchWithID1}
-      />
-    );
+    const component = shallow(<TournamentParticipants id='mock1' />);
     const unHOC = component.dive().dive();
     setTimeout(() => {
       try {
-        expect(unHOC.state('tournamentID')).toEqual(testTournaments[1].id);
+        expect(unHOC.state('id')).toBe(testTournaments[1].id);
         expect(unHOC.state('players')).toEqual(testPlayers);
         expect(unHOC.state('participants')).toEqual(testTournaments[1].players);
         done();
@@ -107,13 +66,15 @@ describe('actions', () => {
       id: player.id,
       name: player.name,
     });
+    const playerSort = (a, b) => {
+      if(a.name < b.name)
+        return -1;
+      else if(a.name > b.name)
+        return 1;
+      return 0;
+    };
     let players = testTournaments[0].players.map(ignoreVariance);
-    const component = shallow(
-      <TournamentParticipants
-        history={mockRoute.history}
-        match={mockRoute.matchWithID0}
-      />
-    );
+    const component = shallow(<TournamentParticipants id='mock0' />);
     const unHOC = component.dive().dive();
     expect(unHOC.find(IntegrationAutosuggest).prop('onSelect')).toEqual(unHOC.instance().handleSelect);
     let nextPlayer = {
@@ -126,7 +87,8 @@ describe('actions', () => {
         label: nextPlayer.name,
       }).then(() => {
         try {
-          expect(testTournaments[0].players.map(ignoreVariance)).toEqual(players.concat(nextPlayer));
+          players.push(nextPlayer);
+          expect(testTournaments[0].players.map(ignoreVariance)).toEqual(players.sort(playerSort));
           expect(unHOC.state('participants')).toEqual(testTournaments[0].players);
           done();
         } catch (error) {
@@ -149,12 +111,7 @@ describe('actions', () => {
       return 0;
     };
     let players = testTournaments[0].players.map(ignoreVariance);
-    const component = shallow(
-      <TournamentParticipants
-        history={mockRoute.history}
-        match={mockRoute.matchWithID0}
-      />
-    );
+    const component = shallow(<TournamentParticipants id='mock0' />);
     const unHOC = component.dive().dive();
     expect(unHOC.find(IntegrationAutosuggest).prop('onSelect')).toEqual(unHOC.instance().handleSelect);
     let nextPlayer = {

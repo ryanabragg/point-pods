@@ -47,23 +47,22 @@ const styles = theme => ({
 class TournamentParticipants extends Component {
   state = {
     menuAnchor: null,
-    tournamentID: null,
+    id: null,
     players: [],
     participants: [],
   };
 
   componentDidMount() {
-    if(!this.props.match.params.id)
-      return this.props.history.push('/');
-    let loadState = { tournamentID: this.props.match.params.id };
-    this.props.api.Tournaments.get(this.props.match.params.id)
+    if(!this.props.id && this.props.id !== 0)
+      return;
+    let loadState = { id: this.props.id };
+    this.props.api.Tournaments.get(this.props.id)
       .catch(error => {
         console.log(error.message);
-        this.props.history.push('/');
       })
-      .then(tournament => loadState.participants = tournament.players)
+      .then(tournament => loadState.participants = tournament.players || [])
       .then(() => this.props.api.Players.all())
-      .then(list => loadState.players = list)
+      .then(list => loadState.players = list || [])
       .catch(error => console.log(error.message))
       .then(() => this.setState(loadState));
   }
@@ -74,7 +73,7 @@ class TournamentParticipants extends Component {
   };
 
   handleSelect = ({ id, label }) => {
-    if(!label.length)
+    if(!label.length || this.state.id === null)
       return;
     return new Promise((resolve, reject) => {
       const found = this.state.players.filter(player => player.id === id);
@@ -82,12 +81,14 @@ class TournamentParticipants extends Component {
         return reject('Player record not found');
       resolve(found[0]);
     })
-      .catch(error => this.props.api.Players.set({name: label}))
-      .then(player => {
-        this.setState({ players: this.state.players.concat(player) });
-        console.log('info', `Created player ${player.name}`, player);
-        return player;
-      })
+      .catch(error => 
+        this.props.api.Players.set({name: label})
+        .then(player => {
+          this.setState({ players: this.state.players.concat(player) });
+          console.log('info', `Created player ${player.name}`, player);
+          return player;
+        })
+      )
       .then(player => {
         const added = this.state.participants.filter(p => p.id === player.id);
         if(added.length)
@@ -107,7 +108,7 @@ class TournamentParticipants extends Component {
       })
       .then(participants => {
         return this.props.api.Tournaments.set({
-          id: this.state.tournamentID,
+          id: this.state.id,
           players: participants,
         })
         .then(tournament => {
@@ -118,10 +119,12 @@ class TournamentParticipants extends Component {
   };
 
   removeParticipant = event => {
+    if(this.state.id === null)
+      return;
     const id = event.currentTarget.id;
     const participants = this.state.participants.filter(p => String(p.id) !== id);
     this.props.api.Tournaments.set({
-      id: this.state.tournamentID,
+      id: this.state.id,
       players: participants,
     })
       .then(() => {
@@ -132,8 +135,10 @@ class TournamentParticipants extends Component {
   };
 
   removeAllParticipants = event => {
+    if(this.state.id === null)
+      return;
     this.props.api.Tournaments.set({
-      id: this.state.tournamentID,
+      id: this.state.id,
       players: [],
     })
       .then(() => {
@@ -146,7 +151,7 @@ class TournamentParticipants extends Component {
 
   render() {
     const { classes } = this.props;
-    const { menuAnchor, players, participants} = this.state;
+    const { menuAnchor, id, players, participants} = this.state;
     return (
       <div>
         <Toolbar>
@@ -201,22 +206,15 @@ class TournamentParticipants extends Component {
 }
 
 TournamentParticipants.defaultProps = {
-  history: {
-    push: () => null,
-    replace: () => null,
-  },
-  match: {
-    params: {
-      id: null,
-    },
-  },
 };
 
 TournamentParticipants.propTypes = {
   api: PropTypes.object.isRequired, // added by withAPI
   classes: PropTypes.object.isRequired, // added by withStyles
-  history: PropTypes.object, // added by parent
-  match: PropTypes.object, // added by parent
+  id: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
 };
 
 export default withStyles(styles, { withTheme: true })(withAPI(TournamentParticipants));

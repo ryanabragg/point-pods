@@ -40,27 +40,28 @@ class NewTournament extends Component {
     return (
       <div>
         <AppMenu title='Point Pods' />
-        {id === null  && (
-          <div className={classes.center}>
-            <TournamentCreation {...rest}
-              onSubmit={this.handleTournamentCreated}
-            />
-          </div>
-        )}
-        {id !== null && (
-          <React.Fragment>
-            <Button
-              variant='fab'
-              color='secondary'
-              aria-label='Start Tournament'
-              className={classes.actionButton}
-              href={`/tournament/${this.state.id}`}
-            >
-              <SendIcon />
-            </Button>
-            <TournamentParticipants {...rest} />
-          </React.Fragment>
-        )}
+        {id === null
+          ? (
+            <div className={classes.center}>
+              <TournamentCreation {...rest}
+                onSubmit={this.handleTournamentCreated}
+              />
+            </div>
+          ) : (
+            <React.Fragment>
+              <Button
+                variant='fab'
+                color='secondary'
+                aria-label='Start Tournament'
+                className={classes.actionButton}
+                href={`/tournament/${this.state.id}`}
+              >
+                <SendIcon />
+              </Button>
+              <TournamentParticipants {...rest} id={id} />
+            </React.Fragment>
+          )
+        }
       </div>
     );
   }
