@@ -31,23 +31,46 @@ const styles = theme => ({
 class TournamentCardList extends Component {
   state = {
     tournaments: [],
+    categories: [],
   };
 
   componentDidMount() {
     this.props.api.Tournaments.all()
-      .then(list => this.setState({ tournaments: list }));
+      .then(list => {
+        let categories = list.map(tournament => tournament.category)
+          .filter((cat, i, self) => cat && self.indexOf(cat) === i).sort();
+        this.setState({
+          tournaments: list,
+          categories: categories,
+        });
+        this.props.onLoadCategories(categories);
+      })
+      .catch(error => this.props.notification(error.message, 'error'));
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, status, category, search } = this.props;
     const { tournaments } = this.state;
-    const cards = this.props.filterByDone
-      ? tournaments.filter(t => t.done === this.props.done)
-      : tournaments;
+    let cards;
+    switch(status) {
+      default:
+      case 'Show All': cards = tournaments; break;
+      case 'Pending': cards = tournaments.filter(t => t.staging); break;
+      case 'In Progress': cards = tournaments.filter(t => !t.staging && !t.done); break;
+      case 'Incomplete': cards = tournaments.filter(t => !t.done); break;
+      case 'Complete': cards = tournaments.filter(t => t.done); break;
+    }
+    if(category)
+      cards = cards.filter(t => t.category == category);
+    if(search)
+      cards = cards.filter(t => (
+        t.name.toLowerCase().includes(search)
+        || t.description.toLowerCase().includes(search)
+      ));
     return (
       <div className={classes.root}>
         {cards.map(({id, name, category, done, staging, players}) => (
-          <Card key={id} className={classes.card}>
+          <Card key={id} id={id} className={classes.card}>
             <CardHeader
               title={name}
               subheader={category}
@@ -70,21 +93,42 @@ class TournamentCardList extends Component {
             </CardActions>
           </Card>
         ))}
+        {!cards.length && (
+          <Card id='not-found' className={classes.card}>
+            <CardHeader
+              title='No Tournaments Found'
+            />
+          </Card>
+        )}
       </div>
     );
   }
 }
 
 TournamentCardList.defaultProps = {
-  filterByDone: false,
-  done: false,
+  notification: (m, v, d, c) => null,
+  onLoadCategories: (categories) => null,
+  onSelect: (tournaments) => null,
+  status: 'Show All',
+  category: '',
+  search: '',
 };
 
 TournamentCardList.propTypes = {
   api: PropTypes.object.isRequired, // added by withAPI
   classes: PropTypes.object.isRequired, // added by withStyles
-  filterByDone: PropTypes.bool,
-  done: PropTypes.bool,
+  notification: PropTypes.func,
+  onLoadCategories: PropTypes.func,
+  onSelect: PropTypes.func,
+  status: PropTypes.oneOf([
+    'Show All',
+    'Pending',
+    'In Progress',
+    'Incomplete',
+    'Complete',
+  ]),
+  category: PropTypes.string,
+  search: PropTypes.string,
 };
 
 export default withStyles(styles, { withTheme: true })(withAPI(TournamentCardList));

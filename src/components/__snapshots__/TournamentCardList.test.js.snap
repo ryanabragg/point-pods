@@ -1,200 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`has control props: filterByDone, done 1`] = `
-<div
-  className="APIComponent-root-4"
->
-  <div
-    className="MuiPaper-root-8 MuiPaper-elevation1-11 MuiPaper-rounded-9 MuiCard-root-7 APIComponent-card-5"
-  >
-    <div
-      className="MuiCardHeader-root-35"
-    >
-      <div
-        className="MuiCardHeader-content-38"
-      >
-        <span
-          className="MuiTypography-root-41 MuiTypography-headline-46 MuiCardHeader-title-39"
-        >
-          test0
-        </span>
-        <span
-          className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-63 MuiCardHeader-subheader-40"
-        >
-          cat0
-        </span>
-      </div>
-    </div>
-    <div
-      className="MuiCardContent-root-65"
-    >
-      <p
-        className="MuiTypography-root-41 MuiTypography-body1-50"
-      >
-        4 Total Players
-      </p>
-      <p
-        className="MuiTypography-root-41 MuiTypography-body1-50"
-      >
-        4 Active Players
-      </p>
-    </div>
-    <div
-      className="MuiCardActions-root-66"
-    >
-      <a
-        className="MuiButtonBase-root-92 MuiButton-root-68 MuiButton-text-70 MuiButton-flat-73 MuiButton-sizeSmall-89 APIComponent-right-6 MuiCardActions-action-67"
-        href="/tournament/mock0"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        <span
-          className="MuiButton-label-69"
-        >
-          Continue
-        </span>
-        <span
-          className="MuiTouchRipple-root-95"
-        />
-      </a>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`has control props: filterByDone, done 2`] = `
-<div
-  className="APIComponent-root-4"
->
-  <div
-    className="MuiPaper-root-8 MuiPaper-elevation1-11 MuiPaper-rounded-9 MuiCard-root-7 APIComponent-card-5"
-  >
-    <div
-      className="MuiCardHeader-root-35"
-    >
-      <div
-        className="MuiCardHeader-content-38"
-      >
-        <span
-          className="MuiTypography-root-41 MuiTypography-headline-46 MuiCardHeader-title-39"
-        >
-          test1
-        </span>
-        <span
-          className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-63 MuiCardHeader-subheader-40"
-        >
-          cat1
-        </span>
-      </div>
-    </div>
-    <div
-      className="MuiCardContent-root-65"
-    >
-      <p
-        className="MuiTypography-root-41 MuiTypography-body1-50"
-      >
-        7 Total Players
-      </p>
-      <p
-        className="MuiTypography-root-41 MuiTypography-body1-50"
-      >
-        7 Active Players
-      </p>
-    </div>
-    <div
-      className="MuiCardActions-root-66"
-    >
-      <a
-        className="MuiButtonBase-root-92 MuiButton-root-68 MuiButton-text-70 MuiButton-flat-73 MuiButton-sizeSmall-89 APIComponent-right-6 MuiCardActions-action-67"
-        href="/tournament/mock1"
-        onBlur={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        role="button"
-        tabIndex="0"
-      >
-        <span
-          className="MuiButton-label-69"
-        >
-          Details
-        </span>
-        <span
-          className="MuiTouchRipple-root-95"
-        />
-      </a>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`matches the prior snapshot 1`] = `
 <div
-  className="APIComponent-root-4"
-/>
+  className="APIComponent-root-62"
+>
+  <div
+    className="MuiPaper-root-66 MuiPaper-elevation1-69 MuiPaper-rounded-67 MuiCard-root-65 APIComponent-card-63"
+    id="not-found"
+  >
+    <div
+      className="MuiCardHeader-root-93"
+    >
+      <div
+        className="MuiCardHeader-content-96"
+      >
+        <span
+          className="MuiTypography-root-99 MuiTypography-headline-104 MuiCardHeader-title-97"
+        >
+          No Tournaments Found
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`matches the prior snapshot 2`] = `
 <div
-  className="APIComponent-root-4"
+  className="APIComponent-root-62"
 >
   <div
-    className="MuiPaper-root-8 MuiPaper-elevation1-11 MuiPaper-rounded-9 MuiCard-root-7 APIComponent-card-5"
+    className="MuiPaper-root-66 MuiPaper-elevation1-69 MuiPaper-rounded-67 MuiCard-root-65 APIComponent-card-63"
+    id="mock0"
   >
     <div
-      className="MuiCardHeader-root-35"
+      className="MuiCardHeader-root-93"
     >
       <div
-        className="MuiCardHeader-content-38"
+        className="MuiCardHeader-content-96"
       >
         <span
-          className="MuiTypography-root-41 MuiTypography-headline-46 MuiCardHeader-title-39"
+          className="MuiTypography-root-99 MuiTypography-headline-104 MuiCardHeader-title-97"
         >
           test0
         </span>
         <span
-          className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-63 MuiCardHeader-subheader-40"
+          className="MuiTypography-root-99 MuiTypography-body1-108 MuiTypography-colorTextSecondary-121 MuiCardHeader-subheader-98"
         >
           cat0
         </span>
       </div>
     </div>
     <div
-      className="MuiCardContent-root-65"
+      className="MuiCardContent-root-123"
     >
       <p
-        className="MuiTypography-root-41 MuiTypography-body1-50"
+        className="MuiTypography-root-99 MuiTypography-body1-108"
       >
         4 Total Players
       </p>
       <p
-        className="MuiTypography-root-41 MuiTypography-body1-50"
+        className="MuiTypography-root-99 MuiTypography-body1-108"
       >
         4 Active Players
       </p>
     </div>
     <div
-      className="MuiCardActions-root-66"
+      className="MuiCardActions-root-124"
     >
       <a
-        className="MuiButtonBase-root-92 MuiButton-root-68 MuiButton-text-70 MuiButton-flat-73 MuiButton-sizeSmall-89 APIComponent-right-6 MuiCardActions-action-67"
-        href="/tournament/mock0"
+        className="MuiButtonBase-root-150 MuiButton-root-126 MuiButton-text-128 MuiButton-flat-131 MuiButton-sizeSmall-147 APIComponent-right-64 MuiCardActions-action-125"
+        href="/new/mock0"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -209,56 +85,57 @@ exports[`matches the prior snapshot 2`] = `
         tabIndex="0"
       >
         <span
-          className="MuiButton-label-69"
+          className="MuiButton-label-127"
         >
           Continue
         </span>
         <span
-          className="MuiTouchRipple-root-95"
+          className="MuiTouchRipple-root-153"
         />
       </a>
     </div>
   </div>
   <div
-    className="MuiPaper-root-8 MuiPaper-elevation1-11 MuiPaper-rounded-9 MuiCard-root-7 APIComponent-card-5"
+    className="MuiPaper-root-66 MuiPaper-elevation1-69 MuiPaper-rounded-67 MuiCard-root-65 APIComponent-card-63"
+    id="mock1"
   >
     <div
-      className="MuiCardHeader-root-35"
+      className="MuiCardHeader-root-93"
     >
       <div
-        className="MuiCardHeader-content-38"
+        className="MuiCardHeader-content-96"
       >
         <span
-          className="MuiTypography-root-41 MuiTypography-headline-46 MuiCardHeader-title-39"
+          className="MuiTypography-root-99 MuiTypography-headline-104 MuiCardHeader-title-97"
         >
           test1
         </span>
         <span
-          className="MuiTypography-root-41 MuiTypography-body1-50 MuiTypography-colorTextSecondary-63 MuiCardHeader-subheader-40"
+          className="MuiTypography-root-99 MuiTypography-body1-108 MuiTypography-colorTextSecondary-121 MuiCardHeader-subheader-98"
         >
           cat1
         </span>
       </div>
     </div>
     <div
-      className="MuiCardContent-root-65"
+      className="MuiCardContent-root-123"
     >
       <p
-        className="MuiTypography-root-41 MuiTypography-body1-50"
+        className="MuiTypography-root-99 MuiTypography-body1-108"
       >
         7 Total Players
       </p>
       <p
-        className="MuiTypography-root-41 MuiTypography-body1-50"
+        className="MuiTypography-root-99 MuiTypography-body1-108"
       >
         7 Active Players
       </p>
     </div>
     <div
-      className="MuiCardActions-root-66"
+      className="MuiCardActions-root-124"
     >
       <a
-        className="MuiButtonBase-root-92 MuiButton-root-68 MuiButton-text-70 MuiButton-flat-73 MuiButton-sizeSmall-89 APIComponent-right-6 MuiCardActions-action-67"
+        className="MuiButtonBase-root-150 MuiButton-root-126 MuiButton-text-128 MuiButton-flat-131 MuiButton-sizeSmall-147 APIComponent-right-64 MuiCardActions-action-125"
         href="/tournament/mock1"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -274,12 +151,78 @@ exports[`matches the prior snapshot 2`] = `
         tabIndex="0"
       >
         <span
-          className="MuiButton-label-69"
+          className="MuiButton-label-127"
         >
           Details
         </span>
         <span
-          className="MuiTouchRipple-root-95"
+          className="MuiTouchRipple-root-153"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-66 MuiPaper-elevation1-69 MuiPaper-rounded-67 MuiCard-root-65 APIComponent-card-63"
+    id="mock2"
+  >
+    <div
+      className="MuiCardHeader-root-93"
+    >
+      <div
+        className="MuiCardHeader-content-96"
+      >
+        <span
+          className="MuiTypography-root-99 MuiTypography-headline-104 MuiCardHeader-title-97"
+        >
+          test2
+        </span>
+        <span
+          className="MuiTypography-root-99 MuiTypography-body1-108 MuiTypography-colorTextSecondary-121 MuiCardHeader-subheader-98"
+        >
+          cat0
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-123"
+    >
+      <p
+        className="MuiTypography-root-99 MuiTypography-body1-108"
+      >
+        4 Total Players
+      </p>
+      <p
+        className="MuiTypography-root-99 MuiTypography-body1-108"
+      >
+        4 Active Players
+      </p>
+    </div>
+    <div
+      className="MuiCardActions-root-124"
+    >
+      <a
+        className="MuiButtonBase-root-150 MuiButton-root-126 MuiButton-text-128 MuiButton-flat-131 MuiButton-sizeSmall-147 APIComponent-right-64 MuiCardActions-action-125"
+        href="/tournament/mock2"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="MuiButton-label-127"
+        >
+          Continue
+        </span>
+        <span
+          className="MuiTouchRipple-root-153"
         />
       </a>
     </div>

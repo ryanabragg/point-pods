@@ -34,7 +34,7 @@ class Home extends Component {
         >
           <AddIcon />
         </Button>
-        <TournamentCardList />
+        <TournamentCardList status='Incomplete' />
       </div>
     );
   }
