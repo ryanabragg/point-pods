@@ -1,0 +1,447 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the prior snapshot 1`] = `
+<div
+  className="MuiPaper-root-115 MuiPaper-elevation1-118 MuiPaper-rounded-116 MuiCard-root-114 APIComponent-root-111"
+>
+  <div
+    className="MuiCardHeader-root-142"
+  >
+    <div
+      className="MuiCardHeader-content-145"
+    >
+      <span
+        className="MuiTypography-root-148 MuiTypography-headline-153 MuiCardHeader-title-146"
+      >
+        Pod Setup
+      </span>
+    </div>
+  </div>
+  <hr
+    className="MuiDivider-root-173"
+  />
+  <div
+    className="MuiCardContent-root-177 APIComponent-content-112"
+  >
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root-178 MuiFormControl-marginDense-180 APIComponent-field-113"
+    >
+      <label
+        className="MuiFormLabel-root-187 MuiInputLabel-root-182 MuiInputLabel-formControl-183 MuiInputLabel-animated-186 MuiInputLabel-marginDense-184"
+        data-shrink={false}
+        htmlFor="settings-pairingMethod"
+      >
+        Pairing Method
+      </label>
+      <div
+        className="MuiInput-root-197 MuiInput-formControl-198 MuiInput-underline-201"
+      >
+        <div
+          className="MuiSelect-root-192"
+        >
+          <div
+            aria-haspopup="true"
+            aria-owns={null}
+            aria-pressed="false"
+            className="MuiSelect-select-193 MuiSelect-selectMenu-194 MuiInput-input-205 MuiInput-inputMarginDense-206"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "&#8203;",
+                }
+              }
+            />
+          </div>
+          <input
+            autoComplete={undefined}
+            autoFocus={undefined}
+            defaultValue={undefined}
+            id="settings-pairingMethod"
+            name={undefined}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            placeholder={undefined}
+            rows={undefined}
+            type="hidden"
+            value=""
+          />
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-210 MuiSelect-icon-196"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root-178 MuiFormControl-marginDense-180 APIComponent-field-113"
+    >
+      <label
+        className="MuiFormLabel-root-187 MuiInputLabel-root-182 MuiInputLabel-formControl-183 MuiInputLabel-animated-186 MuiInputLabel-marginDense-184"
+        data-shrink={false}
+        htmlFor="settings-pairingMethodInitial"
+      >
+        Initial Pairing Method
+      </label>
+      <div
+        className="MuiInput-root-197 MuiInput-formControl-198 MuiInput-underline-201"
+      >
+        <div
+          className="MuiSelect-root-192"
+        >
+          <div
+            aria-haspopup="true"
+            aria-owns={null}
+            aria-pressed="false"
+            className="MuiSelect-select-193 MuiSelect-selectMenu-194 MuiInput-input-205 MuiInput-inputMarginDense-206"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <span
+              dangerouslySetInnerHTML={
+                Object {
+                  "__html": "&#8203;",
+                }
+              }
+            />
+          </div>
+          <input
+            autoComplete={undefined}
+            autoFocus={undefined}
+            defaultValue={undefined}
+            id="settings-pairingMethodInitial"
+            name={undefined}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            placeholder={undefined}
+            rows={undefined}
+            type="hidden"
+            value=""
+          />
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-210 MuiSelect-icon-196"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root-178 MuiFormControl-marginDense-180 APIComponent-field-113"
+    >
+      <label
+        className="MuiFormLabel-root-187 MuiInputLabel-root-182 MuiInputLabel-formControl-183 MuiInputLabel-animated-186 MuiInputLabel-marginDense-184"
+        data-shrink={false}
+        htmlFor="settings-podSizeMinimum"
+      >
+        Minimum Pod Size
+      </label>
+      <div
+        className="MuiInput-root-197 MuiInput-formControl-198 MuiInput-underline-201"
+      >
+        <input
+          aria-invalid={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-205 MuiInput-inputType-208 MuiInput-inputMarginDense-206"
+          defaultValue={undefined}
+          disabled={false}
+          id="settings-podSizeMinimum"
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={false}
+          rows={undefined}
+          type="number"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root-178 MuiFormControl-marginDense-180 APIComponent-field-113"
+    >
+      <label
+        className="MuiFormLabel-root-187 MuiInputLabel-root-182 MuiInputLabel-formControl-183 MuiInputLabel-animated-186 MuiInputLabel-marginDense-184"
+        data-shrink={false}
+        htmlFor="settings-podSizeMaximum"
+      >
+        Maximum Pod Size
+      </label>
+      <div
+        className="MuiInput-root-197 MuiInput-formControl-198 MuiInput-underline-201"
+      >
+        <input
+          aria-invalid={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-205 MuiInput-inputType-208 MuiInput-inputMarginDense-206"
+          defaultValue={undefined}
+          disabled={false}
+          id="settings-podSizeMaximum"
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={false}
+          rows={undefined}
+          type="number"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches the prior snapshot 2`] = `
+<div
+  className="MuiPaper-root-115 MuiPaper-elevation1-118 MuiPaper-rounded-116 MuiCard-root-114 APIComponent-root-111"
+>
+  <div
+    className="MuiCardHeader-root-142"
+  >
+    <div
+      className="MuiCardHeader-content-145"
+    >
+      <span
+        className="MuiTypography-root-148 MuiTypography-headline-153 MuiCardHeader-title-146"
+      >
+        Pod Setup
+      </span>
+    </div>
+  </div>
+  <hr
+    className="MuiDivider-root-173"
+  />
+  <div
+    className="MuiCardContent-root-177 APIComponent-content-112"
+  >
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root-178 MuiFormControl-marginDense-180 APIComponent-field-113"
+    >
+      <label
+        className="MuiFormLabel-root-187 MuiInputLabel-root-182 MuiInputLabel-formControl-183 MuiInputLabel-animated-186 MuiInputLabel-shrink-185 MuiInputLabel-marginDense-184"
+        data-shrink={true}
+        htmlFor="settings-pairingMethod"
+      >
+        Pairing Method
+      </label>
+      <div
+        className="MuiInput-root-197 MuiInput-formControl-198 MuiInput-underline-201"
+      >
+        <div
+          className="MuiSelect-root-192"
+        >
+          <div
+            aria-haspopup="true"
+            aria-owns={null}
+            aria-pressed="false"
+            className="MuiSelect-select-193 MuiSelect-selectMenu-194 MuiInput-input-205 MuiInput-inputMarginDense-206"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Historic
+          </div>
+          <input
+            autoComplete={undefined}
+            autoFocus={undefined}
+            defaultValue={undefined}
+            id="settings-pairingMethod"
+            name={undefined}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            placeholder={undefined}
+            rows={undefined}
+            type="hidden"
+            value={1}
+          />
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-210 MuiSelect-icon-196"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root-178 MuiFormControl-marginDense-180 APIComponent-field-113"
+    >
+      <label
+        className="MuiFormLabel-root-187 MuiInputLabel-root-182 MuiInputLabel-formControl-183 MuiInputLabel-animated-186 MuiInputLabel-shrink-185 MuiInputLabel-marginDense-184"
+        data-shrink={true}
+        htmlFor="settings-pairingMethodInitial"
+      >
+        Initial Pairing Method
+      </label>
+      <div
+        className="MuiInput-root-197 MuiInput-formControl-198 MuiInput-underline-201"
+      >
+        <div
+          className="MuiSelect-root-192"
+        >
+          <div
+            aria-haspopup="true"
+            aria-owns={null}
+            aria-pressed="false"
+            className="MuiSelect-select-193 MuiSelect-selectMenu-194 MuiInput-input-205 MuiInput-inputMarginDense-206"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Historic
+          </div>
+          <input
+            autoComplete={undefined}
+            autoFocus={undefined}
+            defaultValue={undefined}
+            id="settings-pairingMethodInitial"
+            name={undefined}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            placeholder={undefined}
+            rows={undefined}
+            type="hidden"
+            value={1}
+          />
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-210 MuiSelect-icon-196"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root-178 MuiFormControl-marginDense-180 APIComponent-field-113"
+    >
+      <label
+        className="MuiFormLabel-root-187 MuiInputLabel-root-182 MuiInputLabel-formControl-183 MuiInputLabel-animated-186 MuiInputLabel-shrink-185 MuiInputLabel-marginDense-184"
+        data-shrink={true}
+        htmlFor="settings-podSizeMinimum"
+      >
+        Minimum Pod Size
+      </label>
+      <div
+        className="MuiInput-root-197 MuiInput-formControl-198 MuiInput-underline-201"
+      >
+        <input
+          aria-invalid={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-205 MuiInput-inputType-208 MuiInput-inputMarginDense-206"
+          defaultValue={undefined}
+          disabled={false}
+          id="settings-podSizeMinimum"
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={false}
+          rows={undefined}
+          type="number"
+          value={4}
+        />
+      </div>
+    </div>
+    <div
+      aria-describedby={undefined}
+      className="MuiFormControl-root-178 MuiFormControl-marginDense-180 APIComponent-field-113"
+    >
+      <label
+        className="MuiFormLabel-root-187 MuiInputLabel-root-182 MuiInputLabel-formControl-183 MuiInputLabel-animated-186 MuiInputLabel-shrink-185 MuiInputLabel-marginDense-184"
+        data-shrink={true}
+        htmlFor="settings-podSizeMaximum"
+      >
+        Maximum Pod Size
+      </label>
+      <div
+        className="MuiInput-root-197 MuiInput-formControl-198 MuiInput-underline-201"
+      >
+        <input
+          aria-invalid={false}
+          autoComplete={undefined}
+          autoFocus={undefined}
+          className="MuiInput-input-205 MuiInput-inputType-208 MuiInput-inputMarginDense-206"
+          defaultValue={undefined}
+          disabled={false}
+          id="settings-podSizeMaximum"
+          name={undefined}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={undefined}
+          onKeyUp={undefined}
+          placeholder={undefined}
+          readOnly={undefined}
+          required={false}
+          rows={undefined}
+          type="number"
+          value={7}
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
