@@ -3,17 +3,17 @@
 exports[`matches the prior snapshot 1`] = `
 <div>
   <div
-    className="AppMenu-root-143"
+    className="AppMenu-root-144"
   >
     <header
-      className="MuiPaper-root-158 MuiPaper-elevation4-164 MuiAppBar-root-150 MuiAppBar-positionFixed-151 MuiAppBar-colorPrimary-156 mui-fixed"
+      className="MuiPaper-root-159 MuiPaper-elevation4-165 MuiAppBar-root-151 MuiAppBar-positionFixed-152 MuiAppBar-colorPrimary-157 mui-fixed"
     >
       <div
-        className="MuiToolbar-root-185 MuiToolbar-regular-187 MuiToolbar-gutters-186 AppMenu-nowrap-145"
+        className="MuiToolbar-root-186 MuiToolbar-regular-188 MuiToolbar-gutters-187 AppMenu-nowrap-146"
       >
         <button
           aria-label="Menu"
-          className="MuiButtonBase-root-195 MuiIconButton-root-189 MuiIconButton-colorInherit-190 AppMenu-menuButton-146"
+          className="MuiButtonBase-root-196 MuiIconButton-root-190 MuiIconButton-colorInherit-191 AppMenu-menuButton-147"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -30,40 +30,42 @@ exports[`matches the prior snapshot 1`] = `
           type="button"
         >
           <span
-            className="MuiIconButton-label-194"
+            className="MuiIconButton-label-195"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-198"
+              className="MuiSvgIcon-root-199"
               color={undefined}
               focusable="false"
               viewBox="0 0 24 24"
             >
-              <g>
-                <path
-                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                />
-              </g>
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+              />
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-205"
+            className="MuiTouchRipple-root-206"
           />
         </button>
         <h2
-          className="MuiTypography-root-212 MuiTypography-title-218 MuiTypography-colorInherit-231 AppMenu-flex-144"
+          className="MuiTypography-root-213 MuiTypography-title-219 MuiTypography-colorInherit-232 AppMenu-flex-145"
         >
           Point Pods
         </h2>
       </div>
     </header>
     <div
-      className="AppMenu-spacer-148"
+      className="AppMenu-spacer-149"
     />
   </div>
   <a
     aria-label="Add"
-    className="MuiButtonBase-root-195 MuiButton-root-249 MuiButton-fab-264 MuiButton-contained-258 MuiButton-containedSecondary-260 MuiButton-raised-261 MuiButton-raisedSecondary-263 Home-actionButton-142"
+    className="MuiButtonBase-root-196 MuiButton-root-251 MuiButton-fab-266 MuiButton-contained-260 MuiButton-containedSecondary-262 MuiButton-raised-263 MuiButton-raisedSecondary-265 Home-actionButton-143"
     href="/new"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -79,41 +81,43 @@ exports[`matches the prior snapshot 1`] = `
     tabIndex="0"
   >
     <span
-      className="MuiButton-label-250"
+      className="MuiButton-label-252"
     >
       <svg
         aria-hidden="true"
-        className="MuiSvgIcon-root-198"
+        className="MuiSvgIcon-root-199"
         color={undefined}
         focusable="false"
         viewBox="0 0 24 24"
       >
-        <g>
-          <path
-            d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-          />
-        </g>
+        <path
+          d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
       </svg>
     </span>
     <span
-      className="MuiTouchRipple-root-205"
+      className="MuiTouchRipple-root-206"
     />
   </a>
   <div
-    className="APIComponent-root-273"
+    className="APIComponent-root-275"
   >
     <div
-      className="MuiPaper-root-158 MuiPaper-elevation1-161 MuiPaper-rounded-159 MuiCard-root-276 APIComponent-card-274"
+      className="MuiPaper-root-159 MuiPaper-elevation1-162 MuiPaper-rounded-160 MuiCard-root-278 APIComponent-card-276"
       id="not-found"
     >
       <div
-        className="MuiCardHeader-root-277"
+        className="MuiCardHeader-root-279"
       >
         <div
-          className="MuiCardHeader-content-280"
+          className="MuiCardHeader-content-282"
         >
           <span
-            className="MuiTypography-root-212 MuiTypography-headline-217 MuiCardHeader-title-281"
+            className="MuiTypography-root-213 MuiTypography-headline-218 MuiCardHeader-title-283"
           >
             No Tournaments Found
           </span>

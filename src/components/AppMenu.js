@@ -13,12 +13,14 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 
 import MenuIcon from '@material-ui/icons/Menu';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import HomeIcon from '@material-ui/icons/Home';
 import AddBoxIcon from '@material-ui/icons/AddBox';
-import AssessmentIcon from '@material-ui/icons/Assessment';
-import SettingsIcon from '@material-ui/icons/Settings';
+import BallotIcon from '@material-ui/icons/Ballot';
+import PeopleIcon from '@material-ui/icons/People';
+import SettingsIcon from '@material-ui/icons/SettingsSharp';
 
 const styles = theme => ({
   root: {
@@ -55,6 +57,11 @@ class AppMenu extends React.Component {
     drawerOpen: false,
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    if(this.props.usesBackIcon && this.props.usesBackIcon !== prevProps.usesBackIcon)
+      this.setState({ drawerOpen: false });
+  }
+
   toggleDrawer = (open) => () => {
     this.setState({
       drawerOpen: open,
@@ -62,17 +69,33 @@ class AppMenu extends React.Component {
   };
 
   render() {
-    const { classes, theme, title, position, toolbar } = this.props;
+    const { classes, theme, position, title, toolbar, usesBackIcon } = this.props;
 
     return (
       <div className={classes.root}>
         <AppBar position={position}>
           <Toolbar className={classes.nowrap}>
-            <IconButton className={classes.menuButton} color='inherit' aria-label='Menu'
-              onClick={this.toggleDrawer(true)}
-            >
-              <MenuIcon />
-            </IconButton>
+            {usesBackIcon
+              ? (
+                <IconButton
+                  aria-label='Back'
+                  color='inherit'
+                  className={classes.menuButton}
+                  onClick={this.props.onBack}
+                >
+                  <ArrowBackIcon />
+                </IconButton>
+              ) : (
+                <IconButton
+                  aria-label='Menu'
+                  color='inherit'
+                  className={classes.menuButton}
+                  onClick={this.toggleDrawer(true)}
+                >
+                  <MenuIcon />
+                </IconButton>
+              )
+            }
             <Typography variant='title' color='inherit' className={classes.flex}>
               {title}
             </Typography>
@@ -93,9 +116,7 @@ class AppMenu extends React.Component {
             <div className={classes.list}>
               <AppBar position='static'>
                 <Toolbar>
-                  <IconButton className={classes.menuButton} color='inherit' aria-label='Menu-Close'
-                    onClick={this.toggleDrawer(false)}
-                  >
+                  <IconButton className={classes.menuButton} color='inherit' aria-label='Menu-Close'>
                     {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                   </IconButton>
                   <Typography variant='title' color='inherit'>
@@ -116,11 +137,17 @@ class AppMenu extends React.Component {
                   </ListItemIcon>
                   <ListItemText primary='New Tournament' />
                 </ListItem>
-                <ListItem button component='a' href='/history'>
+                <ListItem button component='a' href='/tournaments'>
                   <ListItemIcon>
-                    <AssessmentIcon />
+                    <BallotIcon />
                   </ListItemIcon>
-                  <ListItemText primary='History' />
+                  <ListItemText primary='Tournaments' />
+                </ListItem>
+                <ListItem button component='a' href='/players'>
+                  <ListItemIcon>
+                    <PeopleIcon />
+                  </ListItemIcon>
+                  <ListItemText primary='Players' />
                 </ListItem>
               </List>
               <Divider />
@@ -141,16 +168,20 @@ class AppMenu extends React.Component {
 }
 
 AppMenu.defaultProps = {
-  title: 'Point Pods',
   position: 'fixed',
+  title: 'Point Pods',
   toolbar: null,
+  usesBackIcon: false,
+  onBack: () => null,
 };
 
 AppMenu.propTypes = {
   classes: PropTypes.object.isRequired, // added by withStyles
-  title: PropTypes.string,
   position: PropTypes.oneOf(['static', 'fixed']),
+  title: PropTypes.string,
   toolbar: PropTypes.element,
+  usesBackIcon: PropTypes.bool,
+  onBack: PropTypes.func,
 };
 
 export default withStyles(styles, { withTheme: true })(AppMenu);
