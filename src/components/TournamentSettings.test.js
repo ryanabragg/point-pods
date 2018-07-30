@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
+
+import CardHeader from '@material-ui/core/CardHeader';
 
 import TournamentSettings from './TournamentSettings';
 
@@ -37,6 +39,14 @@ test('is a HOC-ed component', () => {
   expect(component.type().prototype.constructor.name).toBe('APIComponent');
   expect(component.dive().type().prototype.constructor.name).toBe('TournamentSettings');
 });
+
+test('title prop', () => {
+  const component = shallow(<TournamentSettings />);
+  const unHOC = component.dive().dive();
+  expect(unHOC.find(CardHeader).prop('title')).toBe('New Tournament');
+  unHOC.setProps({ title: 'Test' });
+  expect(unHOC.find(CardHeader).prop('title')).toBe('Test');
+})
 
 describe('default values', () => {
   test('sets the date to today', () => {
@@ -96,53 +106,67 @@ describe('default values', () => {
       }
     }, 100);
   });
-});
 
-describe('actions', () => {
-  test('calls onSubmit prop when the submit button is clicked', (done) => {
+  test('submit button is clicked', (done) => {
     const spy = jest.fn(r => r);
     const component = shallow(<TournamentSettings onSubmit={spy} />);
     const unHOC = component.dive().dive();
-    unHOC.find('#tournament-create').simulate('click');
+    unHOC.find('#tournament-submit').simulate('click');
     setTimeout(() => {
       try {
         expect(spy.mock.calls.length).toBe(0);
         unHOC.setState({ name: 'test' });
-        unHOC.find('#tournament-create').simulate('click');
+        unHOC.find('#tournament-submit').simulate('click');
         setTimeout(() => {
           try {
             expect(spy.mock.calls.length).toBe(1);
-            expect(spy.mock.calls[0][0].name).toEqual(unHOC.state().name);
+            expect(spy.mock.calls[0][0].id).toBe(testTournaments[testTournaments.length - 1].id);
+            expect(spy.mock.calls[0][0].name).toBe(testTournaments[testTournaments.length - 1].name);
+            expect(spy.mock.calls[0][0].category).toBe(testTournaments[testTournaments.length - 1].category);
             done();
           } catch (error) {
             done.fail(error);
           }
         }, 100);
+      } catch (error) {
+        done.fail(error);
+      }
+    }, 100);
+  });
+});
+
+describe('with id prop', () => {
+  test('loads the tournament settings', (done) => {
+    const component = shallow(<TournamentSettings id='mock1' />);
+    const unHOC = component.dive().dive();
+    setTimeout(() => {
+      try {
+        Object.keys(testTournaments[1]).forEach(key => {
+          expect(unHOC.state(key)).toEqual(testTournaments[1][key]);
+        });
+        done();
       } catch (error) {
         done.fail(error);
       }
     }, 100);
   });
 
-  test('adding a category', (done) => {
-    const categories = testTournaments
-      .map(tournament => tournament.category)
-      .filter((cat, i, self) => cat && self.indexOf(cat) === i)
-      .sort();
-    const component = shallow(<TournamentSettings />);
+  test('submit button is clicked', (done) => {
+    const spy = jest.fn(r => r);
+    const component = shallow(<TournamentSettings onSubmit={spy} id='mock0' />);
     const unHOC = component.dive().dive();
-    unHOC.find('#tournament-newCategory-add').simulate('click');
+    unHOC.find('#tournament-submit').simulate('click');
     setTimeout(() => {
       try {
-        expect(unHOC.state('category')).toEqual('');
-        expect(unHOC.state('categories')).toEqual(categories);
+        expect(spy.mock.calls.length).toBe(0);
         unHOC.setState({ name: 'test' });
-        unHOC.find('#tournament-newCategory').simulate('change', {target: {value: 'test'}});
-        unHOC.find('#tournament-newCategory-add').simulate('click');
+        unHOC.find('#tournament-submit').simulate('click');
         setTimeout(() => {
           try {
-            expect(unHOC.state('category')).toEqual('test');
-            expect(unHOC.state('categories')).toEqual(categories.concat('test'));
+            expect(spy.mock.calls.length).toBe(1);
+            expect(spy.mock.calls[0][0].id).toBe(testTournaments[0].id);
+            expect(spy.mock.calls[0][0].name).toBe(unHOC.state().name);
+            expect(spy.mock.calls[0][0].category).toBe(testTournaments[0].category);
             done();
           } catch (error) {
             done.fail(error);
@@ -153,4 +177,34 @@ describe('actions', () => {
       }
     }, 100);
   });
+});
+
+test('adding a new category', (done) => {
+  const categories = testTournaments
+    .map(tournament => tournament.category)
+    .filter((cat, i, self) => cat && self.indexOf(cat) === i)
+    .sort();
+  const component = shallow(<TournamentSettings />);
+  const unHOC = component.dive().dive();
+  unHOC.find('#tournament-newCategory-add').simulate('click');
+  setTimeout(() => {
+    try {
+      expect(unHOC.state('category')).toEqual('');
+      expect(unHOC.state('categories')).toEqual(categories);
+      unHOC.setState({ name: 'test' });
+      unHOC.find('#tournament-newCategory').simulate('change', {target: {value: 'test'}});
+      unHOC.find('#tournament-newCategory-add').simulate('click');
+      setTimeout(() => {
+        try {
+          expect(unHOC.state('category')).toEqual('test');
+          expect(unHOC.state('categories')).toEqual(categories.concat('test'));
+          done();
+        } catch (error) {
+          done.fail(error);
+        }
+      }, 100);
+    } catch (error) {
+      done.fail(error);
+    }
+  }, 100);
 });

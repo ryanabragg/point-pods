@@ -38,6 +38,7 @@ const styles = theme => ({
 
 class TournamentSettings extends Component {
   state = {
+    id: null,
     name: '',
     category: '',
     description: '',
@@ -53,28 +54,25 @@ class TournamentSettings extends Component {
 
   componentDidMount() {
     let loadState = {};
-    this.props.api.Settings.get()
-      .then(({
-        pairingMethod,
-        pairingMethodInitial,
-        podSizeMinimum,
-        podSizeMaximum
-      }) => {
-        let methodsArray = Object.keys(this.props.api.pairingMethods)
-          .map(key => ({
-            label: key.slice(0,1).toUpperCase() + key.slice(1).toLowerCase(),
-            value: this.props.api.pairingMethods[key]
-          }));
-        loadState.pairingMethod = pairingMethod;
-        loadState.pairingMethodInitial = pairingMethodInitial;
-        loadState.podSizeMinimum = podSizeMinimum;
-        loadState.podSizeMaximum = podSizeMaximum;
-        loadState.pairingMethods = methodsArray;
+    this.props.api.Tournaments.all()
+      .then(list => {
+        Object.assign(loadState, {
+          pairingMethods: Object.keys(this.props.api.pairingMethods)
+            .map(key => ({
+              label: key.slice(0,1).toUpperCase() + key.slice(1).toLowerCase(),
+              value: this.props.api.pairingMethods[key],
+            })),
+          categories: list.map(tournament => tournament.category)
+            .filter((cat, i, self) => cat && self.indexOf(cat) === i).sort(),
+        });
+        if(!this.props.id)
+          return this.props.api.Settings.get()
+            .then((settings) => Object.assign(loadState, settings));
+        let found = list.filter(t => t.id === this.props.id);
+        if(!found.length)
+          throw new Error('ID not found');
+        Object.assign(loadState, found[0]);
       })
-      .then(() => this.props.api.Tournaments.all())
-      .then(list => loadState.categories = list
-          .map(tournament => tournament.category)
-          .filter((cat, i, self) => cat && self.indexOf(cat) === i).sort())
       .then(() => this.setState(loadState))
       .catch(error => this.props.notification(error.message, 'error'));
   }
@@ -104,6 +102,8 @@ class TournamentSettings extends Component {
     delete values.pairingMethods;
     delete values.categories;
     delete values.newCategory;
+    if(values.id === null)
+      delete values.id;
     this.props.api.Tournaments.set(values)
       .then(tournament => {
         if(typeof this.props.onSubmit === 'function')
@@ -113,8 +113,9 @@ class TournamentSettings extends Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, title } = this.props;
     const {
+      id,
       name,
       category,
       description,
@@ -130,7 +131,7 @@ class TournamentSettings extends Component {
     return (
       <Card className={classes.root}>
         <CardHeader
-          title={'New Tournament'}
+          title={title}
         />
         <Divider />
         <CardContent className={classes.content}>
@@ -235,15 +236,17 @@ class TournamentSettings extends Component {
           />
           <IconButton
             id='tournament-newCategory-add'
+            aria-label='Add Category'
             onClick={this.handleAddCategory}
           >
             <AddIcon />
           </IconButton>
           <Button className={classes.right}
-            id='tournament-create'
+            id='tournament-submit'
+            aria-label={id ? 'Save' : 'Create'}
             onClick={this.handleSubmit}
           >
-            Create
+            {id ? 'Save' : 'Create'}
           </Button>
         </CardActions>
       </Card>
@@ -252,15 +255,22 @@ class TournamentSettings extends Component {
 }
 
 TournamentSettings.defaultProps = {
-  onSubmit: (tournament) => null,
   notification: (message, variant, duration, onClose) => null,
+  title: 'New Tournament',
+  id: null,
+  onSubmit: (tournament) => null,
 };
 
 TournamentSettings.propTypes = {
   api: PropTypes.object.isRequired, // added by withAPI
   classes: PropTypes.object.isRequired, // added by withStyles
-  onSubmit: PropTypes.func,
   notification: PropTypes.func,
+  title: PropTypes.string,
+  id: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]),
+  onSubmit: PropTypes.func,
 };
 
 export default withStyles(styles, { withTheme: true })(withAPI(TournamentSettings));

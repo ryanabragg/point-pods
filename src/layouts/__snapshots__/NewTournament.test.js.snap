@@ -510,6 +510,7 @@ exports[`matches the prior snapshot 1`] = `
           </div>
         </div>
         <button
+          aria-label="Add Category"
           className="MuiButtonBase-root-240 MuiIconButton-root-234 MuiCardActions-action-346"
           disabled={false}
           id="tournament-newCategory-add"
@@ -551,9 +552,10 @@ exports[`matches the prior snapshot 1`] = `
           />
         </button>
         <button
+          aria-label="Create"
           className="MuiButtonBase-root-240 MuiButton-root-347 MuiButton-text-349 MuiButton-flat-352 APIComponent-right-298 MuiCardActions-action-346"
           disabled={false}
-          id="tournament-create"
+          id="tournament-submit"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
