@@ -9,10 +9,10 @@ import SendIcon from '@material-ui/icons/Send';
 
 import { withNotification } from '../components/Notification';
 import AppMenu from '../components/AppMenu';
-import TournamentCreation from '../components/TournamentCreation';
+import TournamentSettings from '../components/TournamentSettings';
 import TournamentParticipants from '../components/TournamentParticipants';
 
-const NotifiedTournamentCreation = withNotification(TournamentCreation);
+const NotifiedTournamentSettings = withNotification(TournamentSettings);
 const NotifiedTournamentParticipants = withNotification(TournamentParticipants);
 
 const styles = theme => ({
@@ -47,7 +47,7 @@ class NewTournament extends Component {
         {id === null
           ? (
             <div className={classes.center}>
-              <NotifiedTournamentCreation {...rest}
+              <NotifiedTournamentSettings {...rest}
                 onSubmit={this.handleTournamentCreated}
               />
             </div>

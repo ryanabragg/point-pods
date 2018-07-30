@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { shallow, mount } from 'enzyme';
 
-import TournamentCreation from './TournamentCreation';
+import TournamentSettings from './TournamentSettings';
 
 import api from '../api';
 
@@ -14,14 +14,14 @@ afterEach(() => demockAPI(api));
 
 test('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<TournamentCreation />, div);
+  ReactDOM.render(<TournamentSettings />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 test('matches the prior snapshot', (done) => {
-  const component = renderer.create(<TournamentCreation />);
+  const component = renderer.create(<TournamentSettings />);
   expect(component.toJSON()).toMatchSnapshot();
-    component.update(<TournamentCreation />);
+    component.update(<TournamentSettings />);
   setTimeout(() => {
     try {
       expect(component.toJSON()).toMatchSnapshot();
@@ -33,15 +33,15 @@ test('matches the prior snapshot', (done) => {
 });
 
 test('is a HOC-ed component', () => {
-  const component = shallow(<TournamentCreation />);
+  const component = shallow(<TournamentSettings />);
   expect(component.type().prototype.constructor.name).toBe('APIComponent');
-  expect(component.dive().type().prototype.constructor.name).toBe('TournamentCreation');
+  expect(component.dive().type().prototype.constructor.name).toBe('TournamentSettings');
 });
 
 describe('default values', () => {
   test('sets the date to today', () => {
     const date = new Date().toJSON().slice(0,10);
-    const component = shallow(<TournamentCreation />);
+    const component = shallow(<TournamentSettings />);
     const unHOC = component.dive().dive();
     expect(unHOC.state('date')).toBe(date);
     expect(unHOC.find('#tournament-date').prop('value')).toBe(date);
@@ -51,7 +51,7 @@ describe('default values', () => {
     const categories = testTournaments
       .map(tournament => tournament.category)
       .filter((value, index, self) => self.indexOf(value) === index);
-    const component = shallow(<TournamentCreation />);
+    const component = shallow(<TournamentSettings />);
     const unHOC = component.dive().dive();
     setTimeout(() => {
       try {
@@ -69,7 +69,7 @@ describe('default values', () => {
         label: key.slice(0,1).toUpperCase() + key.slice(1).toLowerCase(),
         value: api.pairingMethods[key]
       }));
-    const component = shallow(<TournamentCreation />);
+    const component = shallow(<TournamentSettings />);
     const unHOC = component.dive().dive();
     setTimeout(() => {
       try {
@@ -82,7 +82,7 @@ describe('default values', () => {
   });
 
   test('loads the api tournament settings', (done) => {
-    const component = shallow(<TournamentCreation />);
+    const component = shallow(<TournamentSettings />);
     const unHOC = component.dive().dive();
     setTimeout(() => {
       try {
@@ -99,9 +99,9 @@ describe('default values', () => {
 });
 
 describe('actions', () => {
-  test('calls onSubmit prop when the Create button is clicked', (done) => {
+  test('calls onSubmit prop when the submit button is clicked', (done) => {
     const spy = jest.fn(r => r);
-    const component = shallow(<TournamentCreation onSubmit={spy} />);
+    const component = shallow(<TournamentSettings onSubmit={spy} />);
     const unHOC = component.dive().dive();
     unHOC.find('#tournament-create').simulate('click');
     setTimeout(() => {
@@ -129,7 +129,7 @@ describe('actions', () => {
       .map(tournament => tournament.category)
       .filter((cat, i, self) => cat && self.indexOf(cat) === i)
       .sort();
-    const component = shallow(<TournamentCreation />);
+    const component = shallow(<TournamentSettings />);
     const unHOC = component.dive().dive();
     unHOC.find('#tournament-newCategory-add').simulate('click');
     setTimeout(() => {

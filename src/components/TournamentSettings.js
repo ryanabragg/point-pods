@@ -36,7 +36,7 @@ const styles = theme => ({
   },
 });
 
-class TournamentCreation extends Component {
+class TournamentSettings extends Component {
   state = {
     name: '',
     category: '',
@@ -251,16 +251,16 @@ class TournamentCreation extends Component {
   }
 }
 
-TournamentCreation.defaultProps = {
+TournamentSettings.defaultProps = {
   onSubmit: (tournament) => null,
   notification: (message, variant, duration, onClose) => null,
 };
 
-TournamentCreation.propTypes = {
+TournamentSettings.propTypes = {
   api: PropTypes.object.isRequired, // added by withAPI
   classes: PropTypes.object.isRequired, // added by withStyles
   onSubmit: PropTypes.func,
   notification: PropTypes.func,
 };
 
-export default withStyles(styles, { withTheme: true })(withAPI(TournamentCreation));
+export default withStyles(styles, { withTheme: true })(withAPI(TournamentSettings));
