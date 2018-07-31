@@ -194,7 +194,7 @@ exports[`matches the prior snapshot 1`] = `
           required={false}
           rows={undefined}
           type="date"
-          value="2018-07-30"
+          value="2018-07-31"
         />
       </div>
     </div>
@@ -712,7 +712,7 @@ exports[`matches the prior snapshot 2`] = `
           required={false}
           rows={undefined}
           type="date"
-          value="2018-07-30"
+          value="2018-07-31"
         />
       </div>
     </div>

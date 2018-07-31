@@ -3,21 +3,21 @@
 exports[`matches the prior snapshot 1`] = `
 <div>
   <div
-    className="MuiToolbar-root-139 MuiToolbar-regular-141 MuiToolbar-gutters-140"
+    className="MuiToolbar-root-140 MuiToolbar-regular-142 MuiToolbar-gutters-141"
   >
     <h1
-      className="MuiTypography-root-143 MuiTypography-headline-148"
+      className="MuiTypography-root-144 MuiTypography-headline-149"
     >
       Add Players
     </h1>
     <p
-      className="MuiTypography-root-143 MuiTypography-body1-152"
+      className="MuiTypography-root-144 MuiTypography-body1-153"
     />
     <button
       aria-haspopup="true"
       aria-label="Players Menu"
       aria-owns={null}
-      className="MuiButtonBase-root-191 MuiButton-root-167 MuiButton-text-169 MuiButton-flat-172 APIComponent-right-136"
+      className="MuiButtonBase-root-193 MuiButton-root-169 MuiButton-text-171 MuiButton-flat-174 APIComponent-right-137"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
@@ -34,44 +34,44 @@ exports[`matches the prior snapshot 1`] = `
       type="button"
     >
       <span
-        className="MuiButton-label-168"
+        className="MuiButton-label-170"
       >
         0 Players
       </span>
       <span
-        className="MuiTouchRipple-root-194"
+        className="MuiTouchRipple-root-196"
       />
     </button>
   </div>
   <div
-    className="APIComponent-addPlayer-137"
+    className="APIComponent-addPlayer-138"
   >
     <div
-      className="IntegrationAutosuggest-root-205"
+      className="IntegrationAutosuggest-root-207"
     >
       <div
         aria-expanded={false}
         aria-haspopup="listbox"
         aria-owns="react-autowhatever-1"
-        className="IntegrationAutosuggest-container-206"
+        className="IntegrationAutosuggest-container-208"
         role="combobox"
       >
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-210 MuiFormControl-fullWidth-213"
+          className="MuiFormControl-root-212 MuiFormControl-fullWidth-215"
         >
           <div
             aria-activedescendant={null}
             aria-autocomplete="list"
             aria-controls="react-autowhatever-1"
-            className="MuiInput-root-214 MuiInput-fullWidth-221 MuiInput-formControl-215 MuiInput-underline-218"
+            className="MuiInput-root-216 MuiInput-fullWidth-223 MuiInput-formControl-217 MuiInput-underline-220"
             style={Object {}}
           >
             <input
               aria-invalid={false}
               autoComplete="off"
               autoFocus={undefined}
-              className="MuiInput-input-222"
+              className="MuiInput-input-224"
               defaultValue={undefined}
               disabled={false}
               id={undefined}
@@ -83,7 +83,7 @@ exports[`matches the prior snapshot 1`] = `
               onKeyUp={undefined}
               placeholder="Add a player"
               readOnly={undefined}
-              required={undefined}
+              required={false}
               rows={undefined}
               type="text"
               value=""
@@ -91,14 +91,14 @@ exports[`matches the prior snapshot 1`] = `
           </div>
         </div>
         <div
-          className="MuiPaper-root-227 MuiPaper-elevation2-231"
+          className="MuiPaper-root-229 MuiPaper-elevation2-233"
           id="react-autowhatever-1"
           role="listbox"
           style={Object {}}
         />
       </div>
       <button
-        className="MuiButtonBase-root-191 MuiIconButton-root-254 MuiIconButton-colorInherit-255"
+        className="MuiButtonBase-root-193 MuiIconButton-root-256 MuiIconButton-colorInherit-257"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -115,33 +115,35 @@ exports[`matches the prior snapshot 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-259"
+          className="MuiIconButton-label-261"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-260"
+            className="MuiSvgIcon-root-262"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
           >
-            <g>
-              <path
-                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-              />
-            </g>
+            <path
+              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-194"
+          className="MuiTouchRipple-root-196"
         />
       </button>
     </div>
   </div>
   <div
-    className="APIComponent-list-138"
+    className="APIComponent-list-139"
   >
     <ul
-      className="MuiList-root-267 MuiList-padding-268"
+      className="MuiList-root-269 MuiList-padding-270"
     />
   </div>
 </div>
@@ -150,21 +152,21 @@ exports[`matches the prior snapshot 1`] = `
 exports[`matches the prior snapshot 2`] = `
 <div>
   <div
-    className="MuiToolbar-root-139 MuiToolbar-regular-141 MuiToolbar-gutters-140"
+    className="MuiToolbar-root-140 MuiToolbar-regular-142 MuiToolbar-gutters-141"
   >
     <h1
-      className="MuiTypography-root-143 MuiTypography-headline-148"
+      className="MuiTypography-root-144 MuiTypography-headline-149"
     >
       Add Players
     </h1>
     <p
-      className="MuiTypography-root-143 MuiTypography-body1-152"
+      className="MuiTypography-root-144 MuiTypography-body1-153"
     />
     <button
       aria-haspopup="true"
       aria-label="Players Menu"
       aria-owns={null}
-      className="MuiButtonBase-root-191 MuiButton-root-167 MuiButton-text-169 MuiButton-flat-172 APIComponent-right-136"
+      className="MuiButtonBase-root-193 MuiButton-root-169 MuiButton-text-171 MuiButton-flat-174 APIComponent-right-137"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
@@ -181,44 +183,44 @@ exports[`matches the prior snapshot 2`] = `
       type="button"
     >
       <span
-        className="MuiButton-label-168"
+        className="MuiButton-label-170"
       >
         0 Players
       </span>
       <span
-        className="MuiTouchRipple-root-194"
+        className="MuiTouchRipple-root-196"
       />
     </button>
   </div>
   <div
-    className="APIComponent-addPlayer-137"
+    className="APIComponent-addPlayer-138"
   >
     <div
-      className="IntegrationAutosuggest-root-205"
+      className="IntegrationAutosuggest-root-207"
     >
       <div
         aria-expanded={false}
         aria-haspopup="listbox"
         aria-owns="react-autowhatever-1"
-        className="IntegrationAutosuggest-container-206"
+        className="IntegrationAutosuggest-container-208"
         role="combobox"
       >
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-210 MuiFormControl-fullWidth-213"
+          className="MuiFormControl-root-212 MuiFormControl-fullWidth-215"
         >
           <div
             aria-activedescendant={null}
             aria-autocomplete="list"
             aria-controls="react-autowhatever-1"
-            className="MuiInput-root-214 MuiInput-fullWidth-221 MuiInput-formControl-215 MuiInput-underline-218"
+            className="MuiInput-root-216 MuiInput-fullWidth-223 MuiInput-formControl-217 MuiInput-underline-220"
             style={Object {}}
           >
             <input
               aria-invalid={false}
               autoComplete="off"
               autoFocus={undefined}
-              className="MuiInput-input-222"
+              className="MuiInput-input-224"
               defaultValue={undefined}
               disabled={false}
               id={undefined}
@@ -230,7 +232,7 @@ exports[`matches the prior snapshot 2`] = `
               onKeyUp={undefined}
               placeholder="Add a player"
               readOnly={undefined}
-              required={undefined}
+              required={false}
               rows={undefined}
               type="text"
               value=""
@@ -238,14 +240,14 @@ exports[`matches the prior snapshot 2`] = `
           </div>
         </div>
         <div
-          className="MuiPaper-root-227 MuiPaper-elevation2-231"
+          className="MuiPaper-root-229 MuiPaper-elevation2-233"
           id="react-autowhatever-1"
           role="listbox"
           style={Object {}}
         />
       </div>
       <button
-        className="MuiButtonBase-root-191 MuiIconButton-root-254 MuiIconButton-colorInherit-255"
+        className="MuiButtonBase-root-193 MuiIconButton-root-256 MuiIconButton-colorInherit-257"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -262,33 +264,35 @@ exports[`matches the prior snapshot 2`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-259"
+          className="MuiIconButton-label-261"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-260"
+            className="MuiSvgIcon-root-262"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
           >
-            <g>
-              <path
-                d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-              />
-            </g>
+            <path
+              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-194"
+          className="MuiTouchRipple-root-196"
         />
       </button>
     </div>
   </div>
   <div
-    className="APIComponent-list-138"
+    className="APIComponent-list-139"
   >
     <ul
-      className="MuiList-root-267 MuiList-padding-268"
+      className="MuiList-root-269 MuiList-padding-270"
     />
   </div>
 </div>
