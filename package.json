@@ -19,7 +19,8 @@
     "react-autosuggest": "^9.3.4",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-swipeable-views": "^0.12.15"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
