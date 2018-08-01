@@ -69,11 +69,11 @@ class AppMenu extends React.Component {
   };
 
   render() {
-    const { classes, theme, position, title, toolbar, usesBackIcon } = this.props;
+    const { classes, theme, position, color, title, toolbar, usesBackIcon } = this.props;
 
     return (
       <div className={classes.root}>
-        <AppBar position={position}>
+        <AppBar position={position} color={color}>
           <Toolbar className={classes.nowrap}>
             {usesBackIcon
               ? (
@@ -169,6 +169,7 @@ class AppMenu extends React.Component {
 
 AppMenu.defaultProps = {
   position: 'fixed',
+  color: 'primary',
   title: 'Point Pods',
   toolbar: null,
   usesBackIcon: false,
@@ -178,6 +179,7 @@ AppMenu.defaultProps = {
 AppMenu.propTypes = {
   classes: PropTypes.object.isRequired, // added by withStyles
   position: PropTypes.oneOf(['static', 'fixed']),
+  color: PropTypes.string,
   title: PropTypes.string,
   toolbar: PropTypes.element,
   usesBackIcon: PropTypes.bool,

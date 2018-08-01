@@ -39,11 +39,14 @@ describe('props', () => {
     expect(component.find('#test').length).toBe(0);
     component.setProps({
       position: 'static',
+      color: 'secondary',
       title: 'Test',
       toolbar: toolbar,
     });
     expect(component.find(AppBar).at(0).prop('position')).toBe('static');
+    expect(component.find(AppBar).at(0).prop('color')).toBe('secondary');
     expect(component.find(AppBar).at(1).prop('position')).toBe('static');
+    expect(component.find(AppBar).at(1).prop('color')).toBe(undefined);
     expect(component.find(Toolbar).at(0).find(Typography).dive().dive().text()).toBe('Test');
     expect(component.find(Toolbar).at(1).find(Typography).dive().dive().text()).toBe('Menu');
     expect(component.find('#test').length).toBe(1);
