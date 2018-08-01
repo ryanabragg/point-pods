@@ -22,13 +22,14 @@ const styles = theme => ({
   },
   card: {
     minWidth: 275,
+    margin: theme.spacing.unit,
   },
   right: {
     marginLeft: 'auto',
   },
 });
 
-class TournamentCardList extends Component {
+class TournamentCards extends Component {
   state = {
     tournaments: [],
     categories: [],
@@ -105,7 +106,7 @@ class TournamentCardList extends Component {
   }
 }
 
-TournamentCardList.defaultProps = {
+TournamentCards.defaultProps = {
   notification: (m, v, d, c) => null,
   onLoadCategories: (categories) => null,
   onSelect: (tournaments) => null,
@@ -114,7 +115,7 @@ TournamentCardList.defaultProps = {
   search: '',
 };
 
-TournamentCardList.propTypes = {
+TournamentCards.propTypes = {
   api: PropTypes.object.isRequired, // added by withAPI
   classes: PropTypes.object.isRequired, // added by withStyles
   notification: PropTypes.func,
@@ -131,4 +132,4 @@ TournamentCardList.propTypes = {
   search: PropTypes.string,
 };
 
-export default withStyles(styles, { withTheme: true })(withAPI(TournamentCardList));
+export default withStyles(styles, { withTheme: true })(withAPI(TournamentCards));

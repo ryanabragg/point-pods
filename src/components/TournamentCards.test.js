@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 
 import Card from '@material-ui/core/Card';
 
-import TournamentCardList from './TournamentCardList';
+import TournamentCards from './TournamentCards';
 
 import api from '../api';
 
@@ -16,31 +16,31 @@ afterEach(() => demockAPI(api));
 
 test('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<TournamentCardList />, div);
+  ReactDOM.render(<TournamentCards />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 test('matches the prior snapshot', (done) => {
-  const tree = renderer.create(<TournamentCardList />);
+  const tree = renderer.create(<TournamentCards />);
   expect(tree.toJSON()).toMatchSnapshot();
   setTimeout(() => {
-    tree.update(<TournamentCardList />);
+    tree.update(<TournamentCards />);
     expect(tree.toJSON()).toMatchSnapshot();
     done();
   }, 100);
 });
 
 test('is a HOC-ed component', () => {
-  const component = shallow(<TournamentCardList />);
+  const component = shallow(<TournamentCards />);
   expect(component.type().prototype.constructor.name).toBe('APIComponent');
-  expect(component.dive().type().prototype.constructor.name).toBe('TournamentCardList');
+  expect(component.dive().type().prototype.constructor.name).toBe('TournamentCards');
 });
 
 test('loading', (done) => {
   const spy = jest.fn(v => v);
   const categories = testTournaments.map(t => t.category)
     .filter((cat, i, self) => cat && self.indexOf(cat) === i).sort();
-  const component = shallow(<TournamentCardList onLoadCategories={spy} />);
+  const component = shallow(<TournamentCards onLoadCategories={spy} />);
   const unHOC = component.dive().dive();
   setTimeout(() => {
     try{
@@ -56,7 +56,7 @@ test('loading', (done) => {
 test('notification', (done) => {
   mockStore.tournaments = null;
   const spy = jest.fn(v => v);
-  const component = shallow(<TournamentCardList notification={spy} />);
+  const component = shallow(<TournamentCards notification={spy} />);
   const unHOC = component.dive().dive();
   setTimeout(() => {
     try{
@@ -73,7 +73,7 @@ test('onSelect');
 
 describe('control props', () => {
   test('status', (done) => {
-    const component = shallow(<TournamentCardList />);
+    const component = shallow(<TournamentCards />);
     const unHOC = component.dive().dive();
     setTimeout(() => {
       unHOC.update();
@@ -109,7 +109,7 @@ describe('control props', () => {
   });
 
   test('category', (done) => {
-    const component = shallow(<TournamentCardList />);
+    const component = shallow(<TournamentCards />);
     const unHOC = component.dive().dive();
     setTimeout(() => {
       unHOC.update();
@@ -147,7 +147,7 @@ describe('control props', () => {
       term: 'suscipit',
       expect: [ 'mock1' ],
     }];
-    const component = shallow(<TournamentCardList />);
+    const component = shallow(<TournamentCards />);
     const unHOC = component.dive().dive();
     setTimeout(() => {
       unHOC.update();
@@ -170,7 +170,7 @@ describe('control props', () => {
   });
 
   test('no results', (done) => {
-    const component = shallow(<TournamentCardList />);
+    const component = shallow(<TournamentCards />);
     const unHOC = component.dive().dive();
     setTimeout(() => {
       unHOC.update();

@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 
 import AppMenu from '../components/AppMenu';
-import TournamentCardList from '../components/TournamentCardList';
+import TournamentCards from '../components/TournamentCards';
 
 const styles = theme => ({
   actionButton: {
@@ -34,7 +34,7 @@ class Home extends Component {
         >
           <AddIcon />
         </Button>
-        <TournamentCardList status='Incomplete' />
+        <TournamentCards status='Incomplete' />
       </div>
     );
   }
