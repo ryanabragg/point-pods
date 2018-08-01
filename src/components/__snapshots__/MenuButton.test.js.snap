@@ -1,0 +1,190 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the prior snapshot 1`] = `
+<div
+  className="MenuButton-root-37"
+>
+  <button
+    aria-haspopup="true"
+    aria-owns={null}
+    className="MuiButtonBase-root-63 MuiButton-root-39 MuiButton-text-41 MuiButton-flat-44"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    <span
+      className="MuiButton-label-40"
+    >
+      button
+    </span>
+    <span
+      className="MuiTouchRipple-root-66"
+    />
+  </button>
+</div>
+`;
+
+exports[`matches the prior snapshot 2`] = `
+<div
+  className="MenuButton-root-37"
+>
+  <button
+    aria-haspopup="true"
+    aria-owns={null}
+    className="MuiButtonBase-root-63 MuiButton-root-39 MuiButton-text-41 MuiButton-flat-44"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    <span
+      className="MuiButton-label-40"
+    >
+      test
+    </span>
+    <span
+      className="MuiTouchRipple-root-66"
+    />
+  </button>
+</div>
+`;
+
+exports[`matches the prior snapshot 3`] = `
+<div
+  className="MenuButton-root-37"
+>
+  <button
+    aria-haspopup="true"
+    aria-owns={null}
+    className="MuiButtonBase-root-63 MuiButton-root-39 MuiButton-text-41 MuiButton-flat-44 MuiButton-colorInherit-58"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    <span
+      className="MuiButton-label-40"
+    >
+      <svg
+        aria-hidden="true"
+        className="MuiSvgIcon-root-73"
+        color={undefined}
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+        />
+      </svg>
+    </span>
+    <span
+      className="MuiTouchRipple-root-66"
+    />
+  </button>
+</div>
+`;
+
+exports[`matches the prior snapshot 4`] = `
+<div
+  className="MenuButton-root-37"
+>
+  <button
+    aria-haspopup="true"
+    aria-owns={null}
+    className="MuiButtonBase-root-63 MuiButton-root-39 MuiButton-text-41 MuiButton-flat-44"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    <span
+      className="MuiButton-label-40"
+    >
+      button
+    </span>
+    <span
+      className="MuiTouchRipple-root-66"
+    />
+  </button>
+</div>
+`;
+
+exports[`matches the prior snapshot 5`] = `
+<div
+  className="MenuButton-root-37"
+>
+  <button
+    aria-haspopup="true"
+    aria-owns={null}
+    className="MuiButtonBase-root-63 MuiButton-root-39 MuiButton-text-41 MuiButton-flat-44"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex="0"
+    type="button"
+  >
+    <span
+      className="MuiButton-label-40"
+    >
+      button
+    </span>
+    <span
+      className="MuiTouchRipple-root-66"
+    />
+  </button>
+</div>
+`;
