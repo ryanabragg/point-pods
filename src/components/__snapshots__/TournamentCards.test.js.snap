@@ -229,3 +229,121 @@ exports[`matches the prior snapshot 2`] = `
   </div>
 </div>
 `;
+
+exports[`matches the prior snapshot 3`] = `
+<div
+  className="TournamentCards-root-63"
+>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 TournamentCards-card-64"
+    id="mock0"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test0
+        </span>
+        <span
+          className="MuiTypography-root-100 MuiTypography-body1-109 MuiTypography-colorTextSecondary-123 MuiCardHeader-subheader-99"
+        >
+          cat0
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        4 Total Players
+      </p>
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        3 Active Players
+      </p>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 TournamentCards-card-64"
+    id="mock1"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test1
+        </span>
+        <span
+          className="MuiTypography-root-100 MuiTypography-body1-109 MuiTypography-colorTextSecondary-123 MuiCardHeader-subheader-99"
+        >
+          cat1
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        7 Total Players
+      </p>
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        5 Active Players
+      </p>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 TournamentCards-card-64"
+    id="mock2"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test2
+        </span>
+        <span
+          className="MuiTypography-root-100 MuiTypography-body1-109 MuiTypography-colorTextSecondary-123 MuiCardHeader-subheader-99"
+        >
+          cat0
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        4 Total Players
+      </p>
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        4 Active Players
+      </p>
+    </div>
+  </div>
+</div>
+`;

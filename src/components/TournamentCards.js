@@ -29,7 +29,7 @@ const styles = theme => ({
 
 class TournamentCards extends Component {
   render() {
-    const { classes, status, category, search, tournaments } = this.props;
+    const { classes, displayOnly, tournaments, status, category, search } = this.props;
     let cards;
     switch(status) {
       default:
@@ -63,14 +63,16 @@ class TournamentCards extends Component {
                 {`${players.filter(t => !t.dropped).length} Active Players`}
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size='small'
-                className={classes.right}
-                href={`/${staging ? 'new' : 'tournament'}/${id}`}
-              >
-                {done ? 'Details' : 'Continue'}
-              </Button>
-            </CardActions>
+            {!displayOnly && (
+              <CardActions>
+                <Button size='small'
+                  className={classes.right}
+                  href={`/${staging ? 'new' : 'tournament'}/${id}`}
+                >
+                  {done ? 'Details' : 'Continue'}
+                </Button>
+              </CardActions>
+            )}
           </Card>
         ))}
         {!cards.length && (
@@ -86,6 +88,7 @@ class TournamentCards extends Component {
 }
 
 TournamentCards.defaultProps = {
+  displayOnly: false,
   tournaments: [],
   selected: [],
   onSelect: (tournaments) => null,
@@ -96,6 +99,7 @@ TournamentCards.defaultProps = {
 
 TournamentCards.propTypes = {
   classes: PropTypes.object.isRequired, // added by withStyles
+  displayOnly: PropTypes.bool,
   tournaments: PropTypes.array,
   selected: PropTypes.array,
   onSelect: PropTypes.func,

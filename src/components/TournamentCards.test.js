@@ -20,6 +20,8 @@ test('matches the prior snapshot', () => {
   expect(component.toJSON()).toMatchSnapshot();
   component.update(<TournamentCards tournaments={testTournaments} />);
   expect(component.toJSON()).toMatchSnapshot();
+  component.update(<TournamentCards displayOnly tournaments={testTournaments} />);
+  expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('selection');
