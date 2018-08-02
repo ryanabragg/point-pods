@@ -28,7 +28,7 @@ const styles = theme => ({
   },
   flex: {
     flexGrow: 1,
-    flexShrink: 0,
+    flexShrink: 1,
     marginRight: theme.spacing.unit,
   },
   nowrap: {

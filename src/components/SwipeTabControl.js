@@ -10,6 +10,8 @@ import Tab from '@material-ui/core/Tab';
 const styles = theme => ({
   root: {
     paddingBottom: 42,
+    width: '100%',
+    background: theme.palette.background.default,
   },
   tabBar: {
     position: 'fixed',
