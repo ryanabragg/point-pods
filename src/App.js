@@ -5,10 +5,12 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import Notification, { withNotification } from './components/Notification';
 import Home from './layouts/Home';
 import NewTournament from './layouts/NewTournament';
+import PlayerList from './layouts/PlayerList';
 import Settings from './layouts/Settings';
 
 import theme from './theme';
 
+const NotifiedPlayerList = withNotification(PlayerList);
 const NotifiedSettings = withNotification(Settings);
 
 class App extends Component {
@@ -23,9 +25,9 @@ class App extends Component {
               <Route path='/new' component={NewTournament} />
               <Route path='/tournaments' render={() => <Redirect to="/" />} />
               <Route path='/tournament/:id' render={() => <Redirect to="/" />} />
-              <Route path='/players' render={() => <Redirect to="/" />} />
+              <Route path='/players' component={NotifiedPlayerList} />
               <Route path='/player/:id' render={() => <Redirect to="/" />} />
-              <Route path='/settings' component={Settings} />
+              <Route path='/settings' component={NotifiedSettings} />
             </Switch>
           </BrowserRouter>
         </Notification>

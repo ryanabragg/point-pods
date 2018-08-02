@@ -1,0 +1,593 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the prior snapshot 1`] = `
+<div
+  className="PlayerCards-root-63"
+>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 PlayerCards-card-64"
+    id="not-found"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          No Players Found
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches the prior snapshot 2`] = `
+<div
+  className="PlayerCards-root-63"
+>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 PlayerCards-card-64"
+    id="mock0"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test0
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        0 Cumulative Points
+      </p>
+    </div>
+    <div
+      className="MuiCardActions-root-126"
+    >
+      <a
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 PlayerCards-right-65 MuiCardActions-action-127"
+        href="/player/mock0"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="MuiButton-label-129"
+        >
+          Details
+        </span>
+        <span
+          className="MuiTouchRipple-root-155"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 PlayerCards-card-64"
+    id="mock1"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test1
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        1 Cumulative Points
+      </p>
+    </div>
+    <div
+      className="MuiCardActions-root-126"
+    >
+      <a
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 PlayerCards-right-65 MuiCardActions-action-127"
+        href="/player/mock1"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="MuiButton-label-129"
+        >
+          Details
+        </span>
+        <span
+          className="MuiTouchRipple-root-155"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 PlayerCards-card-64"
+    id="mock2"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test2
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        2 Cumulative Points
+      </p>
+    </div>
+    <div
+      className="MuiCardActions-root-126"
+    >
+      <a
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 PlayerCards-right-65 MuiCardActions-action-127"
+        href="/player/mock2"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="MuiButton-label-129"
+        >
+          Details
+        </span>
+        <span
+          className="MuiTouchRipple-root-155"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 PlayerCards-card-64"
+    id="mock3"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test3
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        3 Cumulative Points
+      </p>
+    </div>
+    <div
+      className="MuiCardActions-root-126"
+    >
+      <a
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 PlayerCards-right-65 MuiCardActions-action-127"
+        href="/player/mock3"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="MuiButton-label-129"
+        >
+          Details
+        </span>
+        <span
+          className="MuiTouchRipple-root-155"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 PlayerCards-card-64"
+    id="mock4"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test4
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        4 Cumulative Points
+      </p>
+    </div>
+    <div
+      className="MuiCardActions-root-126"
+    >
+      <a
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 PlayerCards-right-65 MuiCardActions-action-127"
+        href="/player/mock4"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="MuiButton-label-129"
+        >
+          Details
+        </span>
+        <span
+          className="MuiTouchRipple-root-155"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 PlayerCards-card-64"
+    id="mock5"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test5
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        5 Cumulative Points
+      </p>
+    </div>
+    <div
+      className="MuiCardActions-root-126"
+    >
+      <a
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 PlayerCards-right-65 MuiCardActions-action-127"
+        href="/player/mock5"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="MuiButton-label-129"
+        >
+          Details
+        </span>
+        <span
+          className="MuiTouchRipple-root-155"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 PlayerCards-card-64"
+    id="mock6"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test6
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        6 Cumulative Points
+      </p>
+    </div>
+    <div
+      className="MuiCardActions-root-126"
+    >
+      <a
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 PlayerCards-right-65 MuiCardActions-action-127"
+        href="/player/mock6"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="MuiButton-label-129"
+        >
+          Details
+        </span>
+        <span
+          className="MuiTouchRipple-root-155"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 PlayerCards-card-64"
+    id="mock7"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test7
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        7 Cumulative Points
+      </p>
+    </div>
+    <div
+      className="MuiCardActions-root-126"
+    >
+      <a
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 PlayerCards-right-65 MuiCardActions-action-127"
+        href="/player/mock7"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="MuiButton-label-129"
+        >
+          Details
+        </span>
+        <span
+          className="MuiTouchRipple-root-155"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 PlayerCards-card-64"
+    id="mock8"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test8
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        8 Cumulative Points
+      </p>
+    </div>
+    <div
+      className="MuiCardActions-root-126"
+    >
+      <a
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 PlayerCards-right-65 MuiCardActions-action-127"
+        href="/player/mock8"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="MuiButton-label-129"
+        >
+          Details
+        </span>
+        <span
+          className="MuiTouchRipple-root-155"
+        />
+      </a>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 PlayerCards-card-64"
+    id="mock9"
+  >
+    <div
+      className="MuiCardHeader-root-94"
+    >
+      <div
+        className="MuiCardHeader-content-97"
+      >
+        <span
+          className="MuiTypography-root-100 MuiTypography-headline-105 MuiCardHeader-title-98"
+        >
+          test9
+        </span>
+      </div>
+    </div>
+    <div
+      className="MuiCardContent-root-125"
+    >
+      <p
+        className="MuiTypography-root-100 MuiTypography-body1-109"
+      >
+        9 Cumulative Points
+      </p>
+    </div>
+    <div
+      className="MuiCardActions-root-126"
+    >
+      <a
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 PlayerCards-right-65 MuiCardActions-action-127"
+        href="/player/mock9"
+        onBlur={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        role="button"
+        tabIndex="0"
+      >
+        <span
+          className="MuiButton-label-129"
+        >
+          Details
+        </span>
+        <span
+          className="MuiTouchRipple-root-155"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+`;
