@@ -114,7 +114,7 @@ describe('the api object', () => {
         id: 'mock1',
         name: 'changed',
       });
-      expect(setMocked).toBe(mockStore.players[1]);
+      expect(setMocked).toEqual(mockStore.players[1]);
       try {
         const notFound = await api.Players.set({
           id: 'not-found',
@@ -124,16 +124,26 @@ describe('the api object', () => {
       } catch (e) {
         expect(e.message).toBe('ID not found');
       }
-      expect(mockStorage.getItem.mock.calls.length).toBe(2);
+      const setMockedNew = await api.Players.set({
+        name: 'New Player'
+      });
+      expect(setMockedNew).toEqual(mockStore.players[mockStore.players.length - 1]);
+      expect(mockStorage.getItem.mock.calls.length).toBe(3);
       expect(mockStorage.getItem.mock.calls[0][0]).toBe('players');
       expect(mockStorage.getItem.mock.calls[1][0]).toBe('players');
-      expect(mockStorage.setItem.mock.calls.length).toBe(1);
+      expect(mockStorage.getItem.mock.calls[2][0]).toBe('players');
+      expect(mockStorage.setItem.mock.calls.length).toBe(2);
       expect(mockStorage.setItem.mock.calls[0][0]).toBe('players');
       expect(mockStorage.setItem.mock.calls[0][1]).toEqual(testPlayers.map(i => {
         if(i.id === 'mock1')
           return Object.assign({}, i, {name: 'changed'});
         return i;
       }));
+      expect(mockStorage.setItem.mock.calls[1][0]).toBe('players');
+      const call = mockStorage.setItem.mock.calls[1][1];
+      const last = call[call.length - 1];
+      expect(last.name).toBe(setMockedNew.name);
+      expect(last.points).toBe(0);
       expect(mockStorage.removeItem.mock.calls.length).toBe(0);
     });
 
@@ -206,16 +216,25 @@ describe('the api object', () => {
       } catch (e) {
         expect(e.message).toBe('ID not found');
       }
-      expect(mockStorage.getItem.mock.calls.length).toBe(2);
+      const setMockedNew = await api.Tournaments.set({
+        name: 'New Tournament'
+      });
+      expect(setMockedNew).toEqual(mockStore.tournaments[mockStore.tournaments.length - 1]);
+      expect(mockStorage.getItem.mock.calls.length).toBe(3);
       expect(mockStorage.getItem.mock.calls[0][0]).toBe('tournaments');
       expect(mockStorage.getItem.mock.calls[1][0]).toBe('tournaments');
-      expect(mockStorage.setItem.mock.calls.length).toBe(1);
+      expect(mockStorage.getItem.mock.calls[2][0]).toBe('tournaments');
+      expect(mockStorage.setItem.mock.calls.length).toBe(2);
       expect(mockStorage.setItem.mock.calls[0][0]).toBe('tournaments');
       expect(mockStorage.setItem.mock.calls[0][1]).toEqual(testTournaments.map(i => {
         if(i.id === 'mock1')
           return Object.assign({}, i, {name: 'changed'});
         return i;
       }));
+      expect(mockStorage.setItem.mock.calls[1][0]).toBe('tournaments');
+      const call = mockStorage.setItem.mock.calls[1][1];
+      const last = call[call.length - 1];
+      expect(last.name).toBe(setMockedNew.name);
       expect(mockStorage.removeItem.mock.calls.length).toBe(0);
     });
 
