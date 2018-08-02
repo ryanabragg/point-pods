@@ -2,10 +2,10 @@
 
 exports[`matches the prior snapshot 1`] = `
 <div
-  className="APIComponent-root-63"
+  className="TournamentCards-root-63"
 >
   <div
-    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 APIComponent-card-64"
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 TournamentCards-card-64"
     id="not-found"
   >
     <div
@@ -27,10 +27,10 @@ exports[`matches the prior snapshot 1`] = `
 
 exports[`matches the prior snapshot 2`] = `
 <div
-  className="APIComponent-root-63"
+  className="TournamentCards-root-63"
 >
   <div
-    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 APIComponent-card-64"
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 TournamentCards-card-64"
     id="mock0"
   >
     <div
@@ -69,7 +69,7 @@ exports[`matches the prior snapshot 2`] = `
       className="MuiCardActions-root-126"
     >
       <a
-        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 APIComponent-right-65 MuiCardActions-action-127"
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 TournamentCards-right-65 MuiCardActions-action-127"
         href="/new/mock0"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -96,7 +96,7 @@ exports[`matches the prior snapshot 2`] = `
     </div>
   </div>
   <div
-    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 APIComponent-card-64"
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 TournamentCards-card-64"
     id="mock1"
   >
     <div
@@ -135,7 +135,7 @@ exports[`matches the prior snapshot 2`] = `
       className="MuiCardActions-root-126"
     >
       <a
-        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 APIComponent-right-65 MuiCardActions-action-127"
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 TournamentCards-right-65 MuiCardActions-action-127"
         href="/tournament/mock1"
         onBlur={[Function]}
         onFocus={[Function]}
@@ -162,7 +162,7 @@ exports[`matches the prior snapshot 2`] = `
     </div>
   </div>
   <div
-    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 APIComponent-card-64"
+    className="MuiPaper-root-67 MuiPaper-elevation1-70 MuiPaper-rounded-68 MuiCard-root-66 TournamentCards-card-64"
     id="mock2"
   >
     <div
@@ -201,7 +201,7 @@ exports[`matches the prior snapshot 2`] = `
       className="MuiCardActions-root-126"
     >
       <a
-        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 APIComponent-right-65 MuiCardActions-action-127"
+        className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 TournamentCards-right-65 MuiCardActions-action-127"
         href="/tournament/mock2"
         onBlur={[Function]}
         onFocus={[Function]}

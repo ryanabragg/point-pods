@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
-import { withAPI } from '../api';
 
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -16,9 +15,8 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-evenly',
+    justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    alignContent: 'flex-start',
   },
   card: {
     minWidth: 275,
@@ -30,28 +28,8 @@ const styles = theme => ({
 });
 
 class TournamentCards extends Component {
-  state = {
-    tournaments: [],
-    categories: [],
-  };
-
-  componentDidMount() {
-    this.props.api.Tournaments.all()
-      .then(list => {
-        let categories = list.map(tournament => tournament.category)
-          .filter((cat, i, self) => cat && self.indexOf(cat) === i).sort();
-        this.setState({
-          tournaments: list,
-          categories: categories,
-        });
-        this.props.onLoadCategories(categories);
-      })
-      .catch(error => this.props.notification(error.message, 'error'));
-  }
-
   render() {
-    const { classes, status, category, search } = this.props;
-    const { tournaments } = this.state;
+    const { classes, status, category, search, tournaments } = this.props;
     let cards;
     switch(status) {
       default:
@@ -65,8 +43,9 @@ class TournamentCards extends Component {
       cards = cards.filter(t => t.category == category);
     if(search)
       cards = cards.filter(t => (
-        t.name.toLowerCase().includes(search)
-        || t.description.toLowerCase().includes(search)
+        t.name.toLowerCase().includes(search.toLowerCase())
+        || t.category.toLowerCase().includes(search.toLowerCase())
+        || t.description.toLowerCase().includes(search.toLowerCase())
       ));
     return (
       <div className={classes.root}>
@@ -107,8 +86,8 @@ class TournamentCards extends Component {
 }
 
 TournamentCards.defaultProps = {
-  notification: (m, v, d, c) => null,
-  onLoadCategories: (categories) => null,
+  tournaments: [],
+  selected: [],
   onSelect: (tournaments) => null,
   status: 'Show All',
   category: '',
@@ -116,10 +95,9 @@ TournamentCards.defaultProps = {
 };
 
 TournamentCards.propTypes = {
-  api: PropTypes.object.isRequired, // added by withAPI
   classes: PropTypes.object.isRequired, // added by withStyles
-  notification: PropTypes.func,
-  onLoadCategories: PropTypes.func,
+  tournaments: PropTypes.array,
+  selected: PropTypes.array,
   onSelect: PropTypes.func,
   status: PropTypes.oneOf([
     'Show All',
@@ -132,4 +110,4 @@ TournamentCards.propTypes = {
   search: PropTypes.string,
 };
 
-export default withStyles(styles, { withTheme: true })(withAPI(TournamentCards));
+export default withStyles(styles, { withTheme: true })(TournamentCards);

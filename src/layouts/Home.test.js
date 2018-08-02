@@ -17,7 +17,12 @@ test('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-test('matches the prior snapshot', () => {
-  const tree = renderer.create(<Home />);
-  expect(tree.toJSON()).toMatchSnapshot();
+test('matches the prior snapshot', (done) => {
+  const component = renderer.create(<Home />);
+  expect(component.toJSON()).toMatchSnapshot();
+  setTimeout(() => {
+    component.update(<Home />);
+    expect(component.toJSON()).toMatchSnapshot();
+    done();
+  }, 100);
 });
