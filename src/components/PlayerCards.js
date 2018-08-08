@@ -15,7 +15,7 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'flex-start',
   },
   card: {

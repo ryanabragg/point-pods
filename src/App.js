@@ -7,12 +7,14 @@ import Home from './layouts/Home';
 import NewTournament from './layouts/NewTournament';
 import TournamentList from './layouts/TournamentList';
 import PlayerList from './layouts/PlayerList';
+import Player from './layouts/Player';
 import Settings from './layouts/Settings';
 
 import theme from './theme';
 
 const NotifiedTournamentList = withNotification(TournamentList);
 const NotifiedPlayerList = withNotification(PlayerList);
+const NotifiedPlayer = withNotification(Player);
 const NotifiedSettings = withNotification(Settings);
 
 class App extends Component {
@@ -28,7 +30,7 @@ class App extends Component {
               <Route path='/tournaments' component={NotifiedTournamentList} />
               <Route path='/tournament/:id' render={() => <Redirect to="/" />} />
               <Route path='/players' component={NotifiedPlayerList} />
-              <Route path='/player/:id' render={() => <Redirect to="/" />} />
+              <Route path='/player/:id' component={NotifiedPlayer} />
               <Route path='/settings' component={NotifiedSettings} />
             </Switch>
           </BrowserRouter>
