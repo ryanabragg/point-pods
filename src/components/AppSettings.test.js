@@ -74,35 +74,71 @@ describe('default values', () => {
       }
     }, 100);
   });
+});
 
-  test('saves settings as they are changed', (done) => {
-    const spy = jest.fn(r => r);
-    const component = shallow(<AppSettings />);
-    const unHOC = component.dive().dive();
-    setTimeout(() => {
-      try {
-        expect(testSettings.pairingMethod).toBe(api.pairingMethods.HISTORIC);
-        unHOC.find('#settings-pairingMethod').simulate('change', {target: {value: api.pairingMethods.POINTS}});
+test('saves settings as they are changed', (done) => {
+  let next = {
+    pairingMethod: testSettings.pairingMethod,
+    pairingMethodInitial: testSettings.pairingMethodInitial,
+    podSizeMaximum: testSettings.podSizeMaximum,
+    podSizeMinimum: testSettings.podSizeMinimum,
+  };
+  const spy = jest.fn(r => r);
+  const component = shallow(<AppSettings />);
+  const unHOC = component.dive().dive();
+  setTimeout(() => {
+    try {
+      next.pairingMethod = api.pairingMethods.POINTS;
+      expect(testSettings.pairingMethod).toBe(api.pairingMethods.HISTORIC);
+      unHOC.find('#settings-pairingMethod').simulate('change', {target: {value: next.pairingMethod}});
+      setTimeout(() => {
+        try {
+          //expect(mockStorage.setItem.mock.calls.length).toBe(1);
+          expect(mockStorage.setItem.mock.calls[0][0]).toBe('settings');
+          expect(mockStorage.setItem.mock.calls[0][1]).toEqual(next);
+        } catch (error) {
+          done.fail(error);
+        }
+        next.pairingMethodInitial = api.pairingMethods.RANDOM;
         expect(testSettings.pairingMethodInitial).toBe(api.pairingMethods.HISTORIC);
-        unHOC.find('#settings-pairingMethodInitial').simulate('change', {target: {value: api.pairingMethods.RANDOM}});
+        unHOC.find('#settings-pairingMethodInitial').simulate('change', {target: {value: next.pairingMethodInitial}});
+      }, 100);
+      setTimeout(() => {
+        try {
+          expect(mockStorage.setItem.mock.calls.length).toBe(2);
+          expect(mockStorage.setItem.mock.calls[1][0]).toBe('settings');
+          expect(mockStorage.setItem.mock.calls[1][1]).toEqual(next);
+        } catch (error) {
+          done.fail(error);
+        }
+        next.podSizeMinimum = 3;
         expect(testSettings.podSizeMinimum).toBe(4);
-        unHOC.find('#settings-podSizeMinimum').simulate('change', {target: {value: 3}});
+        unHOC.find('#settings-podSizeMinimum').simulate('change', {target: {value: next.podSizeMinimum}});
+      }, 200);
+      setTimeout(() => {
+        try {
+          expect(mockStorage.setItem.mock.calls.length).toBe(3);
+          expect(mockStorage.setItem.mock.calls[2][0]).toBe('settings');
+          expect(mockStorage.setItem.mock.calls[2][1]).toEqual(next);
+        } catch (error) {
+          done.fail(error);
+        }
+        next.podSizeMaximum = 4;
         expect(testSettings.podSizeMaximum).toBe(7);
-        unHOC.find('#settings-podSizeMaximum').simulate('change', {target: {value: 4}});
-        setTimeout(() => {
-          try {
-            expect(testSettings.pairingMethod).toBe(api.pairingMethods.POINTS);
-            expect(testSettings.pairingMethodInitial).toBe(api.pairingMethods.RANDOM);
-            expect(testSettings.podSizeMinimum).toBe(3);
-            expect(testSettings.podSizeMaximum).toBe(4);
-            done();
-          } catch (error) {
-            done.fail(error);
-          }
-        }, 100);
-      } catch (error) {
-        done.fail(error);
-      }
-    }, 100);
-  });
+        unHOC.find('#settings-podSizeMaximum').simulate('change', {target: {value: next.podSizeMaximum}});
+      }, 300);
+      setTimeout(() => {
+        try {
+          expect(mockStorage.setItem.mock.calls.length).toBe(4);
+          expect(mockStorage.setItem.mock.calls[3][0]).toBe('settings');
+          expect(mockStorage.setItem.mock.calls[3][1]).toEqual(next);
+        } catch (error) {
+          done.fail(error);
+        }
+      }, 400);
+    } catch (error) {
+      done.fail(error);
+    }
+  }, 100);
+  setTimeout(() => done(), 1000);
 });
