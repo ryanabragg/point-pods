@@ -31,15 +31,10 @@ api.Settings.get = () => api.store.keys()
 
 api.Settings.set = (settings) => {
   return api.Settings.get().then(values => {
-    if(settings.hasOwnProperty('pairingMethod'))
-      values.pairingMethod = settings.pairingMethod;
-    if(settings.hasOwnProperty('pairingMethodInitial'))
-      values.pairingMethodInitial = settings.pairingMethodInitial;
-    if(settings.hasOwnProperty('podSizeMinimum'))
-      values.podSizeMinimum = settings.podSizeMinimum;
-    if(settings.hasOwnProperty('podSizeMaximum'))
-      values.podSizeMaximum = settings.podSizeMaximum;
-    return api.store.setItem('settings', values);
+    const validKeys = Object.keys(values);
+    const badKeys = Object.keys(settings).filter(k => !validKeys.includes(k))
+      .forEach(key => delete settings.key);
+    return api.store.setItem('settings', Object.assign({}, values, settings));
   });
 };
 
@@ -61,19 +56,21 @@ api.Players.get = (id) => {
 
 api.Players.set = (value) => {
   const create = !value.hasOwnProperty('id');
-  if(create)
-    value = Object.assign({}, { id: Date.now() }, value);
+  const defaultValue = {
+    id: Date.now(),
+    name: '',
+    points: 0,
+  };
+  const validKeys = Object.keys(defaultValue);
+  const badKeys = Object.keys(value).filter(key => !validKeys.includes(key))
+    .forEach(key => delete value.key);
   return api.Players.all().then(list => {
     let index = list.findIndex(i => String(i.id) === String(value.id));
     if(create && index === -1)
-      index = list.push(value) - 1;
+      index = list.push(Object.assign({}, defaultValue, value)) - 1;
     else if(index === -1)
       throw new Error('ID not found');
-    list[index] = Object.assign({
-      id: null,
-      name: '',
-      points: 0,
-    }, list[index], value);
+    list[index] = Object.assign({}, list[index], value);
     return api.store.setItem('players', list).then(list => list[index]);
   });
 };
@@ -108,29 +105,32 @@ api.Tournaments.get = (id) => {
 
 api.Tournaments.set = (value) => {
   const create = !value.hasOwnProperty('id');
-  if(create)
-    value = Object.assign({}, { id: Date.now() }, value);
+  const defaultValue = {
+    id: Date.now(),
+    name: '',
+    category: '',
+    description: '',
+    date: '',
+    pairingMethod: null,
+    pairingMethodInitial: null,
+    podSizeMinimum: null,
+    podSizeMaximum: null,
+    rounds: 0,
+    done: false,
+    staging: true,
+    players: [],
+  };
+  const validKeys = Object.keys(defaultValue);
+  const badKeys = Object.keys(value).filter(key => !validKeys.includes(key))
+    .forEach(key => delete value.key);
   return api.Tournaments.all().then(list => {
     let index = list.findIndex(i => String(i.id) === String(value.id));
     if(create && index === -1)
-      index = list.push(value) - 1;
+      index = list.push(Object.assign({}, defaultValue, value)) - 1;
     else if(index === -1)
       throw new Error('ID not found');
-    list[index] = Object.assign({
-      id: null,
-      name: '',
-      category: '',
-      description: '',
-      date: '',
-      pairingMethod: null,
-      pairingMethodInitial: null,
-      podSizeMinimum: null,
-      podSizeMaximum: null,
-      rounds: 0,
-      done: false,
-      staging: true,
-      players: [],
-    }, list[index], value);
+    else
+      list[index] = Object.assign({}, list[index], value);
     return api.store.setItem('tournaments', list).then(list => list[index]);
   });
 };
