@@ -40,7 +40,7 @@ exports[`matches the prior snapshot 1`] = `
         <input
           aria-invalid={false}
           autoComplete={undefined}
-          autoFocus={true}
+          autoFocus={false}
           className="MuiInput-input-244 MuiInput-inputMarginDense-245"
           defaultValue={undefined}
           disabled={false}
@@ -194,7 +194,7 @@ exports[`matches the prior snapshot 1`] = `
           required={false}
           rows={undefined}
           type="date"
-          value="2018-07-31"
+          value="2018-08-18"
         />
       </div>
     </div>
@@ -331,8 +331,8 @@ exports[`matches the prior snapshot 1`] = `
       className="MuiFormControl-root-222 MuiFormControl-marginDense-224 APIComponent-field-156"
     >
       <label
-        className="MuiFormLabel-root-231 MuiInputLabel-root-226 MuiInputLabel-formControl-227 MuiInputLabel-animated-230 MuiInputLabel-marginDense-228"
-        data-shrink={false}
+        className="MuiFormLabel-root-231 MuiInputLabel-root-226 MuiInputLabel-formControl-227 MuiInputLabel-animated-230 MuiInputLabel-shrink-229 MuiInputLabel-marginDense-228"
+        data-shrink={true}
         htmlFor="tournament-podSizeMinimum"
       >
         Minimum Pod Size
@@ -359,7 +359,7 @@ exports[`matches the prior snapshot 1`] = `
           required={false}
           rows={undefined}
           type="number"
-          value=""
+          value={0}
         />
       </div>
     </div>
@@ -368,8 +368,8 @@ exports[`matches the prior snapshot 1`] = `
       className="MuiFormControl-root-222 MuiFormControl-marginDense-224 APIComponent-field-156"
     >
       <label
-        className="MuiFormLabel-root-231 MuiInputLabel-root-226 MuiInputLabel-formControl-227 MuiInputLabel-animated-230 MuiInputLabel-marginDense-228"
-        data-shrink={false}
+        className="MuiFormLabel-root-231 MuiInputLabel-root-226 MuiInputLabel-formControl-227 MuiInputLabel-animated-230 MuiInputLabel-shrink-229 MuiInputLabel-marginDense-228"
+        data-shrink={true}
         htmlFor="tournament-podSizeMaximum"
       >
         Maximum Pod Size
@@ -396,7 +396,7 @@ exports[`matches the prior snapshot 1`] = `
           required={false}
           rows={undefined}
           type="number"
-          value=""
+          value={0}
         />
       </div>
     </div>
@@ -558,7 +558,7 @@ exports[`matches the prior snapshot 2`] = `
         <input
           aria-invalid={false}
           autoComplete={undefined}
-          autoFocus={true}
+          autoFocus={false}
           className="MuiInput-input-244 MuiInput-inputMarginDense-245"
           defaultValue={undefined}
           disabled={false}
@@ -712,7 +712,7 @@ exports[`matches the prior snapshot 2`] = `
           required={false}
           rows={undefined}
           type="date"
-          value="2018-07-31"
+          value="2018-08-18"
         />
       </div>
     </div>

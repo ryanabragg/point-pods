@@ -45,8 +45,8 @@ class TournamentSettings extends Component {
     date: new Date().toJSON().slice(0,10),
     pairingMethod: '',
     pairingMethodInitial: '',
-    podSizeMinimum: '',
-    podSizeMaximum: '',
+    podSizeMinimum: 0,
+    podSizeMaximum: 0,
     pairingMethods: [],
     categories: [],
     newCategory: '',
@@ -78,8 +78,11 @@ class TournamentSettings extends Component {
   }
 
   handleInputChange = name => event => {
+    let value = event.target.type === 'number'
+      ? Number(event.target.value)
+      : event.target.value;
     this.setState({
-      [name]: event.target.value,
+      [name]: value,
     });
   };
 
@@ -99,9 +102,6 @@ class TournamentSettings extends Component {
     if(!this.state.name)
       return;
     const values = Object.assign({}, this.state);
-    delete values.pairingMethods;
-    delete values.categories;
-    delete values.newCategory;
     if(values.id === null)
       delete values.id;
     this.props.api.Tournaments.set(values)
@@ -113,7 +113,7 @@ class TournamentSettings extends Component {
   };
 
   render() {
-    const { classes, title } = this.props;
+    const { classes, title, autoFocus } = this.props;
     const {
       id,
       name,
@@ -136,29 +136,29 @@ class TournamentSettings extends Component {
         <Divider />
         <CardContent className={classes.content}>
           <TextField className={classes.field}
-            autoFocus
-            margin="dense"
-            id="tournament-name"
-            label=" Name"
-            type="text"
+            autoFocus={autoFocus}
+            margin='dense'
+            id='tournament-name'
+            label=' Name'
+            type='text'
             value={name}
             onChange={this.handleInputChange('name')}
             fullWidth
           />
           <TextField className={classes.field}
-            margin="dense"
-            id="tournament-description"
-            label="Description"
-            type="text"
+            margin='dense'
+            id='tournament-description'
+            label='Description'
+            type='text'
             value={description}
             onChange={this.handleInputChange('description')}
             fullWidth
           />
           <TextField className={classes.field}
-            margin="dense"
-            id="tournament-category"
-            label="Category"
-            type="text"
+            margin='dense'
+            id='tournament-category'
+            label='Category'
+            type='text'
             value={category}
             onChange={this.handleInputChange('category')}
             select
@@ -170,18 +170,18 @@ class TournamentSettings extends Component {
             ))}
           </TextField>
           <TextField className={classes.field}
-            margin="dense"
-            id="tournament-date"
-            label="Date"
-            type="date"
+            margin='dense'
+            id='tournament-date'
+            label='Date'
+            type='date'
             value={date}
             onChange={this.handleInputChange('date')}
           />
           <TextField className={classes.field}
-            margin="dense"
-            id="tournament-pairingMethod"
-            label="Pairing Method"
-            type="text"
+            margin='dense'
+            id='tournament-pairingMethod'
+            label='Pairing Method'
+            type='text'
             value={pairingMethod}
             onChange={this.handleInputChange('pairingMethod')}
             select
@@ -193,10 +193,10 @@ class TournamentSettings extends Component {
             ))}
           </TextField>
           <TextField className={classes.field}
-            margin="dense"
-            id="tournament-pairingMethodInitial"
-            label="Initial Pairing Method"
-            type="text"
+            margin='dense'
+            id='tournament-pairingMethodInitial'
+            label='Initial Pairing Method'
+            type='text'
             value={pairingMethodInitial}
             onChange={this.handleInputChange('pairingMethodInitial')}
             select
@@ -208,18 +208,18 @@ class TournamentSettings extends Component {
             ))}
           </TextField>
           <TextField className={classes.field}
-            margin="dense"
-            id="tournament-podSizeMinimum"
-            label="Minimum Pod Size"
-            type="number"
+            margin='dense'
+            id='tournament-podSizeMinimum'
+            label='Minimum Pod Size'
+            type='number'
             value={podSizeMinimum}
             onChange={this.handleInputChange('podSizeMinimum')}
           />
           <TextField className={classes.field}
-            margin="dense"
-            id="tournament-podSizeMaximum"
-            label="Maximum Pod Size"
-            type="number"
+            margin='dense'
+            id='tournament-podSizeMaximum'
+            label='Maximum Pod Size'
+            type='number'
             value={podSizeMaximum}
             onChange={this.handleInputChange('podSizeMaximum')}
           />
@@ -227,10 +227,10 @@ class TournamentSettings extends Component {
         <Divider />
         <CardActions>
           <TextField
-            margin="dense"
-            id="tournament-newCategory"
-            label="Add Category"
-            type="text"
+            margin='dense'
+            id='tournament-newCategory'
+            label='Add Category'
+            type='text'
             value={newCategory}
             onChange={this.handleInputChange('newCategory')}
           />
@@ -259,6 +259,7 @@ TournamentSettings.defaultProps = {
   title: 'New Tournament',
   id: null,
   onSubmit: (tournament) => null,
+  autoFocus: false,
 };
 
 TournamentSettings.propTypes = {
@@ -271,6 +272,7 @@ TournamentSettings.propTypes = {
     PropTypes.string,
   ]),
   onSubmit: PropTypes.func,
+  autoFocus: PropTypes.bool,
 };
 
 export default withStyles(styles, { withTheme: true })(withAPI(TournamentSettings));
