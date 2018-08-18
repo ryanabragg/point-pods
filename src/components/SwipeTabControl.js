@@ -14,6 +14,7 @@ const styles = theme => ({
     background: theme.palette.background.default,
   },
   tabBar: {
+    zIndex: 2,
     position: 'fixed',
     bottom: 0,
     width: '100vw',
@@ -22,15 +23,19 @@ const styles = theme => ({
 
 class TabControl extends Component {
   state = {
-    tabIndex: this.props.initialTab,
+    tabIndex: this.props.initialTab || 0,
   };
 
   handleChange = (event, value) => {
     this.setState({ tabIndex: value });
+    if(this.props.scrollToTop)
+      window.scroll(0, 0);
   };
 
   handleChangeIndex = (index) => {
     this.setState({ tabIndex: index });
+    if(this.props.scrollToTop)
+      window.scroll(0, 0);
   };
 
   render() {
@@ -67,6 +72,7 @@ TabControl.defaultProps = {
   tabs: [],
   initialTab: 0,
   color: 'primary',
+  scrollToTop: true,
 };
 
 TabControl.propTypes = {
@@ -75,6 +81,7 @@ TabControl.propTypes = {
   tabs: PropTypes.array.isRequired,
   initialTab: PropTypes.number,
   color: PropTypes.string,
+  scrollToTop: PropTypes.bool,
 };
 
 export default withStyles(styles, { withTheme: true })(TabControl);
