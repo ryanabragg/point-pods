@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import CardHeader from '@material-ui/core/CardHeader';
 
@@ -43,8 +43,9 @@ test('is a HOC-ed component', () => {
 test('title prop', () => {
   const component = shallow(<TournamentSettings />);
   const unHOC = component.dive().dive();
-  expect(unHOC.find(CardHeader).prop('title')).toBe('New Tournament');
+  expect(unHOC.find(CardHeader).length).toBe(0);
   unHOC.setProps({ title: 'Test' });
+  expect(unHOC.find(CardHeader).length).toBe(1);
   expect(unHOC.find(CardHeader).prop('title')).toBe('Test');
 })
 
@@ -179,32 +180,4 @@ describe('with id prop', () => {
   });
 });
 
-test('adding a new category', (done) => {
-  const categories = testTournaments
-    .map(tournament => tournament.category)
-    .filter((cat, i, self) => cat && self.indexOf(cat) === i)
-    .sort();
-  const component = shallow(<TournamentSettings />);
-  const unHOC = component.dive().dive();
-  unHOC.find('#tournament-newCategory-add').simulate('click');
-  setTimeout(() => {
-    try {
-      expect(unHOC.state('category')).toEqual('');
-      expect(unHOC.state('categories')).toEqual(categories);
-      unHOC.setState({ name: 'test' });
-      unHOC.find('#tournament-newCategory').simulate('change', {target: {value: 'test'}});
-      unHOC.find('#tournament-newCategory-add').simulate('click');
-      setTimeout(() => {
-        try {
-          expect(unHOC.state('category')).toEqual('test');
-          expect(unHOC.state('categories')).toEqual(categories.concat('test'));
-          done();
-        } catch (error) {
-          done.fail(error);
-        }
-      }, 100);
-    } catch (error) {
-      done.fail(error);
-    }
-  }, 100);
-});
+test('adding a new category');
