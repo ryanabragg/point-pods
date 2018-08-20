@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ClassNames from 'classnames';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -9,22 +10,26 @@ import Tab from '@material-ui/core/Tab';
 
 const styles = theme => ({
   root: {
-    paddingBottom: 42,
-    width: '100%',
-    background: theme.palette.background.default,
+    marginBottom: 42,
   },
   tabBar: {
     zIndex: 2,
     position: 'fixed',
     bottom: 0,
     width: '100vw',
+    background: theme.palette.background.default,
   },
 });
 
 class TabControl extends Component {
   state = {
-    tabIndex: this.props.initialTab || 0,
+    tabIndex: this.props.goToTab || 0,
   };
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if(prevProps.goToTab !== this.props.goToTab)
+      this.setState({tabIndex: this.props.goToTab || 0});
+  }
 
   handleChange = (event, value) => {
     this.setState({ tabIndex: value });
@@ -39,11 +44,11 @@ class TabControl extends Component {
   };
 
   render() {
-    const { classes, theme, tabs, color, children } = this.props;
+    const { classes, theme, tabs, color, className, children } = this.props;
     const { tabIndex } = this.state;
 
     return (
-      <div className={classes.root}>
+      <div className={ClassNames(classes.root, className)}>
         <Tabs
           value={tabIndex}
           onChange={this.handleChange}
@@ -70,18 +75,20 @@ class TabControl extends Component {
 
 TabControl.defaultProps = {
   tabs: [],
-  initialTab: 0,
+  goToTab: 0,
   color: 'primary',
   scrollToTop: true,
+  className: '',
 };
 
 TabControl.propTypes = {
   classes: PropTypes.object.isRequired, // added by withStyles
   theme: PropTypes.object.isRequired, // added by withStyles
   tabs: PropTypes.array.isRequired,
-  initialTab: PropTypes.number,
+  goToTab: PropTypes.number,
   color: PropTypes.string,
   scrollToTop: PropTypes.bool,
+  className: PropTypes.string,
 };
 
 export default withStyles(styles, { withTheme: true })(TabControl);
