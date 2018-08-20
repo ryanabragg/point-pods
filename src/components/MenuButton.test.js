@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
+import Popper from '@material-ui/core/Popper';
+import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuList from '@material-ui/core/MenuList';
@@ -78,4 +80,25 @@ test('menu list'/*, () => {
   });
   expect(component.find(ListItemIcon).length).toBe(itemsWithIcons.length);
   expect(component.find(ListItemText).length).toBe(itemsWithIcons.length);
+}*/);
+
+test('disablePortal prop pass-through', () => {
+  const component = shallow(<MenuButton />).dive();
+  expect(component.find(Popper).prop('disablePortal')).toBe(false);
+  component.setProps({
+    disablePortal: true,
+  });
+  expect(component.find(Popper).prop('disablePortal')).toBe(true);
+});
+
+test('paperStyle prop pass-through'/*, () => {
+  const component = shallow(<MenuButton buttonContent='test' menuItems={items}/>).dive();
+  component.setState({open: true});
+  component.update();
+  expect(component.find(Paper).prop('className')).toBe('');
+  const style = 'maxHeight: 200; overflow: auto';
+  component.setProps({
+    paperStyle: style,
+  });
+  expect(component.find(Paper).prop('className')).toBe(style);
 }*/);

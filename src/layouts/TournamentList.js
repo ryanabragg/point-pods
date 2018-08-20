@@ -175,6 +175,7 @@ class TournamentList extends Component {
             icon: <SortIcon />,
             action: this.setSort('date'),
           }]}
+          disablePortal
         />
       </React.Fragment>
     );

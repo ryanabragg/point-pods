@@ -143,6 +143,7 @@ class Player extends Component {
             icon: <DeleteIcon />,
             action: this.delete,
           }]}
+          disablePortal
         />
       </React.Fragment>
     );

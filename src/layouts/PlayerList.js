@@ -179,6 +179,7 @@ class PlayerList extends Component {
             icon: <SortIcon />,
             action: this.setSort('points'),
           }]}
+          disablePortal
         />
       </React.Fragment>
     );

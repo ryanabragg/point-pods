@@ -1,13 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches the prior snapshot 1`] = `
-<div
-  className="MenuButton-root-37"
->
+<div>
   <button
     aria-haspopup="true"
     aria-owns={null}
-    className="MuiButtonBase-root-63 MuiButton-root-39 MuiButton-text-41 MuiButton-flat-44"
+    className="MuiButtonBase-root-61 MuiButton-root-37 MuiButton-text-39 MuiButton-flat-42"
     disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
@@ -24,25 +22,23 @@ exports[`matches the prior snapshot 1`] = `
     type="button"
   >
     <span
-      className="MuiButton-label-40"
+      className="MuiButton-label-38"
     >
       button
     </span>
     <span
-      className="MuiTouchRipple-root-66"
+      className="MuiTouchRipple-root-64"
     />
   </button>
 </div>
 `;
 
 exports[`matches the prior snapshot 2`] = `
-<div
-  className="MenuButton-root-37"
->
+<div>
   <button
     aria-haspopup="true"
     aria-owns={null}
-    className="MuiButtonBase-root-63 MuiButton-root-39 MuiButton-text-41 MuiButton-flat-44"
+    className="MuiButtonBase-root-61 MuiButton-root-37 MuiButton-text-39 MuiButton-flat-42"
     disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
@@ -59,25 +55,23 @@ exports[`matches the prior snapshot 2`] = `
     type="button"
   >
     <span
-      className="MuiButton-label-40"
+      className="MuiButton-label-38"
     >
       test
     </span>
     <span
-      className="MuiTouchRipple-root-66"
+      className="MuiTouchRipple-root-64"
     />
   </button>
 </div>
 `;
 
 exports[`matches the prior snapshot 3`] = `
-<div
-  className="MenuButton-root-37"
->
+<div>
   <button
     aria-haspopup="true"
     aria-owns={null}
-    className="MuiButtonBase-root-63 MuiButton-root-39 MuiButton-text-41 MuiButton-flat-44 MuiButton-colorInherit-58"
+    className="MuiButtonBase-root-61 MuiButton-root-37 MuiButton-text-39 MuiButton-flat-42 MuiButton-colorInherit-56"
     disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
@@ -94,11 +88,11 @@ exports[`matches the prior snapshot 3`] = `
     type="button"
   >
     <span
-      className="MuiButton-label-40"
+      className="MuiButton-label-38"
     >
       <svg
         aria-hidden="true"
-        className="MuiSvgIcon-root-73"
+        className="MuiSvgIcon-root-71"
         color={undefined}
         focusable="false"
         viewBox="0 0 24 24"
@@ -113,20 +107,18 @@ exports[`matches the prior snapshot 3`] = `
       </svg>
     </span>
     <span
-      className="MuiTouchRipple-root-66"
+      className="MuiTouchRipple-root-64"
     />
   </button>
 </div>
 `;
 
 exports[`matches the prior snapshot 4`] = `
-<div
-  className="MenuButton-root-37"
->
+<div>
   <button
     aria-haspopup="true"
     aria-owns={null}
-    className="MuiButtonBase-root-63 MuiButton-root-39 MuiButton-text-41 MuiButton-flat-44"
+    className="MuiButtonBase-root-61 MuiButton-root-37 MuiButton-text-39 MuiButton-flat-42"
     disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
@@ -143,25 +135,23 @@ exports[`matches the prior snapshot 4`] = `
     type="button"
   >
     <span
-      className="MuiButton-label-40"
+      className="MuiButton-label-38"
     >
       button
     </span>
     <span
-      className="MuiTouchRipple-root-66"
+      className="MuiTouchRipple-root-64"
     />
   </button>
 </div>
 `;
 
 exports[`matches the prior snapshot 5`] = `
-<div
-  className="MenuButton-root-37"
->
+<div>
   <button
     aria-haspopup="true"
     aria-owns={null}
-    className="MuiButtonBase-root-63 MuiButton-root-39 MuiButton-text-41 MuiButton-flat-44"
+    className="MuiButtonBase-root-61 MuiButton-root-37 MuiButton-text-39 MuiButton-flat-42"
     disabled={false}
     onBlur={[Function]}
     onClick={[Function]}
@@ -178,12 +168,12 @@ exports[`matches the prior snapshot 5`] = `
     type="button"
   >
     <span
-      className="MuiButton-label-40"
+      className="MuiButton-label-38"
     >
       button
     </span>
     <span
-      className="MuiTouchRipple-root-66"
+      className="MuiTouchRipple-root-64"
     />
   </button>
 </div>

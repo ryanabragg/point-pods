@@ -18,9 +18,6 @@ const styles = theme => ({
   root: {
     display: 'flex',
   },
-  paper: {
-    marginRight: theme.spacing.unit * 2,
-  },
 });
 
 class MenuButton extends React.Component {
@@ -44,7 +41,7 @@ class MenuButton extends React.Component {
   }
 
   render() {
-    const { classes, buttonType, buttonProps, buttonContent, menuItems } = this.props;
+    const { classes, buttonType, buttonProps, buttonContent, menuItems, disablePortal, paperStyle } = this.props;
     const { open } = this.state;
     let TheButton;
     switch(buttonType) {
@@ -54,47 +51,47 @@ class MenuButton extends React.Component {
     }
 
     return (
-      <div className={classes.root}>
-          <TheButton
-            {...buttonProps}
-            buttonRef={node => this.menuAnchor = node}
-            aria-owns={open ? 'button-menu' : null}
-            aria-haspopup='true'
-            onClick={this.handleToggle}
-          >
-            {buttonContent}
-          </TheButton>
-          <Popper open={open} anchorEl={this.menuAnchor} transition disablePortal>
-            {({ TransitionProps, placement }) => (
-              <Grow
-                {...TransitionProps}
-                id='button-menu'
-                style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-              >
-                <Paper>
-                  <ClickAwayListener onClickAway={this.handleClose}>
-                    <MenuList onClick={this.handleClose}>
-                      {menuItems.map((item, i) => (
-                        <MenuItem key={i}
-                          onClick={this.handleClick(i)}
-                        >
-                          {item.icon && (
-                            <ListItemIcon>
-                              {item.icon}
-                            </ListItemIcon>
-                          )}
-                          {item.icon
-                            ? <ListItemText inset primary={item.label} />
-                            : item.label
-                          }
-                        </MenuItem>
-                      ))}
-                    </MenuList>
-                  </ClickAwayListener>
-                </Paper>
-              </Grow>
-            )}
-          </Popper>
+      <div>
+        <TheButton
+          {...buttonProps}
+          buttonRef={node => this.menuAnchor = node}
+          aria-owns={open ? 'button-menu' : null}
+          aria-haspopup='true'
+          onClick={this.handleToggle}
+        >
+          {buttonContent}
+        </TheButton>
+        <Popper open={open} anchorEl={this.menuAnchor} transition disablePortal={disablePortal}>
+          {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              id='button-menu'
+              style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+            >
+              <Paper className={paperStyle}>
+                <ClickAwayListener onClickAway={this.handleClose}>
+                  <MenuList onClick={this.handleClose}>
+                    {menuItems.map((item, i) => (
+                      <MenuItem key={i}
+                        onClick={this.handleClick(i)}
+                      >
+                        {item.icon && (
+                          <ListItemIcon>
+                            {item.icon}
+                          </ListItemIcon>
+                        )}
+                        {item.icon
+                          ? <ListItemText inset primary={item.label} />
+                          : item.label
+                        }
+                      </MenuItem>
+                    ))}
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+          )}
+        </Popper>
       </div>
     );
   }
@@ -105,6 +102,8 @@ MenuButton.defaultProps = {
   buttonContent: 'button',
   buttonProps: {},
   menuItems: [],
+  disablePortal: false,
+  paperStyle: '',
 }
 
 MenuButton.propTypes = {
@@ -113,6 +112,8 @@ MenuButton.propTypes = {
   buttonContent: PropTypes.node,
   buttonProps: PropTypes.object,
   menuItems: PropTypes.array,
+  disablePortal: PropTypes.bool,
+  paperStyle: PropTypes.string,
 };
 
 export default withStyles(styles)(MenuButton);
