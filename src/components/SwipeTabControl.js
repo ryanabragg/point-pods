@@ -28,17 +28,19 @@ class TabControl extends Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if(prevProps.goToTab !== this.props.goToTab)
-      this.setState({tabIndex: this.props.goToTab || 0});
+      this.handleChangeIndex(this.props.goToTab || 0);
   }
 
   handleChange = (event, value) => {
     this.setState({ tabIndex: value });
+    this.props.onChange(value);
     if(this.props.scrollToTop)
       window.scroll(0, 0);
   };
 
   handleChangeIndex = (index) => {
     this.setState({ tabIndex: index });
+    this.props.onChange(index);
     if(this.props.scrollToTop)
       window.scroll(0, 0);
   };
@@ -76,6 +78,7 @@ class TabControl extends Component {
 TabControl.defaultProps = {
   tabs: [],
   goToTab: 0,
+  onChange: tabIndex => {},
   color: 'primary',
   scrollToTop: true,
   className: '',
@@ -86,6 +89,7 @@ TabControl.propTypes = {
   theme: PropTypes.object.isRequired, // added by withStyles
   tabs: PropTypes.array.isRequired,
   goToTab: PropTypes.number,
+  onChange: PropTypes.func,
   color: PropTypes.string,
   scrollToTop: PropTypes.bool,
   className: PropTypes.string,

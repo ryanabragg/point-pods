@@ -46,3 +46,65 @@ describe('integration', () => {
     expect(component.find(SwipeableViews).find('div').length).toBe(3);
   });
 });
+
+describe('defaults', () => {
+  test('tab index', () => {
+    const wrapper = shallow(
+      <SwipeTabControl 
+        tabs={[
+          {key: 'one', label: 'One'},
+          {key: 'two', label: 'Two'},
+          {key: 'three', label: 'Three'},
+        ]}
+      />
+    );
+    const component = wrapper.dive();
+    expect(component.state('tabIndex')).toBe(0)
+  });
+});
+
+describe('actions', () => {
+  test('goToTab', () => {
+    const wrapper = shallow(
+      <SwipeTabControl 
+        tabs={[
+          {key: 'one', label: 'One'},
+          {key: 'two', label: 'Two'},
+          {key: 'three', label: 'Three'},
+        ]}
+        goToTab={1}
+      />
+    );
+    const component = wrapper.dive();
+    expect(component.state('tabIndex')).toBe(1);
+    component.setProps({
+      goToTab: 2
+    });
+    expect(component.state('tabIndex')).toBe(2);
+  });
+
+  test('onChange', () => {
+    const spy = jest.fn();
+    const wrapper = shallow(
+      <SwipeTabControl 
+        tabs={[
+          {key: 'one', label: 'One'},
+          {key: 'two', label: 'Two'},
+          {key: 'three', label: 'Three'},
+        ]}
+        onChange={spy}
+      />
+    );
+    const component = wrapper.dive();
+    component.setProps({
+      goToTab: 2
+    });
+    expect(spy.mock.calls[0][0]).toBe(2);
+    expect(component.find(Tabs).prop('onChange')).toEqual(component.instance().handleChange);
+    component.instance().handleChange({}, 1);
+    expect(spy.mock.calls[1][0]).toBe(1);
+    expect(component.find(SwipeableViews).prop('onChangeIndex')).toEqual(component.instance().handleChangeIndex);
+    component.instance().handleChangeIndex(0);
+    expect(spy.mock.calls[2][0]).toBe(0);
+  })
+});
