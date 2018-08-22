@@ -2,252 +2,300 @@
 
 exports[`matches the prior snapshot 1`] = `
 <div>
-  <div
-    className="MuiToolbar-root-140 MuiToolbar-regular-142 MuiToolbar-gutters-141"
-  >
-    <h1
-      className="MuiTypography-root-144 MuiTypography-headline-149"
-    >
-      Add Players
-    </h1>
-    <p
-      className="MuiTypography-root-144 MuiTypography-body1-153"
-    />
-    <button
-      aria-haspopup="true"
-      aria-label="Players Menu"
-      aria-owns={null}
-      className="MuiButtonBase-root-193 MuiButton-root-169 MuiButton-text-171 MuiButton-flat-174 APIComponent-right-137"
-      disabled={false}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex="0"
-      type="button"
-    >
-      <span
-        className="MuiButton-label-170"
-      >
-        0 Players
-      </span>
-      <span
-        className="MuiTouchRipple-root-196"
-      />
-    </button>
-  </div>
-  <div
-    className="APIComponent-addPlayer-138"
+  <header
+    className="MuiPaper-root-102 MuiPaper-elevation4-108 MuiAppBar-root-94 MuiAppBar-positionSticky-97"
   >
     <div
-      className="IntegrationAutosuggest-root-207"
+      className="css-10nd86i TournamentParticipants-margined-93"
+      id={undefined}
+      onKeyDown={[Function]}
     >
       <div
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-owns="react-autowhatever-1"
-        className="IntegrationAutosuggest-container-208"
-        role="combobox"
+        aria-describedby={undefined}
+        className="MuiFormControl-root-143 MuiFormControl-fullWidth-146"
       >
+        
         <div
-          aria-describedby={undefined}
-          className="MuiFormControl-root-212 MuiFormControl-fullWidth-215"
+          className="MuiInput-root-147 MuiInput-fullWidth-154 MuiInput-formControl-148 MuiInput-underline-151"
         >
           <div
-            aria-activedescendant={null}
-            aria-autocomplete="list"
-            aria-controls="react-autowhatever-1"
-            className="MuiInput-root-216 MuiInput-fullWidth-223 MuiInput-formControl-217 MuiInput-underline-220"
-            style={Object {}}
+            aria-invalid={false}
+            autoComplete={undefined}
+            autoFocus={undefined}
+            className="MuiInput-input-155 IntegrationReactSelect-input-130"
+            defaultValue={undefined}
+            disabled={false}
+            id={undefined}
+            name={undefined}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
+            placeholder={undefined}
+            readOnly={undefined}
+            required={false}
+            rows={undefined}
+            type="text"
+            value={undefined}
           >
-            <input
-              aria-invalid={false}
-              autoComplete="off"
-              autoFocus={undefined}
-              className="MuiInput-input-224"
-              defaultValue={undefined}
-              disabled={false}
-              id={undefined}
-              name={undefined}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={undefined}
-              placeholder="Add a player"
-              readOnly={undefined}
-              required={false}
-              rows={undefined}
-              type="text"
-              value=""
-            />
+            <div
+              className="IntegrationReactSelect-valueContainer-131"
+            >
+              <p
+                className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 IntegrationReactSelect-placeholder-136"
+              >
+                Select player to add
+              </p>
+              <div
+                className="css-1hrkh7z"
+              >
+                <div
+                  className=""
+                  style={
+                    Object {
+                      "display": "inline-block",
+                    }
+                  }
+                >
+                  <input
+                    aria-autocomplete="list"
+                    aria-label="add-player"
+                    aria-labelledby={undefined}
+                    autoCapitalize="none"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    className={undefined}
+                    disabled={false}
+                    id="react-select-3-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    spellCheck="false"
+                    style={
+                      Object {
+                        "background": 0,
+                        "border": 0,
+                        "boxSizing": "content-box",
+                        "color": "inherit",
+                        "fontSize": "inherit",
+                        "opacity": 1,
+                        "outline": 0,
+                        "padding": 0,
+                        "width": "1px",
+                      }
+                    }
+                    tabIndex="0"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "scroll",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  >
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="css-1wy0on6"
+            >
+              <span
+                className="css-d8oujb"
+              />
+              <div
+                aria-hidden="true"
+                className="css-1ep9fjw"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="css-19bqh2r"
+                  focusable="false"
+                  height={20}
+                  viewBox="0 0 20 20"
+                  width={20}
+                >
+                  <path
+                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
-        <div
-          className="MuiPaper-root-229 MuiPaper-elevation2-233"
-          id="react-autowhatever-1"
-          role="listbox"
-          style={Object {}}
-        />
       </div>
-      <button
-        className="MuiButtonBase-root-193 MuiIconButton-root-256 MuiIconButton-colorInherit-257"
-        disabled={false}
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-      >
-        <span
-          className="MuiIconButton-label-261"
-        >
-          <svg
-            aria-hidden="true"
-            className="MuiSvgIcon-root-262"
-            color={undefined}
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-            />
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-          </svg>
-        </span>
-        <span
-          className="MuiTouchRipple-root-196"
-        />
-      </button>
     </div>
-  </div>
-  <div
-    className="APIComponent-list-139"
-  >
-    <ul
-      className="MuiList-root-269 MuiList-padding-270"
-    />
-  </div>
+  </header>
+  <ul
+    className="MuiList-root-139 MuiList-padding-140"
+  />
 </div>
 `;
 
 exports[`matches the prior snapshot 2`] = `
 <div>
-  <div
-    className="MuiToolbar-root-140 MuiToolbar-regular-142 MuiToolbar-gutters-141"
-  >
-    <h1
-      className="MuiTypography-root-144 MuiTypography-headline-149"
-    >
-      Add Players
-    </h1>
-    <p
-      className="MuiTypography-root-144 MuiTypography-body1-153"
-    />
-    <button
-      aria-haspopup="true"
-      aria-label="Players Menu"
-      aria-owns={null}
-      className="MuiButtonBase-root-193 MuiButton-root-169 MuiButton-text-171 MuiButton-flat-174 APIComponent-right-137"
-      disabled={false}
-      onBlur={[Function]}
-      onClick={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchMove={[Function]}
-      onTouchStart={[Function]}
-      tabIndex="0"
-      type="button"
-    >
-      <span
-        className="MuiButton-label-170"
-      >
-        0 Players
-      </span>
-      <span
-        className="MuiTouchRipple-root-196"
-      />
-    </button>
-  </div>
-  <div
-    className="APIComponent-addPlayer-138"
+  <header
+    className="MuiPaper-root-102 MuiPaper-elevation4-108 MuiAppBar-root-94 MuiAppBar-positionSticky-97"
   >
     <div
-      className="IntegrationAutosuggest-root-207"
+      className="css-10nd86i TournamentParticipants-margined-93"
+      id={undefined}
+      onKeyDown={[Function]}
     >
       <div
-        aria-expanded={false}
-        aria-haspopup="listbox"
-        aria-owns="react-autowhatever-1"
-        className="IntegrationAutosuggest-container-208"
-        role="combobox"
+        aria-describedby={undefined}
+        className="MuiFormControl-root-143 MuiFormControl-fullWidth-146"
       >
+        
         <div
-          aria-describedby={undefined}
-          className="MuiFormControl-root-212 MuiFormControl-fullWidth-215"
+          className="MuiInput-root-147 MuiInput-fullWidth-154 MuiInput-formControl-148 MuiInput-underline-151"
         >
           <div
-            aria-activedescendant={null}
-            aria-autocomplete="list"
-            aria-controls="react-autowhatever-1"
-            className="MuiInput-root-216 MuiInput-fullWidth-223 MuiInput-formControl-217 MuiInput-underline-220"
-            style={Object {}}
+            aria-invalid={false}
+            autoComplete={undefined}
+            autoFocus={undefined}
+            className="MuiInput-input-155 IntegrationReactSelect-input-130"
+            defaultValue={undefined}
+            disabled={false}
+            id={undefined}
+            name={undefined}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
+            placeholder={undefined}
+            readOnly={undefined}
+            required={false}
+            rows={undefined}
+            type="text"
+            value={undefined}
           >
-            <input
-              aria-invalid={false}
-              autoComplete="off"
-              autoFocus={undefined}
-              className="MuiInput-input-224"
-              defaultValue={undefined}
-              disabled={false}
-              id={undefined}
-              name={undefined}
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onKeyUp={undefined}
-              placeholder="Add a player"
-              readOnly={undefined}
-              required={false}
-              rows={undefined}
-              type="text"
-              value=""
-            />
+            <div
+              className="IntegrationReactSelect-valueContainer-131"
+            >
+              <p
+                className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 IntegrationReactSelect-placeholder-136"
+              >
+                Select player to add
+              </p>
+              <div
+                className="css-1hrkh7z"
+              >
+                <div
+                  className=""
+                  style={
+                    Object {
+                      "display": "inline-block",
+                    }
+                  }
+                >
+                  <input
+                    aria-autocomplete="list"
+                    aria-label="add-player"
+                    aria-labelledby={undefined}
+                    autoCapitalize="none"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    className={undefined}
+                    disabled={false}
+                    id="react-select-3-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    spellCheck="false"
+                    style={
+                      Object {
+                        "background": 0,
+                        "border": 0,
+                        "boxSizing": "content-box",
+                        "color": "inherit",
+                        "fontSize": "inherit",
+                        "opacity": 1,
+                        "outline": 0,
+                        "padding": 0,
+                        "width": "1px",
+                      }
+                    }
+                    tabIndex="0"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "scroll",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  >
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="css-1wy0on6"
+            >
+              <span
+                className="css-d8oujb"
+              />
+              <div
+                aria-hidden="true"
+                className="css-1ep9fjw"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="css-19bqh2r"
+                  focusable="false"
+                  height={20}
+                  viewBox="0 0 20 20"
+                  width={20}
+                >
+                  <path
+                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
-        <div
-          className="MuiPaper-root-229 MuiPaper-elevation2-233"
-          id="react-autowhatever-1"
-          role="listbox"
-          style={Object {}}
-        />
       </div>
+    </div>
+  </header>
+  <ul
+    className="MuiList-root-139 MuiList-padding-140"
+  >
+    <li
+      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      disabled={false}
+    >
       <button
-        className="MuiButtonBase-root-193 MuiIconButton-root-256 MuiIconButton-colorInherit-257"
+        aria-label="Reinstate Player"
+        className="MuiButtonBase-root-201 MuiIconButton-root-195"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -264,11 +312,11 @@ exports[`matches the prior snapshot 2`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-261"
+          className="MuiIconButton-label-200"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-262"
+            className="MuiSvgIcon-root-204"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -283,17 +331,591 @@ exports[`matches the prior snapshot 2`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-196"
+          className="MuiTouchRipple-root-211"
         />
       </button>
-    </div>
-  </div>
-  <div
-    className="APIComponent-list-139"
+      <div
+        className="MuiListItemText-root-218"
+      >
+        <span
+          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+        >
+          test0
+        </span>
+        <p
+          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+        >
+          Dropped
+        </p>
+      </div>
+    </li>
+    <li
+      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      disabled={false}
+    >
+      <button
+        aria-label="Remove Player"
+        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label-200"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-204"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root-211"
+        />
+      </button>
+      <div
+        className="MuiListItemText-root-218"
+      >
+        <span
+          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+        >
+          test1
+        </span>
+        <p
+          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+        >
+          Points: 1
+        </p>
+      </div>
+    </li>
+    <li
+      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      disabled={false}
+    >
+      <button
+        aria-label="Remove Player"
+        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label-200"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-204"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root-211"
+        />
+      </button>
+      <div
+        className="MuiListItemText-root-218"
+      >
+        <span
+          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+        >
+          test2
+        </span>
+        <p
+          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+        >
+          Points: 2
+        </p>
+      </div>
+    </li>
+    <li
+      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      disabled={false}
+    >
+      <button
+        aria-label="Remove Player"
+        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label-200"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-204"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root-211"
+        />
+      </button>
+      <div
+        className="MuiListItemText-root-218"
+      >
+        <span
+          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+        >
+          test3
+        </span>
+        <p
+          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+        >
+          Points: 0
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`matches the prior snapshot 3`] = `
+<div>
+  <header
+    className="MuiPaper-root-102 MuiPaper-elevation4-108 MuiAppBar-root-94 MuiAppBar-positionSticky-97"
   >
-    <ul
-      className="MuiList-root-269 MuiList-padding-270"
-    />
-  </div>
+    <div
+      className="css-10nd86i TournamentParticipants-margined-93"
+      id={undefined}
+      onKeyDown={[Function]}
+    >
+      <div
+        aria-describedby={undefined}
+        className="MuiFormControl-root-143 MuiFormControl-fullWidth-146"
+      >
+        
+        <div
+          className="MuiInput-root-147 MuiInput-fullWidth-154 MuiInput-formControl-148 MuiInput-underline-151"
+        >
+          <div
+            aria-invalid={false}
+            autoComplete={undefined}
+            autoFocus={undefined}
+            className="MuiInput-input-155 IntegrationReactSelect-input-130"
+            defaultValue={undefined}
+            disabled={false}
+            id={undefined}
+            name={undefined}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={undefined}
+            onKeyUp={undefined}
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
+            placeholder={undefined}
+            readOnly={undefined}
+            required={false}
+            rows={undefined}
+            type="text"
+            value={undefined}
+          >
+            <div
+              className="IntegrationReactSelect-valueContainer-131"
+            >
+              <p
+                className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 IntegrationReactSelect-placeholder-136"
+              >
+                Select player to add
+              </p>
+              <div
+                className="css-1hrkh7z"
+              >
+                <div
+                  className=""
+                  style={
+                    Object {
+                      "display": "inline-block",
+                    }
+                  }
+                >
+                  <input
+                    aria-autocomplete="list"
+                    aria-label="add-player"
+                    aria-labelledby={undefined}
+                    autoCapitalize="none"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    className={undefined}
+                    disabled={false}
+                    id="react-select-3-input"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    spellCheck="false"
+                    style={
+                      Object {
+                        "background": 0,
+                        "border": 0,
+                        "boxSizing": "content-box",
+                        "color": "inherit",
+                        "fontSize": "inherit",
+                        "opacity": 1,
+                        "outline": 0,
+                        "padding": 0,
+                        "width": "1px",
+                      }
+                    }
+                    tabIndex="0"
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    style={
+                      Object {
+                        "height": 0,
+                        "left": 0,
+                        "overflow": "scroll",
+                        "position": "absolute",
+                        "top": 0,
+                        "visibility": "hidden",
+                        "whiteSpace": "pre",
+                      }
+                    }
+                  >
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="css-1wy0on6"
+            >
+              <span
+                className="css-d8oujb"
+              />
+              <div
+                aria-hidden="true"
+                className="css-1ep9fjw"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="css-19bqh2r"
+                  focusable="false"
+                  height={20}
+                  viewBox="0 0 20 20"
+                  width={20}
+                >
+                  <path
+                    d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <ul
+    className="MuiList-root-139 MuiList-padding-140"
+  >
+    <li
+      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      disabled={false}
+    >
+      <button
+        aria-label="Reinstate Player"
+        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label-200"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-204"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root-211"
+        />
+      </button>
+      <div
+        className="MuiListItemText-root-218"
+      >
+        <span
+          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+        >
+          test0
+        </span>
+        <p
+          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+        >
+          Dropped
+        </p>
+      </div>
+    </li>
+    <li
+      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      disabled={false}
+    >
+      <button
+        aria-label="Remove Player"
+        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label-200"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-204"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root-211"
+        />
+      </button>
+      <div
+        className="MuiListItemText-root-218"
+      >
+        <span
+          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+        >
+          test1
+        </span>
+        <p
+          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+        >
+          Points: 1
+        </p>
+      </div>
+    </li>
+    <li
+      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      disabled={false}
+    >
+      <button
+        aria-label="Remove Player"
+        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label-200"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-204"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root-211"
+        />
+      </button>
+      <div
+        className="MuiListItemText-root-218"
+      >
+        <span
+          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+        >
+          test2
+        </span>
+        <p
+          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+        >
+          Points: 2
+        </p>
+      </div>
+    </li>
+    <li
+      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      disabled={false}
+    >
+      <button
+        aria-label="Remove Player"
+        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
+        type="button"
+      >
+        <span
+          className="MuiIconButton-label-200"
+        >
+          <svg
+            aria-hidden="true"
+            className="MuiSvgIcon-root-204"
+            color={undefined}
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+        <span
+          className="MuiTouchRipple-root-211"
+        />
+      </button>
+      <div
+        className="MuiListItemText-root-218"
+      >
+        <span
+          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+        >
+          test3
+        </span>
+        <p
+          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+        >
+          Points: 0
+        </p>
+      </div>
+    </li>
+  </ul>
 </div>
 `;

@@ -3,19 +3,21 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
+import ListItem from '@material-ui/core/ListItem';
+import IconButton from '@material-ui/core/IconButton';
+
 import TournamentParticipants from './TournamentParticipants';
-import IntegrationAutosuggest from './IntegrationAutosuggest';
+import Select from './Select';
 
-import api from '../api';
+import { testPlayers, testTournaments } from '../testData';
 
-import { testPlayers, testTournaments, mockStorage, mockAPI, demockAPI, mockRoute } from '../testData';
-
-beforeEach(() => {
-  mockAPI(api, mockStorage);
-  mockRoute.history.push.mockClear();
-  mockRoute.history.replace.mockClear();
+const playerSort = jest.fn((a, b) => {
+  if(a.name < b.name)
+    return -1;
+  else if(a.name > b.name)
+    return 1;
+  return 0;
 });
-afterEach(() => demockAPI(api));
 
 test('renders without crashing', () => {
   const div = document.createElement('div');
@@ -23,122 +25,97 @@ test('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-test('matches the prior snapshot', (done) => {
+test('matches the prior snapshot', () => {
   const component = renderer.create(<TournamentParticipants />);
   expect(component.toJSON()).toMatchSnapshot();
-  component.update(<TournamentParticipants id='mock0' />);
-  setTimeout(() => {
-    try {
-      expect(component.toJSON()).toMatchSnapshot();
-      done();
-    } catch (error) {
-      done.fail(error);
-    }
-  }, 100);
-});
-
-test('is a HOC-ed component', () => {
-  const component = shallow(<TournamentParticipants id='mock0' />);
-  expect(component.type().prototype.constructor.name).toBe('APIComponent');
-  expect(component.dive().type().prototype.constructor.name).toBe('TournamentParticipants');
-});
-
-describe('default values', () => {
-  test('loads the state', (done) => {
-    const component = shallow(<TournamentParticipants id='mock1' />);
-    const unHOC = component.dive().dive();
-    setTimeout(() => {
-      try {
-        expect(unHOC.state('id')).toBe(testTournaments[1].id);
-        expect(unHOC.state('players')).toEqual(testPlayers);
-        expect(unHOC.state('participants')).toEqual(testTournaments[1].players);
-        done();
-      } catch (error) {
-        done.fail(error);
-      }
-    }, 100);
-  });
+  component.update(
+    <TournamentParticipants
+      players={testTournaments[0].players}
+      allPlayers={testPlayers}
+    />
+  );
+  expect(component.toJSON()).toMatchSnapshot();
+  component.update(
+    <TournamentParticipants
+      players={testTournaments[0].players}
+      allPlayers={testPlayers}
+      sort={playerSort}
+    />
+  );
+  expect(component.toJSON()).toMatchSnapshot();
 });
 
 describe('actions', () => {
-  test('adding a player', (done) => {
-    const ignoreVariance = player => ({
-      id: player.id,
-      name: player.name,
-    });
-    const playerSort = (a, b) => {
-      if(a.name < b.name)
-        return -1;
-      else if(a.name > b.name)
-        return 1;
-      return 0;
-    };
-    let players = testTournaments[0].players.map(ignoreVariance);
-    const spy = jest.fn((m, v, d, c) => null);
-    const component = shallow(<TournamentParticipants id='mock0' notification={spy} />);
-    const unHOC = component.dive().dive();
-    expect(unHOC.find(IntegrationAutosuggest).prop('onSelect')).toEqual(unHOC.instance().handleSelect);
-    let nextPlayer = {
-      id: testPlayers[8].id,
-      name: testPlayers[8].name,
-    };
-    setTimeout(() => {
-      unHOC.instance().handleSelect({
-        id: nextPlayer.id,
-        label: nextPlayer.name,
-      }).then(() => {
-        try {
-          players.push(nextPlayer);
-          expect(testTournaments[0].players.map(ignoreVariance)).toEqual(players.sort(playerSort));
-          expect(unHOC.state('participants')).toEqual(testTournaments[0].players);
-          expect(spy.mock.calls[0][0]).toBe(`Added player ${nextPlayer.name}`);
-          expect(spy.mock.calls[0][1]).toBe(`info`);
-          done();
-        } catch (error) {
-          done.fail(error);
-        }
-      });
-    }, 100);
+  test('adding a player', () => {
+    const spy = jest.fn();
+    const HOC = shallow(
+      <TournamentParticipants
+        players={testTournaments[0].players}
+        allPlayers={testPlayers}
+        handleSelectPlayer={spy}
+      />
+    );
+    const component = HOC.dive();
+    expect(component.find(Select).prop('onChange')).toEqual(component.instance().handleSelect);
+    component.instance().handleSelect(testPlayers[8], 'test');
+    expect(spy.mock.calls[0][0]).toBe(testPlayers[8]);
+    expect(spy.mock.calls[0][1]).toBe('test');
   });
 
-  test('adding a new player', (done) => {
-    const ignoreVariance = player => ({
-      id: player.id,
-      name: player.name,
-    });
-    const playerSort = (a, b) => {
-      if(a.name < b.name)
-        return -1;
-      else if(a.name > b.name)
-        return 1;
-      return 0;
-    };
-    let players = testTournaments[0].players.map(ignoreVariance);
-    const spy = jest.fn((m, v, d, c) => null);
-    const component = shallow(<TournamentParticipants id='mock0' notification={spy} />);
-    const unHOC = component.dive().dive();
-    expect(unHOC.find(IntegrationAutosuggest).prop('onSelect')).toEqual(unHOC.instance().handleSelect);
-    let nextPlayer = {
-      id: null,
-      name: 'new player',
-    };
-    setTimeout(() => {
-      unHOC.instance().handleSelect({
-        id: nextPlayer.id,
-        label: nextPlayer.name,
-      }).then(() => {
-        try {
-          nextPlayer = testPlayers.map(ignoreVariance)[testPlayers.length - 1];
-          players.push(nextPlayer);
-          expect(testTournaments[0].players.map(ignoreVariance)).toEqual(players.sort(playerSort));
-          expect(unHOC.state('participants')).toEqual(testTournaments[0].players);
-          expect(spy.mock.calls[0][0]).toBe(`Created player ${nextPlayer.name}`);
-          expect(spy.mock.calls[0][1]).toBe(`info`);
-          done();
-        } catch (error) {
-          done.fail(error);
-        }
-      });
-    }, 100);
+  test('adding a new player', () => {
+    const spy = jest.fn();
+    const HOC = shallow(
+      <TournamentParticipants
+        players={testTournaments[0].players}
+        allPlayers={testPlayers}
+        handleSelectCreatePlayer={spy}
+      />
+    );
+    const component = HOC.dive();
+    expect(component.find(Select).prop('onCreateOption')).toEqual(component.instance().handleCreate);
+    component.instance().handleCreate('testing');
+    expect(spy.mock.calls[0][0]).toBe('testing');
+  });
+
+  test('removing a player (non-participating)', () => {
+    const spy = jest.fn();
+    const HOC = shallow(
+      <TournamentParticipants
+        players={testTournaments[0].players}
+        allPlayers={testPlayers}
+        handleRemovePlayer={spy}
+      />
+    );
+    const component = HOC.dive();
+    component.find(ListItem).at(3).find(IconButton).simulate('click');
+    expect(spy.mock.calls[0][0]).toBe(testTournaments[0].players[3].id);
+  });
+
+  test('removing a player (drop participant)', () => {
+    const spy = jest.fn();
+    const HOC = shallow(
+      <TournamentParticipants
+        players={testTournaments[0].players}
+        allPlayers={testPlayers}
+        handleRemovePlayer={spy}
+      />
+    );
+    const component = HOC.dive();
+    component.find(ListItem).at(2).find(IconButton).simulate('click');
+    expect(spy.mock.calls[0][0]).toBe(testTournaments[0].players[2].id);
+  });
+
+  test('reinstating a player (un-drop)', () => {
+    const spy = jest.fn();
+    const HOC = shallow(
+      <TournamentParticipants
+        players={testTournaments[0].players}
+        allPlayers={testPlayers}
+        handleUnDropPlayer={spy}
+      />
+    );
+    const component = HOC.dive();
+    component.find(ListItem).at(0).find(IconButton).simulate('click');
+    expect(spy.mock.calls[0][0]).toBe(testTournaments[0].players[0].id);
   });
 });

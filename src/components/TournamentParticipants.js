@@ -3,226 +3,146 @@ import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
 
-import Toolbar from '@material-ui/core/Toolbar';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import AppBar from '@material-ui/core/AppBar';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 
 import AddIcon from '@material-ui/icons/Add';
 import ClearIcon from '@material-ui/icons/Clear';
+import DeleteIcon from '@material-ui/icons/Delete';
 
-import IntegrationAutosuggest from '../components/IntegrationAutosuggest';
-
-import { withAPI } from '../api';
+import Select from '../components/Select';
 
 const styles = theme => ({
-  right: {
-    marginLeft: 'auto',
-  },
-  addPlayer: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'nowrap',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  list: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    '& > ul': {
-      width: '100%',
-      maxWidth: 420,
-    },
+  margined: {
     margin: theme.spacing.unit,
-    bottom: 0,
   },
 });
 
 class TournamentParticipants extends Component {
   state = {
-    menuAnchor: null,
-    id: null,
-    players: [],
-    participants: [],
+    value: null,
   };
 
-  componentDidMount() {
-    if(!this.props.id && this.props.id !== 0)
-      return;
-    let loadState = { id: this.props.id };
-    this.props.api.Tournaments.get(this.props.id)
-      .catch(error => {
-        this.props.notification(error.message, 'error');
-      })
-      .then(tournament => loadState.participants = tournament.players || [])
-      .then(() => this.props.api.Players.all())
-      .then(list => loadState.players = list || [])
-      .catch(error => {
-        this.props.notification(error.message, 'error');
-      })
-      .then(() => this.setState(loadState));
-  }
-
-  handleToggleMenu = (show) => event => {
-    const value = event ? event.currentTarget : null;
-    this.setState({ menuAnchor: show ? value : null });
+  handleSetValue = (key) => (value) => {
+    this.setState({[key]: value});
   };
 
-  handleSelect = ({ id, label }) => {
-    if(!label.length || this.state.id === null)
-      return;
-    let created = false;
-    return new Promise((resolve, reject) => {
-      const found = this.state.players.filter(player => player.id === id);
-      if(id === null || !found.length)
-        return reject('Player record not found');
-      resolve(found[0]);
-    })
-      .catch(error => 
-        this.props.api.Players.set({name: label})
-        .then(player => {
-          created = true;
-          this.setState({ players: this.state.players.concat(player) });
-          return player;
-        })
-      )
-      .then(player => {
-        const added = this.state.participants.filter(p => p.id === player.id);
-        if(added.length)
-          throw new Error('Player already added');
-        let message = `${created ? 'Created' : 'Added'} player ${player.name}`;
-        this.props.notification(message, 'info');
-        return this.state.participants.concat(player).map(player => ({
-          id: player.id,
-          name: player.name,
-          points: 0,
-        })).sort((a, b) => {
-          if(a.name < b.name)
-            return -1;
-          else if(a.name > b.name)
-            return 1;
-          return 0;
-        });
-      })
-      .then(participants => {
-        return this.props.api.Tournaments.set({
-          id: this.state.id,
-          players: participants,
-        })
-        .then(tournament => {
-          this.setState({ participants: participants });
-        });
-      })
-      .catch(error => {
-        this.props.notification(error.message, 'error');
-      });
+  handleSelect = (selected, action) => {
+    this.props.handleSelectPlayer(selected, action);
+    this.setState({value: ''});
   };
 
-  removeParticipant = event => {
-    if(this.state.id === null)
-      return;
-    const id = event.currentTarget.id;
-    const participants = this.state.participants.filter(p => String(p.id) !== id);
-    this.props.api.Tournaments.set({
-      id: this.state.id,
-      players: participants,
-    })
-      .then(() => {
-        this.setState({
-          participants: participants,
-        });
-      });
+  handleCreate = (name) => {
+    this.props.handleSelectCreatePlayer(name);
+    this.setState({value: ''});
   };
 
-  removeAllParticipants = event => {
-    if(this.state.id === null)
-      return;
-    this.props.api.Tournaments.set({
-      id: this.state.id,
-      players: [],
-    })
-      .then(() => {
-        this.setState({
-          menuAnchor: null,
-          participants: [],
-        });
-      });
+  handleRemove = (id) => () => {
+    this.props.handleRemovePlayer(id);
+  };
+
+  handleReinstate = (id) => () => {
+    this.props.handleUnDropPlayer(id);
   };
 
   render() {
-    const { classes } = this.props;
-    const { menuAnchor, id, players, participants} = this.state;
+    const {
+      classes,
+      sync,
+      players,
+      allPlayers,
+      sort,
+    } = this.props;
+    const { value } = this.state;
+    const participants = players.reduce((a, v, i, s) => a.concat(v.id), []);
+    const playerOptions = allPlayers.map(p => (
+      Object.assign({}, p, {disabled: participants.includes(p.id)})
+    )).sort(sort);
     return (
       <div>
-        <Toolbar>
-          <Typography variant='headline'>
-            Add Players
-          </Typography>
-          <Typography>
-          </Typography>
-          <Button className={classes.right}
-            aria-label='Players Menu'
-            aria-owns={menuAnchor ? 'players-menu' : null}
-            aria-haspopup='true'
-            onClick={this.handleToggleMenu(true)}
-          >
-            {`${participants.length} Player${participants.length === 1 ? '' : 's'}`}
-          </Button>
-          <Menu
-            id='players-menu'
-            anchorEl={menuAnchor}
-            open={Boolean(menuAnchor)}
-            onClose={this.handleToggleMenu(false)}
-          >
-            <MenuItem onClick={this.removeAllParticipants}>Remove All</MenuItem>
-          </Menu>
-        </Toolbar>
-        <div className={classes.addPlayer}>
-          <IntegrationAutosuggest
-            items={players
-              .filter(player => -1 === participants.findIndex(p => p.id === player.id))
-              .map(p => ({ id: p.id, label: p.name }))
-            }
-            onSelect={this.handleSelect}
-            clearOnSelect={true}
-            buttonIcon={<AddIcon />}
+        <AppBar position='sticky' color='inherit'>
+          <Select
+            aria-label='add-player'
+            isCreatable
+            isClearable
+            isDisabled={sync}
+            isLoading={sync}
+            placeholder='Select player to add'
+            onChange={this.handleSelect}
+            onCreateOption={this.handleCreate}
+            isValidNewOption={(inputValue, selectValue, selectOptions) => !(
+              !inputValue ||
+              selectValue.some(option => inputValue.toLowerCase() === option.name.toLowerCase()) ||
+              selectOptions.some(option => inputValue.toLowerCase() === option.name.toLowerCase())
+            )}
+            getNewOptionData={(inputValue, optionLabel) => ({
+              name: inputValue,
+              points: 0,
+              participated: false,
+              dropped: false,
+            })}
+            formatCreateLabel={inputValue => `Create player ${inputValue}`}
+            options={playerOptions}
+            getOptionLabel={option => option.name}
+            getOptionValue={option => option.id}
+            isOptionDisabled={option => option.disabled}
+            value={value}
+            onInputChange={this.handleSetValue('value')}
+            className={classes.margined}
           />
-        </div>
-        <div className={classes.list}>
-          <List>
-            {participants.map(player => (
-              <ListItem key={player.id}>
-                <IconButton aria-label='Remove Player' id={player.id} onClick={this.removeParticipant}>
-                  <ClearIcon />
-                </IconButton>
-                <ListItemText primary={player.name} secondary={`Points: ${player.points}`}/>
-              </ListItem>
-            ))}
-          </List>
-        </div>
+        </AppBar>
+        <List>
+          {players.sort(sort).map(player => {
+            let { id, name, points, participated, dropped } = player;
+            return (
+            <ListItem key={id}>
+              {dropped
+                ? (
+                  <IconButton aria-label='Reinstate Player' onClick={this.handleReinstate(id)}>
+                    <AddIcon />
+                  </IconButton>
+                )
+                : (
+                  <IconButton aria-label='Remove Player' onClick={this.handleRemove(id)}>
+                    {participated ? <ClearIcon /> : <DeleteIcon />}
+                  </IconButton>
+                )
+              }
+              <ListItemText primary={name} secondary={dropped ? 'Dropped' : `Points: ${points}`} />
+            </ListItem>
+            );
+          })}
+        </List>
       </div>
     );
   }
 }
 
 TournamentParticipants.defaultProps = {
-  notification: (message, variant, duration, onClose) => null,
+  sync: false,
+  players: [],
+  allPlayers: [],
+  sort: (a, b) => 0,
+  handleSelectPlayer: (selected, action) => {},
+  handleSelectCreatePlayer: (name) => {},
+  handleRemovePlayer: (id) => {},
+  handleUnDropPlayer: (id) => {},
 };
 
 TournamentParticipants.propTypes = {
-  api: PropTypes.object.isRequired, // added by withAPI
   classes: PropTypes.object.isRequired, // added by withStyles
-  id: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
-  notification: PropTypes.func,
+  sync: PropTypes.bool,
+  players: PropTypes.array,
+  allPlayers: PropTypes.array,
+  sort: PropTypes.func,
+  handleSelectPlayer: PropTypes.func,
+  handleSelectCreatePlayer: PropTypes.func,
+  handleRemovePlayer: PropTypes.func,
+  handleUnDropPlayer: PropTypes.func,
 };
 
-export default withStyles(styles, { withTheme: true })(withAPI(TournamentParticipants));
+export default withStyles(styles, { withTheme: true })(TournamentParticipants);
