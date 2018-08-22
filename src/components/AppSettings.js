@@ -12,6 +12,15 @@ import TextField from '@material-ui/core/TextField';
 
 const styles = theme => ({
   root: {
+    margin: theme.spacing.unit,
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-evenly',
+    alignItems: 'flex-start',
+  },
+  card: {
+    overflow: 'visible',
     maxWidth: theme.breakpoints.values['sm'],
   },
   content: {
@@ -68,60 +77,62 @@ class AppSettings extends Component {
       pairingMethods,
     } = this.state;
     return (
-      <Card className={classes.root}>
-        <CardHeader
-          title='Pod Setup'
-        />
-        <Divider />
-        <CardContent className={classes.content}>
-          <TextField className={classes.field}
-            margin="dense"
-            id="settings-pairingMethod"
-            label="Pairing Method"
-            type="text"
-            value={pairingMethod}
-            onChange={this.handleInputChange('pairingMethod')}
-            select
-          >
-            {pairingMethods.map(method => (
-              <option key={method.value} value={method.value}>
-                {method.label}
-              </option>
-            ))}
-          </TextField>
-          <TextField className={classes.field}
-            margin="dense"
-            id="settings-pairingMethodInitial"
-            label="Initial Pairing Method"
-            type="text"
-            value={pairingMethodInitial}
-            onChange={this.handleInputChange('pairingMethodInitial')}
-            select
-          >
-            {pairingMethods.map(method => (
-              <option key={method.value} value={method.value}>
-                {method.label}
-              </option>
-            ))}
-          </TextField>
-          <TextField className={classes.field}
-            margin="dense"
-            id="settings-podSizeMinimum"
-            label="Minimum Pod Size"
-            type="number"
-            value={podSizeMinimum}
-            onChange={this.handleInputChange('podSizeMinimum')}
+      <div className={classes.root}>
+        <Card className={classes.card}>
+          <CardHeader
+            title='Pod Setup'
           />
-          <TextField className={classes.field}
-            margin="dense"
-            id="settings-podSizeMaximum"
-            label="Maximum Pod Size"
-            type="number"
-            value={podSizeMaximum}
-            onChange={this.handleInputChange('podSizeMaximum')}
-          />
-        </CardContent>
-      </Card>
+          <Divider />
+          <CardContent className={classes.content}>
+            <TextField className={classes.field}
+              margin="dense"
+              id="settings-pairingMethod"
+              label="Pairing Method"
+              type="text"
+              value={pairingMethod}
+              onChange={this.handleInputChange('pairingMethod')}
+              select
+            >
+              {pairingMethods.map(method => (
+                <option key={method.value} value={method.value}>
+                  {method.label}
+                </option>
+              ))}
+            </TextField>
+            <TextField className={classes.field}
+              margin="dense"
+              id="settings-pairingMethodInitial"
+              label="Initial Pairing Method"
+              type="text"
+              value={pairingMethodInitial}
+              onChange={this.handleInputChange('pairingMethodInitial')}
+              select
+            >
+              {pairingMethods.map(method => (
+                <option key={method.value} value={method.value}>
+                  {method.label}
+                </option>
+              ))}
+            </TextField>
+            <TextField className={classes.field}
+              margin="dense"
+              id="settings-podSizeMinimum"
+              label="Minimum Pod Size"
+              type="number"
+              value={podSizeMinimum}
+              onChange={this.handleInputChange('podSizeMinimum')}
+            />
+            <TextField className={classes.field}
+              margin="dense"
+              id="settings-podSizeMaximum"
+              label="Maximum Pod Size"
+              type="number"
+              value={podSizeMaximum}
+              onChange={this.handleInputChange('podSizeMaximum')}
+            />
+          </CardContent>
+        </Card>
+      </div>
     );
   }
 }
