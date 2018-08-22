@@ -77,8 +77,8 @@ class PlayerList extends Component {
     let left = a[field],
       right = b[field];
     if(field === 'name') {
-      a = a.toString().toLowerCase();
-      b = b.toString().toLowerCase();
+      left = left.toString().toLowerCase();
+      right = right.toString().toLowerCase();
     }
     if(left < right)
       return ascending ? -1 : 1;
