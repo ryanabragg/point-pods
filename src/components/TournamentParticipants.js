@@ -71,7 +71,7 @@ class TournamentParticipants extends Component {
             isClearable
             isDisabled={sync}
             isLoading={sync}
-            placeholder='Select player to add'
+            placeholder='Select player or enter new player name'
             onChange={this.handleSelect}
             onCreateOption={this.handleCreate}
             isValidNewOption={(inputValue, selectValue, selectOptions) => !(
@@ -80,10 +80,7 @@ class TournamentParticipants extends Component {
               selectOptions.some(option => inputValue.toLowerCase() === option.name.toLowerCase())
             )}
             getNewOptionData={(inputValue, optionLabel) => ({
-              name: inputValue,
-              points: 0,
-              participated: false,
-              dropped: false,
+              name: optionLabel,
             })}
             formatCreateLabel={inputValue => `Create player ${inputValue}`}
             options={playerOptions}
