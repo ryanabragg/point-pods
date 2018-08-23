@@ -2,35 +2,35 @@
 
 exports[`matches the prior snapshot 1`] = `
 <div
-  className="APIComponent-root-153"
+  className="APIComponent-root-137"
 >
   <div
-    className="MuiPaper-root-159 MuiPaper-elevation1-162 MuiPaper-rounded-160 MuiCard-root-158 APIComponent-card-154"
+    className="MuiPaper-root-143 MuiPaper-elevation1-146 MuiPaper-rounded-144 MuiCard-root-142 APIComponent-card-138"
   >
     
     
     <div
-      className="MuiCardContent-root-186 APIComponent-content-155"
+      className="MuiCardContent-root-170 APIComponent-content-139"
     >
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 MuiFormControl-fullWidth-190 APIComponent-field-156"
+        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 MuiFormControl-fullWidth-174 APIComponent-field-140"
       >
         <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-marginDense-193"
+          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-marginDense-177"
           data-shrink={false}
           htmlFor="tournament-name"
         >
            Name
         </label>
         <div
-          className="MuiInput-root-201 MuiInput-fullWidth-208 MuiInput-formControl-202 MuiInput-underline-205"
+          className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={false}
-            className="MuiInput-input-209 MuiInput-inputMarginDense-210"
+            className="MuiInput-input-193 MuiInput-inputMarginDense-194"
             defaultValue={undefined}
             disabled={false}
             id="tournament-name"
@@ -51,23 +51,23 @@ exports[`matches the prior snapshot 1`] = `
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 MuiFormControl-fullWidth-190 APIComponent-field-156"
+        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 MuiFormControl-fullWidth-174 APIComponent-field-140"
       >
         <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-marginDense-193"
+          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-marginDense-177"
           data-shrink={false}
           htmlFor="tournament-description"
         >
           Description
         </label>
         <div
-          className="MuiInput-root-201 MuiInput-fullWidth-208 MuiInput-formControl-202 MuiInput-underline-205"
+          className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-209 MuiInput-inputMarginDense-210"
+            className="MuiInput-input-193 MuiInput-inputMarginDense-194"
             defaultValue={undefined}
             disabled={false}
             id="tournament-description"
@@ -87,29 +87,29 @@ exports[`matches the prior snapshot 1`] = `
         </div>
       </div>
       <div
-        className="css-10nd86i APIComponent-field-156"
+        className="css-10nd86i APIComponent-field-140"
         id="tournament-category"
         onKeyDown={[Function]}
       >
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-187 MuiFormControl-fullWidth-190"
+          className="MuiFormControl-root-171 MuiFormControl-fullWidth-174"
         >
           <label
-            className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-shrink-194"
+            className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178"
             data-shrink={true}
             htmlFor={undefined}
           >
             Category
           </label>
           <div
-            className="MuiInput-root-201 MuiInput-fullWidth-208 MuiInput-formControl-202 MuiInput-underline-205"
+            className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
           >
             <div
               aria-invalid={false}
               autoComplete={undefined}
               autoFocus={undefined}
-              className="MuiInput-input-209 IntegrationReactSelect-input-215"
+              className="MuiInput-input-193 IntegrationReactSelect-input-199"
               defaultValue={undefined}
               disabled={false}
               id={undefined}
@@ -129,10 +129,10 @@ exports[`matches the prior snapshot 1`] = `
               value={undefined}
             >
               <div
-                className="IntegrationReactSelect-valueContainer-216"
+                className="IntegrationReactSelect-valueContainer-200"
               >
                 <p
-                  className="MuiTypography-root-280 MuiTypography-body1-289 MuiTypography-colorTextSecondary-303 IntegrationReactSelect-placeholder-221"
+                  className="MuiTypography-root-248 MuiTypography-body1-257 MuiTypography-colorTextSecondary-271 IntegrationReactSelect-placeholder-205"
                 >
                   Select or Type...
                 </p>
@@ -156,7 +156,7 @@ exports[`matches the prior snapshot 1`] = `
                       autoCorrect="off"
                       className={undefined}
                       disabled={false}
-                      id="react-select-3-input"
+                      id="react-select-5-input"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -228,23 +228,23 @@ exports[`matches the prior snapshot 1`] = `
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 APIComponent-field-156"
+        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 APIComponent-field-140"
       >
         <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-shrink-194 MuiInputLabel-marginDense-193"
+          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178 MuiInputLabel-marginDense-177"
           data-shrink={true}
           htmlFor="tournament-date"
         >
           Date
         </label>
         <div
-          className="MuiInput-root-201 MuiInput-formControl-202 MuiInput-underline-205"
+          className="MuiInput-root-185 MuiInput-formControl-186 MuiInput-underline-189"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-209 MuiInput-inputType-212 MuiInput-inputMarginDense-210"
+            className="MuiInput-input-193 MuiInput-inputType-196 MuiInput-inputMarginDense-194"
             defaultValue={undefined}
             disabled={false}
             id="tournament-date"
@@ -259,157 +259,309 @@ exports[`matches the prior snapshot 1`] = `
             required={false}
             rows={undefined}
             type="date"
-            value="2018-08-20"
+            value="2018-08-23"
           />
         </div>
       </div>
       <div
-        aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 APIComponent-field-156"
+        className="css-10nd86i APIComponent-field-140"
+        id="tournament-pairingMethod"
+        onKeyDown={[Function]}
       >
-        <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-marginDense-193"
-          data-shrink={false}
-          htmlFor="tournament-pairingMethod"
-        >
-          Pairing Method
-        </label>
         <div
-          className="MuiInput-root-201 MuiInput-formControl-202 MuiInput-underline-205"
+          aria-describedby={undefined}
+          className="MuiFormControl-root-171 MuiFormControl-fullWidth-174"
         >
+          <label
+            className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178"
+            data-shrink={true}
+            htmlFor={undefined}
+          >
+            Pairing Method
+          </label>
           <div
-            className="MuiSelect-root-224"
+            className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
           >
             <div
-              aria-haspopup="true"
-              aria-owns={null}
-              aria-pressed="false"
-              className="MuiSelect-select-225 MuiSelect-selectMenu-226 MuiInput-input-209 MuiInput-inputMarginDense-210"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "&#8203;",
-                  }
-                }
-              />
-            </div>
-            <input
+              aria-invalid={false}
               autoComplete={undefined}
               autoFocus={undefined}
+              className="MuiInput-input-193 IntegrationReactSelect-input-199"
               defaultValue={undefined}
-              id="tournament-pairingMethod"
+              disabled={false}
+              id={undefined}
               name={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
               onKeyDown={undefined}
               onKeyUp={undefined}
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
               placeholder={undefined}
+              readOnly={undefined}
+              required={false}
               rows={undefined}
-              type="hidden"
-              value=""
-            />
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-229 MuiSelect-icon-228"
-              color={undefined}
-              focusable="false"
-              viewBox="0 0 24 24"
+              type="text"
+              value={undefined}
             >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
+              <div
+                className="IntegrationReactSelect-valueContainer-200"
+              >
+                <p
+                  className="MuiTypography-root-248 MuiTypography-body1-257 MuiTypography-colorTextSecondary-271 IntegrationReactSelect-placeholder-205"
+                >
+                  Select...
+                </p>
+                <div
+                  className="css-1hrkh7z"
+                >
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "display": "inline-block",
+                      }
+                    }
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      aria-label={undefined}
+                      aria-labelledby={undefined}
+                      autoCapitalize="none"
+                      autoComplete="off"
+                      autoCorrect="off"
+                      className={undefined}
+                      disabled={false}
+                      id="react-select-6-input"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      spellCheck="false"
+                      style={
+                        Object {
+                          "background": 0,
+                          "border": 0,
+                          "boxSizing": "content-box",
+                          "color": "inherit",
+                          "fontSize": "inherit",
+                          "opacity": 1,
+                          "outline": 0,
+                          "padding": 0,
+                          "width": "1px",
+                        }
+                      }
+                      tabIndex="0"
+                      type="text"
+                      value=""
+                    />
+                    <div
+                      style={
+                        Object {
+                          "height": 0,
+                          "left": 0,
+                          "overflow": "scroll",
+                          "position": "absolute",
+                          "top": 0,
+                          "visibility": "hidden",
+                          "whiteSpace": "pre",
+                        }
+                      }
+                    >
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="css-1wy0on6"
+              >
+                <span
+                  className="css-d8oujb"
+                />
+                <div
+                  aria-hidden="true"
+                  className="css-1ep9fjw"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="css-19bqh2r"
+                    focusable="false"
+                    height={20}
+                    viewBox="0 0 20 20"
+                    width={20}
+                  >
+                    <path
+                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-10nd86i APIComponent-field-140"
+        id="tournament-pairingMethodInitial"
+        onKeyDown={[Function]}
+      >
+        <div
+          aria-describedby={undefined}
+          className="MuiFormControl-root-171 MuiFormControl-fullWidth-174"
+        >
+          <label
+            className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178"
+            data-shrink={true}
+            htmlFor={undefined}
+          >
+            Initial Pairing Method
+          </label>
+          <div
+            className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
+          >
+            <div
+              aria-invalid={false}
+              autoComplete={undefined}
+              autoFocus={undefined}
+              className="MuiInput-input-193 IntegrationReactSelect-input-199"
+              defaultValue={undefined}
+              disabled={false}
+              id={undefined}
+              name={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={undefined}
+              onKeyUp={undefined}
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+              placeholder={undefined}
+              readOnly={undefined}
+              required={false}
+              rows={undefined}
+              type="text"
+              value={undefined}
+            >
+              <div
+                className="IntegrationReactSelect-valueContainer-200"
+              >
+                <p
+                  className="MuiTypography-root-248 MuiTypography-body1-257 MuiTypography-colorTextSecondary-271 IntegrationReactSelect-placeholder-205"
+                >
+                  Select...
+                </p>
+                <div
+                  className="css-1hrkh7z"
+                >
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "display": "inline-block",
+                      }
+                    }
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      aria-label={undefined}
+                      aria-labelledby={undefined}
+                      autoCapitalize="none"
+                      autoComplete="off"
+                      autoCorrect="off"
+                      className={undefined}
+                      disabled={false}
+                      id="react-select-7-input"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      spellCheck="false"
+                      style={
+                        Object {
+                          "background": 0,
+                          "border": 0,
+                          "boxSizing": "content-box",
+                          "color": "inherit",
+                          "fontSize": "inherit",
+                          "opacity": 1,
+                          "outline": 0,
+                          "padding": 0,
+                          "width": "1px",
+                        }
+                      }
+                      tabIndex="0"
+                      type="text"
+                      value=""
+                    />
+                    <div
+                      style={
+                        Object {
+                          "height": 0,
+                          "left": 0,
+                          "overflow": "scroll",
+                          "position": "absolute",
+                          "top": 0,
+                          "visibility": "hidden",
+                          "whiteSpace": "pre",
+                        }
+                      }
+                    >
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="css-1wy0on6"
+              >
+                <span
+                  className="css-d8oujb"
+                />
+                <div
+                  aria-hidden="true"
+                  className="css-1ep9fjw"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="css-19bqh2r"
+                    focusable="false"
+                    height={20}
+                    viewBox="0 0 20 20"
+                    width={20}
+                  >
+                    <path
+                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 APIComponent-field-156"
+        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 APIComponent-field-140"
       >
         <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-marginDense-193"
-          data-shrink={false}
-          htmlFor="tournament-pairingMethodInitial"
-        >
-          Initial Pairing Method
-        </label>
-        <div
-          className="MuiInput-root-201 MuiInput-formControl-202 MuiInput-underline-205"
-        >
-          <div
-            className="MuiSelect-root-224"
-          >
-            <div
-              aria-haspopup="true"
-              aria-owns={null}
-              aria-pressed="false"
-              className="MuiSelect-select-225 MuiSelect-selectMenu-226 MuiInput-input-209 MuiInput-inputMarginDense-210"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              <span
-                dangerouslySetInnerHTML={
-                  Object {
-                    "__html": "&#8203;",
-                  }
-                }
-              />
-            </div>
-            <input
-              autoComplete={undefined}
-              autoFocus={undefined}
-              defaultValue={undefined}
-              id="tournament-pairingMethodInitial"
-              name={undefined}
-              onKeyDown={undefined}
-              onKeyUp={undefined}
-              placeholder={undefined}
-              rows={undefined}
-              type="hidden"
-              value=""
-            />
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-229 MuiSelect-icon-228"
-              color={undefined}
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div
-        aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 APIComponent-field-156"
-      >
-        <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-shrink-194 MuiInputLabel-marginDense-193"
+          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178 MuiInputLabel-marginDense-177"
           data-shrink={true}
           htmlFor="tournament-podSizeMinimum"
         >
           Minimum Pod Size
         </label>
         <div
-          className="MuiInput-root-201 MuiInput-formControl-202 MuiInput-underline-205"
+          className="MuiInput-root-185 MuiInput-formControl-186 MuiInput-underline-189"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-209 MuiInput-inputType-212 MuiInput-inputMarginDense-210"
+            className="MuiInput-input-193 MuiInput-inputType-196 MuiInput-inputMarginDense-194"
             defaultValue={undefined}
             disabled={false}
             id="tournament-podSizeMinimum"
@@ -430,23 +582,23 @@ exports[`matches the prior snapshot 1`] = `
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 APIComponent-field-156"
+        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 APIComponent-field-140"
       >
         <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-shrink-194 MuiInputLabel-marginDense-193"
+          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178 MuiInputLabel-marginDense-177"
           data-shrink={true}
           htmlFor="tournament-podSizeMaximum"
         >
           Maximum Pod Size
         </label>
         <div
-          className="MuiInput-root-201 MuiInput-formControl-202 MuiInput-underline-205"
+          className="MuiInput-root-185 MuiInput-formControl-186 MuiInput-underline-189"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-209 MuiInput-inputType-212 MuiInput-inputMarginDense-210"
+            className="MuiInput-input-193 MuiInput-inputType-196 MuiInput-inputMarginDense-194"
             defaultValue={undefined}
             disabled={false}
             id="tournament-podSizeMaximum"
@@ -467,14 +619,14 @@ exports[`matches the prior snapshot 1`] = `
       </div>
     </div>
     <hr
-      className="MuiDivider-root-240"
+      className="MuiDivider-root-208"
     />
     <div
-      className="MuiCardActions-root-244"
+      className="MuiCardActions-root-212"
     >
       <button
         aria-label="Create"
-        className="MuiButtonBase-root-270 MuiButton-root-246 MuiButton-text-248 MuiButton-flat-251 APIComponent-right-157 MuiCardActions-action-245"
+        className="MuiButtonBase-root-238 MuiButton-root-214 MuiButton-text-216 MuiButton-flat-219 APIComponent-right-141 MuiCardActions-action-213"
         disabled={false}
         id="tournament-submit"
         onBlur={[Function]}
@@ -492,12 +644,12 @@ exports[`matches the prior snapshot 1`] = `
         type="button"
       >
         <span
-          className="MuiButton-label-247"
+          className="MuiButton-label-215"
         >
           Create
         </span>
         <span
-          className="MuiTouchRipple-root-273"
+          className="MuiTouchRipple-root-241"
         />
       </button>
     </div>
@@ -507,35 +659,35 @@ exports[`matches the prior snapshot 1`] = `
 
 exports[`matches the prior snapshot 2`] = `
 <div
-  className="APIComponent-root-153"
+  className="APIComponent-root-137"
 >
   <div
-    className="MuiPaper-root-159 MuiPaper-elevation1-162 MuiPaper-rounded-160 MuiCard-root-158 APIComponent-card-154"
+    className="MuiPaper-root-143 MuiPaper-elevation1-146 MuiPaper-rounded-144 MuiCard-root-142 APIComponent-card-138"
   >
     
     
     <div
-      className="MuiCardContent-root-186 APIComponent-content-155"
+      className="MuiCardContent-root-170 APIComponent-content-139"
     >
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 MuiFormControl-fullWidth-190 APIComponent-field-156"
+        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 MuiFormControl-fullWidth-174 APIComponent-field-140"
       >
         <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-marginDense-193"
+          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-marginDense-177"
           data-shrink={false}
           htmlFor="tournament-name"
         >
            Name
         </label>
         <div
-          className="MuiInput-root-201 MuiInput-fullWidth-208 MuiInput-formControl-202 MuiInput-underline-205"
+          className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={false}
-            className="MuiInput-input-209 MuiInput-inputMarginDense-210"
+            className="MuiInput-input-193 MuiInput-inputMarginDense-194"
             defaultValue={undefined}
             disabled={false}
             id="tournament-name"
@@ -556,23 +708,23 @@ exports[`matches the prior snapshot 2`] = `
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 MuiFormControl-fullWidth-190 APIComponent-field-156"
+        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 MuiFormControl-fullWidth-174 APIComponent-field-140"
       >
         <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-marginDense-193"
+          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-marginDense-177"
           data-shrink={false}
           htmlFor="tournament-description"
         >
           Description
         </label>
         <div
-          className="MuiInput-root-201 MuiInput-fullWidth-208 MuiInput-formControl-202 MuiInput-underline-205"
+          className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-209 MuiInput-inputMarginDense-210"
+            className="MuiInput-input-193 MuiInput-inputMarginDense-194"
             defaultValue={undefined}
             disabled={false}
             id="tournament-description"
@@ -592,29 +744,29 @@ exports[`matches the prior snapshot 2`] = `
         </div>
       </div>
       <div
-        className="css-10nd86i APIComponent-field-156"
+        className="css-10nd86i APIComponent-field-140"
         id="tournament-category"
         onKeyDown={[Function]}
       >
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-187 MuiFormControl-fullWidth-190"
+          className="MuiFormControl-root-171 MuiFormControl-fullWidth-174"
         >
           <label
-            className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-shrink-194"
+            className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178"
             data-shrink={true}
             htmlFor={undefined}
           >
             Category
           </label>
           <div
-            className="MuiInput-root-201 MuiInput-fullWidth-208 MuiInput-formControl-202 MuiInput-underline-205"
+            className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
           >
             <div
               aria-invalid={false}
               autoComplete={undefined}
               autoFocus={undefined}
-              className="MuiInput-input-209 IntegrationReactSelect-input-215"
+              className="MuiInput-input-193 IntegrationReactSelect-input-199"
               defaultValue={undefined}
               disabled={false}
               id={undefined}
@@ -634,10 +786,10 @@ exports[`matches the prior snapshot 2`] = `
               value={undefined}
             >
               <div
-                className="IntegrationReactSelect-valueContainer-216"
+                className="IntegrationReactSelect-valueContainer-200"
               >
                 <p
-                  className="MuiTypography-root-280 MuiTypography-body1-289 MuiTypography-colorTextSecondary-303 IntegrationReactSelect-placeholder-221"
+                  className="MuiTypography-root-248 MuiTypography-body1-257 MuiTypography-colorTextSecondary-271 IntegrationReactSelect-placeholder-205"
                 >
                   Select or Type...
                 </p>
@@ -661,7 +813,7 @@ exports[`matches the prior snapshot 2`] = `
                       autoCorrect="off"
                       className={undefined}
                       disabled={false}
-                      id="react-select-3-input"
+                      id="react-select-5-input"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
@@ -733,23 +885,23 @@ exports[`matches the prior snapshot 2`] = `
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 APIComponent-field-156"
+        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 APIComponent-field-140"
       >
         <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-shrink-194 MuiInputLabel-marginDense-193"
+          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178 MuiInputLabel-marginDense-177"
           data-shrink={true}
           htmlFor="tournament-date"
         >
           Date
         </label>
         <div
-          className="MuiInput-root-201 MuiInput-formControl-202 MuiInput-underline-205"
+          className="MuiInput-root-185 MuiInput-formControl-186 MuiInput-underline-189"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-209 MuiInput-inputType-212 MuiInput-inputMarginDense-210"
+            className="MuiInput-input-193 MuiInput-inputType-196 MuiInput-inputMarginDense-194"
             defaultValue={undefined}
             disabled={false}
             id="tournament-date"
@@ -764,145 +916,309 @@ exports[`matches the prior snapshot 2`] = `
             required={false}
             rows={undefined}
             type="date"
-            value="2018-08-20"
+            value="2018-08-23"
           />
         </div>
       </div>
       <div
-        aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 APIComponent-field-156"
+        className="css-10nd86i APIComponent-field-140"
+        id="tournament-pairingMethod"
+        onKeyDown={[Function]}
       >
-        <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-shrink-194 MuiInputLabel-marginDense-193"
-          data-shrink={true}
-          htmlFor="tournament-pairingMethod"
-        >
-          Pairing Method
-        </label>
         <div
-          className="MuiInput-root-201 MuiInput-formControl-202 MuiInput-underline-205"
+          aria-describedby={undefined}
+          className="MuiFormControl-root-171 MuiFormControl-fullWidth-174"
         >
+          <label
+            className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178"
+            data-shrink={true}
+            htmlFor={undefined}
+          >
+            Pairing Method
+          </label>
           <div
-            className="MuiSelect-root-224"
+            className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
           >
             <div
-              aria-haspopup="true"
-              aria-owns={null}
-              aria-pressed="false"
-              className="MuiSelect-select-225 MuiSelect-selectMenu-226 MuiInput-input-209 MuiInput-inputMarginDense-210"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              Historic
-            </div>
-            <input
+              aria-invalid={false}
               autoComplete={undefined}
               autoFocus={undefined}
+              className="MuiInput-input-193 IntegrationReactSelect-input-199"
               defaultValue={undefined}
-              id="tournament-pairingMethod"
+              disabled={false}
+              id={undefined}
               name={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
               onKeyDown={undefined}
               onKeyUp={undefined}
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
               placeholder={undefined}
+              readOnly={undefined}
+              required={false}
               rows={undefined}
-              type="hidden"
-              value={1}
-            />
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-229 MuiSelect-icon-228"
-              color={undefined}
-              focusable="false"
-              viewBox="0 0 24 24"
+              type="text"
+              value={undefined}
             >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
+              <div
+                className="IntegrationReactSelect-valueContainer-200"
+              >
+                <p
+                  className="MuiTypography-root-248 MuiTypography-body1-257 IntegrationReactSelect-singleValue-204"
+                >
+                  Historic
+                </p>
+                <div
+                  className="css-1hrkh7z"
+                >
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "display": "inline-block",
+                      }
+                    }
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      aria-label={undefined}
+                      aria-labelledby={undefined}
+                      autoCapitalize="none"
+                      autoComplete="off"
+                      autoCorrect="off"
+                      className={undefined}
+                      disabled={false}
+                      id="react-select-6-input"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      spellCheck="false"
+                      style={
+                        Object {
+                          "background": 0,
+                          "border": 0,
+                          "boxSizing": "content-box",
+                          "color": "inherit",
+                          "fontSize": "inherit",
+                          "opacity": 1,
+                          "outline": 0,
+                          "padding": 0,
+                          "width": "1px",
+                        }
+                      }
+                      tabIndex="0"
+                      type="text"
+                      value=""
+                    />
+                    <div
+                      style={
+                        Object {
+                          "height": 0,
+                          "left": 0,
+                          "overflow": "scroll",
+                          "position": "absolute",
+                          "top": 0,
+                          "visibility": "hidden",
+                          "whiteSpace": "pre",
+                        }
+                      }
+                    >
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="css-1wy0on6"
+              >
+                <span
+                  className="css-d8oujb"
+                />
+                <div
+                  aria-hidden="true"
+                  className="css-1ep9fjw"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="css-19bqh2r"
+                    focusable="false"
+                    height={20}
+                    viewBox="0 0 20 20"
+                    width={20}
+                  >
+                    <path
+                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-10nd86i APIComponent-field-140"
+        id="tournament-pairingMethodInitial"
+        onKeyDown={[Function]}
+      >
+        <div
+          aria-describedby={undefined}
+          className="MuiFormControl-root-171 MuiFormControl-fullWidth-174"
+        >
+          <label
+            className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178"
+            data-shrink={true}
+            htmlFor={undefined}
+          >
+            Initial Pairing Method
+          </label>
+          <div
+            className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
+          >
+            <div
+              aria-invalid={false}
+              autoComplete={undefined}
+              autoFocus={undefined}
+              className="MuiInput-input-193 IntegrationReactSelect-input-199"
+              defaultValue={undefined}
+              disabled={false}
+              id={undefined}
+              name={undefined}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={undefined}
+              onKeyUp={undefined}
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+              placeholder={undefined}
+              readOnly={undefined}
+              required={false}
+              rows={undefined}
+              type="text"
+              value={undefined}
+            >
+              <div
+                className="IntegrationReactSelect-valueContainer-200"
+              >
+                <p
+                  className="MuiTypography-root-248 MuiTypography-body1-257 IntegrationReactSelect-singleValue-204"
+                >
+                  Historic
+                </p>
+                <div
+                  className="css-1hrkh7z"
+                >
+                  <div
+                    className=""
+                    style={
+                      Object {
+                        "display": "inline-block",
+                      }
+                    }
+                  >
+                    <input
+                      aria-autocomplete="list"
+                      aria-label={undefined}
+                      aria-labelledby={undefined}
+                      autoCapitalize="none"
+                      autoComplete="off"
+                      autoCorrect="off"
+                      className={undefined}
+                      disabled={false}
+                      id="react-select-7-input"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      spellCheck="false"
+                      style={
+                        Object {
+                          "background": 0,
+                          "border": 0,
+                          "boxSizing": "content-box",
+                          "color": "inherit",
+                          "fontSize": "inherit",
+                          "opacity": 1,
+                          "outline": 0,
+                          "padding": 0,
+                          "width": "1px",
+                        }
+                      }
+                      tabIndex="0"
+                      type="text"
+                      value=""
+                    />
+                    <div
+                      style={
+                        Object {
+                          "height": 0,
+                          "left": 0,
+                          "overflow": "scroll",
+                          "position": "absolute",
+                          "top": 0,
+                          "visibility": "hidden",
+                          "whiteSpace": "pre",
+                        }
+                      }
+                    >
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="css-1wy0on6"
+              >
+                <span
+                  className="css-d8oujb"
+                />
+                <div
+                  aria-hidden="true"
+                  className="css-1ep9fjw"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="css-19bqh2r"
+                    focusable="false"
+                    height={20}
+                    viewBox="0 0 20 20"
+                    width={20}
+                  >
+                    <path
+                      d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 APIComponent-field-156"
+        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 APIComponent-field-140"
       >
         <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-shrink-194 MuiInputLabel-marginDense-193"
-          data-shrink={true}
-          htmlFor="tournament-pairingMethodInitial"
-        >
-          Initial Pairing Method
-        </label>
-        <div
-          className="MuiInput-root-201 MuiInput-formControl-202 MuiInput-underline-205"
-        >
-          <div
-            className="MuiSelect-root-224"
-          >
-            <div
-              aria-haspopup="true"
-              aria-owns={null}
-              aria-pressed="false"
-              className="MuiSelect-select-225 MuiSelect-selectMenu-226 MuiInput-input-209 MuiInput-inputMarginDense-210"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-            >
-              Historic
-            </div>
-            <input
-              autoComplete={undefined}
-              autoFocus={undefined}
-              defaultValue={undefined}
-              id="tournament-pairingMethodInitial"
-              name={undefined}
-              onKeyDown={undefined}
-              onKeyUp={undefined}
-              placeholder={undefined}
-              rows={undefined}
-              type="hidden"
-              value={1}
-            />
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-229 MuiSelect-icon-228"
-              color={undefined}
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div
-        aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 APIComponent-field-156"
-      >
-        <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-shrink-194 MuiInputLabel-marginDense-193"
+          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178 MuiInputLabel-marginDense-177"
           data-shrink={true}
           htmlFor="tournament-podSizeMinimum"
         >
           Minimum Pod Size
         </label>
         <div
-          className="MuiInput-root-201 MuiInput-formControl-202 MuiInput-underline-205"
+          className="MuiInput-root-185 MuiInput-formControl-186 MuiInput-underline-189"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-209 MuiInput-inputType-212 MuiInput-inputMarginDense-210"
+            className="MuiInput-input-193 MuiInput-inputType-196 MuiInput-inputMarginDense-194"
             defaultValue={undefined}
             disabled={false}
             id="tournament-podSizeMinimum"
@@ -923,23 +1239,23 @@ exports[`matches the prior snapshot 2`] = `
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-187 MuiFormControl-marginDense-189 APIComponent-field-156"
+        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 APIComponent-field-140"
       >
         <label
-          className="MuiFormLabel-root-196 MuiInputLabel-root-191 MuiInputLabel-formControl-192 MuiInputLabel-animated-195 MuiInputLabel-shrink-194 MuiInputLabel-marginDense-193"
+          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178 MuiInputLabel-marginDense-177"
           data-shrink={true}
           htmlFor="tournament-podSizeMaximum"
         >
           Maximum Pod Size
         </label>
         <div
-          className="MuiInput-root-201 MuiInput-formControl-202 MuiInput-underline-205"
+          className="MuiInput-root-185 MuiInput-formControl-186 MuiInput-underline-189"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-209 MuiInput-inputType-212 MuiInput-inputMarginDense-210"
+            className="MuiInput-input-193 MuiInput-inputType-196 MuiInput-inputMarginDense-194"
             defaultValue={undefined}
             disabled={false}
             id="tournament-podSizeMaximum"
@@ -960,14 +1276,14 @@ exports[`matches the prior snapshot 2`] = `
       </div>
     </div>
     <hr
-      className="MuiDivider-root-240"
+      className="MuiDivider-root-208"
     />
     <div
-      className="MuiCardActions-root-244"
+      className="MuiCardActions-root-212"
     >
       <button
         aria-label="Create"
-        className="MuiButtonBase-root-270 MuiButton-root-246 MuiButton-text-248 MuiButton-flat-251 APIComponent-right-157 MuiCardActions-action-245"
+        className="MuiButtonBase-root-238 MuiButton-root-214 MuiButton-text-216 MuiButton-flat-219 APIComponent-right-141 MuiCardActions-action-213"
         disabled={false}
         id="tournament-submit"
         onBlur={[Function]}
@@ -985,12 +1301,12 @@ exports[`matches the prior snapshot 2`] = `
         type="button"
       >
         <span
-          className="MuiButton-label-247"
+          className="MuiButton-label-215"
         >
           Create
         </span>
         <span
-          className="MuiTouchRipple-root-273"
+          className="MuiTouchRipple-root-241"
         />
       </button>
     </div>

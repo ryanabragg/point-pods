@@ -275,7 +275,7 @@ exports[`matches the prior snapshot 2`] = `
       >
         <a
           className="MuiButtonBase-root-196 MuiButton-root-251 MuiButton-text-253 MuiButton-flat-256 MuiButton-sizeSmall-272 TournamentCards-right-277 MuiCardActions-action-287"
-          href="/new/mock0"
+          href="/tournament/mock0"
           onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -341,7 +341,7 @@ exports[`matches the prior snapshot 2`] = `
       >
         <a
           className="MuiButtonBase-root-196 MuiButton-root-251 MuiButton-text-253 MuiButton-flat-256 MuiButton-sizeSmall-272 TournamentCards-right-277 MuiCardActions-action-287"
-          href="/tournament/mock2"
+          href="/new/mock2"
           onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}

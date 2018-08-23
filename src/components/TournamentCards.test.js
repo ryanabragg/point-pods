@@ -36,12 +36,12 @@ describe('filter props', () => {
       status: 'Pending',
     });
     expect(component.find(Card).length).toBe(1);
-    expect(component.find(Card).prop('id')).toBe('mock0');
+    expect(component.find(Card).prop('id')).toBe('mock2');
     component.setProps({
       status: 'In Progress',
     });
     expect(component.find(Card).length).toBe(1);
-    expect(component.find(Card).prop('id')).toBe('mock2');
+    expect(component.find(Card).prop('id')).toBe('mock0');
     component.setProps({
       status: 'Incomplete',
     });

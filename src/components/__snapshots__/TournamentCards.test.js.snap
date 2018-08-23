@@ -70,7 +70,7 @@ exports[`matches the prior snapshot 2`] = `
     >
       <a
         className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 TournamentCards-right-65 MuiCardActions-action-127"
-        href="/new/mock0"
+        href="/tournament/mock0"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -123,12 +123,12 @@ exports[`matches the prior snapshot 2`] = `
       <p
         className="MuiTypography-root-100 MuiTypography-body1-109"
       >
-        7 Total Players
+        8 Total Players
       </p>
       <p
         className="MuiTypography-root-100 MuiTypography-body1-109"
       >
-        5 Active Players
+        6 Active Players
       </p>
     </div>
     <div
@@ -202,7 +202,7 @@ exports[`matches the prior snapshot 2`] = `
     >
       <a
         className="MuiButtonBase-root-152 MuiButton-root-128 MuiButton-text-130 MuiButton-flat-133 MuiButton-sizeSmall-149 TournamentCards-right-65 MuiCardActions-action-127"
-        href="/tournament/mock2"
+        href="/new/mock2"
         onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
@@ -299,12 +299,12 @@ exports[`matches the prior snapshot 3`] = `
       <p
         className="MuiTypography-root-100 MuiTypography-body1-109"
       >
-        7 Total Players
+        8 Total Players
       </p>
       <p
         className="MuiTypography-root-100 MuiTypography-body1-109"
       >
-        5 Active Players
+        6 Active Players
       </p>
     </div>
   </div>
