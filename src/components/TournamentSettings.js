@@ -126,7 +126,9 @@ class TournamentSettings extends Component {
 
   handleSubmit = () => {
     if(!this.state.name)
-      return;
+      return this.props.notification('Name cannot be empty', 'error');
+    if(this.state.podSizeMinimum > this.state.podSizeMaximum)
+      return this.props.notification('Minimum pod size exceeds maximum', 'error');
     const values = Object.assign({}, this.state);
     if(values.id === null)
       delete values.id;
