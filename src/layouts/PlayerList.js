@@ -15,11 +15,9 @@ import IconButton from '@material-ui/core/IconButton';
 
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import AddIcon from '@material-ui/icons/Add';
-import DeleteIcon from '@material-ui/icons/Delete';
 import SearchIcon from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close';
 import SortIcon from '@material-ui/icons/Sort';
-import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
 
 import AppMenu from '../components/AppMenu';
 import MenuButton from '../components/MenuButton';

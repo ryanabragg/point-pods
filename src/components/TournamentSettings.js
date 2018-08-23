@@ -12,10 +12,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
 import TextField from '@material-ui/core/TextField';
-
-import AddIcon from '@material-ui/icons/Add';
 
 const styles = theme => ({
   root: {
@@ -78,7 +75,7 @@ class TournamentSettings extends Component {
         if(!this.props.id)
           return this.props.api.Settings.get()
             .then((settings) => Object.assign(loadState, settings));
-        let found = list.filter(t => t.id == this.props.id);
+        let found = list.filter(t => t.id === this.props.id);
         if(!found.length)
           throw new Error('ID not found');
         Object.assign(loadState, found[0]);

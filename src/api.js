@@ -32,8 +32,8 @@ api.Settings.get = () => api.store.keys()
 api.Settings.set = (settings) => {
   return api.Settings.get().then(values => {
     const validKeys = Object.keys(values);
-    const badKeys = Object.keys(settings).filter(k => !validKeys.includes(k))
-      .forEach(key => delete settings.key);
+    const badKeys = Object.keys(settings).filter(k => !validKeys.includes(k));
+    badKeys.forEach(key => delete settings.key);
     return api.store.setItem('settings', Object.assign({}, values, settings));
   });
 };
@@ -62,8 +62,8 @@ api.Players.set = (value) => {
     points: 0,
   };
   const validKeys = Object.keys(defaultValue);
-  const badKeys = Object.keys(value).filter(key => !validKeys.includes(key))
-    .forEach(key => delete value.key);
+  const badKeys = Object.keys(value).filter(key => !validKeys.includes(key));
+  badKeys.forEach(key => delete value.key);
   return api.Players.all().then(list => {
     let index = list.findIndex(i => String(i.id) === String(value.id));
     if(create && index === -1)
@@ -121,8 +121,8 @@ api.Tournaments.set = (value) => {
     players: [],
   };
   const validKeys = Object.keys(defaultValue);
-  const badKeys = Object.keys(value).filter(key => !validKeys.includes(key))
-    .forEach(key => delete value.key);
+  const badKeys = Object.keys(value).filter(key => !validKeys.includes(key));
+  badKeys.forEach(key => delete value.key);
   return api.Tournaments.all().then(list => {
     let index = list.findIndex(i => String(i.id) === String(value.id));
     if(create && index === -1)

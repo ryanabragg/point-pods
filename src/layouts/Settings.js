@@ -14,7 +14,6 @@ class Settings extends Component {
   };
 
   render() {
-    const { classes } = this.props;
     return (
       <div>
         <AppMenu title='Settings' usesBackIcon onBack={this.goBack} />

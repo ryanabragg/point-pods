@@ -41,7 +41,7 @@ class MenuButton extends React.Component {
   }
 
   render() {
-    const { classes, buttonType, buttonProps, buttonContent, menuItems, disablePortal, paperStyle } = this.props;
+    const { buttonType, buttonProps, buttonContent, menuItems, disablePortal, paperStyle } = this.props;
     const { open } = this.state;
     let TheButton;
     switch(buttonType) {

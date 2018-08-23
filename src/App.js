@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import Notification, { withNotification } from './components/Notification';
