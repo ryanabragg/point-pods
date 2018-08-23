@@ -3,26 +3,21 @@ import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
 
-import AppBar from '@material-ui/core/AppBar';
 import Divider from '@material-ui/core/Divider';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import Tooltip from '@material-ui/core/Tooltip';
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
 
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import GroupWorkIcon from '@material-ui/icons/GroupWork';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
-
 import AddIcon from '@material-ui/icons/Add';
-import ClearIcon from '@material-ui/icons/Clear';
 import DeleteIcon from '@material-ui/icons/Delete';
 import RestoreFromTrashIcon from '@material-ui/icons/RestoreFromTrash';
 
@@ -34,6 +29,10 @@ const styles = theme => ({
     top: 20,
     left: '50%',
     transform: 'translate(-50%, 0)',
+  },
+  unmargined: {
+    margin: 0,
+    padding: 0,
   },
   margined: {
     margin: theme.spacing.unit,
@@ -111,8 +110,9 @@ class TournamentRounds extends Component {
       playerSort,
       rounds,
       activeRound,
-      onStartTournament
+      done
     } = this.props;
+    const currentRound = rounds === activeRound && !done;
     const newPlayers = players.filter(p => !p.hasOwnProperty(activeRound) && !p.dropped);
     const podPlayers = players.filter(p => p.hasOwnProperty(activeRound));
     const droppedPlayers = players.filter(p => !p.hasOwnProperty(activeRound) && p.dropped);
@@ -147,12 +147,15 @@ class TournamentRounds extends Component {
                 return (
                   <ListItem key={id} id={id} button>
                     <ListItemText primary={name} />
-                    {!rounds ? null : (
+                    {!rounds || !currentRound ? null : (
                       <ListItemSecondaryAction>
                         <MenuButton
                           buttonType='icon'
-                          buttonProps={{color: 'inherit'}}
-                          buttonContent={<GroupWorkIcon />}
+                          buttonContent={
+                            <Tooltip title={`Move ${name} to a different pod`}>
+                              <GroupWorkIcon />
+                            </Tooltip>
+                          }
                           menuItems={pods.map(d => ({
                             label: `Move to Pod ${d.pod} (${d.players.length} players)`,
                             icon: <ArrowRightAltIcon />,
@@ -164,13 +167,15 @@ class TournamentRounds extends Component {
                           })}
                           paperStyle={this.props.classes.menuButtonPaper}
                         />
-                        <IconButton
-                          color='primary'
-                          className={classes.marginedLeft}
-                          onClick={this.handleRemovePlayer(id, true)}
-                        >
-                          {<DeleteIcon />}
-                        </IconButton>
+                        <Tooltip title={`Remove ${name} from the tournament`}>
+                          <IconButton
+                            color='primary'
+                            className={classes.marginedLeft}
+                            onClick={this.handleRemovePlayer(id, true)}
+                          >
+                            {<DeleteIcon />}
+                          </IconButton>
+                        </Tooltip>
                       </ListItemSecondaryAction>
                     )}
                   </ListItem>
@@ -190,39 +195,52 @@ class TournamentRounds extends Component {
               <CardContent>
                 <List>
                 {pod.players.map(({id, name, dropped, points}) => {
+                  let pointsSoFar = players.filter(p => p.id === id)[0].points;
                   return (
                     <ListItem key={id} id={id} button>
-                      <MenuButton
-                        buttonType='icon'
-                        buttonProps={{color: 'inherit'}}
-                        buttonContent={<GroupWorkIcon color={dropped ? 'error' : 'primary'} />}
-                        menuItems={pods.filter(d => d.pod !== pod.pod).map(d => ({
-                          label: `Move to Pod ${d.pod} (${d.players.length} players)`,
-                          icon: <ArrowRightAltIcon color='primary' />,
-                          action: this.handleSetPlayerPod(id, d.pod),
-                        })).concat({
-                          label: `Move to new pod (Pod ${pods.length + 1})`,
-                          icon: <AddIcon />,
-                          action: this.handleSetPlayerPod(id, pods.length + 1),
-                        })}
-                        paperStyle={this.props.classes.menuButtonPaper}
-                      />
-                      <ListItemText primary={name} />
-                      <ListItemSecondaryAction>
-                        <TextField
-                          margin='dense'
-                          className={classes.scoreField}
-                          required
-                          type='number'
-                          defaultValue={points}
-                          onChange={this.handleScorePlayer(id)}
+                      {!currentRound ? null : (
+                        <MenuButton
+                          buttonType='icon'
+                          buttonContent={
+                            <Tooltip title={`Move ${name} to a different pod`}>
+                              <GroupWorkIcon className={classes.unmargined} color={dropped ? 'error' : 'primary'} />
+                            </Tooltip>
+                          }
+                          menuItems={pods.filter(d => d.pod !== pod.pod).map(d => ({
+                            label: `Move to Pod ${d.pod} (${d.players.length} players)`,
+                            icon: <ArrowRightAltIcon color='primary' />,
+                            action: this.handleSetPlayerPod(id, d.pod),
+                          })).concat({
+                            label: `Move to new pod (Pod ${pods.length + 1})`,
+                            icon: <AddIcon />,
+                            action: this.handleSetPlayerPod(id, pods.length + 1),
+                          })}
+                          paperStyle={this.props.classes.menuButtonPaper}
                         />
-                        <IconButton
-                          className={classes.marginedLeft}
-                          onClick={this.handleRemovePlayer(id, !dropped)}
-                        >
-                          {dropped ? <RestoreFromTrashIcon color='error' /> : <DeleteIcon color='primary' />}
-                        </IconButton>
+                      )}
+                      <ListItemText primary={name} secondary={currentRound ? `${pointsSoFar} points` : null} />
+                      <ListItemSecondaryAction>
+                        {!currentRound ? points : (
+                          <TextField
+                            aria-label={`Points for player ${name}`}
+                            margin='dense'
+                            className={classes.scoreField}
+                            required
+                            type='number'
+                            defaultValue={points}
+                            onChange={this.handleScorePlayer(id)}
+                          />
+                        )}
+                        {!currentRound ? null : (
+                          <Tooltip title={dropped ? 'Reinstate Player' : 'Drop Player'}>
+                            <IconButton
+                              className={classes.marginedLeft}
+                              onClick={this.handleRemovePlayer(id, !dropped)}
+                            >
+                              {dropped ? <RestoreFromTrashIcon color='error' /> : <DeleteIcon color='primary' />}
+                            </IconButton>
+                          </Tooltip>
+                        )}
                       </ListItemSecondaryAction>
                     </ListItem>
                   );
@@ -244,23 +262,28 @@ class TournamentRounds extends Component {
                 return (
                   <ListItem key={id} id={id} button>
                     <ListItemText primary={name} />
-                    <ListItemSecondaryAction>
-                      <MenuButton
-                        buttonType='icon'
-                        buttonProps={{color: 'inherit'}}
-                        buttonContent={<MoreVertIcon />}
-                        menuItems={pods.map(d => ({
-                          label: `Move to Pod ${d.pod} (${d.players.length} players)`,
-                          icon: <ArrowRightAltIcon />,
-                          action: this.handleSetPlayerPod(id, d.pod),
-                        })).concat({
-                          label: `Move to new pod (Pod ${pods.length + 1})`,
-                          icon: <AddIcon />,
-                          action: this.handleSetPlayerPod(id, pods.length),
-                        })}
-                        paperStyle={this.props.classes.menuButtonPaper}
-                      />
-                    </ListItemSecondaryAction>
+                    {!currentRound ? null : (
+                      <ListItemSecondaryAction>
+                        <MenuButton
+                          buttonType='icon'
+                          buttonContent={
+                            <Tooltip title={`Reinstate ${name} and add them to a Pod`}>
+                              <GroupWorkIcon color='primary' />
+                            </Tooltip>
+                          }
+                          menuItems={pods.map(d => ({
+                            label: `Move to Pod ${d.pod} (${d.players.length} players)`,
+                            icon: <ArrowRightAltIcon />,
+                            action: this.handleSetPlayerPod(id, d.pod),
+                          })).concat({
+                            label: `Move to new pod (Pod ${pods.length + 1})`,
+                            icon: <AddIcon />,
+                            action: this.handleSetPlayerPod(id, pods.length),
+                          })}
+                          paperStyle={this.props.classes.menuButtonPaper}
+                        />
+                      </ListItemSecondaryAction>
+                    )}
                   </ListItem>
                 );
               })}
@@ -278,6 +301,7 @@ TournamentRounds.defaultProps = {
   playerSort: (a, b) => 0,
   rounds: 0,
   activeRound: 0,
+  done: false,
   onSetPlayerPod: (id, pod) => null,
   onUpdateScores: scores => null,
   onRemovePlayer: id => null,
@@ -291,6 +315,7 @@ TournamentRounds.propTypes = {
   playerSort: PropTypes.func,
   rounds: PropTypes.number,
   activeRound: PropTypes.number,
+  done: PropTypes.bool,
   onSetPlayerPod: PropTypes.func,
   onUpdateScores: PropTypes.func,
   onRemovePlayer: PropTypes.func,

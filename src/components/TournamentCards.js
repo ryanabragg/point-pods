@@ -40,7 +40,7 @@ class TournamentCards extends Component {
       case 'Complete': cards = tournaments.filter(t => t.done); break;
     }
     if(category)
-      cards = cards.filter(t => t.category == category);
+      cards = cards.filter(t => t.category === category);
     if(search)
       cards = cards.filter(t => (
         t.name.toLowerCase().includes(search.toLowerCase())
@@ -67,7 +67,7 @@ class TournamentCards extends Component {
               <CardActions>
                 <Button size='small'
                   className={classes.right}
-                  href={`/${staging ? 'new' : 'tournament'}/${id}`}
+                  href={`/tournament/${id}`}
                 >
                   {done ? 'Details' : 'Continue'}
                 </Button>

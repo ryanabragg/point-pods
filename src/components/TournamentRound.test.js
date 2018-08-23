@@ -155,23 +155,8 @@ describe('actions', () => {
         3: 0,
       };
       expect(node.find(ListItem).length).toBe(players[i]);
-      let menuItems = node.find(MenuButton).at(0).prop('menuItems');
-      if(i == 1) {
-        expect(menuItems.length).toBe(2);
-        expect(menuItems[0].label).toBe('Move to Pod 2 (3 players)');
-        expect(menuItems[1].label).toBe('Move to new pod (Pod 3)');
-      }
-      else if(i == 2) {
-        expect(menuItems.length).toBe(2);
-        expect(menuItems[0].label).toBe('Move to Pod 1 (3 players)');
-        expect(menuItems[1].label).toBe('Move to new pod (Pod 3)');
-      }
-      else {
-        expect(menuItems.length).toBe(3);
-        expect(menuItems[0].label).toBe('Move to Pod 1 (3 players)');
-        expect(menuItems[1].label).toBe('Move to Pod 2 (3 players)');
-        expect(menuItems[2].label).toBe('Move to new pod (Pod 3)');
-      }
+      expect(node.find(MenuButton).length).toBe(0);
+      expect(node.find(IconButton).length).toBe(0);
     });
   });
 });
