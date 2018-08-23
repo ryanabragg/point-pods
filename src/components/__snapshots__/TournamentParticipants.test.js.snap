@@ -47,7 +47,7 @@ exports[`matches the prior snapshot 1`] = `
               <p
                 className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 IntegrationReactSelect-placeholder-136"
               >
-                Select player to add
+                Select player or enter new player name
               </p>
               <div
                 className="css-1hrkh7z"
@@ -193,7 +193,7 @@ exports[`matches the prior snapshot 2`] = `
               <p
                 className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 IntegrationReactSelect-placeholder-136"
               >
-                Select player to add
+                Select player or enter new player name
               </p>
               <div
                 className="css-1hrkh7z"
@@ -580,7 +580,7 @@ exports[`matches the prior snapshot 3`] = `
               <p
                 className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 IntegrationReactSelect-placeholder-136"
               >
-                Select player to add
+                Select player or enter new player name
               </p>
               <div
                 className="css-1hrkh7z"

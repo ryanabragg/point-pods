@@ -52,7 +52,7 @@ describe('actions', () => {
       <TournamentParticipants
         players={testTournaments[0].players}
         allPlayers={testPlayers}
-        handleSelectPlayer={spy}
+        onSelectPlayer={spy}
       />
     );
     const component = HOC.dive();
@@ -68,7 +68,7 @@ describe('actions', () => {
       <TournamentParticipants
         players={testTournaments[0].players}
         allPlayers={testPlayers}
-        handleSelectCreatePlayer={spy}
+        onSelectCreatePlayer={spy}
       />
     );
     const component = HOC.dive();
@@ -83,7 +83,7 @@ describe('actions', () => {
       <TournamentParticipants
         players={testTournaments[0].players}
         allPlayers={testPlayers}
-        handleRemovePlayer={spy}
+        onRemovePlayer={spy}
       />
     );
     const component = HOC.dive();
@@ -97,7 +97,7 @@ describe('actions', () => {
       <TournamentParticipants
         players={testTournaments[0].players}
         allPlayers={testPlayers}
-        handleRemovePlayer={spy}
+        onRemovePlayer={spy}
       />
     );
     const component = HOC.dive();
@@ -111,7 +111,7 @@ describe('actions', () => {
       <TournamentParticipants
         players={testTournaments[0].players}
         allPlayers={testPlayers}
-        handleUnDropPlayer={spy}
+        onReinstatePlayer={spy}
       />
     );
     const component = HOC.dive();

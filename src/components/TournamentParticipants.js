@@ -32,27 +32,27 @@ class TournamentParticipants extends Component {
   };
 
   handleSelect = (selected, action) => {
-    this.props.handleSelectPlayer(selected, action);
+    this.props.onSelectPlayer(selected, action);
     this.setState({value: ''});
   };
 
   handleCreate = (name) => {
-    this.props.handleSelectCreatePlayer(name);
+    this.props.onSelectCreatePlayer(name);
     this.setState({value: ''});
   };
 
   handleRemove = (id) => () => {
-    this.props.handleRemovePlayer(id);
+    this.props.onRemovePlayer(id);
   };
 
   handleReinstate = (id) => () => {
-    this.props.handleUnDropPlayer(id);
+    this.props.onReinstatePlayer(id);
   };
 
   render() {
     const {
       classes,
-      sync,
+      isSyncing,
       players,
       allPlayers,
       sort,
@@ -69,8 +69,8 @@ class TournamentParticipants extends Component {
             aria-label='add-player'
             isCreatable
             isClearable
-            isDisabled={sync}
-            isLoading={sync}
+            isDisabled={isSyncing}
+            isLoading={isSyncing}
             placeholder='Select player or enter new player name'
             onChange={this.handleSelect}
             onCreateOption={this.handleCreate}
@@ -120,26 +120,26 @@ class TournamentParticipants extends Component {
 }
 
 TournamentParticipants.defaultProps = {
-  sync: false,
+  isSyncing: false,
   players: [],
   allPlayers: [],
   sort: (a, b) => 0,
-  handleSelectPlayer: (selected, action) => {},
-  handleSelectCreatePlayer: (name) => {},
-  handleRemovePlayer: (id) => {},
-  handleUnDropPlayer: (id) => {},
+  onSelectPlayer: (selected, action) => {},
+  onSelectCreatePlayer: (name) => {},
+  onRemovePlayer: (id) => {},
+  onReinstatePlayer: (id) => {},
 };
 
 TournamentParticipants.propTypes = {
   classes: PropTypes.object.isRequired, // added by withStyles
-  sync: PropTypes.bool,
+  isSyncing: PropTypes.bool,
   players: PropTypes.array,
   allPlayers: PropTypes.array,
   sort: PropTypes.func,
-  handleSelectPlayer: PropTypes.func,
-  handleSelectCreatePlayer: PropTypes.func,
-  handleRemovePlayer: PropTypes.func,
-  handleUnDropPlayer: PropTypes.func,
+  onSelectPlayer: PropTypes.func,
+  onSelectCreatePlayer: PropTypes.func,
+  onRemovePlayer: PropTypes.func,
+  onReinstatePlayer: PropTypes.func,
 };
 
 export default withStyles(styles, { withTheme: true })(TournamentParticipants);
