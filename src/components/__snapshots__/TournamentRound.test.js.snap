@@ -1,0 +1,737 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the prior snapshot 1`] = `<div />`;
+
+exports[`matches the prior snapshot 2`] = `
+<div>
+  <div
+    className="MuiPaper-root-16 MuiPaper-elevation1-19 MuiPaper-rounded-17 MuiCard-root-15 TournamentRounds-margined-9"
+  >
+    <div
+      className="MuiCardHeader-root-43"
+    >
+      <div
+        className="MuiCardHeader-content-46"
+      >
+        <span
+          className="MuiTypography-root-49 MuiTypography-headline-54 MuiCardHeader-title-47"
+        >
+          New Players
+        </span>
+      </div>
+    </div>
+    <hr
+      className="MuiDivider-root-74"
+    />
+    <div
+      className="MuiCardContent-root-78"
+    >
+      <ul
+        className="MuiList-root-79 MuiList-padding-80"
+      >
+        <div
+          className="MuiButtonBase-root-93 MuiListItem-root-83 MuiListItem-default-86 MuiListItem-gutters-90 MuiListItem-button-91"
+          id="mock1"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <div
+            className="MuiListItemText-root-96"
+          >
+            <span
+              className="MuiTypography-root-49 MuiTypography-subheading-56 MuiListItemText-primary-99"
+            >
+              test1
+            </span>
+          </div>
+          <span
+            className="MuiTouchRipple-root-102"
+          />
+        </div>
+        <div
+          className="MuiButtonBase-root-93 MuiListItem-root-83 MuiListItem-default-86 MuiListItem-gutters-90 MuiListItem-button-91"
+          id="mock2"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <div
+            className="MuiListItemText-root-96"
+          >
+            <span
+              className="MuiTypography-root-49 MuiTypography-subheading-56 MuiListItemText-primary-99"
+            >
+              test2
+            </span>
+          </div>
+          <span
+            className="MuiTouchRipple-root-102"
+          />
+        </div>
+        <div
+          className="MuiButtonBase-root-93 MuiListItem-root-83 MuiListItem-default-86 MuiListItem-gutters-90 MuiListItem-button-91"
+          id="mock3"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <div
+            className="MuiListItemText-root-96"
+          >
+            <span
+              className="MuiTypography-root-49 MuiTypography-subheading-56 MuiListItemText-primary-99"
+            >
+              test3
+            </span>
+          </div>
+          <span
+            className="MuiTouchRipple-root-102"
+          />
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-16 MuiPaper-elevation1-19 MuiPaper-rounded-17 MuiCard-root-15 TournamentRounds-margined-9"
+  >
+    <div
+      className="MuiCardHeader-root-43"
+    >
+      <div
+        className="MuiCardHeader-content-46"
+      >
+        <span
+          className="MuiTypography-root-49 MuiTypography-headline-54 MuiCardHeader-title-47"
+        >
+          Dropped Players
+        </span>
+      </div>
+    </div>
+    <hr
+      className="MuiDivider-root-74"
+    />
+    <div
+      className="MuiCardContent-root-78"
+    >
+      <ul
+        className="MuiList-root-79 MuiList-padding-80"
+      >
+        <li
+          className="MuiListItem-container-84"
+        >
+          <div
+            className="MuiButtonBase-root-93 MuiListItem-root-83 MuiListItem-default-86 MuiListItem-gutters-90 MuiListItem-button-91 MuiListItem-secondaryAction-92"
+            id="mock0"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            <div
+              className="MuiListItemText-root-96"
+            >
+              <span
+                className="MuiTypography-root-49 MuiTypography-subheading-56 MuiListItemText-primary-99"
+              >
+                test0
+              </span>
+            </div>
+            <span
+              className="MuiTouchRipple-root-102"
+            />
+          </div>
+          <div
+            className="MuiListItemSecondaryAction-root-109"
+          >
+            <div>
+              <button
+                aria-haspopup="true"
+                aria-owns={null}
+                className="MuiButtonBase-root-93 MuiIconButton-root-111 MuiIconButton-colorInherit-112"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <span
+                  className="MuiIconButton-label-116"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root-117"
+                    color={undefined}
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  className="MuiTouchRipple-root-102"
+                />
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches the prior snapshot 3`] = `
+<div>
+  <div
+    className="MuiPaper-root-16 MuiPaper-elevation1-19 MuiPaper-rounded-17 MuiCard-root-15 TournamentRounds-margined-9"
+  >
+    <div
+      className="MuiCardHeader-root-43"
+    >
+      <div
+        className="MuiCardHeader-content-46"
+      >
+        <span
+          className="MuiTypography-root-49 MuiTypography-headline-54 MuiCardHeader-title-47"
+        >
+          Players
+        </span>
+      </div>
+    </div>
+    <hr
+      className="MuiDivider-root-74"
+    />
+    <div
+      className="MuiCardContent-root-78"
+    >
+      <ul
+        className="MuiList-root-79 MuiList-padding-80"
+      >
+        <li
+          className="MuiListItem-container-84"
+        >
+          <div
+            className="MuiButtonBase-root-93 MuiListItem-root-83 MuiListItem-default-86 MuiListItem-gutters-90 MuiListItem-button-91 MuiListItem-secondaryAction-92"
+            id="mock1"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            <div
+              className="MuiListItemText-root-96"
+            >
+              <span
+                className="MuiTypography-root-49 MuiTypography-subheading-56 MuiListItemText-primary-99"
+              >
+                test1
+              </span>
+            </div>
+            <span
+              className="MuiTouchRipple-root-102"
+            />
+          </div>
+          <div
+            className="MuiListItemSecondaryAction-root-109"
+          >
+            <div>
+              <button
+                aria-haspopup="true"
+                aria-owns={null}
+                className="MuiButtonBase-root-93 MuiIconButton-root-111 MuiIconButton-colorInherit-112"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <span
+                  className="MuiIconButton-label-116"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root-117"
+                    color={undefined}
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8zm6.5 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  className="MuiTouchRipple-root-102"
+                />
+              </button>
+            </div>
+            <button
+              className="MuiButtonBase-root-93 MuiIconButton-root-111 MuiIconButton-colorPrimary-113 TournamentRounds-marginedLeft-10"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex="0"
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label-116"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="MuiSvgIcon-root-117"
+                  color={undefined}
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                  />
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                </svg>
+              </span>
+              <span
+                className="MuiTouchRipple-root-102"
+              />
+            </button>
+          </div>
+        </li>
+        <li
+          className="MuiListItem-container-84"
+        >
+          <div
+            className="MuiButtonBase-root-93 MuiListItem-root-83 MuiListItem-default-86 MuiListItem-gutters-90 MuiListItem-button-91 MuiListItem-secondaryAction-92"
+            id="mock2"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            <div
+              className="MuiListItemText-root-96"
+            >
+              <span
+                className="MuiTypography-root-49 MuiTypography-subheading-56 MuiListItemText-primary-99"
+              >
+                test2
+              </span>
+            </div>
+            <span
+              className="MuiTouchRipple-root-102"
+            />
+          </div>
+          <div
+            className="MuiListItemSecondaryAction-root-109"
+          >
+            <div>
+              <button
+                aria-haspopup="true"
+                aria-owns={null}
+                className="MuiButtonBase-root-93 MuiIconButton-root-111 MuiIconButton-colorInherit-112"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <span
+                  className="MuiIconButton-label-116"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root-117"
+                    color={undefined}
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8zm6.5 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  className="MuiTouchRipple-root-102"
+                />
+              </button>
+            </div>
+            <button
+              className="MuiButtonBase-root-93 MuiIconButton-root-111 MuiIconButton-colorPrimary-113 TournamentRounds-marginedLeft-10"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex="0"
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label-116"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="MuiSvgIcon-root-117"
+                  color={undefined}
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                  />
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                </svg>
+              </span>
+              <span
+                className="MuiTouchRipple-root-102"
+              />
+            </button>
+          </div>
+        </li>
+        <li
+          className="MuiListItem-container-84"
+        >
+          <div
+            className="MuiButtonBase-root-93 MuiListItem-root-83 MuiListItem-default-86 MuiListItem-gutters-90 MuiListItem-button-91 MuiListItem-secondaryAction-92"
+            id="mock3"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            <div
+              className="MuiListItemText-root-96"
+            >
+              <span
+                className="MuiTypography-root-49 MuiTypography-subheading-56 MuiListItemText-primary-99"
+              >
+                test3
+              </span>
+            </div>
+            <span
+              className="MuiTouchRipple-root-102"
+            />
+          </div>
+          <div
+            className="MuiListItemSecondaryAction-root-109"
+          >
+            <div>
+              <button
+                aria-haspopup="true"
+                aria-owns={null}
+                className="MuiButtonBase-root-93 MuiIconButton-root-111 MuiIconButton-colorInherit-112"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <span
+                  className="MuiIconButton-label-116"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root-117"
+                    color={undefined}
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5S9.5 9.38 9.5 8zm6.5 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  className="MuiTouchRipple-root-102"
+                />
+              </button>
+            </div>
+            <button
+              className="MuiButtonBase-root-93 MuiIconButton-root-111 MuiIconButton-colorPrimary-113 TournamentRounds-marginedLeft-10"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex="0"
+              type="button"
+            >
+              <span
+                className="MuiIconButton-label-116"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="MuiSvgIcon-root-117"
+                  color={undefined}
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                  />
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                </svg>
+              </span>
+              <span
+                className="MuiTouchRipple-root-102"
+              />
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-16 MuiPaper-elevation1-19 MuiPaper-rounded-17 MuiCard-root-15 TournamentRounds-margined-9"
+  >
+    <div
+      className="MuiCardHeader-root-43"
+    >
+      <div
+        className="MuiCardHeader-content-46"
+      >
+        <span
+          className="MuiTypography-root-49 MuiTypography-headline-54 MuiCardHeader-title-47"
+        >
+          Dropped Players
+        </span>
+      </div>
+    </div>
+    <hr
+      className="MuiDivider-root-74"
+    />
+    <div
+      className="MuiCardContent-root-78"
+    >
+      <ul
+        className="MuiList-root-79 MuiList-padding-80"
+      >
+        <li
+          className="MuiListItem-container-84"
+        >
+          <div
+            className="MuiButtonBase-root-93 MuiListItem-root-83 MuiListItem-default-86 MuiListItem-gutters-90 MuiListItem-button-91 MuiListItem-secondaryAction-92"
+            id="mock0"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            <div
+              className="MuiListItemText-root-96"
+            >
+              <span
+                className="MuiTypography-root-49 MuiTypography-subheading-56 MuiListItemText-primary-99"
+              >
+                test0
+              </span>
+            </div>
+            <span
+              className="MuiTouchRipple-root-102"
+            />
+          </div>
+          <div
+            className="MuiListItemSecondaryAction-root-109"
+          >
+            <div>
+              <button
+                aria-haspopup="true"
+                aria-owns={null}
+                className="MuiButtonBase-root-93 MuiIconButton-root-111 MuiIconButton-colorInherit-112"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex="0"
+                type="button"
+              >
+                <span
+                  className="MuiIconButton-label-116"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root-117"
+                    color={undefined}
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M0 0h24v24H0z"
+                      fill="none"
+                    />
+                    <path
+                      d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  className="MuiTouchRipple-root-102"
+                />
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
