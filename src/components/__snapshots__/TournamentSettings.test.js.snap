@@ -2,36 +2,41 @@
 
 exports[`matches the prior snapshot 1`] = `
 <div
-  className="APIComponent-root-137"
+  className="TournamentSettings-root-103"
 >
   <div
-    className="MuiPaper-root-143 MuiPaper-elevation1-146 MuiPaper-rounded-144 MuiCard-root-142 APIComponent-card-138"
+    className="MuiPaper-root-109 MuiPaper-elevation1-112 MuiPaper-rounded-110 MuiCard-root-108 TournamentSettings-card-104"
   >
     
     
     <div
-      className="MuiCardContent-root-170 APIComponent-content-139"
+      className="MuiCardContent-root-136 TournamentSettings-content-105"
     >
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 MuiFormControl-fullWidth-174 APIComponent-field-140"
+        className="MuiFormControl-root-137 MuiFormControl-marginNormal-138 MuiFormControl-fullWidth-140 TournamentSettings-field-106"
       >
         <label
-          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-marginDense-177"
+          className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145"
           data-shrink={false}
           htmlFor="tournament-name"
         >
            Name
+          <span
+            className="MuiFormLabel-asterisk-150"
+          >
+             *
+          </span>
         </label>
         <div
-          className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
+          className="MuiInput-root-151 MuiInput-fullWidth-158 MuiInput-formControl-152 MuiInput-underline-155"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={false}
-            className="MuiInput-input-193 MuiInput-inputMarginDense-194"
-            defaultValue={undefined}
+            className="MuiInput-input-159"
+            defaultValue=""
             disabled={false}
             id="tournament-name"
             name={undefined}
@@ -42,33 +47,38 @@ exports[`matches the prior snapshot 1`] = `
             onKeyUp={undefined}
             placeholder={undefined}
             readOnly={undefined}
-            required={false}
+            required={true}
             rows={undefined}
             type="text"
-            value=""
+            value={undefined}
           />
         </div>
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 MuiFormControl-fullWidth-174 APIComponent-field-140"
+        className="MuiFormControl-root-137 MuiFormControl-marginNormal-138 MuiFormControl-fullWidth-140 TournamentSettings-field-106"
       >
         <label
-          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-marginDense-177"
+          className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145"
           data-shrink={false}
           htmlFor="tournament-description"
         >
           Description
+          <span
+            className="MuiFormLabel-asterisk-150"
+          >
+             *
+          </span>
         </label>
         <div
-          className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
+          className="MuiInput-root-151 MuiInput-fullWidth-158 MuiInput-formControl-152 MuiInput-underline-155"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-193 MuiInput-inputMarginDense-194"
-            defaultValue={undefined}
+            className="MuiInput-input-159"
+            defaultValue=""
             disabled={false}
             id="tournament-description"
             name={undefined}
@@ -79,37 +89,37 @@ exports[`matches the prior snapshot 1`] = `
             onKeyUp={undefined}
             placeholder={undefined}
             readOnly={undefined}
-            required={false}
+            required={true}
             rows={undefined}
             type="text"
-            value=""
+            value={undefined}
           />
         </div>
       </div>
       <div
-        className="css-10nd86i APIComponent-field-140"
+        className="css-10nd86i TournamentSettings-field-106"
         id="tournament-category"
         onKeyDown={[Function]}
       >
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-171 MuiFormControl-fullWidth-174"
+          className="MuiFormControl-root-137 MuiFormControl-fullWidth-140"
         >
           <label
-            className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178"
+            className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145 MuiInputLabel-shrink-144"
             data-shrink={true}
             htmlFor={undefined}
           >
             Category
           </label>
           <div
-            className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
+            className="MuiInput-root-151 MuiInput-fullWidth-158 MuiInput-formControl-152 MuiInput-underline-155"
           >
             <div
               aria-invalid={false}
               autoComplete={undefined}
               autoFocus={undefined}
-              className="MuiInput-input-193 IntegrationReactSelect-input-199"
+              className="MuiInput-input-159 IntegrationReactSelect-input-165"
               defaultValue={undefined}
               disabled={false}
               id={undefined}
@@ -129,10 +139,10 @@ exports[`matches the prior snapshot 1`] = `
               value={undefined}
             >
               <div
-                className="IntegrationReactSelect-valueContainer-200"
+                className="IntegrationReactSelect-valueContainer-166"
               >
                 <p
-                  className="MuiTypography-root-248 MuiTypography-body1-257 MuiTypography-colorTextSecondary-271 IntegrationReactSelect-placeholder-205"
+                  className="MuiTypography-root-180 MuiTypography-body1-189 MuiTypography-colorTextSecondary-203 IntegrationReactSelect-placeholder-171"
                 >
                   Select or Type...
                 </p>
@@ -228,24 +238,29 @@ exports[`matches the prior snapshot 1`] = `
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 APIComponent-field-140"
+        className="MuiFormControl-root-137 MuiFormControl-marginNormal-138 TournamentSettings-field-106"
       >
         <label
-          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178 MuiInputLabel-marginDense-177"
+          className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145 MuiInputLabel-shrink-144"
           data-shrink={true}
           htmlFor="tournament-date"
         >
           Date
+          <span
+            className="MuiFormLabel-asterisk-150"
+          >
+             *
+          </span>
         </label>
         <div
-          className="MuiInput-root-185 MuiInput-formControl-186 MuiInput-underline-189"
+          className="MuiInput-root-151 MuiInput-formControl-152 MuiInput-underline-155"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-193 MuiInput-inputType-196 MuiInput-inputMarginDense-194"
-            defaultValue={undefined}
+            className="MuiInput-input-159 MuiInput-inputType-162"
+            defaultValue=""
             disabled={false}
             id="tournament-date"
             name={undefined}
@@ -256,37 +271,37 @@ exports[`matches the prior snapshot 1`] = `
             onKeyUp={undefined}
             placeholder={undefined}
             readOnly={undefined}
-            required={false}
+            required={true}
             rows={undefined}
             type="date"
-            value="2018-08-23"
+            value={undefined}
           />
         </div>
       </div>
       <div
-        className="css-10nd86i APIComponent-field-140"
+        className="css-10nd86i TournamentSettings-field-106"
         id="tournament-pairingMethod"
         onKeyDown={[Function]}
       >
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-171 MuiFormControl-fullWidth-174"
+          className="MuiFormControl-root-137 MuiFormControl-fullWidth-140"
         >
           <label
-            className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178"
+            className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145 MuiInputLabel-shrink-144"
             data-shrink={true}
             htmlFor={undefined}
           >
             Pairing Method
           </label>
           <div
-            className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
+            className="MuiInput-root-151 MuiInput-fullWidth-158 MuiInput-formControl-152 MuiInput-underline-155"
           >
             <div
               aria-invalid={false}
               autoComplete={undefined}
               autoFocus={undefined}
-              className="MuiInput-input-193 IntegrationReactSelect-input-199"
+              className="MuiInput-input-159 IntegrationReactSelect-input-165"
               defaultValue={undefined}
               disabled={false}
               id={undefined}
@@ -306,10 +321,10 @@ exports[`matches the prior snapshot 1`] = `
               value={undefined}
             >
               <div
-                className="IntegrationReactSelect-valueContainer-200"
+                className="IntegrationReactSelect-valueContainer-166"
               >
                 <p
-                  className="MuiTypography-root-248 MuiTypography-body1-257 MuiTypography-colorTextSecondary-271 IntegrationReactSelect-placeholder-205"
+                  className="MuiTypography-root-180 MuiTypography-body1-189 MuiTypography-colorTextSecondary-203 IntegrationReactSelect-placeholder-171"
                 >
                   Select...
                 </p>
@@ -404,29 +419,29 @@ exports[`matches the prior snapshot 1`] = `
         </div>
       </div>
       <div
-        className="css-10nd86i APIComponent-field-140"
+        className="css-10nd86i TournamentSettings-field-106"
         id="tournament-pairingMethodInitial"
         onKeyDown={[Function]}
       >
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-171 MuiFormControl-fullWidth-174"
+          className="MuiFormControl-root-137 MuiFormControl-fullWidth-140"
         >
           <label
-            className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178"
+            className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145 MuiInputLabel-shrink-144"
             data-shrink={true}
             htmlFor={undefined}
           >
             Initial Pairing Method
           </label>
           <div
-            className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
+            className="MuiInput-root-151 MuiInput-fullWidth-158 MuiInput-formControl-152 MuiInput-underline-155"
           >
             <div
               aria-invalid={false}
               autoComplete={undefined}
               autoFocus={undefined}
-              className="MuiInput-input-193 IntegrationReactSelect-input-199"
+              className="MuiInput-input-159 IntegrationReactSelect-input-165"
               defaultValue={undefined}
               disabled={false}
               id={undefined}
@@ -446,10 +461,10 @@ exports[`matches the prior snapshot 1`] = `
               value={undefined}
             >
               <div
-                className="IntegrationReactSelect-valueContainer-200"
+                className="IntegrationReactSelect-valueContainer-166"
               >
                 <p
-                  className="MuiTypography-root-248 MuiTypography-body1-257 MuiTypography-colorTextSecondary-271 IntegrationReactSelect-placeholder-205"
+                  className="MuiTypography-root-180 MuiTypography-body1-189 MuiTypography-colorTextSecondary-203 IntegrationReactSelect-placeholder-171"
                 >
                   Select...
                 </p>
@@ -545,24 +560,29 @@ exports[`matches the prior snapshot 1`] = `
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 APIComponent-field-140"
+        className="MuiFormControl-root-137 MuiFormControl-marginNormal-138 TournamentSettings-field-106"
       >
         <label
-          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178 MuiInputLabel-marginDense-177"
-          data-shrink={true}
+          className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145"
+          data-shrink={false}
           htmlFor="tournament-podSizeMinimum"
         >
           Minimum Pod Size
+          <span
+            className="MuiFormLabel-asterisk-150"
+          >
+             *
+          </span>
         </label>
         <div
-          className="MuiInput-root-185 MuiInput-formControl-186 MuiInput-underline-189"
+          className="MuiInput-root-151 MuiInput-formControl-152 MuiInput-underline-155"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-193 MuiInput-inputType-196 MuiInput-inputMarginDense-194"
-            defaultValue={undefined}
+            className="MuiInput-input-159 MuiInput-inputType-162"
+            defaultValue={0}
             disabled={false}
             id="tournament-podSizeMinimum"
             name={undefined}
@@ -573,33 +593,38 @@ exports[`matches the prior snapshot 1`] = `
             onKeyUp={undefined}
             placeholder={undefined}
             readOnly={undefined}
-            required={false}
+            required={true}
             rows={undefined}
             type="number"
-            value={0}
+            value={undefined}
           />
         </div>
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 APIComponent-field-140"
+        className="MuiFormControl-root-137 MuiFormControl-marginNormal-138 TournamentSettings-field-106"
       >
         <label
-          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178 MuiInputLabel-marginDense-177"
-          data-shrink={true}
+          className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145"
+          data-shrink={false}
           htmlFor="tournament-podSizeMaximum"
         >
           Maximum Pod Size
+          <span
+            className="MuiFormLabel-asterisk-150"
+          >
+             *
+          </span>
         </label>
         <div
-          className="MuiInput-root-185 MuiInput-formControl-186 MuiInput-underline-189"
+          className="MuiInput-root-151 MuiInput-formControl-152 MuiInput-underline-155"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-193 MuiInput-inputType-196 MuiInput-inputMarginDense-194"
-            defaultValue={undefined}
+            className="MuiInput-input-159 MuiInput-inputType-162"
+            defaultValue={0}
             disabled={false}
             id="tournament-podSizeMaximum"
             name={undefined}
@@ -610,85 +635,75 @@ exports[`matches the prior snapshot 1`] = `
             onKeyUp={undefined}
             placeholder={undefined}
             readOnly={undefined}
-            required={false}
+            required={true}
             rows={undefined}
             type="number"
-            value={0}
+            value={undefined}
           />
         </div>
       </div>
     </div>
     <hr
-      className="MuiDivider-root-208"
+      className="MuiDivider-root-174"
     />
     <div
-      className="MuiCardActions-root-212"
-    >
-      <button
-        aria-label="Create"
-        className="MuiButtonBase-root-238 MuiButton-root-214 MuiButton-text-216 MuiButton-flat-219 APIComponent-right-141 MuiCardActions-action-213"
-        disabled={false}
-        id="tournament-submit"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-      >
-        <span
-          className="MuiButton-label-215"
-        >
-          Create
-        </span>
-        <span
-          className="MuiTouchRipple-root-241"
-        />
-      </button>
-    </div>
+      className="MuiCardActions-root-178"
+    />
   </div>
 </div>
 `;
 
 exports[`matches the prior snapshot 2`] = `
 <div
-  className="APIComponent-root-137"
+  className="TournamentSettings-root-103"
 >
   <div
-    className="MuiPaper-root-143 MuiPaper-elevation1-146 MuiPaper-rounded-144 MuiCard-root-142 APIComponent-card-138"
+    className="MuiPaper-root-109 MuiPaper-elevation1-112 MuiPaper-rounded-110 MuiCard-root-108 TournamentSettings-card-104"
   >
-    
-    
     <div
-      className="MuiCardContent-root-170 APIComponent-content-139"
+      className="MuiCardHeader-root-205"
+    >
+      <div
+        className="MuiCardHeader-content-208"
+      >
+        <span
+          className="MuiTypography-root-180 MuiTypography-headline-185 MuiCardHeader-title-209"
+        >
+          test
+        </span>
+      </div>
+    </div>
+    <hr
+      className="MuiDivider-root-174"
+    />
+    <div
+      className="MuiCardContent-root-136 TournamentSettings-content-105"
     >
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 MuiFormControl-fullWidth-174 APIComponent-field-140"
+        className="MuiFormControl-root-137 MuiFormControl-marginNormal-138 MuiFormControl-fullWidth-140 TournamentSettings-field-106"
       >
         <label
-          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-marginDense-177"
+          className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145"
           data-shrink={false}
           htmlFor="tournament-name"
         >
            Name
+          <span
+            className="MuiFormLabel-asterisk-150"
+          >
+             *
+          </span>
         </label>
         <div
-          className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
+          className="MuiInput-root-151 MuiInput-fullWidth-158 MuiInput-formControl-152 MuiInput-underline-155"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={false}
-            className="MuiInput-input-193 MuiInput-inputMarginDense-194"
-            defaultValue={undefined}
+            className="MuiInput-input-159"
+            defaultValue="test0"
             disabled={false}
             id="tournament-name"
             name={undefined}
@@ -699,33 +714,38 @@ exports[`matches the prior snapshot 2`] = `
             onKeyUp={undefined}
             placeholder={undefined}
             readOnly={undefined}
-            required={false}
+            required={true}
             rows={undefined}
             type="text"
-            value=""
+            value={undefined}
           />
         </div>
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 MuiFormControl-fullWidth-174 APIComponent-field-140"
+        className="MuiFormControl-root-137 MuiFormControl-marginNormal-138 MuiFormControl-fullWidth-140 TournamentSettings-field-106"
       >
         <label
-          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-marginDense-177"
+          className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145"
           data-shrink={false}
           htmlFor="tournament-description"
         >
           Description
+          <span
+            className="MuiFormLabel-asterisk-150"
+          >
+             *
+          </span>
         </label>
         <div
-          className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
+          className="MuiInput-root-151 MuiInput-fullWidth-158 MuiInput-formControl-152 MuiInput-underline-155"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-193 MuiInput-inputMarginDense-194"
-            defaultValue={undefined}
+            className="MuiInput-input-159"
+            defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae tellus nunc. Etiam urna tortor, laoreet vitae commodo porttitor, mattis id purus."
             disabled={false}
             id="tournament-description"
             name={undefined}
@@ -736,37 +756,37 @@ exports[`matches the prior snapshot 2`] = `
             onKeyUp={undefined}
             placeholder={undefined}
             readOnly={undefined}
-            required={false}
+            required={true}
             rows={undefined}
             type="text"
-            value=""
+            value={undefined}
           />
         </div>
       </div>
       <div
-        className="css-10nd86i APIComponent-field-140"
+        className="css-10nd86i TournamentSettings-field-106"
         id="tournament-category"
         onKeyDown={[Function]}
       >
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-171 MuiFormControl-fullWidth-174"
+          className="MuiFormControl-root-137 MuiFormControl-fullWidth-140"
         >
           <label
-            className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178"
+            className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145 MuiInputLabel-shrink-144"
             data-shrink={true}
             htmlFor={undefined}
           >
             Category
           </label>
           <div
-            className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
+            className="MuiInput-root-151 MuiInput-fullWidth-158 MuiInput-formControl-152 MuiInput-underline-155"
           >
             <div
               aria-invalid={false}
               autoComplete={undefined}
               autoFocus={undefined}
-              className="MuiInput-input-193 IntegrationReactSelect-input-199"
+              className="MuiInput-input-159 IntegrationReactSelect-input-165"
               defaultValue={undefined}
               disabled={false}
               id={undefined}
@@ -786,10 +806,10 @@ exports[`matches the prior snapshot 2`] = `
               value={undefined}
             >
               <div
-                className="IntegrationReactSelect-valueContainer-200"
+                className="IntegrationReactSelect-valueContainer-166"
               >
                 <p
-                  className="MuiTypography-root-248 MuiTypography-body1-257 MuiTypography-colorTextSecondary-271 IntegrationReactSelect-placeholder-205"
+                  className="MuiTypography-root-180 MuiTypography-body1-189 MuiTypography-colorTextSecondary-203 IntegrationReactSelect-placeholder-171"
                 >
                   Select or Type...
                 </p>
@@ -885,24 +905,29 @@ exports[`matches the prior snapshot 2`] = `
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 APIComponent-field-140"
+        className="MuiFormControl-root-137 MuiFormControl-marginNormal-138 TournamentSettings-field-106"
       >
         <label
-          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178 MuiInputLabel-marginDense-177"
+          className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145 MuiInputLabel-shrink-144"
           data-shrink={true}
           htmlFor="tournament-date"
         >
           Date
+          <span
+            className="MuiFormLabel-asterisk-150"
+          >
+             *
+          </span>
         </label>
         <div
-          className="MuiInput-root-185 MuiInput-formControl-186 MuiInput-underline-189"
+          className="MuiInput-root-151 MuiInput-formControl-152 MuiInput-underline-155"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-193 MuiInput-inputType-196 MuiInput-inputMarginDense-194"
-            defaultValue={undefined}
+            className="MuiInput-input-159 MuiInput-inputType-162"
+            defaultValue={2018-01-01T00:00:00.000Z}
             disabled={false}
             id="tournament-date"
             name={undefined}
@@ -913,37 +938,37 @@ exports[`matches the prior snapshot 2`] = `
             onKeyUp={undefined}
             placeholder={undefined}
             readOnly={undefined}
-            required={false}
+            required={true}
             rows={undefined}
             type="date"
-            value="2018-08-23"
+            value={undefined}
           />
         </div>
       </div>
       <div
-        className="css-10nd86i APIComponent-field-140"
+        className="css-10nd86i TournamentSettings-field-106"
         id="tournament-pairingMethod"
         onKeyDown={[Function]}
       >
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-171 MuiFormControl-fullWidth-174"
+          className="MuiFormControl-root-137 MuiFormControl-fullWidth-140"
         >
           <label
-            className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178"
+            className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145 MuiInputLabel-shrink-144"
             data-shrink={true}
             htmlFor={undefined}
           >
             Pairing Method
           </label>
           <div
-            className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
+            className="MuiInput-root-151 MuiInput-fullWidth-158 MuiInput-formControl-152 MuiInput-underline-155"
           >
             <div
               aria-invalid={false}
               autoComplete={undefined}
               autoFocus={undefined}
-              className="MuiInput-input-193 IntegrationReactSelect-input-199"
+              className="MuiInput-input-159 IntegrationReactSelect-input-165"
               defaultValue={undefined}
               disabled={false}
               id={undefined}
@@ -963,12 +988,12 @@ exports[`matches the prior snapshot 2`] = `
               value={undefined}
             >
               <div
-                className="IntegrationReactSelect-valueContainer-200"
+                className="IntegrationReactSelect-valueContainer-166"
               >
                 <p
-                  className="MuiTypography-root-248 MuiTypography-body1-257 IntegrationReactSelect-singleValue-204"
+                  className="MuiTypography-root-180 MuiTypography-body1-189 MuiTypography-colorTextSecondary-203 IntegrationReactSelect-placeholder-171"
                 >
-                  Historic
+                  Select...
                 </p>
                 <div
                   className="css-1hrkh7z"
@@ -1061,29 +1086,29 @@ exports[`matches the prior snapshot 2`] = `
         </div>
       </div>
       <div
-        className="css-10nd86i APIComponent-field-140"
+        className="css-10nd86i TournamentSettings-field-106"
         id="tournament-pairingMethodInitial"
         onKeyDown={[Function]}
       >
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-171 MuiFormControl-fullWidth-174"
+          className="MuiFormControl-root-137 MuiFormControl-fullWidth-140"
         >
           <label
-            className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178"
+            className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145 MuiInputLabel-shrink-144"
             data-shrink={true}
             htmlFor={undefined}
           >
             Initial Pairing Method
           </label>
           <div
-            className="MuiInput-root-185 MuiInput-fullWidth-192 MuiInput-formControl-186 MuiInput-underline-189"
+            className="MuiInput-root-151 MuiInput-fullWidth-158 MuiInput-formControl-152 MuiInput-underline-155"
           >
             <div
               aria-invalid={false}
               autoComplete={undefined}
               autoFocus={undefined}
-              className="MuiInput-input-193 IntegrationReactSelect-input-199"
+              className="MuiInput-input-159 IntegrationReactSelect-input-165"
               defaultValue={undefined}
               disabled={false}
               id={undefined}
@@ -1103,12 +1128,12 @@ exports[`matches the prior snapshot 2`] = `
               value={undefined}
             >
               <div
-                className="IntegrationReactSelect-valueContainer-200"
+                className="IntegrationReactSelect-valueContainer-166"
               >
                 <p
-                  className="MuiTypography-root-248 MuiTypography-body1-257 IntegrationReactSelect-singleValue-204"
+                  className="MuiTypography-root-180 MuiTypography-body1-189 MuiTypography-colorTextSecondary-203 IntegrationReactSelect-placeholder-171"
                 >
-                  Historic
+                  Select...
                 </p>
                 <div
                   className="css-1hrkh7z"
@@ -1202,24 +1227,29 @@ exports[`matches the prior snapshot 2`] = `
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 APIComponent-field-140"
+        className="MuiFormControl-root-137 MuiFormControl-marginNormal-138 TournamentSettings-field-106"
       >
         <label
-          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178 MuiInputLabel-marginDense-177"
-          data-shrink={true}
+          className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145"
+          data-shrink={false}
           htmlFor="tournament-podSizeMinimum"
         >
           Minimum Pod Size
+          <span
+            className="MuiFormLabel-asterisk-150"
+          >
+             *
+          </span>
         </label>
         <div
-          className="MuiInput-root-185 MuiInput-formControl-186 MuiInput-underline-189"
+          className="MuiInput-root-151 MuiInput-formControl-152 MuiInput-underline-155"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-193 MuiInput-inputType-196 MuiInput-inputMarginDense-194"
-            defaultValue={undefined}
+            className="MuiInput-input-159 MuiInput-inputType-162"
+            defaultValue={3}
             disabled={false}
             id="tournament-podSizeMinimum"
             name={undefined}
@@ -1230,33 +1260,38 @@ exports[`matches the prior snapshot 2`] = `
             onKeyUp={undefined}
             placeholder={undefined}
             readOnly={undefined}
-            required={false}
+            required={true}
             rows={undefined}
             type="number"
-            value={4}
+            value={undefined}
           />
         </div>
       </div>
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-171 MuiFormControl-marginDense-173 APIComponent-field-140"
+        className="MuiFormControl-root-137 MuiFormControl-marginNormal-138 TournamentSettings-field-106"
       >
         <label
-          className="MuiFormLabel-root-180 MuiInputLabel-root-175 MuiInputLabel-formControl-176 MuiInputLabel-animated-179 MuiInputLabel-shrink-178 MuiInputLabel-marginDense-177"
-          data-shrink={true}
+          className="MuiFormLabel-root-146 MuiInputLabel-root-141 MuiInputLabel-formControl-142 MuiInputLabel-animated-145"
+          data-shrink={false}
           htmlFor="tournament-podSizeMaximum"
         >
           Maximum Pod Size
+          <span
+            className="MuiFormLabel-asterisk-150"
+          >
+             *
+          </span>
         </label>
         <div
-          className="MuiInput-root-185 MuiInput-formControl-186 MuiInput-underline-189"
+          className="MuiInput-root-151 MuiInput-formControl-152 MuiInput-underline-155"
         >
           <input
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-193 MuiInput-inputType-196 MuiInput-inputMarginDense-194"
-            defaultValue={undefined}
+            className="MuiInput-input-159 MuiInput-inputType-162"
+            defaultValue={4}
             disabled={false}
             id="tournament-podSizeMaximum"
             name={undefined}
@@ -1267,49 +1302,20 @@ exports[`matches the prior snapshot 2`] = `
             onKeyUp={undefined}
             placeholder={undefined}
             readOnly={undefined}
-            required={false}
+            required={true}
             rows={undefined}
             type="number"
-            value={7}
+            value={undefined}
           />
         </div>
       </div>
     </div>
     <hr
-      className="MuiDivider-root-208"
+      className="MuiDivider-root-174"
     />
     <div
-      className="MuiCardActions-root-212"
-    >
-      <button
-        aria-label="Create"
-        className="MuiButtonBase-root-238 MuiButton-root-214 MuiButton-text-216 MuiButton-flat-219 APIComponent-right-141 MuiCardActions-action-213"
-        disabled={false}
-        id="tournament-submit"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="0"
-        type="button"
-      >
-        <span
-          className="MuiButton-label-215"
-        >
-          Create
-        </span>
-        <span
-          className="MuiTouchRipple-root-241"
-        />
-      </button>
-    </div>
+      className="MuiCardActions-root-178"
+    />
   </div>
 </div>
 `;

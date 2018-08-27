@@ -70,20 +70,22 @@ const styles = theme => ({
 
 class Tournament extends Component {
   state = {
-    tabIndex: 0,
+    tabIndex: 1,
     sync: false,
     dialog: null,
     activeRound: 0,
     allPlayers: [],
+    categories: [],
+    pairingMethods: [],
     id: this.props.match.params.id || null,
     name: '',
     category: '',
     description: '',
-    date: null,
-    pairingMethod: '',
-    pairingMethodInitial: '',
-    podSizeMinimum: '',
-    podSizeMaximum: '',
+    date: '',
+    pairingMethod: 0,
+    pairingMethodInitial: 0,
+    podSizeMinimum: 0,
+    podSizeMaximum: 0,
     rounds: 0,
     done: false,
     staging: true,
@@ -103,9 +105,28 @@ class Tournament extends Component {
   componentDidMount() {
     if(this.state.id === null)
       return this.goBack();
-    let loadState = {};
-    this.props.api.Tournaments.get(this.state.id)
-      .then(tournament => Object.assign(loadState, tournament, {activeRound: tournament.rounds}))
+    let loadState = {
+      pairingMethods: Object.keys(this.props.api.pairingMethods)
+        .map(key => ({
+          label: key.slice(0,1).toUpperCase() + key.slice(1).toLowerCase(),
+          value: this.props.api.pairingMethods[key],
+        })),
+    };
+    this.props.api.Settings.get()
+      .then((settings) => Object.assign(loadState, settings))
+      .then(() => this.props.api.Tournaments.all())
+      .then(list => {
+        Object.assign(loadState, {
+          categories: list.map(tournament => tournament.category)
+            .filter((cat, i, self) => cat && self.indexOf(cat) === i).sort(),
+        });
+        if(!this.state.id)
+          throw new Error('Invalid ID');
+        const index = list.findIndex(t => String(t.id) === this.state.id);
+        if(index === -1)
+          throw new Error('ID not found');
+        Object.assign(loadState, list[index], {activeRound: list[index].rounds});
+      })
       .then(() => this.props.api.Players.all())
       .then(list => loadState.allPlayers = list || [])
       .then(() => this.setState(loadState))
@@ -470,10 +491,37 @@ class Tournament extends Component {
       });
   };
 
-  handleSettingsUpdate = () => {
-    this.props.api.Tournaments.get(this.state.id)
-      .then(tournament => this.setState(tournament))
-      .catch(error => this.props.notification(error.message, 'error'));
+  handleSettingsUpdate = (update) => {
+    const check = {
+      name: update.hasOwnProperty('name'),
+      min: update.hasOwnProperty('podSizeMinimum'),
+      max: update.hasOwnProperty('podSizeMaximum'),
+    };
+    if(check.name && update.name === '') {
+      this.setState({sync: false});
+      return this.props.notification('Name cannot be empty', 'error');
+    }
+    if(check.min && check.max && update.podSizeMinimum > update.podSizeMaximum) {
+      this.setState({sync: false});
+      return this.props.notification('Minimum pod size exceeds maximum', 'error');
+    }
+    else if(check.min && update.podSizeMinimum > this.state.podSizeMaximum) {
+      this.setState({sync: false});
+      return this.props.notification('Minimum pod size exceeds maximum', 'error');
+    }
+    else if(check.max && this.state.podSizeMinimum > update.podSizeMaximum) {
+      this.setState({sync: false});
+      return this.props.notification('Minimum pod size exceeds maximum', 'error');
+    }
+    this.props.api.Tournaments.set({
+      id: this.state.id,
+      ...update,
+    })
+      .then(tournament => this.setState(Object.assign({}, tournament, {sync: false})))
+      .catch(error => {
+        this.props.notification(error.message, 'error');
+        this.setState({sync: false});
+      });
   };
 
   renderToolbar = () => {
@@ -574,7 +622,27 @@ class Tournament extends Component {
 
   render() {
     const { classes, theme } = this.props;
-    const { tabIndex, sync, id, name, rounds, done, staging, players, allPlayers, activeRound } = this.state;
+    const {
+      tabIndex,
+      sync,
+      categories,
+      pairingMethods,
+      id,
+      name,
+      category,
+      description,
+      date,
+      pairingMethod,
+      pairingMethodInitial,
+      podSizeMinimum,
+      podSizeMaximum,
+      rounds,
+      done,
+      staging,
+      players,
+      allPlayers,
+      activeRound
+    } = this.state;
     const transitionDuration = {
       enter: theme.transitions.duration.enteringScreen,
       exit: theme.transitions.duration.leavingScreen,
@@ -635,10 +703,22 @@ class Tournament extends Component {
             onRemovePlayer={this.handleRemovePlayer}
             onReinstatePlayer={this.handleReinstatePlayer}
           />
-          <TournamentSettings
-            id={id}
-            onSubmit={this.handleSettingsUpdate}
-          />
+          {tabIndex !== 2 ? <div /> : /* hack: need to force mount when swiching to the tab the first time */
+            <TournamentSettings
+              pairingMethods={pairingMethods}
+              categories={categories}
+              name={name}
+              category={category}
+              description={description}
+              date={date}
+              pairingMethod={pairingMethod}
+              pairingMethodInitial={pairingMethodInitial}
+              podSizeMinimum={podSizeMinimum}
+              podSizeMaximum={podSizeMaximum}
+              onChange={this.handleSettingsUpdate}
+              sync={this.handleSetValue('sync')}
+            />
+          }
         </SwipeTabControl>
       </div>
     );

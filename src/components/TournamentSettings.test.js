@@ -4,15 +4,12 @@ import renderer from 'react-test-renderer';
 import { shallow, mount } from 'enzyme';
 
 import CardHeader from '@material-ui/core/CardHeader';
+import CardActions from '@material-ui/core/CardActions';
+import TextField from '@material-ui/core/TextField';
 
 import TournamentSettings from './TournamentSettings';
 
-import api from '../api';
-
-import { testSettings, testTournaments, mockStorage, mockAPI, demockAPI } from '../testData';
-
-beforeEach(() => mockAPI(api, mockStorage));
-afterEach(() => demockAPI(api));
+import { testSettings, testTournaments } from '../testData';
 
 test('renders without crashing', () => {
   const div = document.createElement('div');
@@ -20,164 +17,245 @@ test('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-test('matches the prior snapshot', (done) => {
+test('matches the prior snapshot', () => {
   const component = renderer.create(<TournamentSettings />);
   expect(component.toJSON()).toMatchSnapshot();
-    component.update(<TournamentSettings />);
-  setTimeout(() => {
-    try {
-      expect(component.toJSON()).toMatchSnapshot();
-      done();
-    } catch (error) {
-      done.fail(error);
-    }
-  }, 100);
+  component.update(<TournamentSettings title='test' {...testTournaments[0]} />);
+  expect(component.toJSON()).toMatchSnapshot();
 });
 
-test('is a HOC-ed component', () => {
-  const component = shallow(<TournamentSettings />);
-  expect(component.type().prototype.constructor.name).toBe('APIComponent');
-  expect(component.dive().type().prototype.constructor.name).toBe('TournamentSettings');
+describe('props', () => {
+  test('actions', () => {
+    let component = shallow(<TournamentSettings />).dive();
+    expect(component.find(CardActions).length).toBe(1);
+    expect(component.find(CardActions).children().length).toBe(0);
+    component = shallow(
+      <TournamentSettings>
+        <div>test</div>
+        <div>trial</div>
+      </TournamentSettings>
+    ).dive();
+    expect(component.find(CardActions).length).toBe(1);
+    expect(component.find(CardActions).children().length).toBe(2);
+    expect(component.find(CardActions).childAt(0).html()).toEqual('<div>test</div>');
+    expect(component.find(CardActions).childAt(1).html()).toEqual('<div>trial</div>');
+  });
+
+  test('title', () => {
+    const component = shallow(<TournamentSettings />).dive();
+    expect(component.find(CardHeader).length).toBe(0);
+    component.setProps({ title: 'Test' });
+    expect(component.find(CardHeader).length).toBe(1);
+    expect(component.find(CardHeader).prop('title')).toBe('Test');
+  });
+
+  test('autoFocus', () => {
+    const component = shallow(<TournamentSettings />).dive();
+    expect(component.find(TextField).at(0).prop('autoFocus')).toBe(false);
+    component.setProps({ autoFocus: true });
+    expect(component.find(TextField).at(0).prop('autoFocus')).toBe(true);
+  });
+
+  test('pairing methods', () => {
+    let methods = [
+      {label: 'new', value: 1},
+      {label: 'test', value: 2},
+    ];
+    const component = shallow(<TournamentSettings />).dive();
+    expect(component.find('#tournament-pairingMethod').prop('options')).toEqual([]);
+    expect(component.find('#tournament-pairingMethodInitial').prop('options')).toEqual([]);
+    component.setProps({ pairingMethods: methods });
+    expect(component.find('#tournament-pairingMethod').prop('options')).toEqual(methods);
+    expect(component.find('#tournament-pairingMethodInitial').prop('options')).toEqual(methods);
+  });
+
+  test('categories', () => {
+    let categories = ['old', 'new', 'test'];
+    const component = shallow(<TournamentSettings />).dive();
+    expect(component.find('#tournament-category').prop('options')).toEqual([]);
+    component.setProps({ categories: categories });
+    component.update();
+    expect(component.find('#tournament-category').prop('options')).toEqual(
+      categories
+        .sort((a, b) => {
+          let left = a.toLowerCase();
+          let right = b.toLowerCase();
+          return left > right ? 1 : left < right ? -1 : 0;
+        })
+        .map(c => ({label: c, value: c}))
+    );
+  });
+
+  test('name', () => {
+    const component = shallow(<TournamentSettings />).dive();
+    expect(component.find('#tournament-name').prop('defaultValue')).toBe('');
+    component.setProps({ name: 'test' });
+    expect(component.find('#tournament-name').prop('defaultValue')).toBe('test');
+  });
+
+  test('description', () => {
+    const component = shallow(<TournamentSettings />).dive();
+    expect(component.find('#tournament-description').prop('defaultValue')).toBe('');
+    component.setProps({ description: 'test' });
+    expect(component.find('#tournament-description').prop('defaultValue')).toBe('test');
+  });
+
+  test('category', () => {
+    const component = shallow(<TournamentSettings />).dive();
+    expect(component.find('#tournament-category').prop('value')).toEqual('');
+    component.setProps({ category: 'test' });
+    expect(component.find('#tournament-category').prop('value')).toEqual('');
+    component.setProps({ categories: ['test'] });
+    expect(component.find('#tournament-category').prop('value')).toEqual({label: 'test', value: 'test'});
+  });
+
+  test('date', () => {
+    const component = shallow(<TournamentSettings />).dive();
+    expect(component.find('#tournament-date').prop('defaultValue')).toBe('');
+    component.setProps({ date: 'test' });
+    expect(component.find('#tournament-date').prop('defaultValue')).toBe('test');
+  });
+
+  test('pairingMethod', () => {
+    let methods = [
+      {label: 'new', value: 1},
+      {label: 'test', value: 2},
+    ];
+    const component = shallow(<TournamentSettings />).dive();
+    expect(component.find('#tournament-pairingMethod').prop('value')).toEqual(null);
+    component.setProps({ pairingMethod: 1 });
+    expect(component.find('#tournament-pairingMethod').prop('value')).toEqual(null);
+    component.setProps({ pairingMethods: methods });
+    expect(component.find('#tournament-pairingMethod').prop('value')).toEqual(methods.filter(m => m.value === 1)[0]);
+  });
+
+  test('pairingMethodInitial', () => {
+    let methods = [
+      {label: 'new', value: 1},
+      {label: 'test', value: 2},
+    ];
+    const component = shallow(<TournamentSettings />).dive();
+    expect(component.find('#tournament-pairingMethodInitial').prop('value')).toEqual(null);
+    component.setProps({ pairingMethodInitial: 1 });
+    expect(component.find('#tournament-pairingMethodInitial').prop('value')).toEqual(null);
+    component.setProps({ pairingMethods: methods });
+    expect(component.find('#tournament-pairingMethodInitial').prop('value')).toEqual(methods.filter(m => m.value === 1)[0]);
+  });
+
+  test('podSizeMinimum', () => {
+    const component = shallow(<TournamentSettings />).dive();
+    expect(component.find('#tournament-podSizeMinimum').prop('defaultValue')).toBe(0);
+    component.setProps({ podSizeMinimum: 1 });
+    expect(component.find('#tournament-podSizeMinimum').prop('defaultValue')).toBe(1);
+  });
+
+  test('podSizeMaximum', () => {
+    const component = shallow(<TournamentSettings />).dive();
+    expect(component.find('#tournament-podSizeMaximum').prop('defaultValue')).toBe(0);
+    component.setProps({ podSizeMaximum: 1 });
+    expect(component.find('#tournament-podSizeMaximum').prop('defaultValue')).toBe(1);
+  });
+
+  describe('onChange & immediate', () => {
+    test('default', (done) => {
+      const spy = jest.fn();
+      const component = shallow(
+        <TournamentSettings
+          categories={['1', '2', '3']}
+          pairingMethods={[
+            {label: 'five', value: 5},
+            {label: 'six', value: 6},
+          ]}
+          onChange={spy}
+        />
+      ).dive();
+      component.find('#tournament-name').simulate('change', {target: {value: '1'}});
+      component.find('#tournament-category').simulate('change', {value: '2'});
+      component.find('#tournament-description').simulate('change', {target: {value: '3'}});
+      component.find('#tournament-date').simulate('change', {target: {value: '4'}});
+      component.find('#tournament-pairingMethod').simulate('change', {value: '5'});
+      component.find('#tournament-pairingMethodInitial').simulate('change', {value: '6'});
+      component.find('#tournament-podSizeMinimum').simulate('change', {target: {value: '7'}});
+      component.find('#tournament-podSizeMaximum').simulate('change', {target: {value: '8'}});
+      setTimeout(() => {
+        try {
+          expect(spy.mock.calls.length).toBe(1);
+          expect(spy.mock.calls[0][0]).toEqual({
+            name: '1',
+            category: '2',
+            description: '3',
+            date: '4',
+            pairingMethod: 5,
+            pairingMethodInitial: 6,
+            podSizeMinimum: 7,
+            podSizeMaximum: 8,
+          });
+          done();
+        } catch(error) {
+          done.fail(error);
+        }
+      }, 2000);
+    });
+
+    test('with immediate', () => {
+      const spy = jest.fn();
+      const component = shallow(
+        <TournamentSettings
+          categories={['1', '2', '3']}
+          pairingMethods={[
+            {label: 'five', value: 5},
+            {label: 'six', value: 6},
+          ]}
+          onChange={spy}
+          immediate
+        />
+      ).dive();
+      component.find('#tournament-name').simulate('change', {target: {value: '1'}});
+      component.find('#tournament-category').simulate('change', {value: '2'});
+      component.find('#tournament-description').simulate('change', {target: {value: '3'}});
+      component.find('#tournament-date').simulate('change', {target: {value: '4'}});
+      component.find('#tournament-pairingMethod').simulate('change', {value: '5'});
+      component.find('#tournament-pairingMethodInitial').simulate('change', {value: '6'});
+      component.find('#tournament-podSizeMinimum').simulate('change', {target: {value: '7'}});
+      component.find('#tournament-podSizeMaximum').simulate('change', {target: {value: '8'}});
+      expect(spy.mock.calls.length).toBe(8);
+      expect(spy.mock.calls[0][0]).toBe('name');
+      expect(spy.mock.calls[0][1]).toBe('1');
+      expect(spy.mock.calls[1][0]).toBe('category');
+      expect(spy.mock.calls[1][1]).toBe('2');
+      expect(spy.mock.calls[2][0]).toBe('description');
+      expect(spy.mock.calls[2][1]).toBe('3');
+      expect(spy.mock.calls[3][0]).toBe('date');
+      expect(spy.mock.calls[3][1]).toBe('4');
+      expect(spy.mock.calls[4][0]).toBe('pairingMethod');
+      expect(spy.mock.calls[4][1]).toBe(5);
+      expect(spy.mock.calls[5][0]).toBe('pairingMethodInitial');
+      expect(spy.mock.calls[5][1]).toBe(6);
+      expect(spy.mock.calls[6][0]).toBe('podSizeMinimum');
+      expect(spy.mock.calls[6][1]).toBe(7);
+      expect(spy.mock.calls[7][0]).toBe('podSizeMaximum');
+      expect(spy.mock.calls[7][1]).toBe(8);
+    });
+
+    test('creatable selects', (done) => {
+      const spy = jest.fn();
+      const component = shallow(
+        <TournamentSettings
+          categories={['new', 'test']}
+          onChange={spy}
+        />
+      ).dive();
+      component.instance().handleSelectCreateValue('category', 'createdCategories')('trial');
+      expect(component.state('createdCategories')).toEqual(['trial']);
+      setTimeout(() => {
+        try {
+          expect(spy.mock.calls.length).toBe(1);
+          expect(spy.mock.calls[0][0]).toEqual({ category: 'trial' });
+          done();
+        } catch(error) {
+          done.fail(error);
+        }
+      }, 2000);
+    });
+  });
 });
-
-test('title prop', () => {
-  const component = shallow(<TournamentSettings />);
-  const unHOC = component.dive().dive();
-  expect(unHOC.find(CardHeader).length).toBe(0);
-  unHOC.setProps({ title: 'Test' });
-  expect(unHOC.find(CardHeader).length).toBe(1);
-  expect(unHOC.find(CardHeader).prop('title')).toBe('Test');
-})
-
-describe('default values', () => {
-  test('sets the date to today', () => {
-    const date = new Date().toJSON().slice(0,10);
-    const component = shallow(<TournamentSettings />);
-    const unHOC = component.dive().dive();
-    expect(unHOC.state('date')).toBe(date);
-    expect(unHOC.find('#tournament-date').prop('value')).toBe(date);
-  });
-
-  test('loads the tournament categories', (done) => {
-    const categories = testTournaments
-      .map(tournament => tournament.category)
-      .filter((value, index, self) => self.indexOf(value) === index);
-    const component = shallow(<TournamentSettings />);
-    const unHOC = component.dive().dive();
-    setTimeout(() => {
-      try {
-        expect(unHOC.state('categories')).toEqual(categories);
-        done();
-      } catch (error) {
-        done.fail(error);
-      }
-    }, 100);
-  });
-
-  test('loads the pod sorting options', (done) => {
-    let methodsArray = Object.keys(api.pairingMethods)
-      .map(key => ({
-        label: key.slice(0,1).toUpperCase() + key.slice(1).toLowerCase(),
-        value: api.pairingMethods[key]
-      }));
-    const component = shallow(<TournamentSettings />);
-    const unHOC = component.dive().dive();
-    setTimeout(() => {
-      try {
-        expect(unHOC.state('pairingMethods')).toEqual(methodsArray);
-        done();
-      } catch (error) {
-        done.fail(error);
-      }
-    }, 100);
-  });
-
-  test('loads the api tournament settings', (done) => {
-    const component = shallow(<TournamentSettings />);
-    const unHOC = component.dive().dive();
-    setTimeout(() => {
-      try {
-        expect(unHOC.state('pairingMethod')).toBe(testSettings.pairingMethod);
-        expect(unHOC.state('pairingMethodInitial')).toBe(testSettings.pairingMethodInitial);
-        expect(unHOC.state('podSizeMinimum')).toBe(testSettings.podSizeMinimum);
-        expect(unHOC.state('podSizeMaximum')).toBe(testSettings.podSizeMaximum);
-        done();
-      } catch (error) {
-        done.fail(error);
-      }
-    }, 100);
-  });
-
-  test('submit button is clicked', (done) => {
-    const spy = jest.fn(r => r);
-    const component = shallow(<TournamentSettings onSubmit={spy} />);
-    const unHOC = component.dive().dive();
-    unHOC.find('#tournament-submit').simulate('click');
-    setTimeout(() => {
-      try {
-        expect(spy.mock.calls.length).toBe(0);
-        unHOC.setState({ name: 'test' });
-        unHOC.find('#tournament-submit').simulate('click');
-        setTimeout(() => {
-          try {
-            expect(spy.mock.calls.length).toBe(1);
-            expect(spy.mock.calls[0][0].id).toBe(testTournaments[testTournaments.length - 1].id);
-            expect(spy.mock.calls[0][0].name).toBe(testTournaments[testTournaments.length - 1].name);
-            expect(spy.mock.calls[0][0].category).toBe(testTournaments[testTournaments.length - 1].category);
-            done();
-          } catch (error) {
-            done.fail(error);
-          }
-        }, 100);
-      } catch (error) {
-        done.fail(error);
-      }
-    }, 100);
-  });
-});
-
-describe('with id prop', () => {
-  test('loads the tournament settings', (done) => {
-    const component = shallow(<TournamentSettings id='mock1' />);
-    const unHOC = component.dive().dive();
-    setTimeout(() => {
-      try {
-        Object.keys(testTournaments[1]).forEach(key => {
-          expect(unHOC.state(key)).toEqual(testTournaments[1][key]);
-        });
-        done();
-      } catch (error) {
-        done.fail(error);
-      }
-    }, 100);
-  });
-
-  test('submit button is clicked', (done) => {
-    const spy = jest.fn(r => r);
-    const component = shallow(<TournamentSettings onSubmit={spy} id='mock0' />);
-    const unHOC = component.dive().dive();
-    unHOC.find('#tournament-submit').simulate('click');
-    setTimeout(() => {
-      try {
-        expect(spy.mock.calls.length).toBe(0);
-        unHOC.setState({ name: 'test' });
-        unHOC.find('#tournament-submit').simulate('click');
-        setTimeout(() => {
-          try {
-            expect(spy.mock.calls.length).toBe(1);
-            expect(spy.mock.calls[0][0].id).toBe(testTournaments[0].id);
-            expect(spy.mock.calls[0][0].name).toBe(unHOC.state().name);
-            expect(spy.mock.calls[0][0].category).toBe(testTournaments[0].category);
-            done();
-          } catch (error) {
-            done.fail(error);
-          }
-        }, 100);
-      } catch (error) {
-        done.fail(error);
-      }
-    }, 100);
-  });
-});
-
-test('adding a new category');
