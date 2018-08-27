@@ -46,30 +46,45 @@ class TabControl extends Component {
   };
 
   render() {
-    const { classes, theme, tabs, color, className, children } = this.props;
+    const {
+      children,
+      classes,
+      theme,
+      tabs,
+      color,
+      tabsOnBottom,
+      animateHeight,
+      className
+    } = this.props;
     const { tabIndex } = this.state;
+
+    const tabBar = (
+      <Tabs
+        value={tabIndex}
+        onChange={this.handleChange}
+        indicatorColor={color}
+        textColor={color}
+        fullWidth centered
+        className={classes.tabBar}
+      >
+        {tabs.map(tab => (
+          <Tab key={tab.key} id={tab.key} label={tab.label} icon={tab.icon} />
+        ))}
+      </Tabs>
+    );
 
     return (
       <div className={ClassNames(classes.root, className)}>
-        <Tabs
-          value={tabIndex}
-          onChange={this.handleChange}
-          indicatorColor={color}
-          textColor={color}
-          fullWidth centered
-          className={classes.tabBar}
-        >
-          {tabs.map(tab => (
-            <Tab key={tab.key} id={tab.key} label={tab.label} icon={tab.icon} />
-          ))}
-        </Tabs>
+        {!tabsOnBottom && tabBar}
         <SwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={tabIndex}
           onChangeIndex={this.handleChangeIndex}
+          animateHeight={animateHeight}
         >
           {children || tabs.map((t, i) => <div key={t.key}>{t.label}</div>)}
         </SwipeableViews>
+        {tabsOnBottom && tabBar}
       </div>
     );
   }
@@ -80,7 +95,9 @@ TabControl.defaultProps = {
   goToTab: 0,
   onChange: tabIndex => {},
   color: 'primary',
+  tabsOnBottom: true,
   scrollToTop: true,
+  animateHeight: false,
   className: '',
 };
 
@@ -91,7 +108,9 @@ TabControl.propTypes = {
   goToTab: PropTypes.number,
   onChange: PropTypes.func,
   color: PropTypes.string,
+  tabsOnBottom: PropTypes.bool,
   scrollToTop: PropTypes.bool,
+  animateHeight: PropTypes.bool,
   className: PropTypes.string,
 };
 

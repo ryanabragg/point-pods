@@ -47,6 +47,23 @@ describe('integration', () => {
   });
 });
 
+test('tab bar position', () => {
+  const component = shallow(
+    <SwipeTabControl 
+      tabs={[
+        {key: 'one', label: 'One'},
+        {key: 'two', label: 'Two'},
+        {key: 'three', label: 'Three'},
+      ]}
+    />
+  ).dive();
+  expect(component.childAt(0).type()).toEqual(SwipeableViews);
+  expect(component.childAt(1).type()).toEqual(Tabs);
+  component.setProps({ tabsOnBottom: false });
+  expect(component.childAt(0).type()).toEqual(Tabs);
+  expect(component.childAt(1).type()).toEqual(SwipeableViews);
+});
+
 describe('defaults', () => {
   test('tab index', () => {
     const wrapper = shallow(
@@ -59,7 +76,7 @@ describe('defaults', () => {
       />
     );
     const component = wrapper.dive();
-    expect(component.state('tabIndex')).toBe(0)
+    expect(component.state('tabIndex')).toBe(0);
   });
 });
 
