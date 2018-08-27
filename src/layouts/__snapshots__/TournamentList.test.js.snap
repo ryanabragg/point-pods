@@ -3,17 +3,17 @@
 exports[`matches the prior snapshot 1`] = `
 <div>
   <div
-    className="AppMenu-root-153"
+    className="APIComponent-root-154"
   >
     <header
-      className="MuiPaper-root-168 MuiPaper-elevation4-174 MuiAppBar-root-160 MuiAppBar-positionFixed-161 MuiAppBar-colorPrimary-166 mui-fixed"
+      className="MuiPaper-root-170 MuiPaper-elevation4-176 MuiAppBar-root-162 MuiAppBar-positionFixed-163 MuiAppBar-colorPrimary-168 mui-fixed"
     >
       <div
-        className="MuiToolbar-root-195 MuiToolbar-regular-197 MuiToolbar-gutters-196 AppMenu-nowrap-155"
+        className="MuiToolbar-root-197 MuiToolbar-regular-199 MuiToolbar-gutters-198 APIComponent-nowrap-156"
       >
         <button
           aria-label="Menu"
-          className="MuiButtonBase-root-205 MuiIconButton-root-199 MuiIconButton-colorInherit-200 AppMenu-menuButton-156"
+          className="MuiButtonBase-root-207 MuiIconButton-root-201 MuiIconButton-colorInherit-202 APIComponent-menuButton-157"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -30,11 +30,11 @@ exports[`matches the prior snapshot 1`] = `
           type="button"
         >
           <span
-            className="MuiIconButton-label-204"
+            className="MuiIconButton-label-206"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-208"
+              className="MuiSvgIcon-root-210"
               color={undefined}
               focusable="false"
               viewBox="0 0 24 24"
@@ -49,16 +49,16 @@ exports[`matches the prior snapshot 1`] = `
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-215"
+            className="MuiTouchRipple-root-217"
           />
         </button>
         <h2
-          className="MuiTypography-root-222 MuiTypography-title-228 MuiTypography-colorInherit-241 AppMenu-flex-154"
+          className="MuiTypography-root-224 MuiTypography-title-230 MuiTypography-colorInherit-243 APIComponent-flex-155"
         >
           Point Pods
         </h2>
         <button
-          className="MuiButtonBase-root-205 MuiIconButton-root-199 MuiIconButton-colorInherit-200"
+          className="MuiButtonBase-root-207 MuiIconButton-root-201 MuiIconButton-colorInherit-202"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -75,11 +75,11 @@ exports[`matches the prior snapshot 1`] = `
           type="button"
         >
           <span
-            className="MuiIconButton-label-204"
+            className="MuiIconButton-label-206"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-208"
+              className="MuiSvgIcon-root-210"
               color={undefined}
               focusable="false"
               viewBox="0 0 24 24"
@@ -94,14 +94,14 @@ exports[`matches the prior snapshot 1`] = `
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-215"
+            className="MuiTouchRipple-root-217"
           />
         </button>
         <div>
           <button
             aria-haspopup="true"
             aria-owns={null}
-            className="MuiButtonBase-root-205 MuiIconButton-root-199 MuiIconButton-colorInherit-200"
+            className="MuiButtonBase-root-207 MuiIconButton-root-201 MuiIconButton-colorInherit-202"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -118,11 +118,11 @@ exports[`matches the prior snapshot 1`] = `
             type="button"
           >
             <span
-              className="MuiIconButton-label-204"
+              className="MuiIconButton-label-206"
             >
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-208"
+                className="MuiSvgIcon-root-210"
                 color={undefined}
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -137,19 +137,19 @@ exports[`matches the prior snapshot 1`] = `
               </svg>
             </span>
             <span
-              className="MuiTouchRipple-root-215"
+              className="MuiTouchRipple-root-217"
             />
           </button>
         </div>
       </div>
     </header>
     <div
-      className="AppMenu-spacer-158"
+      className="APIComponent-spacer-159"
     />
   </div>
   <a
     aria-label="New Tournament"
-    className="MuiButtonBase-root-205 MuiButton-root-261 MuiButton-fab-276 MuiButton-contained-270 MuiButton-containedSecondary-272 MuiButton-raised-273 MuiButton-raisedSecondary-275 APIComponent-actionButton-148"
+    className="MuiButtonBase-root-207 MuiButton-root-263 MuiButton-fab-278 MuiButton-contained-272 MuiButton-containedSecondary-274 MuiButton-raised-275 MuiButton-raisedSecondary-277 APIComponent-actionButton-149"
     href="/new"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -165,11 +165,11 @@ exports[`matches the prior snapshot 1`] = `
     tabIndex="0"
   >
     <span
-      className="MuiButton-label-262"
+      className="MuiButton-label-264"
     >
       <svg
         aria-hidden="true"
-        className="MuiSvgIcon-root-208"
+        className="MuiSvgIcon-root-210"
         color={undefined}
         focusable="false"
         viewBox="0 0 24 24"
@@ -184,24 +184,24 @@ exports[`matches the prior snapshot 1`] = `
       </svg>
     </span>
     <span
-      className="MuiTouchRipple-root-215"
+      className="MuiTouchRipple-root-217"
     />
   </a>
   <div
-    className="TournamentCards-root-285"
+    className="TournamentCards-root-287"
   >
     <div
-      className="MuiPaper-root-168 MuiPaper-elevation1-171 MuiPaper-rounded-169 MuiCard-root-288 TournamentCards-card-286"
+      className="MuiPaper-root-170 MuiPaper-elevation1-173 MuiPaper-rounded-171 MuiCard-root-290 TournamentCards-card-288"
       id="not-found"
     >
       <div
-        className="MuiCardHeader-root-289"
+        className="MuiCardHeader-root-291"
       >
         <div
-          className="MuiCardHeader-content-292"
+          className="MuiCardHeader-content-294"
         >
           <span
-            className="MuiTypography-root-222 MuiTypography-headline-227 MuiCardHeader-title-293"
+            className="MuiTypography-root-224 MuiTypography-headline-229 MuiCardHeader-title-295"
           >
             No Tournaments Found
           </span>
@@ -215,17 +215,17 @@ exports[`matches the prior snapshot 1`] = `
 exports[`matches the prior snapshot 2`] = `
 <div>
   <div
-    className="AppMenu-root-153"
+    className="APIComponent-root-154"
   >
     <header
-      className="MuiPaper-root-168 MuiPaper-elevation4-174 MuiAppBar-root-160 MuiAppBar-positionFixed-161 MuiAppBar-colorPrimary-166 mui-fixed"
+      className="MuiPaper-root-170 MuiPaper-elevation4-176 MuiAppBar-root-162 MuiAppBar-positionFixed-163 MuiAppBar-colorPrimary-168 mui-fixed"
     >
       <div
-        className="MuiToolbar-root-195 MuiToolbar-regular-197 MuiToolbar-gutters-196 AppMenu-nowrap-155"
+        className="MuiToolbar-root-197 MuiToolbar-regular-199 MuiToolbar-gutters-198 APIComponent-nowrap-156"
       >
         <button
           aria-label="Menu"
-          className="MuiButtonBase-root-205 MuiIconButton-root-199 MuiIconButton-colorInherit-200 AppMenu-menuButton-156"
+          className="MuiButtonBase-root-207 MuiIconButton-root-201 MuiIconButton-colorInherit-202 APIComponent-menuButton-157"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -242,11 +242,11 @@ exports[`matches the prior snapshot 2`] = `
           type="button"
         >
           <span
-            className="MuiIconButton-label-204"
+            className="MuiIconButton-label-206"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-208"
+              className="MuiSvgIcon-root-210"
               color={undefined}
               focusable="false"
               viewBox="0 0 24 24"
@@ -261,16 +261,16 @@ exports[`matches the prior snapshot 2`] = `
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-215"
+            className="MuiTouchRipple-root-217"
           />
         </button>
         <h2
-          className="MuiTypography-root-222 MuiTypography-title-228 MuiTypography-colorInherit-241 AppMenu-flex-154"
+          className="MuiTypography-root-224 MuiTypography-title-230 MuiTypography-colorInherit-243 APIComponent-flex-155"
         >
           Point Pods
         </h2>
         <button
-          className="MuiButtonBase-root-205 MuiIconButton-root-199 MuiIconButton-colorInherit-200"
+          className="MuiButtonBase-root-207 MuiIconButton-root-201 MuiIconButton-colorInherit-202"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -287,11 +287,11 @@ exports[`matches the prior snapshot 2`] = `
           type="button"
         >
           <span
-            className="MuiIconButton-label-204"
+            className="MuiIconButton-label-206"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-208"
+              className="MuiSvgIcon-root-210"
               color={undefined}
               focusable="false"
               viewBox="0 0 24 24"
@@ -306,14 +306,14 @@ exports[`matches the prior snapshot 2`] = `
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-215"
+            className="MuiTouchRipple-root-217"
           />
         </button>
         <div>
           <button
             aria-haspopup="true"
             aria-owns={null}
-            className="MuiButtonBase-root-205 MuiIconButton-root-199 MuiIconButton-colorInherit-200"
+            className="MuiButtonBase-root-207 MuiIconButton-root-201 MuiIconButton-colorInherit-202"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -330,11 +330,11 @@ exports[`matches the prior snapshot 2`] = `
             type="button"
           >
             <span
-              className="MuiIconButton-label-204"
+              className="MuiIconButton-label-206"
             >
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-208"
+                className="MuiSvgIcon-root-210"
                 color={undefined}
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -349,19 +349,19 @@ exports[`matches the prior snapshot 2`] = `
               </svg>
             </span>
             <span
-              className="MuiTouchRipple-root-215"
+              className="MuiTouchRipple-root-217"
             />
           </button>
         </div>
       </div>
     </header>
     <div
-      className="AppMenu-spacer-158"
+      className="APIComponent-spacer-159"
     />
   </div>
   <a
     aria-label="New Tournament"
-    className="MuiButtonBase-root-205 MuiButton-root-261 MuiButton-fab-276 MuiButton-contained-270 MuiButton-containedSecondary-272 MuiButton-raised-273 MuiButton-raisedSecondary-275 APIComponent-actionButton-148"
+    className="MuiButtonBase-root-207 MuiButton-root-263 MuiButton-fab-278 MuiButton-contained-272 MuiButton-containedSecondary-274 MuiButton-raised-275 MuiButton-raisedSecondary-277 APIComponent-actionButton-149"
     href="/new"
     onBlur={[Function]}
     onFocus={[Function]}
@@ -377,11 +377,11 @@ exports[`matches the prior snapshot 2`] = `
     tabIndex="0"
   >
     <span
-      className="MuiButton-label-262"
+      className="MuiButton-label-264"
     >
       <svg
         aria-hidden="true"
-        className="MuiSvgIcon-root-208"
+        className="MuiSvgIcon-root-210"
         color={undefined}
         focusable="false"
         viewBox="0 0 24 24"
@@ -396,53 +396,53 @@ exports[`matches the prior snapshot 2`] = `
       </svg>
     </span>
     <span
-      className="MuiTouchRipple-root-215"
+      className="MuiTouchRipple-root-217"
     />
   </a>
   <div
-    className="TournamentCards-root-285"
+    className="TournamentCards-root-287"
   >
     <div
-      className="MuiPaper-root-168 MuiPaper-elevation1-171 MuiPaper-rounded-169 MuiCard-root-288 TournamentCards-card-286"
+      className="MuiPaper-root-170 MuiPaper-elevation1-173 MuiPaper-rounded-171 MuiCard-root-290 TournamentCards-card-288"
       id="mock0"
     >
       <div
-        className="MuiCardHeader-root-289"
+        className="MuiCardHeader-root-291"
       >
         <div
-          className="MuiCardHeader-content-292"
+          className="MuiCardHeader-content-294"
         >
           <span
-            className="MuiTypography-root-222 MuiTypography-headline-227 MuiCardHeader-title-293"
+            className="MuiTypography-root-224 MuiTypography-headline-229 MuiCardHeader-title-295"
           >
             test0
           </span>
           <span
-            className="MuiTypography-root-222 MuiTypography-body1-231 MuiTypography-colorTextSecondary-245 MuiCardHeader-subheader-294"
+            className="MuiTypography-root-224 MuiTypography-body1-233 MuiTypography-colorTextSecondary-247 MuiCardHeader-subheader-296"
           >
             cat0
           </span>
         </div>
       </div>
       <div
-        className="MuiCardContent-root-295"
+        className="MuiCardContent-root-297"
       >
         <p
-          className="MuiTypography-root-222 MuiTypography-body1-231"
+          className="MuiTypography-root-224 MuiTypography-body1-233"
         >
           4 Total Players
         </p>
         <p
-          className="MuiTypography-root-222 MuiTypography-body1-231"
+          className="MuiTypography-root-224 MuiTypography-body1-233"
         >
           3 Active Players
         </p>
       </div>
       <div
-        className="MuiCardActions-root-296"
+        className="MuiCardActions-root-298"
       >
         <a
-          className="MuiButtonBase-root-205 MuiButton-root-261 MuiButton-text-263 MuiButton-flat-266 MuiButton-sizeSmall-282 TournamentCards-right-287 MuiCardActions-action-297"
+          className="MuiButtonBase-root-207 MuiButton-root-263 MuiButton-text-265 MuiButton-flat-268 MuiButton-sizeSmall-284 TournamentCards-right-289 MuiCardActions-action-299"
           href="/tournament/mock0"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -458,57 +458,57 @@ exports[`matches the prior snapshot 2`] = `
           tabIndex="0"
         >
           <span
-            className="MuiButton-label-262"
+            className="MuiButton-label-264"
           >
             Continue
           </span>
           <span
-            className="MuiTouchRipple-root-215"
+            className="MuiTouchRipple-root-217"
           />
         </a>
       </div>
     </div>
     <div
-      className="MuiPaper-root-168 MuiPaper-elevation1-171 MuiPaper-rounded-169 MuiCard-root-288 TournamentCards-card-286"
+      className="MuiPaper-root-170 MuiPaper-elevation1-173 MuiPaper-rounded-171 MuiCard-root-290 TournamentCards-card-288"
       id="mock1"
     >
       <div
-        className="MuiCardHeader-root-289"
+        className="MuiCardHeader-root-291"
       >
         <div
-          className="MuiCardHeader-content-292"
+          className="MuiCardHeader-content-294"
         >
           <span
-            className="MuiTypography-root-222 MuiTypography-headline-227 MuiCardHeader-title-293"
+            className="MuiTypography-root-224 MuiTypography-headline-229 MuiCardHeader-title-295"
           >
             test1
           </span>
           <span
-            className="MuiTypography-root-222 MuiTypography-body1-231 MuiTypography-colorTextSecondary-245 MuiCardHeader-subheader-294"
+            className="MuiTypography-root-224 MuiTypography-body1-233 MuiTypography-colorTextSecondary-247 MuiCardHeader-subheader-296"
           >
             cat1
           </span>
         </div>
       </div>
       <div
-        className="MuiCardContent-root-295"
+        className="MuiCardContent-root-297"
       >
         <p
-          className="MuiTypography-root-222 MuiTypography-body1-231"
+          className="MuiTypography-root-224 MuiTypography-body1-233"
         >
           8 Total Players
         </p>
         <p
-          className="MuiTypography-root-222 MuiTypography-body1-231"
+          className="MuiTypography-root-224 MuiTypography-body1-233"
         >
           6 Active Players
         </p>
       </div>
       <div
-        className="MuiCardActions-root-296"
+        className="MuiCardActions-root-298"
       >
         <a
-          className="MuiButtonBase-root-205 MuiButton-root-261 MuiButton-text-263 MuiButton-flat-266 MuiButton-sizeSmall-282 TournamentCards-right-287 MuiCardActions-action-297"
+          className="MuiButtonBase-root-207 MuiButton-root-263 MuiButton-text-265 MuiButton-flat-268 MuiButton-sizeSmall-284 TournamentCards-right-289 MuiCardActions-action-299"
           href="/tournament/mock1"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -524,57 +524,57 @@ exports[`matches the prior snapshot 2`] = `
           tabIndex="0"
         >
           <span
-            className="MuiButton-label-262"
+            className="MuiButton-label-264"
           >
             Details
           </span>
           <span
-            className="MuiTouchRipple-root-215"
+            className="MuiTouchRipple-root-217"
           />
         </a>
       </div>
     </div>
     <div
-      className="MuiPaper-root-168 MuiPaper-elevation1-171 MuiPaper-rounded-169 MuiCard-root-288 TournamentCards-card-286"
+      className="MuiPaper-root-170 MuiPaper-elevation1-173 MuiPaper-rounded-171 MuiCard-root-290 TournamentCards-card-288"
       id="mock2"
     >
       <div
-        className="MuiCardHeader-root-289"
+        className="MuiCardHeader-root-291"
       >
         <div
-          className="MuiCardHeader-content-292"
+          className="MuiCardHeader-content-294"
         >
           <span
-            className="MuiTypography-root-222 MuiTypography-headline-227 MuiCardHeader-title-293"
+            className="MuiTypography-root-224 MuiTypography-headline-229 MuiCardHeader-title-295"
           >
             test2
           </span>
           <span
-            className="MuiTypography-root-222 MuiTypography-body1-231 MuiTypography-colorTextSecondary-245 MuiCardHeader-subheader-294"
+            className="MuiTypography-root-224 MuiTypography-body1-233 MuiTypography-colorTextSecondary-247 MuiCardHeader-subheader-296"
           >
             cat0
           </span>
         </div>
       </div>
       <div
-        className="MuiCardContent-root-295"
+        className="MuiCardContent-root-297"
       >
         <p
-          className="MuiTypography-root-222 MuiTypography-body1-231"
+          className="MuiTypography-root-224 MuiTypography-body1-233"
         >
           4 Total Players
         </p>
         <p
-          className="MuiTypography-root-222 MuiTypography-body1-231"
+          className="MuiTypography-root-224 MuiTypography-body1-233"
         >
           4 Active Players
         </p>
       </div>
       <div
-        className="MuiCardActions-root-296"
+        className="MuiCardActions-root-298"
       >
         <a
-          className="MuiButtonBase-root-205 MuiButton-root-261 MuiButton-text-263 MuiButton-flat-266 MuiButton-sizeSmall-282 TournamentCards-right-287 MuiCardActions-action-297"
+          className="MuiButtonBase-root-207 MuiButton-root-263 MuiButton-text-265 MuiButton-flat-268 MuiButton-sizeSmall-284 TournamentCards-right-289 MuiCardActions-action-299"
           href="/tournament/mock2"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -590,12 +590,12 @@ exports[`matches the prior snapshot 2`] = `
           tabIndex="0"
         >
           <span
-            className="MuiButton-label-262"
+            className="MuiButton-label-264"
           >
             Continue
           </span>
           <span
-            className="MuiTouchRipple-root-215"
+            className="MuiTouchRipple-root-217"
           />
         </a>
       </div>
