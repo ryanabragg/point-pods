@@ -29,12 +29,18 @@ api.Settings.get = () => api.store.keys()
     return api.store.getItem('settings');
   });
 
-api.Settings.set = (settings) => {
-  return api.Settings.get().then(values => {
-    const validKeys = Object.keys(values);
-    const badKeys = Object.keys(settings).filter(k => !validKeys.includes(k));
-    badKeys.forEach(key => delete settings.key);
-    return api.store.setItem('settings', Object.assign({}, values, settings));
+api.Settings.set = (value) => {
+  return api.Settings.get().then(settings => {
+    const cleanValue = {};
+    if(value.hasOwnProperty('pairingMethod'))
+      cleanValue.pairingMethod = value.pairingMethod;
+    if(value.hasOwnProperty('pairingMethodInitial'))
+      cleanValue.pairingMethodInitial = value.pairingMethodInitial;
+    if(value.hasOwnProperty('podSizeMinimum'))
+      cleanValue.podSizeMinimum = value.podSizeMinimum;
+    if(value.hasOwnProperty('podSizeMaximum'))
+      cleanValue.podSizeMaximum = value.podSizeMaximum;
+    return api.store.setItem('settings', Object.assign({}, settings, cleanValue));
   });
 };
 
@@ -61,16 +67,20 @@ api.Players.set = (value) => {
     name: '',
     points: 0,
   };
-  const validKeys = Object.keys(defaultValue);
-  const badKeys = Object.keys(value).filter(key => !validKeys.includes(key));
-  badKeys.forEach(key => delete value.key);
+  const cleanValue = {};
+  if(value.hasOwnProperty('id'))
+    cleanValue.id = value.id;
+  if(value.hasOwnProperty('name'))
+    cleanValue.name = value.name;
+  if(value.hasOwnProperty('points'))
+    cleanValue.points = Number(value.points);
   return api.Players.all().then(list => {
-    let index = list.findIndex(i => String(i.id) === String(value.id));
+    let index = list.findIndex(i => String(i.id) === String(cleanValue.id));
     if(create && index === -1)
-      index = list.push(Object.assign({}, defaultValue, value)) - 1;
+      index = list.push(Object.assign({}, defaultValue, cleanValue)) - 1;
     else if(index === -1)
       throw new Error('ID not found');
-    list[index] = Object.assign({}, list[index], value);
+    list[index] = Object.assign({}, list[index], cleanValue);
     return api.store.setItem('players', list).then(list => list[index]);
   });
 };
@@ -120,17 +130,41 @@ api.Tournaments.set = (value) => {
     staging: true,
     players: [],
   };
-  const validKeys = Object.keys(defaultValue);
-  const badKeys = Object.keys(value).filter(key => !validKeys.includes(key));
-  badKeys.forEach(key => delete value.key);
+  const cleanValue = {};
+  if(value.hasOwnProperty('id'))
+    cleanValue.id = value.id;
+  if(value.hasOwnProperty('name'))
+    cleanValue.name = value.name;
+  if(value.hasOwnProperty('category'))
+    cleanValue.category = value.category;
+  if(value.hasOwnProperty('description'))
+    cleanValue.description = value.description;
+  if(value.hasOwnProperty('date'))
+    cleanValue.date = value.date;
+  if(value.hasOwnProperty('pairingMethod'))
+    cleanValue.pairingMethod = Number(value.pairingMethod);
+  if(value.hasOwnProperty('pairingMethodInitial'))
+    cleanValue.pairingMethodInitial = Number(value.pairingMethodInitial);
+  if(value.hasOwnProperty('podSizeMinimum'))
+    cleanValue.podSizeMinimum = Number(value.podSizeMinimum);
+  if(value.hasOwnProperty('podSizeMaximum'))
+    cleanValue.podSizeMaximum = Number(value.podSizeMaximum);
+  if(value.hasOwnProperty('rounds'))
+    cleanValue.rounds = Number(value.rounds);
+  if(value.hasOwnProperty('done'))
+    cleanValue.done = Boolean(value.done);
+  if(value.hasOwnProperty('staging'))
+    cleanValue.staging = Boolean(value.staging);
+  if(value.hasOwnProperty('players'))
+    cleanValue.players = value.players;
   return api.Tournaments.all().then(list => {
-    let index = list.findIndex(i => String(i.id) === String(value.id));
+    let index = list.findIndex(i => String(i.id) === String(cleanValue.id));
     if(create && index === -1)
-      index = list.push(Object.assign({}, defaultValue, value)) - 1;
+      index = list.push(Object.assign({}, defaultValue, cleanValue)) - 1;
     else if(index === -1)
       throw new Error('ID not found');
     else
-      list[index] = Object.assign({}, list[index], value);
+      list[index] = Object.assign({}, list[index], cleanValue);
     return api.store.setItem('tournaments', list).then(list => list[index]);
   });
 };
