@@ -60,6 +60,8 @@ describe('actions', () => {
     component.instance().handleSelect(testPlayers[8], 'test');
     expect(spy.mock.calls[0][0]).toBe(testPlayers[8]);
     expect(spy.mock.calls[0][1]).toBe('test');
+    component.setProps({ displayOnly: true });
+    expect(component.find(Select).length).toBe(0);
   });
 
   test('adding a new player', () => {
@@ -75,6 +77,8 @@ describe('actions', () => {
     expect(component.find(Select).prop('onCreateOption')).toEqual(component.instance().handleCreate);
     component.instance().handleCreate('testing');
     expect(spy.mock.calls[0][0]).toBe('testing');
+    component.setProps({ displayOnly: true });
+    expect(component.find(Select).length).toBe(0);
   });
 
   test('removing a player (non-participating)', () => {
@@ -89,6 +93,8 @@ describe('actions', () => {
     const component = HOC.dive();
     component.find(ListItem).at(3).find(IconButton).simulate('click');
     expect(spy.mock.calls[0][0]).toBe(testTournaments[0].players[3].id);
+    component.setProps({ displayOnly: true });
+    expect(component.find(IconButton).length).toBe(0);
   });
 
   test('removing a player (drop participant)', () => {
@@ -103,6 +109,8 @@ describe('actions', () => {
     const component = HOC.dive();
     component.find(ListItem).at(2).find(IconButton).simulate('click');
     expect(spy.mock.calls[0][0]).toBe(testTournaments[0].players[2].id);
+    component.setProps({ displayOnly: true });
+    expect(component.find(IconButton).length).toBe(0);
   });
 
   test('reinstating a player (un-drop)', () => {
@@ -117,5 +125,7 @@ describe('actions', () => {
     const component = HOC.dive();
     component.find(ListItem).at(0).find(IconButton).simulate('click');
     expect(spy.mock.calls[0][0]).toBe(testTournaments[0].players[0].id);
+    component.setProps({ displayOnly: true });
+    expect(component.find(IconButton).length).toBe(0);
   });
 });

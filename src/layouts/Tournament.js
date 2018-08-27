@@ -694,6 +694,7 @@ class Tournament extends Component {
             sync={this.handleSetValue('sync')}
           />
           <TournamentParticipants
+            displayOnly={done}
             isSyncing={sync}
             players={players}
             allPlayers={allPlayers}

@@ -1,28 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches the prior snapshot 1`] = `
-<div>
+<div
+  className="TournamentParticipants-root-94"
+>
   <header
-    className="MuiPaper-root-102 MuiPaper-elevation4-108 MuiAppBar-root-94 MuiAppBar-positionSticky-97"
+    className="MuiPaper-root-104 MuiPaper-elevation4-110 MuiAppBar-root-96 MuiAppBar-positionSticky-99"
   >
     <div
-      className="css-10nd86i TournamentParticipants-margined-93"
+      className="css-10nd86i TournamentParticipants-margined-95"
       id={undefined}
       onKeyDown={[Function]}
     >
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-143 MuiFormControl-fullWidth-146"
+        className="MuiFormControl-root-145 MuiFormControl-fullWidth-148"
       >
         
         <div
-          className="MuiInput-root-147 MuiInput-fullWidth-154 MuiInput-formControl-148 MuiInput-underline-151"
+          className="MuiInput-root-149 MuiInput-fullWidth-156 MuiInput-formControl-150 MuiInput-underline-153"
         >
           <div
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-155 IntegrationReactSelect-input-130"
+            className="MuiInput-input-157 IntegrationReactSelect-input-132"
             defaultValue={undefined}
             disabled={false}
             id={undefined}
@@ -42,10 +44,10 @@ exports[`matches the prior snapshot 1`] = `
             value={undefined}
           >
             <div
-              className="IntegrationReactSelect-valueContainer-131"
+              className="IntegrationReactSelect-valueContainer-133"
             >
               <p
-                className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 IntegrationReactSelect-placeholder-136"
+                className="MuiTypography-root-162 MuiTypography-body1-171 MuiTypography-colorTextSecondary-185 IntegrationReactSelect-placeholder-138"
               >
                 Select player or enter new player name
               </p>
@@ -141,34 +143,36 @@ exports[`matches the prior snapshot 1`] = `
     </div>
   </header>
   <ul
-    className="MuiList-root-139 MuiList-padding-140"
+    className="MuiList-root-141 MuiList-padding-142"
   />
 </div>
 `;
 
 exports[`matches the prior snapshot 2`] = `
-<div>
+<div
+  className="TournamentParticipants-root-94"
+>
   <header
-    className="MuiPaper-root-102 MuiPaper-elevation4-108 MuiAppBar-root-94 MuiAppBar-positionSticky-97"
+    className="MuiPaper-root-104 MuiPaper-elevation4-110 MuiAppBar-root-96 MuiAppBar-positionSticky-99"
   >
     <div
-      className="css-10nd86i TournamentParticipants-margined-93"
+      className="css-10nd86i TournamentParticipants-margined-95"
       id={undefined}
       onKeyDown={[Function]}
     >
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-143 MuiFormControl-fullWidth-146"
+        className="MuiFormControl-root-145 MuiFormControl-fullWidth-148"
       >
         
         <div
-          className="MuiInput-root-147 MuiInput-fullWidth-154 MuiInput-formControl-148 MuiInput-underline-151"
+          className="MuiInput-root-149 MuiInput-fullWidth-156 MuiInput-formControl-150 MuiInput-underline-153"
         >
           <div
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-155 IntegrationReactSelect-input-130"
+            className="MuiInput-input-157 IntegrationReactSelect-input-132"
             defaultValue={undefined}
             disabled={false}
             id={undefined}
@@ -188,10 +192,10 @@ exports[`matches the prior snapshot 2`] = `
             value={undefined}
           >
             <div
-              className="IntegrationReactSelect-valueContainer-131"
+              className="IntegrationReactSelect-valueContainer-133"
             >
               <p
-                className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 IntegrationReactSelect-placeholder-136"
+                className="MuiTypography-root-162 MuiTypography-body1-171 MuiTypography-colorTextSecondary-185 IntegrationReactSelect-placeholder-138"
               >
                 Select player or enter new player name
               </p>
@@ -287,15 +291,15 @@ exports[`matches the prior snapshot 2`] = `
     </div>
   </header>
   <ul
-    className="MuiList-root-139 MuiList-padding-140"
+    className="MuiList-root-141 MuiList-padding-142"
   >
     <li
-      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      className="MuiListItem-root-187 MuiListItem-default-190 MuiListItem-gutters-194"
       disabled={false}
     >
       <button
         aria-label="Reinstate Player"
-        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        className="MuiButtonBase-root-203 MuiIconButton-root-197"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -312,11 +316,11 @@ exports[`matches the prior snapshot 2`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-200"
+          className="MuiIconButton-label-202"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-204"
+            className="MuiSvgIcon-root-206"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -331,31 +335,31 @@ exports[`matches the prior snapshot 2`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-211"
+          className="MuiTouchRipple-root-213"
         />
       </button>
       <div
-        className="MuiListItemText-root-218"
+        className="MuiListItemText-root-220"
       >
         <span
-          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+          className="MuiTypography-root-162 MuiTypography-subheading-169 MuiListItemText-primary-223"
         >
           test0
         </span>
         <p
-          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+          className="MuiTypography-root-162 MuiTypography-body1-171 MuiTypography-colorTextSecondary-185 MuiListItemText-secondary-224"
         >
           Dropped
         </p>
       </div>
     </li>
     <li
-      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      className="MuiListItem-root-187 MuiListItem-default-190 MuiListItem-gutters-194"
       disabled={false}
     >
       <button
         aria-label="Remove Player"
-        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        className="MuiButtonBase-root-203 MuiIconButton-root-197"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -372,11 +376,11 @@ exports[`matches the prior snapshot 2`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-200"
+          className="MuiIconButton-label-202"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-204"
+            className="MuiSvgIcon-root-206"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -391,31 +395,31 @@ exports[`matches the prior snapshot 2`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-211"
+          className="MuiTouchRipple-root-213"
         />
       </button>
       <div
-        className="MuiListItemText-root-218"
+        className="MuiListItemText-root-220"
       >
         <span
-          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+          className="MuiTypography-root-162 MuiTypography-subheading-169 MuiListItemText-primary-223"
         >
           test1
         </span>
         <p
-          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+          className="MuiTypography-root-162 MuiTypography-body1-171 MuiTypography-colorTextSecondary-185 MuiListItemText-secondary-224"
         >
           Points: 1
         </p>
       </div>
     </li>
     <li
-      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      className="MuiListItem-root-187 MuiListItem-default-190 MuiListItem-gutters-194"
       disabled={false}
     >
       <button
         aria-label="Remove Player"
-        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        className="MuiButtonBase-root-203 MuiIconButton-root-197"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -432,11 +436,11 @@ exports[`matches the prior snapshot 2`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-200"
+          className="MuiIconButton-label-202"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-204"
+            className="MuiSvgIcon-root-206"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -451,31 +455,31 @@ exports[`matches the prior snapshot 2`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-211"
+          className="MuiTouchRipple-root-213"
         />
       </button>
       <div
-        className="MuiListItemText-root-218"
+        className="MuiListItemText-root-220"
       >
         <span
-          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+          className="MuiTypography-root-162 MuiTypography-subheading-169 MuiListItemText-primary-223"
         >
           test2
         </span>
         <p
-          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+          className="MuiTypography-root-162 MuiTypography-body1-171 MuiTypography-colorTextSecondary-185 MuiListItemText-secondary-224"
         >
           Points: 2
         </p>
       </div>
     </li>
     <li
-      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      className="MuiListItem-root-187 MuiListItem-default-190 MuiListItem-gutters-194"
       disabled={false}
     >
       <button
         aria-label="Remove Player"
-        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        className="MuiButtonBase-root-203 MuiIconButton-root-197"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -492,11 +496,11 @@ exports[`matches the prior snapshot 2`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-200"
+          className="MuiIconButton-label-202"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-204"
+            className="MuiSvgIcon-root-206"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -511,19 +515,19 @@ exports[`matches the prior snapshot 2`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-211"
+          className="MuiTouchRipple-root-213"
         />
       </button>
       <div
-        className="MuiListItemText-root-218"
+        className="MuiListItemText-root-220"
       >
         <span
-          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+          className="MuiTypography-root-162 MuiTypography-subheading-169 MuiListItemText-primary-223"
         >
           test3
         </span>
         <p
-          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+          className="MuiTypography-root-162 MuiTypography-body1-171 MuiTypography-colorTextSecondary-185 MuiListItemText-secondary-224"
         >
           Points: 0
         </p>
@@ -534,28 +538,30 @@ exports[`matches the prior snapshot 2`] = `
 `;
 
 exports[`matches the prior snapshot 3`] = `
-<div>
+<div
+  className="TournamentParticipants-root-94"
+>
   <header
-    className="MuiPaper-root-102 MuiPaper-elevation4-108 MuiAppBar-root-94 MuiAppBar-positionSticky-97"
+    className="MuiPaper-root-104 MuiPaper-elevation4-110 MuiAppBar-root-96 MuiAppBar-positionSticky-99"
   >
     <div
-      className="css-10nd86i TournamentParticipants-margined-93"
+      className="css-10nd86i TournamentParticipants-margined-95"
       id={undefined}
       onKeyDown={[Function]}
     >
       <div
         aria-describedby={undefined}
-        className="MuiFormControl-root-143 MuiFormControl-fullWidth-146"
+        className="MuiFormControl-root-145 MuiFormControl-fullWidth-148"
       >
         
         <div
-          className="MuiInput-root-147 MuiInput-fullWidth-154 MuiInput-formControl-148 MuiInput-underline-151"
+          className="MuiInput-root-149 MuiInput-fullWidth-156 MuiInput-formControl-150 MuiInput-underline-153"
         >
           <div
             aria-invalid={false}
             autoComplete={undefined}
             autoFocus={undefined}
-            className="MuiInput-input-155 IntegrationReactSelect-input-130"
+            className="MuiInput-input-157 IntegrationReactSelect-input-132"
             defaultValue={undefined}
             disabled={false}
             id={undefined}
@@ -575,10 +581,10 @@ exports[`matches the prior snapshot 3`] = `
             value={undefined}
           >
             <div
-              className="IntegrationReactSelect-valueContainer-131"
+              className="IntegrationReactSelect-valueContainer-133"
             >
               <p
-                className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 IntegrationReactSelect-placeholder-136"
+                className="MuiTypography-root-162 MuiTypography-body1-171 MuiTypography-colorTextSecondary-185 IntegrationReactSelect-placeholder-138"
               >
                 Select player or enter new player name
               </p>
@@ -674,15 +680,15 @@ exports[`matches the prior snapshot 3`] = `
     </div>
   </header>
   <ul
-    className="MuiList-root-139 MuiList-padding-140"
+    className="MuiList-root-141 MuiList-padding-142"
   >
     <li
-      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      className="MuiListItem-root-187 MuiListItem-default-190 MuiListItem-gutters-194"
       disabled={false}
     >
       <button
         aria-label="Reinstate Player"
-        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        className="MuiButtonBase-root-203 MuiIconButton-root-197"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -699,11 +705,11 @@ exports[`matches the prior snapshot 3`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-200"
+          className="MuiIconButton-label-202"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-204"
+            className="MuiSvgIcon-root-206"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -718,31 +724,31 @@ exports[`matches the prior snapshot 3`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-211"
+          className="MuiTouchRipple-root-213"
         />
       </button>
       <div
-        className="MuiListItemText-root-218"
+        className="MuiListItemText-root-220"
       >
         <span
-          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+          className="MuiTypography-root-162 MuiTypography-subheading-169 MuiListItemText-primary-223"
         >
           test0
         </span>
         <p
-          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+          className="MuiTypography-root-162 MuiTypography-body1-171 MuiTypography-colorTextSecondary-185 MuiListItemText-secondary-224"
         >
           Dropped
         </p>
       </div>
     </li>
     <li
-      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      className="MuiListItem-root-187 MuiListItem-default-190 MuiListItem-gutters-194"
       disabled={false}
     >
       <button
         aria-label="Remove Player"
-        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        className="MuiButtonBase-root-203 MuiIconButton-root-197"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -759,11 +765,11 @@ exports[`matches the prior snapshot 3`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-200"
+          className="MuiIconButton-label-202"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-204"
+            className="MuiSvgIcon-root-206"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -778,31 +784,31 @@ exports[`matches the prior snapshot 3`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-211"
+          className="MuiTouchRipple-root-213"
         />
       </button>
       <div
-        className="MuiListItemText-root-218"
+        className="MuiListItemText-root-220"
       >
         <span
-          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+          className="MuiTypography-root-162 MuiTypography-subheading-169 MuiListItemText-primary-223"
         >
           test1
         </span>
         <p
-          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+          className="MuiTypography-root-162 MuiTypography-body1-171 MuiTypography-colorTextSecondary-185 MuiListItemText-secondary-224"
         >
           Points: 1
         </p>
       </div>
     </li>
     <li
-      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      className="MuiListItem-root-187 MuiListItem-default-190 MuiListItem-gutters-194"
       disabled={false}
     >
       <button
         aria-label="Remove Player"
-        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        className="MuiButtonBase-root-203 MuiIconButton-root-197"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -819,11 +825,11 @@ exports[`matches the prior snapshot 3`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-200"
+          className="MuiIconButton-label-202"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-204"
+            className="MuiSvgIcon-root-206"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -838,31 +844,31 @@ exports[`matches the prior snapshot 3`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-211"
+          className="MuiTouchRipple-root-213"
         />
       </button>
       <div
-        className="MuiListItemText-root-218"
+        className="MuiListItemText-root-220"
       >
         <span
-          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+          className="MuiTypography-root-162 MuiTypography-subheading-169 MuiListItemText-primary-223"
         >
           test2
         </span>
         <p
-          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+          className="MuiTypography-root-162 MuiTypography-body1-171 MuiTypography-colorTextSecondary-185 MuiListItemText-secondary-224"
         >
           Points: 2
         </p>
       </div>
     </li>
     <li
-      className="MuiListItem-root-185 MuiListItem-default-188 MuiListItem-gutters-192"
+      className="MuiListItem-root-187 MuiListItem-default-190 MuiListItem-gutters-194"
       disabled={false}
     >
       <button
         aria-label="Remove Player"
-        className="MuiButtonBase-root-201 MuiIconButton-root-195"
+        className="MuiButtonBase-root-203 MuiIconButton-root-197"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -879,11 +885,11 @@ exports[`matches the prior snapshot 3`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-200"
+          className="MuiIconButton-label-202"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-204"
+            className="MuiSvgIcon-root-206"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -898,19 +904,19 @@ exports[`matches the prior snapshot 3`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-211"
+          className="MuiTouchRipple-root-213"
         />
       </button>
       <div
-        className="MuiListItemText-root-218"
+        className="MuiListItemText-root-220"
       >
         <span
-          className="MuiTypography-root-160 MuiTypography-subheading-167 MuiListItemText-primary-221"
+          className="MuiTypography-root-162 MuiTypography-subheading-169 MuiListItemText-primary-223"
         >
           test3
         </span>
         <p
-          className="MuiTypography-root-160 MuiTypography-body1-169 MuiTypography-colorTextSecondary-183 MuiListItemText-secondary-222"
+          className="MuiTypography-root-162 MuiTypography-body1-171 MuiTypography-colorTextSecondary-185 MuiListItemText-secondary-224"
         >
           Points: 0
         </p>

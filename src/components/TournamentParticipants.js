@@ -16,6 +16,9 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import Select from '../components/Select';
 
 const styles = theme => ({
+  root: {
+    minHeight: 400,
+  },
   margined: {
     margin: theme.spacing.unit,
   },
@@ -51,6 +54,7 @@ class TournamentParticipants extends Component {
   render() {
     const {
       classes,
+      displayOnly,
       isSyncing,
       players,
       allPlayers,
@@ -62,41 +66,43 @@ class TournamentParticipants extends Component {
       Object.assign({}, p, {disabled: participants.includes(p.id)})
     )).sort(sort);
     return (
-      <div>
-        <AppBar position='sticky' color='inherit'>
-          <Select
-            aria-label='add-player'
-            isCreatable
-            isClearable
-            isDisabled={isSyncing}
-            isLoading={isSyncing}
-            placeholder='Select player or enter new player name'
-            onChange={this.handleSelect}
-            onCreateOption={this.handleCreate}
-            isValidNewOption={(inputValue, selectValue, selectOptions) => !(
-              !inputValue ||
-              selectValue.some(option => inputValue.toLowerCase() === option.name.toLowerCase()) ||
-              selectOptions.some(option => inputValue.toLowerCase() === option.name.toLowerCase())
-            )}
-            getNewOptionData={(inputValue, optionLabel) => ({
-              name: optionLabel,
-            })}
-            formatCreateLabel={inputValue => `Create player ${inputValue}`}
-            options={playerOptions}
-            getOptionLabel={option => option.name}
-            getOptionValue={option => option.id}
-            isOptionDisabled={option => option.disabled}
-            value={value}
-            onInputChange={this.handleSetValue('value')}
-            className={classes.margined}
-          />
-        </AppBar>
+      <div className={classes.root}>
+        {!displayOnly && (
+          <AppBar position='sticky' color='inherit'>
+            <Select
+              aria-label='add-player'
+              isCreatable
+              isClearable
+              isDisabled={isSyncing}
+              isLoading={isSyncing}
+              placeholder='Select player or enter new player name'
+              onChange={this.handleSelect}
+              onCreateOption={this.handleCreate}
+              isValidNewOption={(inputValue, selectValue, selectOptions) => !(
+                !inputValue ||
+                selectValue.some(option => inputValue.toLowerCase() === option.name.toLowerCase()) ||
+                selectOptions.some(option => inputValue.toLowerCase() === option.name.toLowerCase())
+              )}
+              getNewOptionData={(inputValue, optionLabel) => ({
+                name: optionLabel,
+              })}
+              formatCreateLabel={inputValue => `Create player ${inputValue}`}
+              options={playerOptions}
+              getOptionLabel={option => option.name}
+              getOptionValue={option => option.id}
+              isOptionDisabled={option => option.disabled}
+              value={value}
+              onInputChange={this.handleSetValue('value')}
+              className={classes.margined}
+            />
+          </AppBar>
+        )}
         <List>
           {players.sort(sort).map(player => {
             let { id, name, points, participated, dropped } = player;
             return (
             <ListItem key={id}>
-              {dropped
+              {displayOnly ? null : dropped
                 ? (
                   <IconButton aria-label='Reinstate Player' onClick={this.handleReinstate(id)}>
                     <AddIcon />
@@ -119,6 +125,7 @@ class TournamentParticipants extends Component {
 }
 
 TournamentParticipants.defaultProps = {
+  displayOnly: false,
   isSyncing: false,
   players: [],
   allPlayers: [],
@@ -131,6 +138,7 @@ TournamentParticipants.defaultProps = {
 
 TournamentParticipants.propTypes = {
   classes: PropTypes.object.isRequired, // added by withStyles
+  displayOnly: PropTypes.bool,
   isSyncing: PropTypes.bool,
   players: PropTypes.array,
   allPlayers: PropTypes.array,
