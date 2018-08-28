@@ -55,7 +55,7 @@ exports[`matches the prior snapshot 1`] = `
         <h2
           className="MuiTypography-root-235 MuiTypography-title-241 MuiTypography-colorInherit-254 APIComponent-flex-166"
         >
-          Point Pods
+          Tournaments
         </h2>
         <button
           className="MuiButtonBase-root-218 MuiIconButton-root-212 MuiIconButton-colorInherit-213"
@@ -267,7 +267,7 @@ exports[`matches the prior snapshot 2`] = `
         <h2
           className="MuiTypography-root-235 MuiTypography-title-241 MuiTypography-colorInherit-254 APIComponent-flex-166"
         >
-          Point Pods
+          Tournaments
         </h2>
         <button
           className="MuiButtonBase-root-218 MuiIconButton-root-212 MuiIconButton-colorInherit-213"

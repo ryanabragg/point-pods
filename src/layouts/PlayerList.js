@@ -238,7 +238,7 @@ class PlayerList extends Component {
     return (
       <div>
         <AppMenu
-          title={searching ? '' : 'Point Pods'}
+          title={searching ? '' : 'Players'}
           color={searching ? 'secondary' : 'primary'}
           toolbar={this.renderToolbar()}
         />

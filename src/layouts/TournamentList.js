@@ -188,7 +188,7 @@ class TournamentList extends Component {
     return (
       <div>
         <AppMenu
-          title={searching ? '' : 'Point Pods'}
+          title={searching ? '' : 'Tournaments'}
           color={searching ? 'secondary' : 'primary'}
           toolbar={this.renderToolbar()}
         />
