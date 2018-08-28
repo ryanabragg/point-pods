@@ -38,10 +38,10 @@ import TournamentSettings from '../components/TournamentSettings';
 const styles = theme => ({
   actionButton: {
     position: 'fixed',
-    zIndex: 12,
-    margin: 2 * theme.spacing.unit,
     bottom: 0,
     right: 0,
+    margin: 2 * theme.spacing.unit,
+    zIndex: 12,
   },
   margined: {
     margin: theme.spacing.unit,

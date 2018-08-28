@@ -24,10 +24,10 @@ const styles = theme => ({
     maxWidth: theme.breakpoints.values['sm'],
   },
   actionButton: {
-    margin: 2 * theme.spacing.unit,
-    position: 'absolute',
+    position: 'fixed',
     bottom: 0,
     right: 0,
+    margin: 2 * theme.spacing.unit,
   },
   points: {
     margin: theme.spacing.unit,

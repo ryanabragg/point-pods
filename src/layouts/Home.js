@@ -13,10 +13,10 @@ import TournamentCards from '../components/TournamentCards';
 
 const styles = theme => ({
   actionButton: {
-    margin: 2 * theme.spacing.unit,
-    position: 'absolute',
+    position: 'fixed',
     bottom: 0,
     right: 0,
+    margin: 2 * theme.spacing.unit,
   },
 });
 
