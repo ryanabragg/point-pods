@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import { withStyles } from '@material-ui/core/styles';
 import { withAPI } from '../api';
@@ -7,12 +8,14 @@ import { withAPI } from '../api';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogActions from '@material-ui/core/DialogActions';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import Zoom from '@material-ui/core/Zoom';
 
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import SettingsIcon from '@material-ui/icons/SettingsSharp';
 import SendIcon from '@material-ui/icons/Send';
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -66,13 +69,16 @@ const styles = theme => ({
       transform: 'rotate(-360deg)',
     },
   },
+  red: {
+    color: theme.palette.error.main,
+  },
 });
 
 class Tournament extends Component {
   state = {
     tabIndex: 1,
-    sync: false,
     dialog: null,
+    sync: false,
     activeRound: 0,
     allPlayers: [],
     categories: [],
@@ -118,7 +124,7 @@ class Tournament extends Component {
       .then(list => {
         Object.assign(loadState, {
           categories: list.map(tournament => tournament.category)
-            .filter((cat, i, self) => cat && self.indexOf(cat) === i).sort(),
+            .filter((cat, i, self) => self.indexOf(cat) === i),
         });
         if(!this.state.id)
           throw new Error('Invalid ID');
@@ -214,9 +220,11 @@ class Tournament extends Component {
     return update;
   };
 
-  handleSetValue = (key) => (value) => {
-    this.setState({[key]: value});
-  };
+  setValue = (key, value) => this.setState({[key]: value});
+
+  handleSetValue = (key, value) => () => this.setState({[key]: value});
+
+  handleSetValueOf = (key) => (value) => this.setState({[key]: value});
 
   handleDelete = () => {
     this.props.api.Tournaments.remove(this.state.id)
@@ -388,8 +396,6 @@ class Tournament extends Component {
       .catch(error => this.props.notification(error.message, 'error'));
   };
 
-  handleViewRound = (round) => () => this.setState({activeRound: round});
-
   handleCreatePods = (method) => () => {
     let { podSizeMaximum, podSizeMinimum, rounds, players } = this.state;
     this.getPods(players, method, podSizeMinimum, podSizeMaximum)
@@ -491,33 +497,79 @@ class Tournament extends Component {
       });
   };
 
-  handleSettingsUpdate = (update) => {
-    const check = {
-      name: update.hasOwnProperty('name'),
-      min: update.hasOwnProperty('podSizeMinimum'),
-      max: update.hasOwnProperty('podSizeMaximum'),
+  handleUpdateSettings = (key, value) => {
+    let update = {
+      [key]: value
     };
-    if(check.name && update.name === '') {
-      this.setState({sync: false});
+    if(key === 'category' && !this.state.categories.includes(value))
+      update.categories = [
+        ...this.state.categories,
+        value
+      ];
+    this.setState(update);
+  };
+
+  handleRevertSettings = () => {
+    this.setState({sync: true});
+    this.props.api.Tournaments.get(this.state.id)
+      .then(tournament => {
+        const {
+          name,
+          category,
+          description,
+          date,
+          pairingMethod,
+          pairingMethodInitial,
+          podSizeMinimum,
+          podSizeMaximum,
+        } = tournament;
+        this.setState({
+          dialog: null,
+          name,
+          category,
+          description,
+          date,
+          pairingMethod,
+          pairingMethodInitial,
+          podSizeMinimum,
+          podSizeMaximum,
+          sync: false,
+        });
+      })
+      .catch(error => {
+        this.props.notification(error.message, 'error');
+        this.setState({sync: false});
+      });
+  };
+
+  handleSaveSettings = () => {
+    const {
+      name,
+      category,
+      description,
+      date,
+      pairingMethod,
+      pairingMethodInitial,
+      podSizeMinimum,
+      podSizeMaximum,
+    } = this.state;
+    this.setState({sync: true});
+    if(!name.length)
       return this.props.notification('Name cannot be empty', 'error');
-    }
-    if(check.min && check.max && update.podSizeMinimum > update.podSizeMaximum) {
-      this.setState({sync: false});
+    if(podSizeMinimum > podSizeMaximum)
       return this.props.notification('Minimum pod size exceeds maximum', 'error');
-    }
-    else if(check.min && update.podSizeMinimum > this.state.podSizeMaximum) {
-      this.setState({sync: false});
-      return this.props.notification('Minimum pod size exceeds maximum', 'error');
-    }
-    else if(check.max && this.state.podSizeMinimum > update.podSizeMaximum) {
-      this.setState({sync: false});
-      return this.props.notification('Minimum pod size exceeds maximum', 'error');
-    }
     this.props.api.Tournaments.set({
       id: this.state.id,
-      ...update,
+      name,
+      category,
+      description,
+      date,
+      pairingMethod,
+      pairingMethodInitial,
+      podSizeMinimum,
+      podSizeMaximum,
     })
-      .then(tournament => this.setState(Object.assign({}, tournament, {sync: false})))
+      .then(tournament => this.setState(Object.assign({}, tournament, {dialog: null, sync: false})))
       .catch(error => {
         this.props.notification(error.message, 'error');
         this.setState({sync: false});
@@ -530,7 +582,7 @@ class Tournament extends Component {
     const { pairingMethods } = this.props.api;
     let tournamentMenu = [{
       label: rounds ? 'New Round' : 'Start Tournament',
-      icon: <AddIcon />,
+      icon: rounds ? <AddIcon /> : <SendIcon />,
       action: this.handleNewRound,
     }, {
       label: `Re-Pod Randomly`,
@@ -549,6 +601,8 @@ class Tournament extends Component {
       icon: <DoneIcon />,
       action: this.handleTournamentEnd(true),
     }];
+    if(!rounds)
+      tournamentMenu.pop();
     if(!rounds || activeRound !== rounds)
       tournamentMenu.splice(1, 3);
     if(done) {
@@ -559,9 +613,14 @@ class Tournament extends Component {
       }, {
         label: 'Delete Tournament',
         icon: <DeleteIcon />,
-        action: this.handleDelete,
+        action: this.handleSetValue('dialog', 'delete'),
       }];
     }
+    tournamentMenu.push({
+      label: 'Settings',
+      icon: <SettingsIcon />,
+      action: this.handleSetValue('dialog', 'settings'),
+    });
     let playersMenu = [{
       label: `Remove All Players`,
       icon: <DeleteSweepIcon />,
@@ -573,7 +632,7 @@ class Tournament extends Component {
         roundsMenu.push({
           label: `View Round ${i}`,
           icon: <ArrowRightAltIcon />,
-          action: this.handleViewRound(i),
+          action: this.handleSetValue('activeRound', i),
         });
     }
     return (
@@ -624,10 +683,10 @@ class Tournament extends Component {
     const { classes, theme } = this.props;
     const {
       tabIndex,
+      dialog,
       sync,
       categories,
       pairingMethods,
-      id,
       name,
       category,
       description,
@@ -676,10 +735,10 @@ class Tournament extends Component {
           tabs={[
             {key: 1, label: 'Pods'},
             {key: 2, label: 'Players'},
-            {key: 3, label: 'Settings'},
+            //{key: 3, label: 'Settings'},
           ]}
           goToTab={staging ? 1 : 0}
-          onChange={this.handleSetValue('tabIndex')}
+          onChange={this.handleSetValueOf('tabIndex')}
         >
           <TournamentRound
             players={players}
@@ -691,7 +750,7 @@ class Tournament extends Component {
             onUpdateScores={this.handleUpdateScores}
             onRemovePlayer={this.handleRemovePlayer}
             onReinstatePlayer={this.handleReinstatePlayer}
-            sync={this.handleSetValue('sync')}
+            sync={this.handleSetValueOf('sync')}
           />
           <TournamentParticipants
             displayOnly={done}
@@ -704,7 +763,15 @@ class Tournament extends Component {
             onRemovePlayer={this.handleRemovePlayer}
             onReinstatePlayer={this.handleReinstatePlayer}
           />
-          {tabIndex !== 2 ? <div /> : /* hack: need to force mount when swiching to the tab the first time */
+        </SwipeTabControl>
+
+        <Dialog
+          open={dialog === 'settings'}
+          onClose={this.handleSetValue('dialog', null)}
+          aria-label='tournament-settings'
+          scroll='body'
+        >
+          <DialogContent>
             <TournamentSettings
               pairingMethods={pairingMethods}
               categories={categories}
@@ -716,11 +783,52 @@ class Tournament extends Component {
               pairingMethodInitial={pairingMethodInitial}
               podSizeMinimum={podSizeMinimum}
               podSizeMaximum={podSizeMaximum}
-              onChange={this.handleSettingsUpdate}
-              sync={this.handleSetValue('sync')}
+              onChange={this.handleUpdateSettings}
             />
-          }
-        </SwipeTabControl>
+          </DialogContent>
+          <DialogActions>
+            <Button 
+              color='primary'
+              onClick={this.handleRevertSettings}>
+              Revert
+            </Button>
+            <Button
+              variant='contained'
+              color='primary'
+              onClick={this.handleSaveSettings}
+              className={classes.right}
+            >
+              Save
+            </Button>
+          </DialogActions>
+        </Dialog>
+
+        <Dialog
+          open={dialog === 'delete'}
+          onClose={this.handleSetValue('dialog', null)}
+          aria-labelledby='delete-tournament'
+        >
+          <DialogTitle id='delete-tournament'>Delete Tournament</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Are you sure you want to delete this tournament?
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button 
+              variant='contained'
+              color='primary'
+              onClick={this.handleSetValue('dialog', null)}>
+              Cancel
+            </Button>
+            <Button
+              onClick={this.handleDelete}
+              className={classNames(classes.red, classes.right)}
+            >
+              Delete
+            </Button>
+          </DialogActions>
+        </Dialog>
       </div>
     );
   }

@@ -25,30 +25,6 @@ test('matches the prior snapshot', () => {
 });
 
 describe('props', () => {
-  test('actions', () => {
-    let component = shallow(<TournamentSettings />).dive();
-    expect(component.find(CardActions).length).toBe(1);
-    expect(component.find(CardActions).children().length).toBe(0);
-    component = shallow(
-      <TournamentSettings>
-        <div>test</div>
-        <div>trial</div>
-      </TournamentSettings>
-    ).dive();
-    expect(component.find(CardActions).length).toBe(1);
-    expect(component.find(CardActions).children().length).toBe(2);
-    expect(component.find(CardActions).childAt(0).html()).toEqual('<div>test</div>');
-    expect(component.find(CardActions).childAt(1).html()).toEqual('<div>trial</div>');
-  });
-
-  test('title', () => {
-    const component = shallow(<TournamentSettings />).dive();
-    expect(component.find(CardHeader).length).toBe(0);
-    component.setProps({ title: 'Test' });
-    expect(component.find(CardHeader).length).toBe(1);
-    expect(component.find(CardHeader).prop('title')).toBe('Test');
-  });
-
   test('autoFocus', () => {
     const component = shallow(<TournamentSettings />).dive();
     expect(component.find(TextField).at(0).prop('autoFocus')).toBe(false);
@@ -88,16 +64,16 @@ describe('props', () => {
 
   test('name', () => {
     const component = shallow(<TournamentSettings />).dive();
-    expect(component.find('#tournament-name').prop('defaultValue')).toBe('');
+    expect(component.find('#tournament-name').prop('value')).toBe('');
     component.setProps({ name: 'test' });
-    expect(component.find('#tournament-name').prop('defaultValue')).toBe('test');
+    expect(component.find('#tournament-name').prop('value')).toBe('test');
   });
 
   test('description', () => {
     const component = shallow(<TournamentSettings />).dive();
-    expect(component.find('#tournament-description').prop('defaultValue')).toBe('');
+    expect(component.find('#tournament-description').prop('value')).toBe('');
     component.setProps({ description: 'test' });
-    expect(component.find('#tournament-description').prop('defaultValue')).toBe('test');
+    expect(component.find('#tournament-description').prop('value')).toBe('test');
   });
 
   test('category', () => {
@@ -111,9 +87,9 @@ describe('props', () => {
 
   test('date', () => {
     const component = shallow(<TournamentSettings />).dive();
-    expect(component.find('#tournament-date').prop('defaultValue')).toBe('');
+    expect(component.find('#tournament-date').prop('value')).toBe('');
     component.setProps({ date: 'test' });
-    expect(component.find('#tournament-date').prop('defaultValue')).toBe('test');
+    expect(component.find('#tournament-date').prop('value')).toBe('test');
   });
 
   test('pairingMethod', () => {
@@ -144,60 +120,20 @@ describe('props', () => {
 
   test('podSizeMinimum', () => {
     const component = shallow(<TournamentSettings />).dive();
-    expect(component.find('#tournament-podSizeMinimum').prop('defaultValue')).toBe(0);
+    expect(component.find('#tournament-podSizeMinimum').prop('value')).toBe(0);
     component.setProps({ podSizeMinimum: 1 });
-    expect(component.find('#tournament-podSizeMinimum').prop('defaultValue')).toBe(1);
+    expect(component.find('#tournament-podSizeMinimum').prop('value')).toBe(1);
   });
 
   test('podSizeMaximum', () => {
     const component = shallow(<TournamentSettings />).dive();
-    expect(component.find('#tournament-podSizeMaximum').prop('defaultValue')).toBe(0);
+    expect(component.find('#tournament-podSizeMaximum').prop('value')).toBe(0);
     component.setProps({ podSizeMaximum: 1 });
-    expect(component.find('#tournament-podSizeMaximum').prop('defaultValue')).toBe(1);
+    expect(component.find('#tournament-podSizeMaximum').prop('value')).toBe(1);
   });
 
-  describe('onChange & immediate', () => {
-    test('default', (done) => {
-      const spy = jest.fn();
-      const component = shallow(
-        <TournamentSettings
-          categories={['1', '2', '3']}
-          pairingMethods={[
-            {label: 'five', value: 5},
-            {label: 'six', value: 6},
-          ]}
-          onChange={spy}
-        />
-      ).dive();
-      component.find('#tournament-name').simulate('change', {target: {value: '1'}});
-      component.find('#tournament-category').simulate('change', {value: '2'});
-      component.find('#tournament-description').simulate('change', {target: {value: '3'}});
-      component.find('#tournament-date').simulate('change', {target: {value: '4'}});
-      component.find('#tournament-pairingMethod').simulate('change', {value: '5'});
-      component.find('#tournament-pairingMethodInitial').simulate('change', {value: '6'});
-      component.find('#tournament-podSizeMinimum').simulate('change', {target: {value: '7'}});
-      component.find('#tournament-podSizeMaximum').simulate('change', {target: {value: '8'}});
-      setTimeout(() => {
-        try {
-          expect(spy.mock.calls.length).toBe(1);
-          expect(spy.mock.calls[0][0]).toEqual({
-            name: '1',
-            category: '2',
-            description: '3',
-            date: '4',
-            pairingMethod: 5,
-            pairingMethodInitial: 6,
-            podSizeMinimum: 7,
-            podSizeMaximum: 8,
-          });
-          done();
-        } catch(error) {
-          done.fail(error);
-        }
-      }, 2000);
-    });
-
-    test('with immediate', () => {
+  describe('onChange', () => {
+    test('called on input change', () => {
       const spy = jest.fn();
       const component = shallow(
         <TournamentSettings
@@ -237,7 +173,7 @@ describe('props', () => {
       expect(spy.mock.calls[7][1]).toBe(8);
     });
 
-    test('creatable selects', (done) => {
+    test('called for creatable selects', () => {
       const spy = jest.fn();
       const component = shallow(
         <TournamentSettings
@@ -247,15 +183,14 @@ describe('props', () => {
       ).dive();
       component.instance().handleSelectCreateValue('category', 'createdCategories')('trial');
       expect(component.state('createdCategories')).toEqual(['trial']);
-      setTimeout(() => {
-        try {
-          expect(spy.mock.calls.length).toBe(1);
-          expect(spy.mock.calls[0][0]).toEqual({ category: 'trial' });
-          done();
-        } catch(error) {
-          done.fail(error);
-        }
-      }, 2000);
+      expect(spy.mock.calls.length).toBe(1);
+      expect(spy.mock.calls[0][0]).toEqual('category');
+      expect(spy.mock.calls[0][1]).toEqual('trial');
+      component.instance().handleSelectCreateValue('category', 'createdCategories')('testing');
+      expect(component.state('createdCategories')).toEqual(['trial', 'testing']);
+      expect(spy.mock.calls.length).toBe(2);
+      expect(spy.mock.calls[1][0]).toEqual('category');
+      expect(spy.mock.calls[1][1]).toEqual('testing');
     });
   });
 });

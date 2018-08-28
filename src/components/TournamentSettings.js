@@ -3,43 +3,22 @@ import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
 
-import Select from './Select';
-
-import Divider from '@material-ui/core/Divider';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import TextField from '@material-ui/core/TextField';
+
+import Select from './Select';
 
 const styles = theme => ({
   root: {
-    margin: theme.spacing.unit,
+    padding: 2 * theme.spacing.unit,
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
     alignItems: 'flex-start',
-    minHeight: 400,
-  },
-  card: {
-    overflow: 'visible',
-    maxWidth: theme.breakpoints.values['sm'],
-  },
-  content: {
-    padding: theme.spacing.unit,
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-evenly',
-    alignItems: 'flex-start',
-    alignContent: 'flex-start',
+    minHeight: 540,
   },
   field: {
     minWidth: 250,
-  },
-  right: {
-    marginLeft: 'auto',
   },
 });
 
@@ -48,33 +27,11 @@ class TournamentSettings extends Component {
     createdCategories: [],
   };
 
-  updateValues = {};
-
-  componentWillUnmount() {
-    if(this.timeout)
-      clearTimeout(this.timeout);
-    this.timeout = null;
-    this.props.sync(false);
-  }
-
-  update = () => {
-    this.props.onChange(this.updateValues);
-    this.updateValues = {};
-  };
-
   handleInputChange = name => event => {
     let val = typeof this.props[name] === 'number'
       ? Number(event.target.value)
       : event.target.value;
-    this.props.sync(true);
-    if(this.props.immediate)
-      return this.props.onChange(name, val);
-    Object.assign(this.updateValues, {
-      [name]: val,
-    });
-    if(this.timeout)
-      clearTimeout(this.timeout);
-    this.timeout = setTimeout(this.update, 2000);
+    this.props.onChange(name, val);
   };
 
   handleSelectValue = name => (selected, action) => {
@@ -83,15 +40,7 @@ class TournamentSettings extends Component {
     let val = typeof this.props[name] === 'number'
       ? Number(selected.value)
       : selected.value;
-    this.props.sync(true);
-    if(this.props.immediate)
-      return this.props.onChange(name, val);
-    Object.assign(this.updateValues, {
-      [name]: val,
-    });
-    if(this.timeout)
-      clearTimeout(this.timeout);
-    this.timeout = setTimeout(this.update, 2000);
+    this.props.onChange(name, val);
   };
 
   handleSelectCreateValue = (name, list) => value => {
@@ -104,22 +53,12 @@ class TournamentSettings extends Component {
         val,
       ],
     }));
-    this.props.sync(true);
-    if(this.props.immediate)
-      return this.props.onChange(name, val);
-    Object.assign(this.updateValues, {
-      [name]: val,
-    });
-    if(this.timeout)
-      clearTimeout(this.timeout);
-    this.timeout = setTimeout(this.update, 2000);
+    this.props.onChange(name, val);
   };
 
   render() {
     const {
-      children,
       classes,
-      title,
       autoFocus,
       pairingMethods,
       categories,
@@ -135,8 +74,10 @@ class TournamentSettings extends Component {
     const { createdCategories } = this.state;
     const allCategories = [
       ...categories,
-      ...createdCategories
-    ].sort((a, b) => {
+      ...createdCategories.filter(cat => !categories.includes(cat))
+    ].filter(cat => cat && cat.length).sort((a, b) => {
+      if(!a || !b)
+        return 0;
       let left = a.toLowerCase();
       let right = b.toLowerCase();
       return left > right ? 1 : left < right ? -1 : 0;
@@ -157,113 +98,102 @@ class TournamentSettings extends Component {
       selectValues.pairingMethodInitial = selectValues.filterPairingMethodInitial[0];
     return (
       <div className={classes.root}>
-        <Card className={classes.card}>
-          {title && <CardHeader title={title} />}
-          {title && <Divider />}
-          <CardContent className={classes.content}>
-            <TextField className={classes.field}
-              autoFocus={autoFocus}
-              margin='normal'
-              id='tournament-name'
-              label=' Name'
-              type='text'
-              required
-              defaultValue={name}
-              onChange={this.handleInputChange('name')}
-              fullWidth
-            />
-            <TextField className={classes.field}
-              margin='normal'
-              id='tournament-description'
-              label='Description'
-              type='text'
-              required
-              defaultValue={description}
-              onChange={this.handleInputChange('description')}
-              fullWidth
-            />
-            <Select className={classes.field}
-              margin='normal'
-              id='tournament-category'
-              label='Category'
-              type='text'
-              isClearable
-              isCreatable
-              placeholder='Select or Type...'
-              value={selectValues.category}
-              onChange={this.handleSelectValue('category')}
-              options={allCategories}
-              onCreateOption={this.handleSelectCreateValue('category', 'createdCategories')}
-              getOptionLabel={option => option.label}
-              getOptionValue={option => option.value}
-            />
-            <TextField className={classes.field}
-              margin='normal'
-              id='tournament-date'
-              label='Date'
-              type='date'
-              required
-              defaultValue={date}
-              onChange={this.handleInputChange('date')}
-              InputLabelProps={{
-                shrink: true,
-              }}
-            />
-            <Select className={classes.field}
-              margin='normal'
-              id='tournament-pairingMethod'
-              label='Pairing Method'
-              type='text'
-              backspaceRemovesValue={false}
-              value={selectValues.pairingMethod}
-              onChange={this.handleSelectValue('pairingMethod')}
-              options={pairingMethods}
-              getOptionLabel={option => option.label}
-              getOptionValue={option => option.value}
-            />
-            <Select className={classes.field}
-              margin='normal'
-              id='tournament-pairingMethodInitial'
-              label='Initial Pairing Method'
-              type='text'
-              backspaceRemovesValue={false}
-              value={selectValues.pairingMethodInitial}
-              onChange={this.handleSelectValue('pairingMethodInitial')}
-              options={pairingMethods}
-              getOptionLabel={option => option.label}
-              getOptionValue={option => option.value}
-            />
-            <TextField className={classes.field}
-              margin='normal'
-              id='tournament-podSizeMinimum'
-              label='Minimum Pod Size'
-              type='number'
-              required
-              defaultValue={podSizeMinimum}
-              onChange={this.handleInputChange('podSizeMinimum')}
-            />
-            <TextField className={classes.field}
-              margin='normal'
-              id='tournament-podSizeMaximum'
-              label='Maximum Pod Size'
-              type='number'
-              required
-              defaultValue={podSizeMaximum}
-              onChange={this.handleInputChange('podSizeMaximum')}
-            />
-          </CardContent>
-          <Divider />
-          <CardActions>
-            {children}
-          </CardActions>
-        </Card>
+        <TextField className={classes.field}
+          autoFocus={autoFocus}
+          margin='dense'
+          id='tournament-name'
+          label=' Name'
+          type='text'
+          required
+          value={name}
+          onChange={this.handleInputChange('name')}
+          fullWidth
+        />
+        <TextField className={classes.field}
+          margin='dense'
+          id='tournament-description'
+          label='Description'
+          type='text'
+          required
+          value={description}
+          onChange={this.handleInputChange('description')}
+          fullWidth
+        />
+        <Select className={classes.field}
+          margin='dense'
+          id='tournament-category'
+          label='Category'
+          type='text'
+          isClearable
+          isCreatable
+          placeholder='Select or Type...'
+          value={selectValues.category}
+          onChange={this.handleSelectValue('category')}
+          options={allCategories}
+          onCreateOption={this.handleSelectCreateValue('category', 'createdCategories')}
+          getOptionLabel={option => option.label}
+          getOptionValue={option => option.value}
+        />
+        <TextField className={classes.field}
+          margin='dense'
+          id='tournament-date'
+          label='Date'
+          type='date'
+          required
+          value={date}
+          onChange={this.handleInputChange('date')}
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+        <Select className={classes.field}
+          margin='dense'
+          id='tournament-pairingMethod'
+          label='Pairing Method'
+          type='text'
+          backspaceRemovesValue={false}
+          value={selectValues.pairingMethod}
+          onChange={this.handleSelectValue('pairingMethod')}
+          options={pairingMethods}
+          getOptionLabel={option => option.label}
+          getOptionValue={option => option.value}
+        />
+        <Select className={classes.field}
+          margin='dense'
+          id='tournament-pairingMethodInitial'
+          label='Initial Pairing Method'
+          type='text'
+          backspaceRemovesValue={false}
+          value={selectValues.pairingMethodInitial}
+          onChange={this.handleSelectValue('pairingMethodInitial')}
+          options={pairingMethods}
+          getOptionLabel={option => option.label}
+          getOptionValue={option => option.value}
+        />
+        <TextField className={classes.field}
+          margin='dense'
+          id='tournament-podSizeMinimum'
+          label='Minimum Pod Size'
+          type='number'
+          required
+          value={podSizeMinimum}
+          onChange={this.handleInputChange('podSizeMinimum')}
+        />
+        <TextField className={classes.field}
+          margin='dense'
+          id='tournament-podSizeMaximum'
+          label='Maximum Pod Size'
+          type='number'
+          required
+          value={podSizeMaximum}
+          onChange={this.handleInputChange('podSizeMaximum')}
+        />
       </div>
     );
   }
 }
 
 TournamentSettings.defaultProps = {
-  title: '',
   autoFocus: false,
   pairingMethods: [],
   categories: [],
@@ -275,14 +205,11 @@ TournamentSettings.defaultProps = {
   pairingMethodInitial: 0,
   podSizeMinimum: 0,
   podSizeMaximum: 0,
-  onChange: (updateValues) => null,
-  immediate: false,
-  sync: bool => null,
+  onChange: (name, value) => null,
 };
 
 TournamentSettings.propTypes = {
   classes: PropTypes.object.isRequired, // added by withStyles
-  title: PropTypes.string,
   autoFocus: PropTypes.bool,
   pairingMethods: PropTypes.array,
   categories: PropTypes.array,
@@ -295,8 +222,6 @@ TournamentSettings.propTypes = {
   podSizeMinimum: PropTypes.number,
   podSizeMaximum: PropTypes.number,
   onChange: PropTypes.func,
-  immediate: PropTypes.bool,
-  sync: PropTypes.func,
 };
 
 export default withStyles(styles, { withTheme: true })(TournamentSettings);

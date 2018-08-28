@@ -5,9 +5,12 @@ import { withStyles } from '@material-ui/core/styles';
 import { withAPI } from '../api';
 
 import AppBar from '@material-ui/core/AppBar';
-import Modal from '@material-ui/core/Modal';
 import Toolbar from '@material-ui/core/Toolbar';
 import Drawer from '@material-ui/core/Drawer';
+import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogActions from '@material-ui/core/DialogActions';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
@@ -65,7 +68,7 @@ const styles = theme => ({
 class AppMenu extends React.Component {
   state = {
     drawerOpen: false,
-    modalOpen: false,
+    dialogOpen: false,
     categories: [],
     pairingMethods: [],
     name: '',
@@ -147,7 +150,7 @@ class AppMenu extends React.Component {
   };
 
   handleCloseModal = () => {
-    this.setState(Object.assign({}, this.defaultSettings, { modalOpen: false }));
+    this.setState(Object.assign({}, this.defaultSettings, { dialogOpen: false }));
     this.props.onCancelNew();
   };
 
@@ -164,7 +167,7 @@ class AppMenu extends React.Component {
     } = this.props;
     const {
       drawerOpen,
-      modalOpen,
+      dialogOpen,
       categories,
       pairingMethods,
       name,
@@ -236,7 +239,7 @@ class AppMenu extends React.Component {
                 </ListItemIcon>
                 <ListItemText primary='Home' />
               </ListItem>
-              <ListItem button component='a' onClick={this.handleUpdateValue('modalOpen', true)}>
+              <ListItem button component='a' onClick={this.handleUpdateValue('dialogOpen', true)}>
                 <ListItemIcon>
                   <AddBoxIcon />
                 </ListItemIcon>
@@ -266,30 +269,32 @@ class AppMenu extends React.Component {
             </List>
           </div>
         </Drawer>
-        <Modal
-          aria-label='New Tournament Modal'
-          open={modalOpen || showNew}
-          disableAutoFocus
-          disableBackdropClick
-          disableEscapeKeyDown
+        <Dialog
+          open={dialogOpen || showNew}
           onClose={this.handleCloseModal}
+          aria-labelledby='new-tournament-dialog'
+          scroll='body'
         >
-          <TournamentSettings
-            title='New Tournament'
-            pairingMethods={pairingMethods}
-            categories={categories}
-            name={name}
-            category={category}
-            description={description}
-            date={date}
-            pairingMethod={pairingMethod}
-            pairingMethodInitial={pairingMethodInitial}
-            podSizeMinimum={podSizeMinimum}
-            podSizeMaximum={podSizeMaximum}
-            onChange={this.setValue}
-            immediate
-          >
-            <Button onClick={this.handleCloseModal}>
+          <DialogTitle id='new-tournament-dialog'>New Tournament</DialogTitle>
+          <DialogContent>
+            <TournamentSettings
+              pairingMethods={pairingMethods}
+              categories={categories}
+              name={name}
+              category={category}
+              description={description}
+              date={date}
+              pairingMethod={pairingMethod}
+              pairingMethodInitial={pairingMethodInitial}
+              podSizeMinimum={podSizeMinimum}
+              podSizeMaximum={podSizeMaximum}
+              onChange={this.setValue}
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button 
+              color='primary'
+              onClick={this.handleCloseModal}>
               Cancel
             </Button>
             <Button
@@ -300,8 +305,8 @@ class AppMenu extends React.Component {
             >
               Create
             </Button>
-          </TournamentSettings>
-        </Modal>
+          </DialogActions>
+        </Dialog>
       </div>
     );
   }

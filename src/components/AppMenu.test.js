@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
-import Modal from '@material-ui/core/Modal';
+import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Drawer from '@material-ui/core/Drawer';
@@ -73,7 +73,7 @@ test('back button', () => {
 test('menu drawer', () => {
   const spy = jest.fn(v => v);
   const component = shallow(<AppMenu />).dive().dive();
-  expect(component.find(Modal).length).toBe(1);
+  expect(component.find(Dialog).length).toBe(1);
   expect(component.state('drawerOpen')).toBe(false);
   component.find(IconButton).at(0).simulate('click');
   expect(component.state('drawerOpen')).toBe(true);
@@ -83,28 +83,29 @@ test('menu drawer', () => {
   expect(component.find(ListItemText).at(2).prop('primary')).toBe('Tournaments');
   expect(component.find(ListItemText).at(3).prop('primary')).toBe('Players');
   expect(component.find(ListItemText).at(4).prop('primary')).toBe('Settings');
-  expect(component.state('modalOpen')).toBe(false);
-  expect(component.find(Modal).prop('open')).toBe(false);
+  expect(component.state('dialogOpen')).toBe(false);
+  expect(component.find(Dialog).prop('open')).toBe(false);
   component.find(ListItem).at(1).simulate('click');
-  expect(component.state('modalOpen')).toBe(true);
-  expect(component.find(Modal).prop('open')).toBe(true);
+  expect(component.state('dialogOpen')).toBe(true);
+  expect(component.find(Dialog).prop('open')).toBe(true);
 });
 
-test('new tournament modal', () => {
+test('new tournament dialog', () => {
   const spy = jest.fn(v => v);
   const component = shallow(<AppMenu />).dive().dive();
-  expect(component.find(Modal).find(TournamentSettings).length).toBe(1);
-  expect(component.state('modalOpen')).toBe(false);
-  expect(component.find(Modal).prop('open')).toBe(false);
+  expect(component.find(Dialog).length).toBe(1);
+  expect(component.find(Dialog).find(TournamentSettings).length).toBe(1);
+  expect(component.state('dialogOpen')).toBe(false);
+  expect(component.find(Dialog).prop('open')).toBe(false);
   component.find(ListItem).at(1).simulate('click');
-  expect(component.state('modalOpen')).toBe(true);
-  expect(component.find(Modal).prop('open')).toBe(true);
+  expect(component.state('dialogOpen')).toBe(true);
+  expect(component.find(Dialog).prop('open')).toBe(true);
   component.setProps({ onCancelNew: spy });
-  component.find(TournamentSettings).find(Button).at(0).simulate('click');
-  expect(component.state('modalOpen')).toBe(false);
-  expect(component.find(Modal).prop('open')).toBe(false);
+  component.find(Dialog).find(Button).at(0).simulate('click');
+  expect(component.state('dialogOpen')).toBe(false);
+  expect(component.find(Dialog).prop('open')).toBe(false);
   expect(spy.mock.calls.length).toBe(1);
   component.setProps({ showNew: true });
-  expect(component.state('modalOpen')).toBe(false);
-  expect(component.find(Modal).prop('open')).toBe(true);
+  expect(component.state('dialogOpen')).toBe(false);
+  expect(component.find(Dialog).prop('open')).toBe(true);
 });
