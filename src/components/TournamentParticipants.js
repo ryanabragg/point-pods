@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { withStyles } from '@material-ui/core/styles';
 
+import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -21,6 +22,17 @@ const styles = theme => ({
   },
   margined: {
     margin: theme.spacing.unit,
+  },
+  hideOnPrint: {
+    '@media print': {
+      display: 'none',
+    },
+  },
+  showOnPrint: {
+    display: 'none',
+    '@media print': {
+      display: 'block',
+    },
   },
 });
 
@@ -68,7 +80,7 @@ class TournamentParticipants extends Component {
     return (
       <div className={classes.root}>
         {!displayOnly && (
-          <AppBar position='sticky' color='inherit'>
+          <AppBar position='sticky' color='inherit' className={classes.hideOnPrint}>
             <Select
               aria-label='add-player'
               isCreatable
@@ -97,7 +109,7 @@ class TournamentParticipants extends Component {
             />
           </AppBar>
         )}
-        <List>
+        <List className={classes.hideOnPrint}>
           {players.sort(sort).map(player => {
             let { id, name, points, participated, dropped } = player;
             return (
@@ -119,6 +131,16 @@ class TournamentParticipants extends Component {
             );
           })}
         </List>
+        <div className={classes.showOnPrint}>
+          <Typography variant='headline'>Participants</Typography>
+          <List>
+            {players.sort(sort).map(({ id, name }) => (
+              <ListItem key={id} dense className={classes.printList}>
+                <ListItemText primary={name} />
+              </ListItem>
+            ))}
+          </List>
+        </div>
       </div>
     );
   }
