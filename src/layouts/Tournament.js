@@ -72,6 +72,11 @@ const styles = theme => ({
   red: {
     color: theme.palette.error.main,
   },
+  hideOnPrint: {
+    '@media print': {
+      display: 'none',
+    },
+  },
 });
 
 class Tournament extends Component {
@@ -712,6 +717,7 @@ class Tournament extends Component {
         <AppMenu title={name}
           usesBackIcon onBack={this.goBack}
           toolbar={this.renderToolbar()}
+          className={classes.hideOnPrint}
         />
         <Zoom
           in={showStartFab}
@@ -724,7 +730,7 @@ class Tournament extends Component {
           <Button variant="extendedFab"
             aria-label='Start Tournament'
             color='secondary'
-            className={classes.actionButton}
+            className={classNames(classes.actionButton, classes.hideOnPrint)}
             onClick={this.handleNewRound}
           >
             <SendIcon className={classes.marginedRight} />
@@ -739,6 +745,8 @@ class Tournament extends Component {
           ]}
           goToTab={staging ? 1 : 0}
           onChange={this.handleSetValueOf('tabIndex')}
+          hideTabsOnPrint={true}
+          animateHeight={rounds > 0}
         >
           <TournamentRound
             players={players}
