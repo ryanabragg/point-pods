@@ -3,17 +3,17 @@
 exports[`matches the prior snapshot 1`] = `
 <div>
   <div
-    className="APIComponent-root-170"
+    className=""
   >
     <header
-      className="MuiPaper-root-186 MuiPaper-elevation4-192 MuiAppBar-root-178 MuiAppBar-positionFixed-179 MuiAppBar-colorPrimary-184 mui-fixed"
+      className="MuiPaper-root-184 MuiPaper-elevation4-190 MuiAppBar-root-176 MuiAppBar-positionFixed-177 MuiAppBar-colorPrimary-182 mui-fixed"
     >
       <div
-        className="MuiToolbar-root-213 MuiToolbar-regular-215 MuiToolbar-gutters-214 APIComponent-nowrap-172"
+        className="MuiToolbar-root-211 MuiToolbar-regular-213 MuiToolbar-gutters-212 APIComponent-nowrap-170"
       >
         <button
           aria-label="Back"
-          className="MuiButtonBase-root-223 MuiIconButton-root-217 MuiIconButton-colorInherit-218 APIComponent-menuButton-173"
+          className="MuiButtonBase-root-221 MuiIconButton-root-215 MuiIconButton-colorInherit-216 APIComponent-menuButton-171"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -30,11 +30,11 @@ exports[`matches the prior snapshot 1`] = `
           type="button"
         >
           <span
-            className="MuiIconButton-label-222"
+            className="MuiIconButton-label-220"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-226"
+              className="MuiSvgIcon-root-224"
               color={undefined}
               focusable="false"
               viewBox="0 0 24 24"
@@ -49,67 +49,67 @@ exports[`matches the prior snapshot 1`] = `
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-233"
+            className="MuiTouchRipple-root-231"
           />
         </button>
         <h2
-          className="MuiTypography-root-240 MuiTypography-title-246 MuiTypography-colorInherit-259 APIComponent-flex-171"
+          className="MuiTypography-root-238 MuiTypography-title-244 MuiTypography-colorInherit-257 APIComponent-flex-169"
         >
           Settings
         </h2>
       </div>
     </header>
     <div
-      className="APIComponent-spacer-175"
+      className="APIComponent-spacer-173"
     />
   </div>
   <div
-    className="APIComponent-root-289"
+    className="APIComponent-root-287"
   >
     <div
-      className="MuiPaper-root-186 MuiPaper-elevation1-189 MuiPaper-rounded-187 MuiCard-root-293 APIComponent-card-290"
+      className="MuiPaper-root-184 MuiPaper-elevation1-187 MuiPaper-rounded-185 MuiCard-root-291 APIComponent-card-288"
     >
       <div
-        className="MuiCardHeader-root-294"
+        className="MuiCardHeader-root-292"
       >
         <div
-          className="MuiCardHeader-content-297"
+          className="MuiCardHeader-content-295"
         >
           <span
-            className="MuiTypography-root-240 MuiTypography-headline-245 MuiCardHeader-title-298"
+            className="MuiTypography-root-238 MuiTypography-headline-243 MuiCardHeader-title-296"
           >
             Pod Setup
           </span>
         </div>
       </div>
       <hr
-        className="MuiDivider-root-300"
+        className="MuiDivider-root-298"
       />
       <div
-        className="MuiCardContent-root-304 APIComponent-content-291"
+        className="MuiCardContent-root-302 APIComponent-content-289"
       >
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-305 MuiFormControl-marginDense-307 APIComponent-field-292"
+          className="MuiFormControl-root-303 MuiFormControl-marginDense-305 APIComponent-field-290"
         >
           <label
-            className="MuiFormLabel-root-314 MuiInputLabel-root-309 MuiInputLabel-formControl-310 MuiInputLabel-animated-313 MuiInputLabel-marginDense-311"
+            className="MuiFormLabel-root-312 MuiInputLabel-root-307 MuiInputLabel-formControl-308 MuiInputLabel-animated-311 MuiInputLabel-marginDense-309"
             data-shrink={false}
             htmlFor="settings-pairingMethod"
           >
             Pairing Method
           </label>
           <div
-            className="MuiInput-root-324 MuiInput-formControl-325 MuiInput-underline-328"
+            className="MuiInput-root-322 MuiInput-formControl-323 MuiInput-underline-326"
           >
             <div
-              className="MuiSelect-root-319"
+              className="MuiSelect-root-317"
             >
               <div
                 aria-haspopup="true"
                 aria-owns={null}
                 aria-pressed="false"
-                className="MuiSelect-select-320 MuiSelect-selectMenu-321 MuiInput-input-332 MuiInput-inputMarginDense-333"
+                className="MuiSelect-select-318 MuiSelect-selectMenu-319 MuiInput-input-330 MuiInput-inputMarginDense-331"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -140,7 +140,7 @@ exports[`matches the prior snapshot 1`] = `
               />
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-226 MuiSelect-icon-323"
+                className="MuiSvgIcon-root-224 MuiSelect-icon-321"
                 color={undefined}
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -154,26 +154,26 @@ exports[`matches the prior snapshot 1`] = `
         </div>
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-305 MuiFormControl-marginDense-307 APIComponent-field-292"
+          className="MuiFormControl-root-303 MuiFormControl-marginDense-305 APIComponent-field-290"
         >
           <label
-            className="MuiFormLabel-root-314 MuiInputLabel-root-309 MuiInputLabel-formControl-310 MuiInputLabel-animated-313 MuiInputLabel-marginDense-311"
+            className="MuiFormLabel-root-312 MuiInputLabel-root-307 MuiInputLabel-formControl-308 MuiInputLabel-animated-311 MuiInputLabel-marginDense-309"
             data-shrink={false}
             htmlFor="settings-pairingMethodInitial"
           >
             Initial Pairing Method
           </label>
           <div
-            className="MuiInput-root-324 MuiInput-formControl-325 MuiInput-underline-328"
+            className="MuiInput-root-322 MuiInput-formControl-323 MuiInput-underline-326"
           >
             <div
-              className="MuiSelect-root-319"
+              className="MuiSelect-root-317"
             >
               <div
                 aria-haspopup="true"
                 aria-owns={null}
                 aria-pressed="false"
-                className="MuiSelect-select-320 MuiSelect-selectMenu-321 MuiInput-input-332 MuiInput-inputMarginDense-333"
+                className="MuiSelect-select-318 MuiSelect-selectMenu-319 MuiInput-input-330 MuiInput-inputMarginDense-331"
                 onBlur={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -204,7 +204,7 @@ exports[`matches the prior snapshot 1`] = `
               />
               <svg
                 aria-hidden="true"
-                className="MuiSvgIcon-root-226 MuiSelect-icon-323"
+                className="MuiSvgIcon-root-224 MuiSelect-icon-321"
                 color={undefined}
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -218,23 +218,23 @@ exports[`matches the prior snapshot 1`] = `
         </div>
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-305 MuiFormControl-marginDense-307 APIComponent-field-292"
+          className="MuiFormControl-root-303 MuiFormControl-marginDense-305 APIComponent-field-290"
         >
           <label
-            className="MuiFormLabel-root-314 MuiInputLabel-root-309 MuiInputLabel-formControl-310 MuiInputLabel-animated-313 MuiInputLabel-marginDense-311"
+            className="MuiFormLabel-root-312 MuiInputLabel-root-307 MuiInputLabel-formControl-308 MuiInputLabel-animated-311 MuiInputLabel-marginDense-309"
             data-shrink={false}
             htmlFor="settings-podSizeMinimum"
           >
             Minimum Pod Size
           </label>
           <div
-            className="MuiInput-root-324 MuiInput-formControl-325 MuiInput-underline-328"
+            className="MuiInput-root-322 MuiInput-formControl-323 MuiInput-underline-326"
           >
             <input
               aria-invalid={false}
               autoComplete={undefined}
               autoFocus={undefined}
-              className="MuiInput-input-332 MuiInput-inputType-335 MuiInput-inputMarginDense-333"
+              className="MuiInput-input-330 MuiInput-inputType-333 MuiInput-inputMarginDense-331"
               defaultValue={undefined}
               disabled={false}
               id="settings-podSizeMinimum"
@@ -255,23 +255,23 @@ exports[`matches the prior snapshot 1`] = `
         </div>
         <div
           aria-describedby={undefined}
-          className="MuiFormControl-root-305 MuiFormControl-marginDense-307 APIComponent-field-292"
+          className="MuiFormControl-root-303 MuiFormControl-marginDense-305 APIComponent-field-290"
         >
           <label
-            className="MuiFormLabel-root-314 MuiInputLabel-root-309 MuiInputLabel-formControl-310 MuiInputLabel-animated-313 MuiInputLabel-marginDense-311"
+            className="MuiFormLabel-root-312 MuiInputLabel-root-307 MuiInputLabel-formControl-308 MuiInputLabel-animated-311 MuiInputLabel-marginDense-309"
             data-shrink={false}
             htmlFor="settings-podSizeMaximum"
           >
             Maximum Pod Size
           </label>
           <div
-            className="MuiInput-root-324 MuiInput-formControl-325 MuiInput-underline-328"
+            className="MuiInput-root-322 MuiInput-formControl-323 MuiInput-underline-326"
           >
             <input
               aria-invalid={false}
               autoComplete={undefined}
               autoFocus={undefined}
-              className="MuiInput-input-332 MuiInput-inputType-335 MuiInput-inputMarginDense-333"
+              className="MuiInput-input-330 MuiInput-inputType-333 MuiInput-inputMarginDense-331"
               defaultValue={undefined}
               disabled={false}
               id="settings-podSizeMaximum"

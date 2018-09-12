@@ -33,9 +33,6 @@ import SettingsIcon from '@material-ui/icons/SettingsSharp';
 import TournamentSettings from '../components/TournamentSettings';
 
 const styles = theme => ({
-  root: {
-    width: '100%',
-  },
   flex: {
     flexGrow: 1,
     flexShrink: 1,
@@ -157,6 +154,7 @@ class AppMenu extends React.Component {
   render() {
     const {
       classes,
+      className,
       theme,
       position,
       color,
@@ -181,7 +179,7 @@ class AppMenu extends React.Component {
     } = this.state;
 
     return (
-      <div className={classes.root}>
+      <div className={className}>
         <AppBar position={position} color={color}>
           <Toolbar className={classes.nowrap}>
             {usesBackIcon
@@ -319,6 +317,7 @@ AppMenu.defaultProps = {
     replace: () => null,
   },
   notification: (m, v, d, c) => null,
+  className: '',
   position: 'fixed',
   color: 'primary',
   title: 'Point Pods',
@@ -334,6 +333,7 @@ AppMenu.propTypes = {
   classes: PropTypes.object.isRequired, // added by withStyles
   history: PropTypes.object.isRequired,
   notification: PropTypes.func,
+  className: PropTypes.string,
   position: PropTypes.oneOf(['static', 'fixed']),
   color: PropTypes.string,
   title: PropTypes.string,

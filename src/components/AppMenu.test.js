@@ -32,6 +32,13 @@ test('matches the prior snapshot', () => {
   expect(component.toJSON()).toMatchSnapshot();
 });
 
+test('className prop pass through to root', () => {
+  const component = shallow(<AppMenu />).dive().dive();
+  expect(component.find('div').at(0).prop('className')).toBe('');
+  component.setProps({ className: 'test' });
+  expect(component.find('div').at(0).prop('className')).toBe('test');
+});
+
 test('content', () => {
   const toolbar = <div id='test' />;
   const component = shallow(<AppMenu />).dive().dive();

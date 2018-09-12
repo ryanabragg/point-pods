@@ -2,17 +2,17 @@
 
 exports[`matches the prior snapshot 1`] = `
 <div
-  className="APIComponent-root-120"
+  className=""
 >
   <header
-    className="MuiPaper-root-136 MuiPaper-elevation4-142 MuiAppBar-root-128 MuiAppBar-positionFixed-129 MuiAppBar-colorPrimary-134 mui-fixed"
+    className="MuiPaper-root-134 MuiPaper-elevation4-140 MuiAppBar-root-126 MuiAppBar-positionFixed-127 MuiAppBar-colorPrimary-132 mui-fixed"
   >
     <div
-      className="MuiToolbar-root-163 MuiToolbar-regular-165 MuiToolbar-gutters-164 APIComponent-nowrap-122"
+      className="MuiToolbar-root-161 MuiToolbar-regular-163 MuiToolbar-gutters-162 APIComponent-nowrap-120"
     >
       <button
         aria-label="Menu"
-        className="MuiButtonBase-root-173 MuiIconButton-root-167 MuiIconButton-colorInherit-168 APIComponent-menuButton-123"
+        className="MuiButtonBase-root-171 MuiIconButton-root-165 MuiIconButton-colorInherit-166 APIComponent-menuButton-121"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -29,11 +29,11 @@ exports[`matches the prior snapshot 1`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-172"
+          className="MuiIconButton-label-170"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-176"
+            className="MuiSvgIcon-root-174"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -48,35 +48,35 @@ exports[`matches the prior snapshot 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-183"
+          className="MuiTouchRipple-root-181"
         />
       </button>
       <h2
-        className="MuiTypography-root-190 MuiTypography-title-196 MuiTypography-colorInherit-209 APIComponent-flex-121"
+        className="MuiTypography-root-188 MuiTypography-title-194 MuiTypography-colorInherit-207 APIComponent-flex-119"
       >
         Point Pods
       </h2>
     </div>
   </header>
   <div
-    className="APIComponent-spacer-125"
+    className="APIComponent-spacer-123"
   />
 </div>
 `;
 
 exports[`matches the prior snapshot 2`] = `
 <div
-  className="APIComponent-root-120"
+  className=""
 >
   <header
-    className="MuiPaper-root-136 MuiPaper-elevation4-142 MuiAppBar-root-128 MuiAppBar-positionStatic-132 MuiAppBar-colorPrimary-134"
+    className="MuiPaper-root-134 MuiPaper-elevation4-140 MuiAppBar-root-126 MuiAppBar-positionStatic-130 MuiAppBar-colorPrimary-132"
   >
     <div
-      className="MuiToolbar-root-163 MuiToolbar-regular-165 MuiToolbar-gutters-164 APIComponent-nowrap-122"
+      className="MuiToolbar-root-161 MuiToolbar-regular-163 MuiToolbar-gutters-162 APIComponent-nowrap-120"
     >
       <button
         aria-label="Menu"
-        className="MuiButtonBase-root-173 MuiIconButton-root-167 MuiIconButton-colorInherit-168 APIComponent-menuButton-123"
+        className="MuiButtonBase-root-171 MuiIconButton-root-165 MuiIconButton-colorInherit-166 APIComponent-menuButton-121"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -93,11 +93,11 @@ exports[`matches the prior snapshot 2`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-172"
+          className="MuiIconButton-label-170"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-176"
+            className="MuiSvgIcon-root-174"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -112,35 +112,35 @@ exports[`matches the prior snapshot 2`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-183"
+          className="MuiTouchRipple-root-181"
         />
       </button>
       <h2
-        className="MuiTypography-root-190 MuiTypography-title-196 MuiTypography-colorInherit-209 APIComponent-flex-121"
+        className="MuiTypography-root-188 MuiTypography-title-194 MuiTypography-colorInherit-207 APIComponent-flex-119"
       >
         Point Pods
       </h2>
     </div>
   </header>
   <div
-    className="APIComponent-pad-126"
+    className="APIComponent-pad-124"
   />
 </div>
 `;
 
 exports[`matches the prior snapshot 3`] = `
 <div
-  className="APIComponent-root-120"
+  className=""
 >
   <header
-    className="MuiPaper-root-136 MuiPaper-elevation4-142 MuiAppBar-root-128 MuiAppBar-positionFixed-129 MuiAppBar-colorPrimary-134 mui-fixed"
+    className="MuiPaper-root-134 MuiPaper-elevation4-140 MuiAppBar-root-126 MuiAppBar-positionFixed-127 MuiAppBar-colorPrimary-132 mui-fixed"
   >
     <div
-      className="MuiToolbar-root-163 MuiToolbar-regular-165 MuiToolbar-gutters-164 APIComponent-nowrap-122"
+      className="MuiToolbar-root-161 MuiToolbar-regular-163 MuiToolbar-gutters-162 APIComponent-nowrap-120"
     >
       <button
         aria-label="Back"
-        className="MuiButtonBase-root-173 MuiIconButton-root-167 MuiIconButton-colorInherit-168 APIComponent-menuButton-123"
+        className="MuiButtonBase-root-171 MuiIconButton-root-165 MuiIconButton-colorInherit-166 APIComponent-menuButton-121"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -157,11 +157,11 @@ exports[`matches the prior snapshot 3`] = `
         type="button"
       >
         <span
-          className="MuiIconButton-label-172"
+          className="MuiIconButton-label-170"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-176"
+            className="MuiSvgIcon-root-174"
             color={undefined}
             focusable="false"
             viewBox="0 0 24 24"
@@ -176,11 +176,11 @@ exports[`matches the prior snapshot 3`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-183"
+          className="MuiTouchRipple-root-181"
         />
       </button>
       <h2
-        className="MuiTypography-root-190 MuiTypography-title-196 MuiTypography-colorInherit-209 APIComponent-flex-121"
+        className="MuiTypography-root-188 MuiTypography-title-194 MuiTypography-colorInherit-207 APIComponent-flex-119"
       >
         Test
       </h2>
@@ -192,7 +192,7 @@ exports[`matches the prior snapshot 3`] = `
     </div>
   </header>
   <div
-    className="APIComponent-spacer-125"
+    className="APIComponent-spacer-123"
   />
 </div>
 `;
