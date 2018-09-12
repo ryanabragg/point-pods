@@ -21,16 +21,20 @@ test('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-/* For some reason, this refuses to render without error
+/* TypeError: Cannot read property 'addEventListener' of null
 test('matches the prior snapshot', () => {
-  const component = renderer.create(<SwipeTabControl tabs={[{key:1,label:'tab1'},{key:2,label:'tab2'}]}><div>1</div><div>2</div></SwipeTabControl>);
+  const component = renderer.create(
+    <SwipeTabControl tabs={[{key:1,label:'tab1'},{key:2,label:'tab2'}]}>
+      <div>1</div>
+      <div>2</div>
+    </SwipeTabControl>
+  );
   expect(component.toJSON()).toMatchSnapshot();
 });*/
 
 describe('integration', () => {
   test('Tabs', () => {
-    const wrapper = shallow(<SwipeTabControl />);
-    const component = wrapper.dive();
+    const component = shallow(<SwipeTabControl />).dive();
     expect(component.find(Tabs).length).toBe(1);
     expect(component.find(Tab).length).toBe(0);
     component.setProps({ tabs: testTabs });
@@ -38,8 +42,7 @@ describe('integration', () => {
   });
 
   test('SwipeableViews', () => {
-    const wrapper = shallow(<SwipeTabControl />);
-    const component = wrapper.dive();
+    const component = shallow(<SwipeTabControl />).dive();
     expect(component.find(SwipeableViews).length).toBe(1);
     expect(component.find(SwipeableViews).find('div').length).toBe(0);
     component.setProps({ tabs: testTabs });
@@ -66,7 +69,7 @@ test('tab bar position', () => {
 
 describe('defaults', () => {
   test('tab index', () => {
-    const wrapper = shallow(
+    const component = shallow(
       <SwipeTabControl 
         tabs={[
           {key: 'one', label: 'One'},
@@ -74,15 +77,14 @@ describe('defaults', () => {
           {key: 'three', label: 'Three'},
         ]}
       />
-    );
-    const component = wrapper.dive();
+    ).dive();
     expect(component.state('tabIndex')).toBe(0);
   });
 });
 
 describe('actions', () => {
   test('goToTab', () => {
-    const wrapper = shallow(
+    const component = shallow(
       <SwipeTabControl 
         tabs={[
           {key: 'one', label: 'One'},
@@ -91,8 +93,7 @@ describe('actions', () => {
         ]}
         goToTab={1}
       />
-    );
-    const component = wrapper.dive();
+    ).dive();
     expect(component.state('tabIndex')).toBe(1);
     component.setProps({
       goToTab: 2
@@ -102,7 +103,7 @@ describe('actions', () => {
 
   test('onChange', () => {
     const spy = jest.fn();
-    const wrapper = shallow(
+    const component = shallow(
       <SwipeTabControl 
         tabs={[
           {key: 'one', label: 'One'},
@@ -111,8 +112,7 @@ describe('actions', () => {
         ]}
         onChange={spy}
       />
-    );
-    const component = wrapper.dive();
+    ).dive();
     component.setProps({
       goToTab: 2
     });
@@ -124,4 +124,32 @@ describe('actions', () => {
     component.instance().handleChangeIndex(0);
     expect(spy.mock.calls[2][0]).toBe(0);
   })
+});
+
+test('className prop', () => {
+  const component = shallow(
+    <SwipeTabControl 
+      tabs={[
+        {key: 'one', label: 'One'},
+        {key: 'two', label: 'Two'},
+      ]}
+    />
+  ).dive();
+  expect(component.find('div').at(0).prop('className')).toBe('SwipeTabControl-root-16');
+  component.setProps({className: 'test'})
+  expect(component.find('div').at(0).prop('className')).toBe('SwipeTabControl-root-16 test');
+});
+
+test('printing', () => {
+  const component = shallow(
+    <SwipeTabControl 
+      tabs={[
+        {key: 'one', label: 'One'},
+        {key: 'two', label: 'Two'},
+      ]}
+    />
+  ).dive();
+  expect(component.find(Tabs).prop('className')).toBe('SwipeTabControl-tabBar-17');
+  component.setProps({ hideTabsOnPrint: true });
+  expect(component.find(Tabs).prop('className')).toBe('SwipeTabControl-tabBar-17 SwipeTabControl-hideOnPrint-18');
 });

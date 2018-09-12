@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -19,9 +19,14 @@ const styles = theme => ({
     width: '100vw',
     background: theme.palette.background.default,
   },
+  hideOnPrint: {
+    '@media print': {
+      display: 'none',
+    },
+  },
 });
 
-class TabControl extends Component {
+class SwipeTabControl extends Component {
   state = {
     tabIndex: this.props.goToTab || 0,
   };
@@ -53,6 +58,7 @@ class TabControl extends Component {
       tabs,
       color,
       tabsOnBottom,
+      hideTabsOnPrint,
       animateHeight,
       className
     } = this.props;
@@ -65,7 +71,7 @@ class TabControl extends Component {
         indicatorColor={color}
         textColor={color}
         fullWidth centered
-        className={classes.tabBar}
+        className={classNames(classes.tabBar, hideTabsOnPrint ? classes.hideOnPrint : null)}
       >
         {tabs.map(tab => (
           <Tab key={tab.key} id={tab.key} label={tab.label} icon={tab.icon} />
@@ -74,7 +80,7 @@ class TabControl extends Component {
     );
 
     return (
-      <div className={ClassNames(classes.root, className)}>
+      <div className={classNames(classes.root, className)}>
         {!tabsOnBottom && tabBar}
         <SwipeableViews
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -90,18 +96,19 @@ class TabControl extends Component {
   }
 }
 
-TabControl.defaultProps = {
+SwipeTabControl.defaultProps = {
   tabs: [],
   goToTab: 0,
   onChange: tabIndex => {},
   color: 'primary',
   tabsOnBottom: true,
+  hideTabsOnPrint: false,
   scrollToTop: true,
   animateHeight: false,
   className: '',
 };
 
-TabControl.propTypes = {
+SwipeTabControl.propTypes = {
   classes: PropTypes.object.isRequired, // added by withStyles
   theme: PropTypes.object.isRequired, // added by withStyles
   tabs: PropTypes.array.isRequired,
@@ -109,9 +116,10 @@ TabControl.propTypes = {
   onChange: PropTypes.func,
   color: PropTypes.string,
   tabsOnBottom: PropTypes.bool,
+  hideTabsOnPrint: PropTypes.bool,
   scrollToTop: PropTypes.bool,
   animateHeight: PropTypes.bool,
   className: PropTypes.string,
 };
 
-export default withStyles(styles, { withTheme: true })(TabControl);
+export default withStyles(styles, { withTheme: true })(SwipeTabControl);
