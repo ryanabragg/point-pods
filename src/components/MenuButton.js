@@ -41,7 +41,7 @@ class MenuButton extends React.Component {
   }
 
   render() {
-    const { buttonType, buttonProps, buttonContent, menuItems, disablePortal, paperStyle } = this.props;
+    const { classes, className, buttonType, buttonProps, buttonContent, menuItems, disablePortal, paperStyle } = this.props;
     const { open } = this.state;
     let TheButton;
     switch(buttonType) {
@@ -51,7 +51,7 @@ class MenuButton extends React.Component {
     }
 
     return (
-      <div>
+      <div className={className}>
         <TheButton
           {...buttonProps}
           buttonRef={node => this.menuAnchor = node}
@@ -98,6 +98,7 @@ class MenuButton extends React.Component {
 }
 
 MenuButton.defaultProps = {
+  className: '',
   buttonType: 'normal',
   buttonContent: 'button',
   buttonProps: {},
@@ -108,6 +109,7 @@ MenuButton.defaultProps = {
 
 MenuButton.propTypes = {
   classes: PropTypes.object.isRequired, // added by withStyles
+  className: PropTypes.string,
   buttonType: PropTypes.oneOf(['normal', 'icon']),
   buttonContent: PropTypes.node,
   buttonProps: PropTypes.object,

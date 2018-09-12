@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`matches the prior snapshot 1`] = `
-<div>
+<div
+  className=""
+>
   <button
     aria-haspopup="true"
     aria-owns={null}
@@ -34,7 +36,9 @@ exports[`matches the prior snapshot 1`] = `
 `;
 
 exports[`matches the prior snapshot 2`] = `
-<div>
+<div
+  className=""
+>
   <button
     aria-haspopup="true"
     aria-owns={null}
@@ -67,7 +71,9 @@ exports[`matches the prior snapshot 2`] = `
 `;
 
 exports[`matches the prior snapshot 3`] = `
-<div>
+<div
+  className=""
+>
   <button
     aria-haspopup="true"
     aria-owns={null}
@@ -114,7 +120,9 @@ exports[`matches the prior snapshot 3`] = `
 `;
 
 exports[`matches the prior snapshot 4`] = `
-<div>
+<div
+  className=""
+>
   <button
     aria-haspopup="true"
     aria-owns={null}
@@ -147,7 +155,9 @@ exports[`matches the prior snapshot 4`] = `
 `;
 
 exports[`matches the prior snapshot 5`] = `
-<div>
+<div
+  className=""
+>
   <button
     aria-haspopup="true"
     aria-owns={null}

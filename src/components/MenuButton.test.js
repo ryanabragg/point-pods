@@ -82,6 +82,13 @@ test('menu list'/*, () => {
   expect(component.find(ListItemText).length).toBe(itemsWithIcons.length);
 }*/);
 
+test('className prop', () => {
+  const component = shallow(<MenuButton />).dive();
+  expect(component.find('div').prop('className')).toBe('');
+  component.setProps({className: 'test'})
+  expect(component.find('div').prop('className')).toBe('test');
+});
+
 test('disablePortal prop pass-through', () => {
   const component = shallow(<MenuButton />).dive();
   expect(component.find(Popper).prop('disablePortal')).toBe(false);
