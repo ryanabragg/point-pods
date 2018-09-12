@@ -15,6 +15,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Zoom from '@material-ui/core/Zoom';
 
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import PrintIcon from '@material-ui/icons/Print';
 import SettingsIcon from '@material-ui/icons/SettingsSharp';
 import SendIcon from '@material-ui/icons/Send';
 import AddIcon from '@material-ui/icons/Add';
@@ -149,6 +150,10 @@ class Tournament extends Component {
 
   goBack = () => {
     this.props.history.go(-1);
+  };
+
+  print = () => {
+    window.print();
   };
 
   // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -664,6 +669,9 @@ class Tournament extends Component {
             />
           )
         }
+        <IconButton color='inherit' onClick={this.print}>
+          <PrintIcon />
+        </IconButton>
         {sync
           ? (
             <IconButton color='inherit' className={classes.spinning}>
