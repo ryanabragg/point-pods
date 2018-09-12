@@ -50,7 +50,7 @@ test('matches the prior snapshot', () => {
 describe('actions', () => {
   test('scoring', (done) => {
     const spy = jest.fn();
-    const HOC = shallow(
+    const component = shallow(
       <TournamentRound
         players={testTournaments[1].players}
         playerSort={playerSort}
@@ -58,8 +58,7 @@ describe('actions', () => {
         activeRound={2}
         onUpdateScores={spy}
       />
-    );
-    const component = HOC.dive();
+    ).dive();
     component.find('#mock3').find(TextField).simulate('change', {target: {value: '42'}});
     setTimeout(() => {
       component.update();
@@ -74,7 +73,7 @@ describe('actions', () => {
 
   test('drop a player', () => {
     const spy = jest.fn();
-    const HOC = shallow(
+    const component = shallow(
       <TournamentRound
         players={testTournaments[1].players}
         playerSort={playerSort}
@@ -82,15 +81,14 @@ describe('actions', () => {
         activeRound={2}
         onRemovePlayer={spy}
       />
-    );
-    const component = HOC.dive();
+    ).dive();
     component.find('#mock4').find(IconButton).simulate('click');
     expect(spy.mock.calls[0][0]).toBe('mock4');
   });
 
   test('reinstate a player', () => {
     const spy = jest.fn();
-    const HOC = shallow(
+    const component = shallow(
       <TournamentRound
         players={testTournaments[1].players}
         playerSort={playerSort}
@@ -98,15 +96,14 @@ describe('actions', () => {
         activeRound={2}
         onReinstatePlayer={spy}
       />
-    );
-    const component = HOC.dive();
+    ).dive();
     component.find('#mock1').find(IconButton).simulate('click');
     expect(spy.mock.calls[0][0]).toBe('mock1');
   });
 
   test('moving a player to a pod', () => {
     const spy = jest.fn();
-    const HOC = shallow(
+    const component = shallow(
       <TournamentRound
         players={testTournaments[1].players}
         playerSort={playerSort}
@@ -114,10 +111,9 @@ describe('actions', () => {
         activeRound={2}
         onSetPlayerPod={spy}
       />
-    );
-    const component = HOC.dive();
+    ).dive();
     expect(component.find(Card).length).toBe(4);
-    expect(component.find(ListItem).length).toBe(testTournaments[1].players.length);
+    expect(component.find(Card).find(ListItem).length).toBe(testTournaments[1].players.length);
     component.find(Card).forEach((node, i) => {
       let players = {
         0: 1,
@@ -146,7 +142,7 @@ describe('actions', () => {
     });
     component.setProps({ activeRound: 1 });
     expect(component.find(Card).length).toBe(3);
-    expect(component.find(ListItem).length).toBe(testTournaments[1].players.length);
+    expect(component.find(Card).find(ListItem).length).toBe(testTournaments[1].players.length);
     component.find(Card).forEach((node, i) => {
       let players = {
         0: 2,
@@ -159,4 +155,18 @@ describe('actions', () => {
       expect(node.find(IconButton).length).toBe(0);
     });
   });
+});
+
+test('printing', () => {
+  const component = shallow(
+    <TournamentRound
+      players={testTournaments[1].players}
+      playerSort={playerSort}
+      rounds={testTournaments[1].rounds}
+      activeRound={2}
+    />
+  ).dive();
+  expect(component.find('div').at(0).prop('className')).toBe(undefined);
+  expect(component.find('div').at(1).prop('className')).toBe('TournamentRounds-hideOnPrint-54');
+  expect(component.find('div').at(2).prop('className')).toBe('TournamentRounds-showOnPrint-55');
 });

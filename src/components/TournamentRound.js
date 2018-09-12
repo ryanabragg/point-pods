@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import { withStyles } from '@material-ui/core/styles';
 
+import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -44,6 +46,10 @@ const styles = theme => ({
     maxHeight: theme.spacing.unit * 6 * 5.5,
     overflow: 'auto',
   },
+  flex: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
   right: {
     marginLeft: 'auto',
   },
@@ -56,6 +62,30 @@ const styles = theme => ({
   },
   scoreField: {
     maxWidth: 7 * theme.spacing.unit,
+  },
+  printPod: {
+    width: '90%',
+    marginTop: theme.spacing.unit,
+    marginBottom: theme.spacing.unit,
+    padding: 2 * theme.spacing.unit,
+    borderTop: '1px dashed',
+    pageBreakInside: 'avoid',
+  },
+  printPodEntry: {
+    height: 3 * theme.spacing.unit,
+    width: 8 * theme.spacing.unit,
+    borderBottom: '1px solid',
+  },
+  hideOnPrint: {
+    '@media print': {
+      display: 'none',
+    },
+  },
+  showOnPrint: {
+    display: 'none',
+    '@media print': {
+      display: 'block',
+    },
   },
 });
 
@@ -135,25 +165,24 @@ class TournamentRounds extends Component {
     }
     return (
       <div>
-        {newPlayers.length > 0 && (
-          <Card className={classes.margined}>
-            <CardHeader
-              title={`${rounds ? '' : 'New '}Players`}
-            />
-            <Divider />
-            <CardContent>
-              <List>
-              {newPlayers.map(({id, name}) => {
-                return (
-                  <ListItem key={id} id={id} button>
-                    <ListItemText primary={name} />
-                    {!rounds || !currentRound ? null : (
-                      <ListItemSecondaryAction>
+        <div className={classes.hideOnPrint}>
+          {newPlayers.length > 0 && (
+            <Card className={classes.margined}>
+              <CardHeader
+                title={`${rounds ? '' : 'New '}Players`}
+              />
+              <Divider />
+              <CardContent>
+                <List>
+                {newPlayers.map(({id, name}) => {
+                  return (
+                    <ListItem key={id} id={id} button>
+                      {!currentRound ? null : (
                         <MenuButton
                           buttonType='icon'
                           buttonContent={
                             <Tooltip title={`Move ${name} to a different pod`}>
-                              <GroupWorkIcon />
+                              <GroupWorkIcon color='primary' />
                             </Tooltip>
                           }
                           menuItems={pods.map(d => ({
@@ -167,103 +196,101 @@ class TournamentRounds extends Component {
                           })}
                           paperStyle={this.props.classes.menuButtonPaper}
                         />
-                        <Tooltip title={`Remove ${name} from the tournament`}>
-                          <IconButton
-                            color='primary'
-                            className={classes.marginedLeft}
-                            onClick={this.handleRemovePlayer(id, true)}
-                          >
-                            {<DeleteIcon />}
-                          </IconButton>
-                        </Tooltip>
-                      </ListItemSecondaryAction>
-                    )}
-                  </ListItem>
-                );
-              })}
-              </List>
-            </CardContent>
-          </Card>
-        )}
-        {podPlayers.length > 0 &&
-          pods.map(pod => (
-            <Card key={pod.pod} className={classes.margined}>
-              <CardHeader
-                title={`Pod ${pod.pod}`}
-              />
-              <Divider />
-              <CardContent>
-                <List>
-                {pod.players.map(({id, name, dropped, points}) => {
-                  let pointsSoFar = players.filter(p => p.id === id)[0].points;
-                  return (
-                    <ListItem key={id} id={id} button>
-                      {!currentRound ? null : (
-                        <MenuButton
-                          buttonType='icon'
-                          buttonContent={
-                            <Tooltip title={`Move ${name} to a different pod`}>
-                              <GroupWorkIcon className={classes.unmargined} color={dropped ? 'error' : 'primary'} />
-                            </Tooltip>
-                          }
-                          menuItems={pods.filter(d => d.pod !== pod.pod).map(d => ({
-                            label: `Move to Pod ${d.pod} (${d.players.length} players)`,
-                            icon: <ArrowRightAltIcon color='primary' />,
-                            action: this.handleSetPlayerPod(id, d.pod),
-                          })).concat({
-                            label: `Move to new pod (Pod ${pods.length + 1})`,
-                            icon: <AddIcon />,
-                            action: this.handleSetPlayerPod(id, pods.length + 1),
-                          })}
-                          paperStyle={this.props.classes.menuButtonPaper}
-                        />
                       )}
-                      <ListItemText primary={name} secondary={currentRound ? `${pointsSoFar} points` : null} />
-                      <ListItemSecondaryAction>
-                        {!currentRound ? points : (
-                          <TextField
-                            aria-label={`Points for player ${name}`}
-                            margin='dense'
-                            className={classes.scoreField}
-                            required
-                            type='number'
-                            defaultValue={points}
-                            onChange={this.handleScorePlayer(id)}
-                          />
-                        )}
-                        {!currentRound ? null : (
-                          <Tooltip title={dropped ? 'Reinstate Player' : 'Drop Player'}>
-                            <IconButton
-                              className={classes.marginedLeft}
-                              onClick={this.handleRemovePlayer(id, !dropped)}
-                            >
-                              {dropped ? <RestoreFromTrashIcon color='error' /> : <DeleteIcon color='primary' />}
-                            </IconButton>
-                          </Tooltip>
-                        )}
-                      </ListItemSecondaryAction>
+                      <ListItemText primary={name} />
+                      {!rounds || !currentRound ? null : (
+                        <ListItemSecondaryAction>
+                          <IconButton onClick={this.handleRemovePlayer(id, true)}>
+                            <Tooltip title={`Remove ${name} from tournament`}>
+                              <DeleteIcon color='primary' />
+                            </Tooltip>
+                          </IconButton>
+                        </ListItemSecondaryAction>
+                      )}
                     </ListItem>
                   );
                 })}
                 </List>
               </CardContent>
             </Card>
-          ))
-        }
-        {droppedPlayers.length > 0 && (
-          <Card className={classes.margined}>
-            <CardHeader
-              title={`Dropped Players`}
-            />
-            <Divider />
-            <CardContent>
-              <List>
-              {droppedPlayers.map(({id, name}) => {
-                return (
-                  <ListItem key={id} id={id} button>
-                    <ListItemText primary={name} />
-                    {!currentRound ? null : (
-                      <ListItemSecondaryAction>
+          )}
+          {podPlayers.length > 0 &&
+            pods.map(pod => (
+              <Card key={pod.pod} className={classes.margined}>
+                <CardHeader
+                  title={`Pod ${pod.pod}`}
+                />
+                <Divider />
+                <CardContent>
+                  <List>
+                  {pod.players.map(({id, name, dropped, points}) => {
+                    let pointsSoFar = players.filter(p => p.id === id)[0].points;
+                    return (
+                      <ListItem key={id} id={id} button>
+                        {!currentRound ? null : (
+                          <MenuButton
+                            buttonType='icon'
+                            buttonContent={
+                              <Tooltip title={`Move ${name} to a different pod`}>
+                                <GroupWorkIcon className={classes.unmargined} color={dropped ? 'error' : 'primary'} />
+                              </Tooltip>
+                            }
+                            menuItems={pods.filter(d => d.pod !== pod.pod).map(d => ({
+                              label: `Move to Pod ${d.pod} (${d.players.length} players)`,
+                              icon: <ArrowRightAltIcon color='primary' />,
+                              action: this.handleSetPlayerPod(id, d.pod),
+                            })).concat({
+                              label: `Move to new pod (Pod ${pods.length + 1})`,
+                              icon: <AddIcon />,
+                              action: this.handleSetPlayerPod(id, pods.length + 1),
+                            })}
+                            paperStyle={this.props.classes.menuButtonPaper}
+                          />
+                        )}
+                        <ListItemText primary={name} secondary={currentRound ? `${pointsSoFar} points` : null} />
+                        <ListItemSecondaryAction>
+                          {!currentRound ? points : (
+                            <TextField
+                              aria-label={`Points for player ${name}`}
+                              margin='dense'
+                              className={classes.scoreField}
+                              required
+                              type='number'
+                              defaultValue={points}
+                              onChange={this.handleScorePlayer(id)}
+                            />
+                          )}
+                          {!currentRound ? null : (
+                            <Tooltip title={dropped ? 'Reinstate Player' : 'Drop Player'}>
+                              <IconButton
+                                className={classes.marginedLeft}
+                                onClick={this.handleRemovePlayer(id, !dropped)}
+                              >
+                                {dropped ? <RestoreFromTrashIcon color='error' /> : <DeleteIcon color='primary' />}
+                              </IconButton>
+                            </Tooltip>
+                          )}
+                        </ListItemSecondaryAction>
+                      </ListItem>
+                    );
+                  })}
+                  </List>
+                </CardContent>
+              </Card>
+            ))
+          }
+          {droppedPlayers.length > 0 && (
+            <Card className={classes.margined}>
+              <CardHeader
+                title={`Dropped Players`}
+              />
+              <Divider />
+              <CardContent>
+                <List>
+                {droppedPlayers.map(({id, name}) => {
+                  return (
+                    <ListItem key={id} id={id} button>
+                      {!currentRound ? null : (
                         <MenuButton
                           buttonType='icon'
                           buttonContent={
@@ -282,15 +309,48 @@ class TournamentRounds extends Component {
                           })}
                           paperStyle={this.props.classes.menuButtonPaper}
                         />
-                      </ListItemSecondaryAction>
-                    )}
+                      )}
+                      <ListItemText primary={name} />
+                    </ListItem>
+                  );
+                })}
+                </List>
+              </CardContent>
+            </Card>
+          )}
+        </div>
+        <div className={classes.showOnPrint}>
+          {pods.map(pod => (
+            <div key={pod.pod} className={classes.printPod}>
+              <Typography variant='headline' className={classes.flex}>
+                {`Round ${activeRound}, Pod ${pod.pod}`}
+                <span className={classes.right}>Points</span>
+              </Typography>
+              <List>
+                {pod.players.map(({id, name}) => (
+                  <ListItem key={id}>
+                    <ListItemText primary={name} />
+                    <ListItemSecondaryAction>
+                      <div className={classes.printPodEntry} />
+                    </ListItemSecondaryAction>
                   </ListItem>
-                );
-              })}
+                ))}
               </List>
-            </CardContent>
-          </Card>
-        )}
+            </div>
+          ))}
+          {!pods.length && (
+            <div>
+              <Typography variant='headline'>Participants</Typography>
+              <List>
+                {players.sort(playerSort).map(({ id, name }) => (
+                  <ListItem key={id} dense className={classes.printList}>
+                    <ListItemText primary={name} />
+                  </ListItem>
+                ))}
+              </List>
+            </div>
+          )}
+        </div>
       </div>
     );
   }
