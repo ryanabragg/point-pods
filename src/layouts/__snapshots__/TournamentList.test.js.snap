@@ -149,11 +149,12 @@ exports[`matches the prior snapshot 1`] = `
       className="APIComponent-spacer-168"
     />
   </div>
-  <a
+  <button
     aria-label="New Tournament"
     className="MuiButtonBase-root-216 MuiButton-root-283 MuiButton-fab-298 MuiButton-contained-292 MuiButton-containedSecondary-294 MuiButton-raised-295 MuiButton-raisedSecondary-297 APIComponent-actionButton-159"
-    href="/new"
+    disabled={false}
     onBlur={[Function]}
+    onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onKeyUp={[Function]}
@@ -163,8 +164,8 @@ exports[`matches the prior snapshot 1`] = `
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}
-    role="button"
     tabIndex="0"
+    type="button"
   >
     <span
       className="MuiButton-label-284"
@@ -188,7 +189,7 @@ exports[`matches the prior snapshot 1`] = `
     <span
       className="MuiTouchRipple-root-226"
     />
-  </a>
+  </button>
   <div
     className="TournamentCards-root-307"
   >
@@ -363,11 +364,12 @@ exports[`matches the prior snapshot 2`] = `
       className="APIComponent-spacer-168"
     />
   </div>
-  <a
+  <button
     aria-label="New Tournament"
     className="MuiButtonBase-root-216 MuiButton-root-283 MuiButton-fab-298 MuiButton-contained-292 MuiButton-containedSecondary-294 MuiButton-raised-295 MuiButton-raisedSecondary-297 APIComponent-actionButton-159"
-    href="/new"
+    disabled={false}
     onBlur={[Function]}
+    onClick={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onKeyUp={[Function]}
@@ -377,8 +379,8 @@ exports[`matches the prior snapshot 2`] = `
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}
-    role="button"
     tabIndex="0"
+    type="button"
   >
     <span
       className="MuiButton-label-284"
@@ -402,7 +404,7 @@ exports[`matches the prior snapshot 2`] = `
     <span
       className="MuiTouchRipple-root-226"
     />
-  </a>
+  </button>
   <div
     className="TournamentCards-root-307"
   >

@@ -49,6 +49,7 @@ class TournamentList extends Component {
   state = {
     dialog: null,
     newPlayer: '',
+    newTournament: false,
     searching: false,
     searchTerm: '',
     category: '',
@@ -125,6 +126,10 @@ class TournamentList extends Component {
     this.setState({ selected: selected });
   };
 
+  handleUpdateValue = (key, value) => () => {
+    this.setState({[key]: value});
+  };
+
   renderToolbar = () => {
     if(this.state.searching) {
       return (
@@ -177,8 +182,8 @@ class TournamentList extends Component {
   renderDialogCategories = () => null;
 
   render() {
-    const { classes } = this.props;
-    const { dialog, searching, searchTerm, tournaments, selected } = this.state;
+    const { classes, history, notification } = this.props;
+    const { dialog, newTournament, searching, searchTerm, tournaments, selected } = this.state;
     const cards = Array.from(tournaments).sort(this.sorting);
     let showDialog;
     switch(dialog) {
@@ -190,6 +195,10 @@ class TournamentList extends Component {
         <AppMenu
           title={searching ? '' : 'Tournaments'}
           color={searching ? 'secondary' : 'primary'}
+          history={history}
+          notification={notification}
+          showNew={newTournament}
+          onCancelNew={this.handleUpdateValue('newTournament', false)}
           toolbar={this.renderToolbar()}
         />
         <Button
@@ -197,7 +206,7 @@ class TournamentList extends Component {
           color='secondary'
           aria-label='New Tournament'
           className={classes.actionButton}
-          href='/new'
+          onClick={this.handleUpdateValue('newTournament', true)}
         >
           <AddIcon />
         </Button>
@@ -214,12 +223,24 @@ class TournamentList extends Component {
 }
 
 TournamentList.defaultProps = {
+  history: {
+    go: () => null,
+    push: () => null,
+    replace: () => null,
+  },
+  match: {
+    params: {
+      id: null,
+    },
+  },
   notification: (m, v, d, c) => null,
 };
 
 TournamentList.propTypes = {
   api: PropTypes.object.isRequired, // added by withAPI
   classes: PropTypes.object.isRequired, // added by withStyles
+  history: PropTypes.object, // added by parent Route
+  match: PropTypes.object, // added by parent Route
   notification: PropTypes.func,
 };
 

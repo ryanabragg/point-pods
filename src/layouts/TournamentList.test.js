@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 import TournamentList from './TournamentList';
+import AppMenu from '../components/AppMenu';
 
 import api from '../api';
 
@@ -44,8 +45,7 @@ test('is a HOC-ed component', () => {
 
 describe('defaults', () => {
   test('values', () => {
-    const wrapper = shallow(<TournamentList />);
-    const component = wrapper.dive().dive();
+    const component = shallow(<TournamentList />).dive().dive();
     expect(component.state('dialog')).toBe(null);
     expect(component.state('searching')).toBe(false);
     expect(component.state('sort')).toEqual({field: 'name', ascending: true});
@@ -53,8 +53,7 @@ describe('defaults', () => {
   });
 
   test('loads the state', (done) => {
-    const wrapper = shallow(<TournamentList />);
-    const component = wrapper.dive().dive();
+    const component = shallow(<TournamentList />).dive().dive();
     expect(component.state('tournaments')).toEqual([]);
     expect(component.state('categories')).toEqual([]);
     setTimeout(() => {
@@ -82,8 +81,13 @@ describe('actions', () => {
   test('sorting');
 
   test('add a tournament', () => {
-    const wrapper = shallow(<TournamentList />);
-    const component = wrapper.dive().dive();
-    expect(component.findWhere(n => n.prop('variant') === 'fab').prop('href')).toBe('/new');
+    const component = shallow(<TournamentList />).dive().dive();
+    expect(component.find(Button).length).toBe(1);
+    expect(component.find(Button).prop('variant')).toBe('fab');
+    expect(component.state('newTournament')).toBe(false);
+    expect(component.find(AppMenu).prop('showNew')).toBe(false);
+    component.find(Button).simulate('click');
+    expect(component.state('newTournament')).toBe(true);
+    expect(component.find(AppMenu).prop('showNew')).toBe(true);
   });
 });
